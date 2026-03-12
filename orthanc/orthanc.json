@@ -1,0 +1,23 @@
+{
+  "Name": "AlpCAN DICOM Server",
+  "StorageDirectory": "/var/lib/orthanc/db",
+  "IndexDirectory": "/var/lib/orthanc/db",
+  "DicomAet": "ALPCAN",
+  "DicomPort": 4242,
+  "HttpPort": 8042,
+  "RemoteAccessAllowed": true,
+  "AuthenticationEnabled": false,
+  "DicomCheckCalledAet": false,
+  "StableAge": 60,
+  "StorageCompression": false,
+  "MaximumStorageSize": 0,
+  "MaximumPatientCount": 0,
+  "LuaScripts": [],
+  "Plugins": [
+    "/usr/share/orthanc/plugins"
+  ],
+  "DicomWeb": {
+    "Enable": true,
+    "Root": "/dicom-web/"
+  }
+}
