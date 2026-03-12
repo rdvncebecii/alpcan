@@ -1,0 +1,13 @@
+{
+  "id": "ridvancebec/alpcan-cxr-torchxrayvision",
+  "title": "AlpCAN CXR Pipeline - TorchXRayVision Baseline",
+  "code_file": "02_cxr_pipeline_torchxrayvision.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "dataset_sources": ["nih-chest-xrays/data"],
+  "competition_sources": [],
+  "kernel_sources": []
+}
