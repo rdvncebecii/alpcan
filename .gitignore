@@ -46,6 +46,7 @@ docker-compose.override.yml
 
 # Logs
 *.log
+!notebooks/outputs/**/*.log
 logs/
 
 # Coverage

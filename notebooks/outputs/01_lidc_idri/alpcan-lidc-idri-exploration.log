@@ -1,0 +1,127 @@
+[{"stream_name":"stderr","time":7.45841318,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.458476437,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.458482485,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.458485818,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":8.175962273,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":8.17601837,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":8.176024333,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":8.17602859,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":10.228650912,"data":"Mevcut input dizinleri:\n"}
+,{"stream_name":"stdout","time":10.22870743,"data":"  datasets/\n"}
+,{"stream_name":"stdout","time":10.228713187,"data":"    zhangweiled\n"}
+,{"stream_name":"stdout","time":10.228719671,"data":"\n"}
+,{"stream_name":"stdout","time":10.228723876,"data":"Veri seti bulundu: /kaggle/input/datasets/zhangweiled/lidcidri/LIDC-IDRI-slices\n"}
+,{"stream_name":"stdout","time":11.492054141,"data":"Toplam hasta: 875\n"}
+,{"stream_name":"stdout","time":11.492093677,"data":"\n"}
+,{"stream_name":"stdout","time":11.492098641,"data":"İlk 5 hasta:\n"}
+,{"stream_name":"stdout","time":11.49210345,"data":"  LIDC-IDRI-0001: 1 nodül\n"}
+,{"stream_name":"stdout","time":11.492110012,"data":"    nodule-0: ['mask-1', 'images', 'mask-2', 'mask-0', 'mask-3']\n"}
+,{"stream_name":"stdout","time":11.492114521,"data":"  LIDC-IDRI-0002: 1 nodül\n"}
+,{"stream_name":"stdout","time":11.492119704,"data":"    nodule-0: ['mask-1', 'images', 'mask-2', 'mask-0', 'mask-3']\n"}
+,{"stream_name":"stdout","time":11.492124563,"data":"  LIDC-IDRI-0003: 4 nodül\n"}
+,{"stream_name":"stdout","time":11.492129601,"data":"    nodule-0: ['mask-1', 'images', 'mask-2', 'mask-0', 'mask-3']\n"}
+,{"stream_name":"stdout","time":11.492134848,"data":"    nodule-1: ['mask-1', 'images', 'mask-2', 'mask-0', 'mask-3']\n"}
+,{"stream_name":"stdout","time":11.492139739,"data":"    nodule-2: ['mask-1', 'images', 'mask-2', 'mask-0', 'mask-3']\n"}
+,{"stream_name":"stdout","time":11.492143953,"data":"  LIDC-IDRI-0004: 1 nodül\n"}
+,{"stream_name":"stdout","time":11.492147938,"data":"    nodule-0: ['mask-1', 'images', 'mask-2', 'mask-0', 'mask-3']\n"}
+,{"stream_name":"stdout","time":11.492152064,"data":"  LIDC-IDRI-0005: 3 nodül\n"}
+,{"stream_name":"stdout","time":11.492158316,"data":"    nodule-0: ['mask-1', 'images', 'mask-2', 'mask-0', 'mask-3']\n"}
+,{"stream_name":"stdout","time":11.492162106,"data":"    nodule-1: ['mask-1', 'images', 'mask-2', 'mask-0', 'mask-3']\n"}
+,{"stream_name":"stdout","time":11.49216486,"data":"    nodule-2: ['mask-1', 'images', 'mask-2', 'mask-0', 'mask-3']\n"}
+,{"stream_name":"stdout","time":34.206051399,"data":"\n"}
+,{"stream_name":"stdout","time":34.206089531,"data":"=== VERİ SETİ ÖZETİ ===\n"}
+,{"stream_name":"stdout","time":34.206097532,"data":"Toplam hasta: 875\n"}
+,{"stream_name":"stdout","time":34.206102055,"data":"Toplam nodül: 2630\n"}
+,{"stream_name":"stdout","time":34.206106502,"data":"Toplam dilim: 15,548\n"}
+,{"stream_name":"stdout","time":34.206111027,"data":"\n"}
+,{"stream_name":"stdout","time":34.206130755,"data":"Hasta başına nodül sayısı:\n"}
+,{"stream_name":"stdout","time":34.206135493,"data":"count    875.000000\n"}
+,{"stream_name":"stdout","time":34.20613923,"data":"mean       3.005714\n"}
+,{"stream_name":"stdout","time":34.206142817,"data":"std        2.643798\n"}
+,{"stream_name":"stdout","time":34.206153677,"data":"min        1.000000\n"}
+,{"stream_name":"stdout","time":34.20615752,"data":"25%        1.000000\n"}
+,{"stream_name":"stdout","time":34.206161201,"data":"50%        2.000000\n"}
+,{"stream_name":"stdout","time":34.206164863,"data":"75%        4.000000\n"}
+,{"stream_name":"stdout","time":34.206168776,"data":"max       23.000000\n"}
+,{"stream_name":"stdout","time":34.206172522,"data":"dtype: float64\n"}
+,{"stream_name":"stdout","time":34.206176442,"data":"\n"}
+,{"stream_name":"stdout","time":34.206181105,"data":"Nodül başına dilim sayısı:\n"}
+,{"stream_name":"stdout","time":34.206185994,"data":"count    2630.000000\n"}
+,{"stream_name":"stdout","time":34.206189958,"data":"mean        5.911787\n"}
+,{"stream_name":"stdout","time":34.206194152,"data":"std         5.169826\n"}
+,{"stream_name":"stdout","time":34.20619843,"data":"min         1.000000\n"}
+,{"stream_name":"stdout","time":34.206202014,"data":"25%         3.000000\n"}
+,{"stream_name":"stdout","time":34.206206548,"data":"50%         4.000000\n"}
+,{"stream_name":"stdout","time":34.20621138,"data":"75%         7.000000\n"}
+,{"stream_name":"stdout","time":34.206216392,"data":"max        56.000000\n"}
+,{"stream_name":"stdout","time":34.206220045,"data":"Name: n_slices, dtype: float64\n"}
+,{"stream_name":"stdout","time":34.206223974,"data":"\n"}
+,{"stream_name":"stdout","time":34.206228018,"data":"Annotatör dağılımı:\n"}
+,{"stream_name":"stdout","time":34.206232808,"data":"n_annotators\n"}
+,{"stream_name":"stdout","time":34.206236783,"data":"4    2630\n"}
+,{"stream_name":"stdout","time":34.20624153,"data":"Name: count, dtype: int64\n"}
+,{"stream_name":"stdout","time":34.280587663,"data":"Hasta: LIDC-IDRI-0001\n"}
+,{"stream_name":"stdout","time":34.28062059,"data":"Nodül: nodule-0\n"}
+,{"stream_name":"stdout","time":34.280627398,"data":"Dilim sayısı: 9\n"}
+,{"stream_name":"stdout","time":34.28063162,"data":"Annotator sayısı: 4\n"}
+,{"stream_name":"stdout","time":34.280637338,"data":"\n"}
+,{"stream_name":"stdout","time":34.280641745,"data":"Görüntü boyutu: (128, 128)\n"}
+,{"stream_name":"stdout","time":34.280644605,"data":"Piksel aralığı: [0, 255]\n"}
+,{"stream_name":"stdout","time":34.280647448,"data":"Dtype: uint8\n"}
+,{"stream_name":"stdout","time":138.771824495,"data":"Boyut hesaplanan nodül sayısı: 2630\n"}
+,{"stream_name":"stdout","time":138.771892489,"data":"\n"}
+,{"stream_name":"stdout","time":138.771899249,"data":"Maksimum çap (piksel) istatistikleri:\n"}
+,{"stream_name":"stdout","time":138.771904756,"data":"count    2630.000000\n"}
+,{"stream_name":"stdout","time":138.771909992,"data":"mean       11.647148\n"}
+,{"stream_name":"stdout","time":138.7719173,"data":"std         9.082115\n"}
+,{"stream_name":"stdout","time":138.771922656,"data":"min         0.000000\n"}
+,{"stream_name":"stdout","time":138.771928427,"data":"25%         6.000000\n"}
+,{"stream_name":"stdout","time":138.77193447,"data":"50%         9.000000\n"}
+,{"stream_name":"stdout","time":138.771940876,"data":"75%        13.000000\n"}
+,{"stream_name":"stdout","time":138.771946896,"data":"max        70.000000\n"}
+,{"stream_name":"stdout","time":138.771952621,"data":"Name: max_diameter_px, dtype: float64\n"}
+,{"stream_name":"stdout","time":139.852800074,"data":"Görüntü stack: (9, 128, 128)\n"}
+,{"stream_name":"stdout","time":139.852835538,"data":"Konsensüs maske: (9, 128, 128)\n"}
+,{"stream_name":"stdout","time":139.852839932,"data":"Pozitif piksel oranı: 3.68%\n"}
+,{"stream_name":"stdout","time":142.398207525,"data":"============================================================\n"}
+,{"stream_name":"stdout","time":142.398241562,"data":"LIDC-IDRI VERİ SETİ ÖZET RAPORU\n"}
+,{"stream_name":"stdout","time":142.398247201,"data":"============================================================\n"}
+,{"stream_name":"stdout","time":142.398251486,"data":"Toplam hasta: 875\n"}
+,{"stream_name":"stdout","time":142.39825586,"data":"Toplam nodül: 2630\n"}
+,{"stream_name":"stdout","time":142.398259656,"data":"Toplam dilim: 15,548\n"}
+,{"stream_name":"stdout","time":142.398263308,"data":"Ortalama dilim/nodül: 5.9\n"}
+,{"stream_name":"stdout","time":142.398267269,"data":"Annotator dağılımı: {4: np.int64(2630)}\n"}
+,{"stream_name":"stdout","time":142.39827142,"data":"\n"}
+,{"stream_name":"stdout","time":142.398275312,"data":"Nodül çap (piksel):\n"}
+,{"stream_name":"stdout","time":142.398279889,"data":"  Min: 0\n"}
+,{"stream_name":"stdout","time":142.398284403,"data":"  Medyan: 9\n"}
+,{"stream_name":"stdout","time":142.398288889,"data":"  Max: 70\n"}
+,{"stream_name":"stdout","time":142.398293391,"data":"\n"}
+,{"stream_name":"stdout","time":142.398297656,"data":"============================================================\n"}
+,{"stream_name":"stdout","time":142.398301663,"data":"SONRAKİ ADIMLAR:\n"}
+,{"stream_name":"stdout","time":142.398305634,"data":"  1. LUNA16 veri seti ile tam 3D BT analizi\n"}
+,{"stream_name":"stdout","time":142.398309397,"data":"  2. nnU-Net v2 formatına dönüşüm\n"}
+,{"stream_name":"stdout","time":142.398313202,"data":"  3. Konsensüs maskeleri ile eğitim veri seti\n"}
+,{"stream_name":"stdout","time":142.398317296,"data":"  4. 5-fold cross-validation split\n"}
+,{"stream_name":"stdout","time":142.398321163,"data":"  5. CXR pipeline için ChestX-ray14 keşfi\n"}
+,{"stream_name":"stdout","time":142.398325679,"data":"============================================================\n"}
+,{"stream_name":"stdout","time":142.398330294,"data":"\n"}
+,{"stream_name":"stdout","time":142.39835353,"data":"CSV dosyaları kaydedildi.\n"}
+,{"stream_name":"stderr","time":145.597814978,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":145.597852204,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":145.762530473,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":145.762560863,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":146.422136601,"data":"/usr/local/lib/python3.12/dist-packages/traitlets/traitlets.py:2915: FutureWarning: --Exporter.preprocessors=[\"remove_papermill_header.RemovePapermillHeader\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":146.422176658,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":146.458401692,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":146.848934375,"data":"[NbConvertApp] Writing 1733613 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":149.745064299,"data":"/usr/local/lib/python3.12/dist-packages/traitlets/traitlets.py:2915: FutureWarning: --Exporter.preprocessors=[\"nbconvert.preprocessors.ExtractOutputPreprocessor\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":149.745103414,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":149.769452267,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":150.831372209,"data":"[NbConvertApp] Support files will be in __results___files/\n"}
+,{"stream_name":"stderr","time":150.831405391,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":150.831796597,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":150.832434712,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":150.832660362,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":150.833211697,"data":"[NbConvertApp] Writing 357503 bytes to __results__.html\n"}
+]
