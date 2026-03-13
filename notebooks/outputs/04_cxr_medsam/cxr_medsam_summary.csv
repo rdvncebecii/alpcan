@@ -1,0 +1,2 @@
+model,n_bbox_processed,n_lung_processed,mean_dice,std_dice,mean_iou,std_iou,mean_confidence,mean_seg_time,mean_lung_ratio,speed_img_per_sec
+MedSAM ViT-Base (flaviagiammarino/medsam-vit-base),164,500,0.5959374076364977,0.11783926881853589,0.4342146889853128,0.11781581992201064,0.6263300009616991,0.2853854487581951,0.28078779220581057,3.5040328942884975

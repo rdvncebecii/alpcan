@@ -1,0 +1,252 @@
+[{"stream_name":"stderr","time":6.470025521,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.470103281,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.470112845,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.470116667,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":7.03575484,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.035786441,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.03579206,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.03579646,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":33.184436682,"data":"PyTorch: 2.9.0+cu126\n"}
+,{"stream_name":"stdout","time":33.184492658,"data":"GPU: Tesla P100-PCIE-16GB\n"}
+,{"stream_name":"stdout","time":33.184501078,"data":"CUDA: True\n"}
+,{"stream_name":"stdout","time":156.236212692,"data":"Labels CSV: /kaggle/input/datasets/organizations/nih-chest-xrays/data/Data_Entry_2017.csv\n"}
+,{"stream_name":"stdout","time":156.236251453,"data":"Image directories: 12\n"}
+,{"stream_name":"stdout","time":156.236258312,"data":"  /kaggle/input/datasets/organizations/nih-chest-xrays/data/images_001/images: 4,999 PNG\n"}
+,{"stream_name":"stdout","time":156.323367282,"data":"  /kaggle/input/datasets/organizations/nih-chest-xrays/data/images_002/images: 10,000 PNG\n"}
+,{"stream_name":"stdout","time":156.323394493,"data":"  /kaggle/input/datasets/organizations/nih-chest-xrays/data/images_003/images: 10,000 PNG\n"}
+,{"stream_name":"stdout","time":156.323400129,"data":"  /kaggle/input/datasets/organizations/nih-chest-xrays/data/images_004/images: 10,000 PNG\n"}
+,{"stream_name":"stdout","time":156.323405534,"data":"  /kaggle/input/datasets/organizations/nih-chest-xrays/data/images_005/images: 10,000 PNG\n"}
+,{"stream_name":"stdout","time":157.137102937,"data":"Toplam indekslenen goruntu: 112,120\n"}
+,{"stream_name":"stdout","time":157.587284344,"data":"CSV kayit sayisi: 112,120\n"}
+,{"stream_name":"stdout","time":157.587322124,"data":"Hasta sayisi: 30,805\n"}
+,{"stream_name":"stdout","time":157.926520185,"data":"\n"}
+,{"stream_name":"stdout","time":157.9265555,"data":"Patoloji Dagilimi:\n"}
+,{"stream_name":"stdout","time":157.926562792,"data":"          Infiltration: 19,894 ( 17.7%)\n"}
+,{"stream_name":"stdout","time":157.926568357,"data":"              Effusion: 13,317 ( 11.9%)\n"}
+,{"stream_name":"stdout","time":157.926573656,"data":"           Atelectasis: 11,559 ( 10.3%)\n"}
+,{"stream_name":"stdout","time":157.926578643,"data":"                Nodule:  6,331 (  5.6%) \u003c\u003c AlpCAN\n"}
+,{"stream_name":"stdout","time":157.926584065,"data":"                  Mass:  5,782 (  5.2%) \u003c\u003c AlpCAN\n"}
+,{"stream_name":"stdout","time":157.926589418,"data":"          Pneumothorax:  5,302 (  4.7%)\n"}
+,{"stream_name":"stdout","time":157.926594159,"data":"         Consolidation:  4,667 (  4.2%)\n"}
+,{"stream_name":"stdout","time":157.926598813,"data":"    Pleural_Thickening:  3,385 (  3.0%)\n"}
+,{"stream_name":"stdout","time":157.926603865,"data":"          Cardiomegaly:  2,776 (  2.5%)\n"}
+,{"stream_name":"stdout","time":157.926608695,"data":"             Emphysema:  2,516 (  2.2%)\n"}
+,{"stream_name":"stdout","time":157.92661438,"data":"                 Edema:  2,303 (  2.1%)\n"}
+,{"stream_name":"stdout","time":157.92663849,"data":"              Fibrosis:  1,686 (  1.5%)\n"}
+,{"stream_name":"stdout","time":157.926643117,"data":"             Pneumonia:  1,431 (  1.3%)\n"}
+,{"stream_name":"stdout","time":157.926647224,"data":"                Hernia:    227 (  0.2%)\n"}
+,{"stream_name":"stdout","time":191.849123078,"data":"BBox kayit sayisi (ham): 984\n"}
+,{"stream_name":"stdout","time":191.849160323,"data":"BBox sutunlari: ['Image Index', 'Finding Label', 'Bbox [x', 'y', 'w', 'h]', 'Unnamed: 6', 'Unnamed: 7', 'Unnamed: 8']\n"}
+,{"stream_name":"stdout","time":191.849168322,"data":"\n"}
+,{"stream_name":"stdout","time":191.849172197,"data":"Ham sutunlar: ['Image Index', 'Finding Label', 'Bbox [x', 'y', 'w', 'h]', 'Unnamed: 6', 'Unnamed: 7', 'Unnamed: 8']\n"}
+,{"stream_name":"stdout","time":191.849175814,"data":"Numerik sutunlar: ['Bbox [x', 'y', 'w', 'h]', 'Unnamed: 6', 'Unnamed: 7', 'Unnamed: 8']\n"}
+,{"stream_name":"stdout","time":191.849179067,"data":"\n"}
+,{"stream_name":"stdout","time":191.849182086,"data":"BBox kayit sayisi (temizlenmis): 984\n"}
+,{"stream_name":"stdout","time":191.849185192,"data":"\n"}
+,{"stream_name":"stdout","time":191.849188091,"data":"BBox patoloji dagilimi:\n"}
+,{"stream_name":"stdout","time":191.849191137,"data":"Finding Label\n"}
+,{"stream_name":"stdout","time":191.849194154,"data":"Atelectasis     180\n"}
+,{"stream_name":"stdout","time":191.849197238,"data":"Effusion        153\n"}
+,{"stream_name":"stdout","time":191.849200221,"data":"Cardiomegaly    146\n"}
+,{"stream_name":"stdout","time":191.849203186,"data":"Infiltrate      123\n"}
+,{"stream_name":"stdout","time":191.849206133,"data":"Pneumonia       120\n"}
+,{"stream_name":"stdout","time":191.84920914,"data":"Pneumothorax     98\n"}
+,{"stream_name":"stdout","time":191.849212091,"data":"Mass             85\n"}
+,{"stream_name":"stdout","time":191.849215054,"data":"Nodule           79\n"}
+,{"stream_name":"stdout","time":191.849218056,"data":"Name: count, dtype: int64\n"}
+,{"stream_name":"stdout","time":191.849221059,"data":"\n"}
+,{"stream_name":"stdout","time":191.849224035,"data":"Ornek BBox verileri:\n"}
+,{"stream_name":"stdout","time":191.849227054,"data":"        Image Index Finding Label      bbox_x      bbox_y      bbox_w  \\\n"}
+,{"stream_name":"stdout","time":191.849230208,"data":"0  00013118_008.png   Atelectasis  225.084746  547.019217   86.779661   \n"}
+,{"stream_name":"stdout","time":191.849233326,"data":"1  00014716_007.png   Atelectasis  686.101695  131.543498  185.491525   \n"}
+,{"stream_name":"stdout","time":191.849236426,"data":"2  00029817_009.png   Atelectasis  221.830508  317.053115  155.118644   \n"}
+,{"stream_name":"stdout","time":191.849239463,"data":"3  00014687_001.png   Atelectasis  726.237288  494.951420  141.016949   \n"}
+,{"stream_name":"stdout","time":191.849242574,"data":"4  00017877_001.png   Atelectasis  660.067797  569.780787  200.677966   \n"}
+,{"stream_name":"stdout","time":191.849245728,"data":"\n"}
+,{"stream_name":"stdout","time":191.849254399,"data":"       bbox_h  \n"}
+,{"stream_name":"stdout","time":191.849257516,"data":"0   79.186441  \n"}
+,{"stream_name":"stdout","time":191.849260491,"data":"1  313.491525  \n"}
+,{"stream_name":"stdout","time":191.849263503,"data":"2  216.949153  \n"}
+,{"stream_name":"stdout","time":191.849266479,"data":"3   55.322034  \n"}
+,{"stream_name":"stdout","time":191.849269513,"data":"4   78.101695  \n"}
+,{"stream_name":"stderr","time":192.050291137,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":192.050330955,"data":"\n"}
+,{"stream_name":"stderr","time":192.050336742,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":195.921806567,"data":"The tied weights mapping and config for this model specifies to tie shared_image_embedding.positional_embedding to prompt_encoder.shared_embedding.positional_embedding, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning\n"}
+,{"stream_name":"stderr","time":195.921845321,"data":"\n"}
+,{"stream_name":"stderr","time":195.921850596,"data":"The tied weights mapping and config for this model specifies to tie shared_image_embedding.positional_embedding to prompt_encoder.shared_embedding.positional_embedding, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning\n"}
+,{"stream_name":"stderr","time":196.588023876,"data":"The image processor of type `SamImageProcessor` is now loaded as a fast processor by default, even if the model checkpoint was saved with a slow processor. This is a breaking change and may produce slightly different outputs. To continue using the slow processor, instantiate this class with `use_fast=False`. \n"}
+,{"stream_name":"stderr","time":196.588055434,"data":"\n"}
+,{"stream_name":"stderr","time":196.588059892,"data":"The image processor of type `SamImageProcessor` is now loaded as a fast processor by default, even if the model checkpoint was saved with a slow processor. This is a breaking change and may produce slightly different outputs. To continue using the slow processor, instantiate this class with `use_fast=False`. \n"}
+,{"stream_name":"stdout","time":196.778623969,"data":"MedSAM loaded on cuda\n"}
+,{"stream_name":"stdout","time":196.778656219,"data":"Parameters: 93,735,984\n"}
+,{"stream_name":"stdout","time":196.778661502,"data":"Model type: SamModel\n"}
+,{"stream_name":"stdout","time":196.98699016,"data":"Test goruntusu: 00000502_003.png\n"}
+,{"stream_name":"stdout","time":198.62407786,"data":"Mask shape: (1024, 1024)\n"}
+,{"stream_name":"stdout","time":198.62413419,"data":"Mask range: [False, True]\n"}
+,{"stream_name":"stdout","time":198.624139605,"data":"Segmented area: 162,695 pixels (15.5%)\n"}
+,{"stream_name":"stdout","time":198.62414308500001,"data":"Inference time: 1.60s\n"}
+,{"stream_name":"stdout","time":199.464611689,"data":"Segmentasyon ve metrik fonksiyonlari tanimlandi.\n"}
+,{"stream_name":"stdout","time":199.66524655,"data":"Toplam Nodule/Mass BBox annotasyonu: 164\n"}
+,{"stream_name":"stdout","time":199.665290044,"data":"Benzersiz goruntu: 164\n"}
+,{"stream_name":"stdout","time":199.665296597,"data":"Mevcut goruntulere sahip BBox: 164\n"}
+,{"stream_name":"stdout","time":199.665301507,"data":"\n"}
+,{"stream_name":"stdout","time":199.665305827,"data":"Segmentasyon basliyor: 164 BBox annotasyonu\n"}
+,{"stream_name":"stdout","time":199.665310441,"data":"------------------------------------------------------------\n"}
+,{"stream_name":"stdout","time":214.625713069,"data":"     50/164 ( 30.5%) | 3.4 img/s | ETA: 34s | OK: 50\n"}
+,{"stream_name":"stdout","time":229.307055771,"data":"    100/164 ( 61.0%) | 3.4 img/s | ETA: 19s | OK: 100\n"}
+,{"stream_name":"stdout","time":243.954343634,"data":"    150/164 ( 91.5%) | 3.4 img/s | ETA: 4s | OK: 150\n"}
+,{"stream_name":"stdout","time":247.785737291,"data":"    164/164 (100.0%) | 3.4 img/s | ETA: 0s | OK: 164\n"}
+,{"stream_name":"stdout","time":247.785777129,"data":"\n"}
+,{"stream_name":"stdout","time":247.785801229,"data":"============================================================\n"}
+,{"stream_name":"stdout","time":247.785805489,"data":"Segmentasyon tamamlandi!\n"}
+,{"stream_name":"stdout","time":247.785809513,"data":"  Islenen: 164 BBox (toplam 164, 0 hata)\n"}
+,{"stream_name":"stdout","time":247.785813362,"data":"  Sure: 48.2s\n"}
+,{"stream_name":"stdout","time":247.785816625,"data":"  Hiz: 3.4 img/s\n"}
+,{"stream_name":"stdout","time":247.785819755,"data":"  Ortalama Dice: 0.5959\n"}
+,{"stream_name":"stdout","time":247.785822962,"data":"  Ortalama IoU: 0.4342\n"}
+,{"stream_name":"stdout","time":247.833773847,"data":"=================================================================\n"}
+,{"stream_name":"stdout","time":247.833801511,"data":"MedSAM Nodul/Kitle Segmentasyon Metrikleri\n"}
+,{"stream_name":"stdout","time":247.833806388,"data":"=================================================================\n"}
+,{"stream_name":"stdout","time":247.833810709,"data":"\n"}
+,{"stream_name":"stdout","time":247.833814957,"data":"                   Metrik |   Ortalama |     Medyan |        Std |        Min |        Max\n"}
+,{"stream_name":"stdout","time":247.833818804,"data":"-------------------------------------------------------------------------------------\n"}
+,{"stream_name":"stdout","time":247.833822284,"data":"                       dice |     0.5959 |     0.6045 |     0.1175 |     0.2769 |     0.8386\n"}
+,{"stream_name":"stdout","time":247.833826056,"data":"                        iou |     0.4342 |     0.4332 |     0.1175 |     0.1607 |     0.7221\n"}
+,{"stream_name":"stdout","time":247.833829835,"data":"                 confidence |     0.6263 |     0.6258 |     0.0322 |     0.5323 |     0.7293\n"}
+,{"stream_name":"stdout","time":247.833833532,"data":"                 area_ratio |     0.4547 |     0.4519 |     0.1397 |     0.1607 |     1.1126\n"}
+,{"stream_name":"stdout","time":247.833837181,"data":"                   seg_time |     0.2854 |     0.2814 |     0.0152 |     0.2628 |     0.3271\n"}
+,{"stream_name":"stdout","time":247.833841646,"data":"\n"}
+,{"stream_name":"stdout","time":247.833845014,"data":"=================================================================\n"}
+,{"stream_name":"stdout","time":247.833848594,"data":"Patolojiye Gore Sonuclar\n"}
+,{"stream_name":"stdout","time":247.833851977,"data":"=================================================================\n"}
+,{"stream_name":"stdout","time":247.833859481,"data":"\n"}
+,{"stream_name":"stdout","time":247.833863495,"data":"  Mass (n=85):\n"}
+,{"stream_name":"stdout","time":247.833867314,"data":"    Dice:       0.6287 +/- 0.1195\n"}
+,{"stream_name":"stdout","time":247.833870871,"data":"    IoU:        0.4688 +/- 0.1207\n"}
+,{"stream_name":"stdout","time":247.833874556,"data":"    Confidence: 0.6354 +/- 0.0353\n"}
+,{"stream_name":"stdout","time":247.833878697,"data":"    Area ratio: 0.4733 +/- 0.1198\n"}
+,{"stream_name":"stdout","time":247.833882236,"data":"\n"}
+,{"stream_name":"stdout","time":247.833885944,"data":"  Nodule (n=79):\n"}
+,{"stream_name":"stdout","time":247.833889843,"data":"    Dice:       0.5606 +/- 0.1058\n"}
+,{"stream_name":"stdout","time":247.833893479,"data":"    IoU:        0.3970 +/- 0.1030\n"}
+,{"stream_name":"stdout","time":247.833897016,"data":"    Confidence: 0.6166 +/- 0.0257\n"}
+,{"stream_name":"stdout","time":247.833900444,"data":"    Area ratio: 0.4348 +/- 0.1573\n"}
+,{"stream_name":"stdout","time":247.833904026,"data":"\n"}
+,{"stream_name":"stdout","time":247.833907368,"data":"=================================================================\n"}
+,{"stream_name":"stdout","time":247.833923131,"data":"Dice Skor Dagilimi\n"}
+,{"stream_name":"stdout","time":247.833926812,"data":"=================================================================\n"}
+,{"stream_name":"stdout","time":247.833930169,"data":"  [0.0-0.2)  Cok Dusuk:     0 (  0.0%) \n"}
+,{"stream_name":"stdout","time":247.833933972,"data":"  [0.2-0.4)      Dusuk:    11 (  6.7%) ###\n"}
+,{"stream_name":"stdout","time":247.83393807,"data":"  [0.4-0.6)       Orta:    69 ( 42.1%) #####################\n"}
+,{"stream_name":"stdout","time":247.833942471,"data":"  [0.6-0.8)        Iyi:    81 ( 49.4%) ########################\n"}
+,{"stream_name":"stdout","time":247.833946689,"data":"  [0.8-1.0)    Cok Iyi:     3 (  1.8%) \n"}
+,{"stream_name":"stdout","time":250.316297964,"data":"Saved: cxr_medsam_performance.png\n"}
+,{"stream_name":"stdout","time":261.831331324,"data":"Saved: cxr_medsam_examples.png\n"}
+,{"stream_name":"stdout","time":304.321950614,"data":"DenseNet-121 tahminleri yuklendi (kernel): 112,120 goruntu\n"}
+,{"stream_name":"stdout","time":304.510864105,"data":"DenseNet tahmin sutunu: pred_Nodule\n"}
+,{"stream_name":"stdout","time":304.510900082,"data":"Birlesik veri: 164 goruntu\n"}
+,{"stream_name":"stdout","time":304.510905985,"data":"\n"}
+,{"stream_name":"stdout","time":304.510910508,"data":"Quadrant Analizi:\n"}
+,{"stream_name":"stdout","time":304.510916845,"data":"  Siniflandirma iyi + Segmentasyon iyi: 45\n"}
+,{"stream_name":"stdout","time":304.510921437,"data":"  Siniflandirma dusuk + Segmentasyon iyi: 37 (segmentasyon deger katiyor)\n"}
+,{"stream_name":"stdout","time":304.510927826,"data":"  Siniflandirma iyi + Segmentasyon dusuk: 37\n"}
+,{"stream_name":"stdout","time":304.510933096,"data":"  Ikisi de dusuk: 45\n"}
+,{"stream_name":"stdout","time":305.241194759,"data":"Saved: cxr_medsam_classification_integration.png\n"}
+,{"stream_name":"stdout","time":305.439740345,"data":"Akciger segmentasyonu basliyor: 500 goruntu\n"}
+,{"stream_name":"stdout","time":305.439777826,"data":"------------------------------------------------------------\n"}
+,{"stream_name":"stdout","time":334.380020841,"data":"    100/500 ( 20.0%) | 3.5 img/s\n"}
+,{"stream_name":"stdout","time":362.885724201,"data":"    200/500 ( 40.0%) | 3.5 img/s\n"}
+,{"stream_name":"stdout","time":392.200220303,"data":"    300/500 ( 60.0%) | 3.5 img/s\n"}
+,{"stream_name":"stdout","time":420.287433368,"data":"    400/500 ( 80.0%) | 3.5 img/s\n"}
+,{"stream_name":"stdout","time":448.808717335,"data":"    500/500 (100.0%) | 3.5 img/s\n"}
+,{"stream_name":"stdout","time":448.808769233,"data":"\n"}
+,{"stream_name":"stdout","time":448.808773839,"data":"============================================================\n"}
+,{"stream_name":"stdout","time":448.808777684,"data":"Akciger segmentasyonu tamamlandi!\n"}
+,{"stream_name":"stdout","time":448.808780876,"data":"  Islenen: 500 goruntu\n"}
+,{"stream_name":"stdout","time":448.808784048,"data":"  Sure: 143.4s (3.5 img/s)\n"}
+,{"stream_name":"stdout","time":448.876236056,"data":"=================================================================\n"}
+,{"stream_name":"stdout","time":448.876272967,"data":"Akciger Bolgesi Segmentasyon Istatistikleri\n"}
+,{"stream_name":"stdout","time":448.876279099,"data":"=================================================================\n"}
+,{"stream_name":"stdout","time":448.876284086,"data":"\n"}
+,{"stream_name":"stdout","time":448.876288488,"data":"                   Metrik |        Deger\n"}
+,{"stream_name":"stdout","time":448.876292927,"data":"---------------------------------------------\n"}
+,{"stream_name":"stdout","time":448.876297864,"data":"        Ortalama Lung Ratio |       0.2808\n"}
+,{"stream_name":"stdout","time":448.876316301,"data":"          Medyan Lung Ratio |       0.2951\n"}
+,{"stream_name":"stdout","time":448.876320683,"data":"             Std Lung Ratio |       0.1104\n"}
+,{"stream_name":"stdout","time":448.876324862,"data":"             Min Lung Ratio |       0.0512\n"}
+,{"stream_name":"stdout","time":448.876328588,"data":"             Max Lung Ratio |       0.5060\n"}
+,{"stream_name":"stdout","time":448.876332696,"data":"    Ortalama Lung Area (px) |      294,427\n"}
+,{"stream_name":"stdout","time":448.876336541,"data":"      Ortalama Seg Sure (s) |        0.274\n"}
+,{"stream_name":"stdout","time":448.876350874,"data":"\n"}
+,{"stream_name":"stdout","time":448.876354319,"data":"Patoloji durumuna gore akciger alani:\n"}
+,{"stream_name":"stdout","time":448.876357571,"data":"  Normal (n=278): lung_ratio = 0.2865 +/- 0.1137\n"}
+,{"stream_name":"stdout","time":448.876360922,"data":"  Patolojik (n=222): lung_ratio = 0.2736 +/- 0.1059\n"}
+,{"stream_name":"stdout","time":460.629948256,"data":"Saved: cxr_medsam_lung_regions.png\n"}
+,{"stream_name":"stdout","time":460.809452649,"data":"Saved: cxr_medsam_segmentation_results.csv (164 rows)\n"}
+,{"stream_name":"stdout","time":460.809479181,"data":"Saved: cxr_medsam_lung_stats.csv (500 rows)\n"}
+,{"stream_name":"stdout","time":460.810875586,"data":"Saved: cxr_medsam_summary.csv\n"}
+,{"stream_name":"stdout","time":460.810894301,"data":"\n"}
+,{"stream_name":"stdout","time":460.810899599,"data":"Tum cikti dosyalari:\n"}
+,{"stream_name":"stdout","time":460.810904604,"data":"  cxr_medsam_classification_integration.png (176.9 KB)\n"}
+,{"stream_name":"stdout","time":460.810909578,"data":"  cxr_medsam_examples.png (3.0 MB)\n"}
+,{"stream_name":"stdout","time":460.810914232,"data":"  cxr_medsam_lung_regions.png (2.7 MB)\n"}
+,{"stream_name":"stdout","time":460.810918886,"data":"  cxr_medsam_lung_stats.csv (47.2 KB)\n"}
+,{"stream_name":"stdout","time":460.810923587,"data":"  cxr_medsam_performance.png (252.7 KB)\n"}
+,{"stream_name":"stdout","time":460.810928239,"data":"  cxr_medsam_segmentation_results.csv (34.4 KB)\n"}
+,{"stream_name":"stdout","time":460.81093318,"data":"  cxr_medsam_summary.csv (0.3 KB)\n"}
+,{"stream_name":"stdout","time":460.990746077,"data":"\n"}
+,{"stream_name":"stdout","time":460.990772428,"data":"======================================================================\n"}
+,{"stream_name":"stdout","time":460.990778558,"data":"AlpCAN CXR Pipeline -- MedSAM Segmentasyon Baseline OZET\n"}
+,{"stream_name":"stdout","time":460.990784047,"data":"======================================================================\n"}
+,{"stream_name":"stdout","time":460.990789572,"data":"\n"}
+,{"stream_name":"stdout","time":460.99079445899997,"data":"  Model: MedSAM ViT-Base (flaviagiammarino/medsam-vit-base)\n"}
+,{"stream_name":"stdout","time":460.99079989,"data":"  Parametre: 93,735,984 (93.7M)\n"}
+,{"stream_name":"stdout","time":460.990804928,"data":"  Device: cuda\n"}
+,{"stream_name":"stdout","time":460.990809475,"data":"\n"}
+,{"stream_name":"stdout","time":460.990813869,"data":"  BBox-guided segmentasyon:\n"}
+,{"stream_name":"stdout","time":460.990818388,"data":"    Islenen: 164 BBox annotasyonlu goruntu\n"}
+,{"stream_name":"stdout","time":460.990822756,"data":"    Ortalama Dice: 0.5959 +/- 0.1178\n"}
+,{"stream_name":"stdout","time":460.990827116,"data":"    Ortalama IoU:  0.4342 +/- 0.1178\n"}
+,{"stream_name":"stdout","time":460.990831522,"data":"    Ortalama Confidence: 0.6263\n"}
+,{"stream_name":"stdout","time":460.990835862,"data":"    Hiz: 3.5 img/s\n"}
+,{"stream_name":"stdout","time":460.990840157,"data":"    Mass (n=85): Dice=0.6287, IoU=0.4688\n"}
+,{"stream_name":"stdout","time":460.990855415,"data":"    Nodule (n=79): Dice=0.5606, IoU=0.3970\n"}
+,{"stream_name":"stdout","time":460.990858085,"data":"\n"}
+,{"stream_name":"stdout","time":460.990860283,"data":"  Akciger bolgesi segmentasyonu:\n"}
+,{"stream_name":"stdout","time":460.990862456,"data":"    Islenen: 500 goruntu\n"}
+,{"stream_name":"stdout","time":460.990864706,"data":"    Ortalama akciger orani: 0.2808\n"}
+,{"stream_name":"stdout","time":460.990866888,"data":"\n"}
+,{"stream_name":"stdout","time":460.990869878,"data":"  Cikti dosyalari:\n"}
+,{"stream_name":"stdout","time":460.990873235,"data":"    cxr_medsam_classification_integration.png (176.9 KB)\n"}
+,{"stream_name":"stdout","time":460.990876702,"data":"    cxr_medsam_examples.png (3076.5 KB)\n"}
+,{"stream_name":"stdout","time":460.990880819,"data":"    cxr_medsam_lung_regions.png (2782.8 KB)\n"}
+,{"stream_name":"stdout","time":460.99088469,"data":"    cxr_medsam_lung_stats.csv (47.2 KB)\n"}
+,{"stream_name":"stdout","time":460.990889122,"data":"    cxr_medsam_performance.png (252.7 KB)\n"}
+,{"stream_name":"stdout","time":460.99089324,"data":"    cxr_medsam_segmentation_results.csv (34.4 KB)\n"}
+,{"stream_name":"stdout","time":460.990897333,"data":"    cxr_medsam_summary.csv (0.3 KB)\n"}
+,{"stream_name":"stdout","time":460.990900742,"data":"\n"}
+,{"stream_name":"stdout","time":460.990903922,"data":"  Sonraki adimlar:\n"}
+,{"stream_name":"stdout","time":460.99090713,"data":"    1. MedSAM fine-tuning NIH BBox verileri uzerinde\n"}
+,{"stream_name":"stdout","time":460.990910499,"data":"    2. Siniflandirma + Segmentasyon pipeline entegrasyonu\n"}
+,{"stream_name":"stdout","time":460.990913865,"data":"    3. 3D LIDC-IDRI uzerinde volumetrik segmentasyon\n"}
+,{"stream_name":"stdout","time":460.990917256,"data":"======================================================================\n"}
+,{"stream_name":"stderr","time":465.867428033,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":465.867459786,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":466.006345054,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":466.006370566,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":466.544440017,"data":"/usr/local/lib/python3.12/dist-packages/traitlets/traitlets.py:2915: FutureWarning: --Exporter.preprocessors=[\"remove_papermill_header.RemovePapermillHeader\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":466.544467058,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":466.573654687,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":466.962053885,"data":"[NbConvertApp] Writing 4738409 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":469.23953116,"data":"/usr/local/lib/python3.12/dist-packages/traitlets/traitlets.py:2915: FutureWarning: --Exporter.preprocessors=[\"nbconvert.preprocessors.ExtractOutputPreprocessor\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":469.239565009,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":469.259578654,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":470.258349714,"data":"[NbConvertApp] Support files will be in __results___files/\n"}
+,{"stream_name":"stderr","time":470.258376995,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":470.258834279,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":470.259103886,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":470.260161116,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":470.260412352,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":470.26141497,"data":"[NbConvertApp] Writing 547706 bytes to __results__.html\n"}
+]
