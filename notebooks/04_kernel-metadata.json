@@ -1,5 +1,5 @@
 {
-  "id": "ridvancebec/alpcan-cxr-pipeline-medsam-segmentation",
+  "id": "ridvancebec/alpcan-cxr-pipeline-medsam-segmentation-baseline",
   "title": "AlpCAN CXR Pipeline - MedSAM Segmentation Baseline",
   "code_file": "04_cxr_pipeline_medsam.ipynb",
   "language": "python",
