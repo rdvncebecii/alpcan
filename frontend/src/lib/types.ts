@@ -1,22 +1,66 @@
-export type PipelineType = "ct" | "cxr";
+export type Screen = "splash" | "radyolog" | "gelistirici";
 
-export type StudyStatus = "uploaded" | "queued" | "processing" | "completed" | "error";
+// ── Patient Data (matches demo + backend) ──
+export interface PatientAgent {
+  n: string;
+  v: string;
+  p: number;
+  c: string;
+}
 
-export type LungRADSCategory = "1" | "2" | "3" | "4A" | "4B" | "4X";
+export interface NoduleInfo {
+  sz: string;
+  loc: string;
+  mal: number;
+  c: string;
+}
 
-export const LUNG_RADS_LABELS: Record<string, { label: string; color: string }> = {
-  "1": { label: "Negatif", color: "bg-green-500" },
-  "2": { label: "Benign", color: "bg-green-400" },
-  "3": { label: "Muhtemelen Benign", color: "bg-yellow-500" },
-  "4A": { label: "Şüpheli (Düşük)", color: "bg-orange-500" },
-  "4B": { label: "Şüpheli (Yüksek)", color: "bg-red-500" },
-  "4X": { label: "Ek Bulgular", color: "bg-red-700" },
-};
+export interface HistoryItem {
+  d: string;
+  t: string;
+  r: string;
+  rc: string;
+}
 
-export const STATUS_LABELS: Record<StudyStatus, { label: string; color: string }> = {
-  uploaded: { label: "Yüklendi", color: "bg-gray-500" },
-  queued: { label: "Kuyrukta", color: "bg-blue-500" },
-  processing: { label: "İşleniyor", color: "bg-yellow-500" },
-  completed: { label: "Tamamlandı", color: "bg-green-500" },
-  error: { label: "Hata", color: "bg-red-500" },
-};
+export interface PatientData {
+  id: string;
+  name: string;
+  age: number;
+  g: string;
+  pri: "h" | "m" | "l";
+  cxr: { tk: string; ci: string; rs: string };
+  ct: { tk: string; ci: string; rs: string } | null;
+  rads: string;
+  rc: string;
+  rcolor: string;
+  rname: string;
+  ract: string;
+  cdec: string;
+  agents: PatientAgent[];
+  nods: NoduleInfo[];
+  hx: HistoryItem[];
+  trend: string;
+}
+
+// ── Agent Data (matches demo) ──
+export interface AgentData {
+  code: string;
+  name: string;
+  icon: string;
+  pip: 1 | 2;
+  st: "ok" | "tr" | "id" | "wa";
+  model: string;
+  fw: string;
+  dev: string;
+  data: string;
+  acc: string;
+  spd: string;
+  p: Record<string, string | number>;
+  desc: string;
+}
+
+export interface DatasetInfo {
+  n: string;
+  d: string;
+  tags: string[];
+}
