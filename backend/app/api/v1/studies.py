@@ -9,7 +9,6 @@ from sqlalchemy.orm import selectinload
 
 from app.core.database import get_db
 from app.models.study import Study
-from app.models.patient import Patient
 
 router = APIRouter()
 

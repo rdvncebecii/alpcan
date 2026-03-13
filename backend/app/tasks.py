@@ -44,7 +44,6 @@ async def _run_pipeline_async(task, study_id: str, pipeline_type: str) -> dict:
 
     from app.core.database import async_session
     from app.models.study import Study
-    from app.models.patient import Patient
 
     async with async_session() as db:
         # Study'yi bul
@@ -88,7 +87,6 @@ async def _run_pipeline_async(task, study_id: str, pipeline_type: str) -> dict:
 async def _run_cxr_pipeline(study, db) -> dict:
     """CXR pipeline'ını çalıştır."""
     from app.services.pipeline_cxr import CXRPipeline
-    from app.services.dicom_service import DicomService
 
     # Orthanc'tan görüntü al
     image_path = await _get_cxr_image(study, db)
@@ -100,7 +98,6 @@ async def _run_cxr_pipeline(study, db) -> dict:
 async def _run_ct_pipeline(study, db) -> dict:
     """BT pipeline'ını çalıştır."""
     from app.services.pipeline_bt import BTPipeline
-    from app.services.dicom_service import DicomService
 
     # Orthanc'tan DICOM serisi al
     dicom_path = await _get_ct_dicom(study, db)

@@ -46,8 +46,6 @@ class MedRAXAgent(BaseAgent):
             result = MedSAMInference.predict(preprocessed["pil_image"])
 
             # Segmentasyon maskesinden şüpheli bölge tespiti
-            import numpy as np
-
             mask = result.get("mask")
             has_segmentation = mask is not None and mask.sum() > 0
 
