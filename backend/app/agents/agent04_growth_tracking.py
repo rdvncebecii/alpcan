@@ -2,24 +2,27 @@
 
 Volümetrik büyüme takibi + VDT (Volume Doubling Time) hesabı.
 VDT <400 gün: yüksek malignite | >600 gün: muhtemelen benign.
+Gelecek faz — not_available döner.
 """
 
+import logging
+
 from app.agents.base import BaseAgent
+
+logger = logging.getLogger(__name__)
 
 
 class GrowthTrackingAgent(BaseAgent):
     name = "Growth Tracking (Siamese CNN)"
-    version = "0.1.0"
+    version = "0.2.0"
     requires_gpu = True
     pipeline = "ct"
 
     def preprocess(self, input_data: dict) -> dict:
-        """T1 ve T2 BT'den nodül patch çiftleri oluştur."""
-        # TODO: Önceki çalışmayı bul, nodül eşleştirmesi yap
+        """Önceki çalışma kontrolü."""
         return {
-            "has_previous_study": False,
-            "nodule_pairs": [],
-            "status": "stub",
+            "has_previous_study": input_data.get("has_previous_study", False),
+            "nodules": input_data.get("nodules", []),
         }
 
     def predict(self, preprocessed: dict) -> dict:
@@ -27,23 +30,28 @@ class GrowthTrackingAgent(BaseAgent):
         if not preprocessed.get("has_previous_study"):
             return {"growth_results": [], "status": "no_previous_study"}
 
-        # TODO: VoxelMorph registration + volümetrik karşılaştırma
-        return {
-            "growth_results": [
-                {
-                    "nodule_idx": 0,
-                    "previous_diameter_mm": 6.5,
-                    "current_diameter_mm": 8.2,
-                    "volume_change_percent": 26.2,
-                    "vdt_days": 380,
-                    "assessment": "high_risk",
-                }
-            ],
-            "status": "stub",
-        }
+        from ml.inference.growth_tracking_inference import GrowthTrackingInference
+        from ml.inference.base import ModelNotAvailableError
+
+        try:
+            return GrowthTrackingInference.predict(None)
+        except ModelNotAvailableError as e:
+            logger.info(f"Büyüme takibi mevcut değil: {e}")
+            return {"growth_results": [], "status": "not_available", "reason": str(e)}
 
     def postprocess(self, prediction: dict) -> dict:
-        """VDT yorumları ve Fleischner tavsiyesi."""
+        """VDT yorumları."""
+        if prediction.get("status") in ("not_available", "no_previous_study"):
+            return {
+                "findings": {
+                    "has_previous": False,
+                    "growth_results": [],
+                    "status": prediction.get("status"),
+                    "reason": prediction.get("reason", "Önceki çalışma yok"),
+                },
+                "confidence": None,
+            }
+
         results = prediction.get("growth_results", [])
         for r in results:
             vdt = r.get("vdt_days")

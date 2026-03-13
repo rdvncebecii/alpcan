@@ -1,74 +1,55 @@
-"""Ajan 5 — Rapor Üretimi: Meta-Llama-3-8B-Instruct (llama.cpp Q4_K_M)
+"""Ajan 5 — Rapor Üretimi: Template tabanlı (ilk sürüm)
 
 Türkçe Lung-RADS 2022 yapılandırılmış rapor üretimi.
-Çıktı: PDF + DICOM SR + HL7 FHIR R4 DocumentReference.
-CPU ile ~10-30 s/rapor, GPU ile ~3-8 s.
+İlk sürüm: şablon tabanlı. Gelecek: Llama-3-8B-Instruct (Q4_K_M).
+CPU ile <1 s/rapor (template), ~10-30 s (LLM).
 """
 
+import logging
+
 from app.agents.base import BaseAgent
+
+logger = logging.getLogger(__name__)
 
 
 class ReportGenerationAgent(BaseAgent):
     name = "Report Generation (Llama-3)"
-    version = "0.1.0"
-    requires_gpu = False  # CPU yeterli (Q4 quantized)
+    version = "0.2.0"
+    requires_gpu = False
     pipeline = "ct"
 
-    REPORT_TEMPLATE = """
-AKCIĞER BT ANALİZ RAPORU — AlpCAN v{version}
-==============================================
-Tarih: {date}
-Hasta ID: {patient_id}
-
-BULGULAR:
-{findings_text}
-
-LUNG-RADS KATEGORİSİ: {lung_rads}
-{lung_rads_description}
-
-TAVSİYE:
-{recommendation}
-
-NOT: Bu rapor yapay zekâ destekli ön değerlendirmedir.
-Nihai tanı kararı radyologa aittir.
-"""
-
     def preprocess(self, input_data: dict) -> dict:
-        """Tüm ajan çıktılarını rapor prompt'una dönüştür."""
-        # TODO: Tüm pipeline çıktılarını topla
+        """Tüm pipeline çıktılarını rapor verisi olarak topla."""
         return {
             "nodules": input_data.get("nodules", []),
-            "lung_rads": input_data.get("overall_lung_rads", "1"),
-            "growth_data": input_data.get("growth_results", []),
-            "quality_score": input_data.get("quality_score", 100),
-            "status": "stub",
+            "nodule_results": input_data.get("nodule_results", []),
+            "overall_lung_rads": input_data.get("overall_lung_rads", "1"),
+            "growth_results": input_data.get("growth_results", []),
+            "quality_score": input_data.get("quality_score"),
+            "quality": input_data.get("quality", {}),
+            "patient_id": input_data.get("patient_id", "ANON"),
+            "study_id": input_data.get("study_id", ""),
         }
 
     def predict(self, preprocessed: dict) -> dict:
-        """Llama-3 ile Türkçe rapor oluştur."""
-        # TODO: llama.cpp ile rapor üretimi
-        lung_rads = preprocessed.get("lung_rads", "1")
-        return {
-            "report_text": self.REPORT_TEMPLATE.format(
-                version=self.version,
-                date="2026-03-12",
-                patient_id="ANON-001",
-                findings_text="Stub rapor — model entegre edildiğinde detaylı bulgular burada yer alacaktır.",
-                lung_rads=lung_rads,
-                lung_rads_description="Stub açıklama",
-                recommendation="Stub tavsiye",
-            ),
-            "status": "stub",
-        }
+        """Template tabanlı Türkçe rapor oluştur."""
+        from ml.inference.report_generation_inference import ReportGenerationInference
+
+        if not ReportGenerationInference.is_loaded():
+            ReportGenerationInference.load_model({"method": "template"})
+
+        return ReportGenerationInference.predict(preprocessed)
 
     def postprocess(self, prediction: dict) -> dict:
-        """PDF, DICOM SR ve FHIR çıktıları oluştur."""
+        """Rapor çıktısını yapılandır."""
         return {
             "findings": {
                 "report_text": prediction.get("report_text", ""),
+                "summary_tr": prediction.get("summary_tr", ""),
+                "recommendation_tr": prediction.get("recommendation_tr", ""),
+                "lung_rads": prediction.get("lung_rads", "1"),
                 "pdf_generated": False,
                 "dicom_sr_generated": False,
-                "fhir_document_created": False,
             },
             "confidence": 1.0,
         }

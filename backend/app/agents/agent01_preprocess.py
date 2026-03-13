@@ -4,47 +4,52 @@ DICOM okuma, HU normalizasyon, akciğer maskesi, anonimleştirme.
 GPU gerektirmez — CPU ile 30-60 s/tarama.
 """
 
+import logging
+
 from app.agents.base import BaseAgent
+
+logger = logging.getLogger(__name__)
 
 
 class PreprocessAgent(BaseAgent):
     name = "Preprocessing"
-    version = "0.1.0"
+    version = "0.2.0"
     requires_gpu = False
     pipeline = "ct"
 
     def preprocess(self, input_data: dict) -> dict:
-        """DICOM serisini oku ve dilim sırala."""
-        # TODO: pydicom ile DICOM okuma
-        # TODO: Instance Number / Z koordinatı bazında sıralama
-        return {
-            "dicom_path": input_data.get("dicom_path"),
-            "slice_count": 0,
-            "status": "stub",
-        }
+        """DICOM dizin yolunu kontrol et."""
+        dicom_path = input_data.get("dicom_path")
+        if not dicom_path:
+            raise ValueError("dicom_path gerekli")
+        return {"dicom_path": dicom_path}
 
     def predict(self, preprocessed: dict) -> dict:
-        """HU normalizasyon, izotropik resampling, akciğer maskesi."""
-        # TODO: HU kırpma [-1000, 400]
-        # TODO: İzotropik yeniden örnekleme → 1mm³
-        # TODO: Eşik tabanlı akciğer maskesi (-600 HU)
-        # TODO: Morfolojik kapanma + bağlı bileşen analizi
-        return {
-            "volume_shape": [512, 512, 300],
-            "voxel_spacing": [1.0, 1.0, 1.0],
-            "hu_range": [-1000, 400],
-            "lung_mask_applied": True,
-            "status": "stub",
-        }
+        """Tam ön işleme pipeline'ı: DICOM → normalize 3D volume."""
+        from ml.inference.ct_preprocess_inference import CTPreprocessInference
+
+        if not CTPreprocessInference.is_loaded():
+            CTPreprocessInference.load_model({
+                "hu_min": -1000,
+                "hu_max": 400,
+                "target_spacing": [1.0, 1.0, 1.0],
+                "lung_threshold_hu": -600,
+            })
+
+        return CTPreprocessInference.predict(preprocessed["dicom_path"])
 
     def postprocess(self, prediction: dict) -> dict:
         """Normalize 3D volume çıktısı."""
         return {
             "findings": {
-                "volume_shape": prediction.get("volume_shape"),
-                "voxel_spacing": prediction.get("voxel_spacing"),
-                "lung_mask_applied": prediction.get("lung_mask_applied"),
-                "anonymized": True,
+                "volume_shape": list(prediction.get("resampled_shape", [])),
+                "original_shape": list(prediction.get("original_shape", [])),
+                "voxel_spacing": list(prediction.get("spacing", [])),
+                "lung_mask_applied": prediction.get("lung_mask") is not None,
+                "metadata": prediction.get("metadata", {}),
             },
             "confidence": 1.0,
+            # Pipeline'a veri aktarımı için
+            "volume": prediction.get("volume"),
+            "lung_mask": prediction.get("lung_mask"),
         }

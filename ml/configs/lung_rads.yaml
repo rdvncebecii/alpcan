@@ -1,0 +1,73 @@
+# Lung-RADS 2022 v1.1 Kategori Tanımları
+# Referans: ACR Lung-RADS Assessment Categories
+
+categories:
+  "1":
+    name: "Negatif"
+    description: "Malignite bulgusu yok veya kesinlikle benign"
+    action: "Yillik DDBT taramasi devam"
+    malignancy_risk: "<1%"
+
+  "2":
+    name: "Benign"
+    description: "Iyi huylu ozellikler gosteren nodul"
+    action: "Yillik DDBT taramasi devam"
+    malignancy_risk: "<1%"
+    criteria:
+      - "Perifisural nodul <10mm"
+      - "Tam kalsifiye nodul (herhangi boyut)"
+      - "Yag iceren nodul (hamartom)"
+      - "Solid nodul <6mm"
+
+  "3":
+    name: "Muhtemelen benign"
+    description: "6 ay sonra kontrol BT onerilir"
+    action: "6 ay sonra kontrol BT"
+    malignancy_risk: "1-2%"
+    criteria:
+      solid:
+        min_mm: 6
+        max_mm: 8
+      part_solid:
+        min_mm: 6
+        solid_component_max_mm: 6
+      ground_glass:
+        min_mm: 30
+
+  "4A":
+    name: "Supheli (dusuk)"
+    description: "3 ay BT veya PET-BT"
+    action: "3 ay kontrol BT veya PET-BT onerilir"
+    malignancy_risk: "5-15%"
+    criteria:
+      solid:
+        min_mm: 8
+        max_mm: 15
+      part_solid:
+        solid_component_min_mm: 6
+        solid_component_max_mm: 8
+      new_ground_glass:
+        min_mm: 30
+
+  "4B":
+    name: "Supheli (yuksek)"
+    description: "Biyopsi veya cerrahi degerlendirilmeli"
+    action: "Doku ornekleme / biyopsi onerilir"
+    malignancy_risk: ">15%"
+    criteria:
+      solid:
+        min_mm: 15
+      part_solid:
+        solid_component_min_mm: 8
+      growing_nodule: true
+
+  "4X":
+    name: "Ek bulgular"
+    description: "Ek supheli ozellikler mevcut"
+    action: "Multidisipliner kurul onerilir"
+    malignancy_risk: ">15%"
+    criteria:
+      - "Spikule morfoloji"
+      - "Lenfadenopati"
+      - "Plevral efuzyon"
+      - "Hizli buyume (VDT <400 gun)"

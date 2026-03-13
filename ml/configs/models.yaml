@@ -1,0 +1,104 @@
+# AlpCAN — Model Konfigürasyonları
+# Tüm model parametreleri tek dosyada yönetilir.
+
+device: "cpu"  # INFERENCE_DEVICE env ile override edilebilir
+weights_dir: "/app/ml/weights"
+
+models:
+  ark_plus:
+    name: "Ark+ Foundation (Swin-L)"
+    weights_file: "Ark6_swinLarge768_ep50.pth.tar"
+    checkpoint_key: "teacher"
+    img_size: 768
+    patch_size: 4
+    window_size: 12
+    embed_dim: 192
+    depths: [2, 2, 18, 2]
+    num_heads: [6, 12, 24, 48]
+    num_classes_list: [14, 14, 14, 3, 6, 1]
+    head_n: 2  # NIH14 head
+    projector_features: 1376
+    use_mlp: false
+    normalize:
+      mean: [0.485, 0.456, 0.406]
+      std: [0.229, 0.224, 0.225]
+    labels:
+      - Atelectasis
+      - Cardiomegaly
+      - Effusion
+      - Infiltration
+      - Mass
+      - Nodule
+      - Pneumonia
+      - Pneumothorax
+      - Consolidation
+      - Edema
+      - Emphysema
+      - Fibrosis
+      - Pleural_Thickening
+      - Hernia
+    thresholds:
+      suspicious: 0.5
+      nodule_high: 0.7
+
+  torchxrayvision:
+    name: "TorchXRayVision DenseNet-121"
+    weights_name: "densenet121-res224-all"
+    img_size: 224
+    n_pathologies: 18
+    thresholds:
+      suspicious: 0.5
+
+  xraydar:
+    name: "X-Raydar"
+    available: false
+    reason: "Model kodu herkese acik degil (Lancet Digital Health, 2023)"
+
+  medsam:
+    name: "MedSAM ViT-Base"
+    hf_model_id: "flaviagiammarino/medsam-vit-base"
+    available: true
+
+  cxr_quality:
+    name: "CXR Kalite Kontrol"
+    method: "heuristic"
+    laplacian_threshold: 100.0
+    min_image_size: 256
+    min_dynamic_range: 50
+
+  ct_quality:
+    name: "BT Kalite Kontrol"
+    method: "header_analysis"
+    slice_thickness_max: 2.5  # mm
+    fov_min: 300  # mm
+    snr_min: 15  # dB
+    artifact_score_max: 0.3
+
+  ct_preprocess:
+    name: "BT On Isleme"
+    hu_min: -1000
+    hu_max: 400
+    target_spacing: [1.0, 1.0, 1.0]
+    lung_threshold_hu: -600
+
+  nnunet:
+    name: "nnU-Net v2 Nodul Tespit"
+    available: false
+    reason: "LIDC-IDRI uzerinde egitim henuz tamamlanmadi"
+
+  characterization:
+    name: "3D ResNet-50 + CBAM"
+    available: false
+    reason: "Kaggle egitimi devam ediyor, agirliklar bekleniyor"
+    patch_size: [64, 64, 64]
+
+  growth_tracking:
+    name: "Siamese 3D CNN + VoxelMorph"
+    available: false
+    reason: "Gelecek faz implementasyonu"
+
+  report_generation:
+    name: "Rapor Uretimi"
+    method: "template"  # "llama_cpp" model hazir oldugunda
+    llama_model_path: null
+    language: "tr"

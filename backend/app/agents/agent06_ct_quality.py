@@ -1,45 +1,56 @@
-"""Ajan 6 — BT Kalite Kontrol: EfficientNet-B0
+"""Ajan 6 — BT Kalite Kontrol: DICOM header analizi
 
-BT kalite değerlendirmesi — slice kalınlığı, FOV, SNR, artefakt.
+BT kalite değerlendirmesi — dilim kalınlığı, FOV, SNR, artefakt.
 CPU ile <3 s/tarama.
 """
 
+import logging
+
 from app.agents.base import BaseAgent
+
+logger = logging.getLogger(__name__)
 
 
 class CTQualityAgent(BaseAgent):
     name = "CT Quality Control"
-    version = "0.1.0"
+    version = "0.2.0"
     requires_gpu = False
     pipeline = "ct"
 
     QUALITY_THRESHOLDS = {
-        "slice_thickness_max": 2.5,  # mm
-        "fov_min": 300,  # mm
-        "snr_min": 15,  # dB
+        "slice_thickness_max": 2.5,
+        "fov_min": 300,
+        "snr_min": 15,
         "artifact_score_max": 0.3,
     }
 
     def preprocess(self, input_data: dict) -> dict:
         """DICOM header'dan kalite parametrelerini çıkar."""
-        # TODO: pydicom ile header okuma
-        return {
-            "slice_thickness": input_data.get("slice_thickness", 1.5),
-            "fov": input_data.get("fov", 350),
-            "status": "stub",
-        }
+        dicom_path = input_data.get("dicom_path")
+        metadata = input_data.get("metadata", {})
+
+        if not metadata and dicom_path:
+            from ml.preprocessing.dicom_utils import extract_dicom_metadata
+            from pathlib import Path
+
+            path = Path(dicom_path)
+            dcm_files = list(path.glob("*.dcm")) if path.is_dir() else [path]
+            if dcm_files:
+                metadata = extract_dicom_metadata(dcm_files[0])
+
+        return {"metadata": metadata, "dicom_path": dicom_path}
 
     def predict(self, preprocessed: dict) -> dict:
-        """EfficientNet-B0 ile kalite skorlama."""
-        # TODO: Model inference
-        return {
-            "quality_score": 85,
-            "slice_thickness_ok": True,
-            "fov_ok": True,
-            "snr_ok": True,
-            "artifact_ok": True,
-            "status": "stub",
-        }
+        """DICOM header analizi ile kalite skorlama."""
+        from ml.inference.ct_quality_inference import CTQualityInference
+
+        if not CTQualityInference.is_loaded():
+            CTQualityInference.load_model(self.QUALITY_THRESHOLDS)
+
+        return CTQualityInference.predict(
+            metadata=preprocessed.get("metadata", {}),
+            sample_slices=preprocessed.get("sample_slices"),
+        )
 
     def postprocess(self, prediction: dict) -> dict:
         """Kalite kararı: GEÇTİ / UYARI / RED."""
