@@ -1,0 +1,13 @@
+{
+  "id": "ridvancebec/alpcan-cxr-pipeline-medsam-segmentation",
+  "title": "AlpCAN CXR Pipeline - MedSAM Segmentation Baseline",
+  "code_file": "04_cxr_pipeline_medsam.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "dataset_sources": ["nih-chest-xrays/data"],
+  "competition_sources": [],
+  "kernel_sources": ["ridvancebec/alpcan-cxr-pipeline-torchxrayvision-baseline"]
+}

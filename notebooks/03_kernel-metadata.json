@@ -1,0 +1,13 @@
+{
+  "id": "ridvancebec/alpcan-cxr-pipeline-resnet50-baseline",
+  "title": "AlpCAN CXR Pipeline - ResNet-50 512 Baseline",
+  "code_file": "03_cxr_pipeline_resnet50.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "dataset_sources": ["nih-chest-xrays/data"],
+  "competition_sources": [],
+  "kernel_sources": ["ridvancebec/alpcan-cxr-pipeline-torchxrayvision-baseline"]
+}
