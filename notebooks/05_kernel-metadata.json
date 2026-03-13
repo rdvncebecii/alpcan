@@ -1,5 +1,5 @@
 {
-  "id": "ridvancebec/alpcan-cxr-pipeline-ark-plus-baseline",
+  "id": "ridvancebec/alpcan-cxr-pipeline-ark-plus-zero-shot-baseline",
   "title": "AlpCAN CXR Pipeline - Ark Plus Zero-Shot Baseline",
   "code_file": "05_cxr_pipeline_ark_plus.ipynb",
   "language": "python",
