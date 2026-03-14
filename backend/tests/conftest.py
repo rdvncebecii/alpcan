@@ -8,14 +8,10 @@ from httpx import ASGITransport, AsyncClient
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
 
 from app.core.database import Base, get_db
-from app.main import app
+from app.main import app as fastapi_app
 
 # Models must be imported so Base.metadata has them
-import app.models.patient  # noqa: F401
-import app.models.study  # noqa: F401
-import app.models.nodule  # noqa: F401
-import app.models.report  # noqa: F401
-import app.models.user  # noqa: F401
+from app.models import patient as _p, study as _s, nodule as _n, report as _r, user as _u  # noqa: F401
 
 TEST_DB_URL = "sqlite+aiosqlite:///:memory:"
 
@@ -46,13 +42,13 @@ async def client(db_session: AsyncSession) -> AsyncClient:
     async def override_get_db():
         yield db_session
 
-    app.dependency_overrides[get_db] = override_get_db
+    fastapi_app.dependency_overrides[get_db] = override_get_db
 
-    transport = ASGITransport(app=app)
+    transport = ASGITransport(app=fastapi_app)
     async with AsyncClient(transport=transport, base_url="http://test") as c:
         yield c
 
-    app.dependency_overrides.clear()
+    fastapi_app.dependency_overrides.clear()
 
 
 @pytest.fixture
