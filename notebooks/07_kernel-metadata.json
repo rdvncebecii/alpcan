@@ -1,0 +1,13 @@
+{
+  "id": "ridvancebec/alpcan-ct-nodule-characterization",
+  "title": "AlpCAN CT Nodule Characterization",
+  "code_file": "07_ct_nodule_characterization.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "dataset_sources": ["zhangweiled/lidcidri"],
+  "competition_sources": [],
+  "kernel_sources": []
+}
