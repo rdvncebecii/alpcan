@@ -78,6 +78,20 @@ export const AGENTS: AgentData[] = [
     p: { Epoch: 55, Loss: "0.0421", Val_Acc: "93.8%", Params: "5.3M" },
     desc: "BT çalışma kalite değerlendirme",
   },
+  {
+    code: "A-BT-6", name: "U-Net Nodül Segm.", icon: "🫁", pip: 2, st: "tr",
+    model: "U-Net (ResNet-34 enc.)", fw: "PyTorch 2.3.1", dev: "T4 16GB (Kaggle)",
+    data: "LIDC-IDRI (1018 BT)", acc: "Dice 0.87+", spd: "10-30s",
+    p: { Epoch: "0/50", Loss: "DiceBCE", Optimizer: "AdamW", Params: "24.4M" },
+    desc: "Nodül segmentasyonu — Notebook 06 (Kaggle eğitimde)",
+  },
+  {
+    code: "A-BT-7", name: "Karakterizasyon", icon: "🧬", pip: 2, st: "tr",
+    model: "ResNet-50 + CBAM", fw: "PyTorch 2.3.1", dev: "T4 16GB (Kaggle)",
+    data: "LIDC-IDRI (1018 BT)", acc: "AUC 0.90+", spd: "2-5s",
+    p: { Epoch: "0/80", Loss: "Focal+WCE", Optimizer: "AdamW", Params: "45.2M" },
+    desc: "Nodül karakterizasyonu + Lung-RADS — Notebook 07 (Kaggle eğitimde)",
+  },
 ];
 
 export const DATASETS: DatasetInfo[] = [

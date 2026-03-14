@@ -332,6 +332,105 @@
 .dset-s { display:flex; gap:6px; margin-top:5px; }
 .dst { font-size:8px; padding:2px 6px; border-radius:6px; font-family:JetBrains Mono,monospace; }
 
+/* ── PROFESSIONAL VIEWPORT ── */
+.vp-overlay { position:absolute; z-index:5; pointer-events:none; font-family:JetBrains Mono,monospace; }
+.vp-tl { top:8px; left:10px; font-size:10px; color:rgba(255,255,255,.6); line-height:1.6; }
+.vp-tr { top:8px; right:10px; font-size:9px; color:rgba(255,255,255,.45); text-align:right; line-height:1.6; }
+.vp-bl { bottom:8px; left:10px; font-size:9px; color:rgba(255,255,255,.35); line-height:1.6; }
+.vp-br { bottom:8px; right:10px; font-size:9px; color:rgba(255,255,255,.35); text-align:right; line-height:1.6; }
+.vp-mod { font-size:11px; font-weight:700; color:rgba(26,159,168,.7); letter-spacing:.1em; }
+.vp-center { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center;
+  pointer-events:none; z-index:3; }
+.vp-center svg { opacity:.06; }
+.vp-center-txt { font-size:10px; color:var(--t3); font-family:JetBrains Mono,monospace; margin-top:12px; opacity:.5; }
+
+/* CT pane borders — OHIF style */
+.vpane-ax { border-top:2px solid rgba(220,60,60,.6); }
+.vpane-co { border-top:2px solid rgba(60,180,60,.6); }
+.vpane-sa { border-top:2px solid rgba(200,180,40,.6); }
+.vpane-3d { border-top:2px solid rgba(60,100,220,.6); }
+.vpane .vp-mod { font-size:9px; }
+
+/* crosshair lines */
+.crosshair-h, .crosshair-v { position:absolute; z-index:4; pointer-events:none; }
+.crosshair-h { left:0; right:0; height:1px; top:50%; background:rgba(26,159,168,.12); }
+.crosshair-v { top:0; bottom:0; width:1px; left:50%; background:rgba(26,159,168,.12); }
+
+/* heatmap simulated overlay */
+.heatmap-sim { position:absolute; inset:0; z-index:6; pointer-events:none; opacity:0; transition:opacity .4s;
+  background:radial-gradient(ellipse at 55% 45%, rgba(232,69,95,.25) 0%, rgba(245,162,32,.15) 20%,
+  rgba(26,159,168,.08) 40%, transparent 65%); }
+.heatmap-sim.on { opacity:1; }
+
+/* toolbar icon buttons */
+.tb-i { display:flex; align-items:center; justify-content:center; gap:4px; padding:4px 8px; border-radius:5px;
+  background:transparent; border:1px solid var(--b1); color:var(--t3); font-size:9px; cursor:pointer;
+  transition:all .15s; font-family:Mulish,sans-serif; position:relative; white-space:nowrap; }
+.tb-i:hover { background:var(--tdim); border-color:rgba(26,159,168,.4); color:var(--tl); }
+.tb-i.on { background:rgba(26,159,168,.15); border-color:var(--tm); color:var(--tl); }
+.tb-i.active { background:linear-gradient(135deg,rgba(14,122,130,.3),rgba(26,159,168,.2));
+  border-color:var(--tm); color:var(--tl); box-shadow:0 0 8px rgba(26,159,168,.2); }
+.tb-i svg { width:14px; height:14px; flex-shrink:0; }
+.tb-kbd { font-size:7px; padding:1px 3px; border-radius:2px; background:rgba(255,255,255,.06);
+  color:var(--t3); font-family:JetBrains Mono,monospace; margin-left:2px; }
+
+/* W/L dropdown */
+.wl-wrap { position:relative; margin-left:auto; }
+.wl-btn { display:flex; align-items:center; gap:5px; padding:3px 8px; border-radius:5px; background:var(--s2);
+  border:1px solid var(--b1); color:var(--t2); font-size:9px; cursor:pointer; font-family:JetBrains Mono,monospace;
+  transition:all .15s; }
+.wl-btn:hover { border-color:var(--tm); color:var(--tl); }
+.wl-btn svg { width:12px; height:12px; }
+.wl-dd { position:absolute; top:100%; right:0; margin-top:4px; background:var(--s2); border:1px solid var(--b2);
+  border-radius:7px; min-width:180px; z-index:100; box-shadow:0 8px 24px rgba(0,0,0,.5);
+  display:none; overflow:hidden; }
+.wl-dd.open { display:block; }
+.wl-opt { padding:7px 10px; font-size:10px; cursor:pointer; transition:all .1s; display:flex;
+  justify-content:space-between; align-items:center; border-bottom:1px solid var(--b1); }
+.wl-opt:last-child { border-bottom:none; }
+.wl-opt:hover { background:var(--tdim); color:var(--tl); }
+.wl-opt.sel { background:rgba(26,159,168,.1); color:var(--tl); }
+.wl-opt-n { font-family:Mulish,sans-serif; }
+.wl-opt-v { font-family:JetBrains Mono,monospace; font-size:9px; color:var(--t3); }
+
+/* progress bar animated */
+@keyframes progressPulse { 0%{opacity:.6} 50%{opacity:1} 100%{opacity:.6} }
+.pbar-fl.animating { animation:progressPulse 1.5s ease-in-out infinite; }
+
+/* loading skeleton */
+@keyframes shimmer { 0%{background-position:-200% 0} 100%{background-position:200% 0} }
+.skeleton { background:linear-gradient(90deg,var(--s2) 25%,var(--s3) 50%,var(--s2) 75%);
+  background-size:200% 100%; animation:shimmer 1.5s infinite; border-radius:4px; }
+
+/* study card date */
+.pc-date { font-size:8px; color:var(--t3); font-family:JetBrains Mono,monospace; }
+.pc-mod { display:inline-flex; align-items:center; gap:3px; }
+.pc-mod svg { width:10px; height:10px; color:var(--t3); }
+
+/* report section */
+.r-stamp { font-size:9px; color:var(--t3); font-family:JetBrains Mono,monospace; margin-top:8px;
+  padding-top:8px; border-top:1px solid var(--b1); }
+.r-sign { display:flex; align-items:center; gap:8px; margin-top:8px; padding:8px;
+  background:var(--s2); border-radius:6px; border:1px solid var(--b1); }
+.r-sign-av { width:28px; height:28px; border-radius:50%; background:linear-gradient(135deg,var(--td),var(--tl));
+  display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; color:#fff; flex-shrink:0; }
+.r-sign-info { font-size:10px; line-height:1.5; }
+.r-sign-name { font-weight:600; font-family:Syne,sans-serif; }
+.r-sign-role { font-size:9px; color:var(--t3); }
+
+/* nodule density/morphology tags */
+.ntag { display:inline-block; font-size:7px; padding:1px 5px; border-radius:8px; margin-right:3px;
+  font-family:JetBrains Mono,monospace; font-weight:600; }
+.ntag-solid { background:rgba(232,69,95,.1); color:var(--err); }
+.ntag-ps { background:rgba(245,162,32,.1); color:var(--warn); }
+.ntag-ggo { background:rgba(45,216,138,.1); color:var(--ok); }
+.ntag-rads { background:rgba(26,159,168,.1); color:var(--tl); }
+
+/* demo badge */
+.demo-badge { position:absolute; top:8px; right:8px; font-size:8px; padding:2px 8px; border-radius:10px;
+  background:rgba(245,162,32,.1); color:var(--warn); border:1px solid rgba(245,162,32,.2);
+  font-family:JetBrains Mono,monospace; font-weight:600; z-index:10; }
+
 /* ── TOAST ── */
 .toast { position:fixed; bottom:18px; right:18px; background:linear-gradient(135deg,var(--s2),var(--s1));
   border:1px solid var(--b2); border-radius:9px; padding:9px 14px; font-size:12px; font-weight:500;

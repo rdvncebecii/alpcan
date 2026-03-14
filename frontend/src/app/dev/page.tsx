@@ -307,7 +307,8 @@ export default function DevPage() {
       </header>
 
       {/* ── 3-COLUMN LAYOUT ── */}
-      <div className="glayout">
+      <div className="glayout" style={{ position: "relative" }}>
+        <div className="demo-badge">DEMO MODU</div>
         {/* ── LEFT SIDEBAR ── */}
         <aside className="gsidebar">
           <div className="gsh">

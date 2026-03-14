@@ -1,6 +1,18 @@
+"use client";
+
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { getHealth } from "@/lib/api";
 
 export default function SplashPage() {
+  const [apiOk, setApiOk] = useState<boolean | null>(null);
+
+  useEffect(() => {
+    getHealth()
+      .then(() => setApiOk(true))
+      .catch(() => setApiOk(false));
+  }, []);
+
   return (
     <div
       style={{
@@ -32,9 +44,26 @@ export default function SplashPage() {
         <div className="sp-sub">Akciğer Kanseri Erken Tespit Platformu</div>
         <div style={{ textAlign: "center" }}>
           <div className="sp-badge">
-            TÜSEB 2026-C6 · Giresun Üniversitesi · v3.0
+            TÜSEB 2026-C6 · Giresun Üniversitesi · v1.0.0-beta
           </div>
         </div>
+      </div>
+
+      {/* Backend status */}
+      <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 11, fontFamily: "JetBrains Mono, monospace" }}>
+        <span
+          style={{
+            width: 8,
+            height: 8,
+            borderRadius: "50%",
+            background: apiOk === null ? "var(--t3)" : apiOk ? "var(--ok)" : "var(--err)",
+            boxShadow: apiOk ? "0 0 8px var(--ok)" : "none",
+            display: "inline-block",
+          }}
+        />
+        <span style={{ color: apiOk === null ? "var(--t3)" : apiOk ? "var(--ok)" : "var(--err)" }}>
+          {apiOk === null ? "Backend kontrol ediliyor..." : apiOk ? "API bağlantısı aktif" : "API bağlantısı başarısız"}
+        </span>
       </div>
 
       <div style={{ display: "flex", gap: 14, flexWrap: "wrap", justifyContent: "center" }}>
@@ -65,7 +94,7 @@ export default function SplashPage() {
             <div className="sp-icon">⚡</div>
             <div className="sp-ct">Geliştirici Paneli</div>
             <div className="sp-cd">
-              Ajan eğitimi &middot; GPU izleme
+              13 AI ajan &middot; GPU izleme
               <br />
               Metrikler &middot; MLflow &middot; Canlı log
             </div>
@@ -74,7 +103,7 @@ export default function SplashPage() {
       </div>
 
       <div className="sp-foot">
-        Demo — NIH CXR-14 açık veri · KVKK uyumlu yapay veri
+        TÜSEB Proje No: 2026-C6 · Giresun Üniversitesi Mühendislik Fakültesi · KVKK uyumlu
       </div>
     </div>
   );

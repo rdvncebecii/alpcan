@@ -4,6 +4,20 @@ import { useState, useRef, useCallback, useEffect } from "react";
 import Link from "next/link";
 import { useStudies, useInference, useReport } from "@/lib/hooks";
 import type { StudySummary } from "@/lib/types";
+import {
+  Move, Ruler, ZoomIn, Triangle, RotateCw, FlipHorizontal, RefreshCcw,
+  Layers, Thermometer, Trash2, ChevronDown, Monitor,
+  FileImage, Box, Stethoscope, Activity,
+} from "lucide-react";
+
+/* ── W/L presets ── */
+const WL_PRESETS = [
+  { name: "Akciğer", w: 1500, l: -600 },
+  { name: "Mediastin", w: 350, l: 50 },
+  { name: "Kemik", w: 1800, l: 400 },
+  { name: "Beyin", w: 80, l: 40 },
+  { name: "Varsayılan", w: 2048, l: 0 },
+];
 
 /* ── helper: Lung-RADS → UI display ── */
 const RADS_META: Record<string, { rc: string; color: string; name: string; act: string }> = {
@@ -70,8 +84,11 @@ export default function RadyologPage() {
   const [showNodules, setShowNodules] = useState(false);
 
   // toolbar
+  const [activeTool, setActiveTool] = useState<"pan" | "ruler" | "zoom" | "angle" | "rotate" | "flip" | "reset">("pan");
   const [aiLayer, setAiLayer] = useState(false);
   const [heatmap, setHeatmap] = useState(false);
+  const [wlPreset, setWlPreset] = useState(0); // Akciğer
+  const [wlOpen, setWlOpen] = useState(false);
 
   // toast
   const [toast, setToast] = useState("");
@@ -85,6 +102,26 @@ export default function RadyologPage() {
   const [pip1State, setPip1State] = useState<"" | "on" | "done">("");
   const [pip2State, setPip2State] = useState<"" | "ready" | "on" | "done">("");
   const [pipMsg, setPipMsg] = useState("");
+
+  // W/L current values
+  const wl = WL_PRESETS[wlPreset];
+
+  // keyboard shortcuts
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
+      switch (e.key.toLowerCase()) {
+        case "p": setActiveTool("pan"); break;
+        case "l": setActiveTool("ruler"); break;
+        case "z": setActiveTool("zoom"); break;
+        case "a": setActiveTool("angle"); break;
+        case "r": setActiveTool("rotate"); break;
+        case "h": setHeatmap(v => !v); break;
+      }
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, []);
 
   // report
   const selectedStudy = studies[selIdx] || null;
@@ -321,7 +358,7 @@ export default function RadyologPage() {
         {/* ──────── LEFT PANEL ──────── */}
         <div className="lpanel">
           <div className="lph">
-            <div className="lplbl">Çalışma Kuyruğu</div>
+            <div className="lplbl">Çalışma Kuyruğu ({filtered.length})</div>
             <input
               className="lpsrc"
               placeholder="Hasta ara..."
@@ -344,6 +381,12 @@ export default function RadyologPage() {
             </div>
           </div>
           <div className="plist">
+            {filtered.length === 0 && (
+              <div style={{ padding: 20, textAlign: "center", color: "var(--t3)", fontSize: 11 }}>
+                <FileImage size={28} strokeWidth={1} style={{ margin: "0 auto 8px", opacity: 0.3 }} />
+                <div>Sonuç bulunamadı</div>
+              </div>
+            )}
             {filtered.map((s) => {
               const realIdx = studies.indexOf(s);
               const pri = statusToPri(s);
@@ -357,11 +400,14 @@ export default function RadyologPage() {
                   <div className="pct">
                     <div className="pcn">
                       <span className={`prio p${pri}`} />
-                      {s.patient_name} ({s.modality})
+                      <span className="pc-mod">
+                        {s.modality === "CT" ? <Box size={10} /> : <FileImage size={10} />}
+                      </span>
+                      {s.patient_name}
                     </div>
                   </div>
                   <div className="pcb">
-                    <span className="pct2">{priLabel(pri)}</span>
+                    <span className="pc-date">{new Date(s.study_date).toLocaleDateString("tr-TR")}</span>
                     {s.lung_rads && (
                       <span className={`rb ${sRads.rc}`}>RADS-{s.lung_rads}</span>
                     )}
@@ -399,53 +445,97 @@ export default function RadyologPage() {
 
           {/* toolbar */}
           <div className="vtbar">
-            <button className="tb">Pan</button>
-            <button className="tb">Ölçüm</button>
-            <button className="tb">Zoom</button>
-            <button className="tb">Açı</button>
-            <span className="tsep" />
-            <button
-              className={`tb${aiLayer ? " on" : ""}`}
-              onClick={() => setAiLayer(!aiLayer)}
-            >
-              AI Katman
+            <button className={`tb-i${activeTool === "pan" ? " active" : ""}`} onClick={() => setActiveTool("pan")} title="Pan (P)">
+              <Move /><span className="tb-kbd">P</span>
             </button>
-            <button
-              className={`tb${heatmap ? " on" : ""}`}
-              onClick={() => setHeatmap(!heatmap)}
-            >
-              Isı Haritası
+            <button className={`tb-i${activeTool === "ruler" ? " active" : ""}`} onClick={() => setActiveTool("ruler")} title="Ölçüm (L)">
+              <Ruler /><span className="tb-kbd">L</span>
+            </button>
+            <button className={`tb-i${activeTool === "zoom" ? " active" : ""}`} onClick={() => setActiveTool("zoom")} title="Zoom (Z)">
+              <ZoomIn /><span className="tb-kbd">Z</span>
+            </button>
+            <button className={`tb-i${activeTool === "angle" ? " active" : ""}`} onClick={() => setActiveTool("angle")} title="Açı (A)">
+              <Triangle /><span className="tb-kbd">A</span>
             </button>
             <span className="tsep" />
-            <button className="tb" onClick={() => { setAiLayer(false); setHeatmap(false); }}>
-              Temizle
+            <button className={`tb-i${activeTool === "rotate" ? " active" : ""}`} onClick={() => setActiveTool("rotate")} title="Döndür (R)">
+              <RotateCw /><span className="tb-kbd">R</span>
             </button>
-            <span className="wli">W:2048 L:0</span>
+            <button className="tb-i" onClick={() => showToast("Yatay çevirme uygulandı")} title="Çevir">
+              <FlipHorizontal />
+            </button>
+            <button className="tb-i" onClick={() => { setActiveTool("pan"); showToast("Görüntü sıfırlandı"); }} title="Sıfırla">
+              <RefreshCcw />
+            </button>
+            <span className="tsep" />
+            <button className={`tb-i${aiLayer ? " on" : ""}`} onClick={() => setAiLayer(!aiLayer)} title="AI Katman">
+              <Layers />
+            </button>
+            <button className={`tb-i${heatmap ? " on" : ""}`} onClick={() => setHeatmap(!heatmap)} title="Isı Haritası (H)">
+              <Thermometer /><span className="tb-kbd">H</span>
+            </button>
+            <span className="tsep" />
+            <button className="tb-i" onClick={() => { setAiLayer(false); setHeatmap(false); setActiveTool("pan"); }} title="Temizle">
+              <Trash2 />
+            </button>
+
+            {/* W/L preset dropdown */}
+            <div className="wl-wrap">
+              <button className="wl-btn" onClick={() => setWlOpen(!wlOpen)}>
+                <Monitor size={12} />
+                {wl.name} W:{wl.w} L:{wl.l}
+                <ChevronDown />
+              </button>
+              <div className={`wl-dd${wlOpen ? " open" : ""}`}>
+                {WL_PRESETS.map((p, i) => (
+                  <div
+                    key={p.name}
+                    className={`wl-opt${wlPreset === i ? " sel" : ""}`}
+                    onClick={() => { setWlPreset(i); setWlOpen(false); }}
+                  >
+                    <span className="wl-opt-n">{p.name}</span>
+                    <span className="wl-opt-v">W:{p.w} L:{p.l}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
 
           {/* CXR viewer */}
           {activePip === 1 && (
             <div className="cxr-wrap">
-              <div className="vlbl">PA AKCİĞER GRAFİSİ</div>
-              <div className="vinfo">{st?.modality || "CXR"}</div>
-              <div className="vwl">W:2048 L:0</div>
-              <div className="scan" />
-              <svg className="ov" />
-              <div
-                style={{
-                  width: 320,
-                  height: 380,
-                  border: "1px solid rgba(26,159,168,.15)",
-                  borderRadius: 8,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  color: "var(--t3)",
-                  fontSize: 11,
-                  fontFamily: "JetBrains Mono, monospace",
-                }}
-              >
-                CXR — {st?.patient_name || "Seçili değil"}
+              {/* Corner overlays — OHIF style */}
+              <div className="vp-overlay vp-tl">
+                <div className="vp-mod">{st?.modality === "CT" ? "CT" : st?.modality === "DX" ? "DX" : "CR"}</div>
+                <div>PA AKCİĞER GRAFİSİ</div>
+                {st && <div style={{ fontSize: 8, color: "rgba(255,255,255,.3)" }}>{st.description || "Standart projeksiyon"}</div>}
+              </div>
+              <div className="vp-overlay vp-tr">
+                <div style={{ fontWeight: 600, color: "rgba(255,255,255,.55)" }}>{st?.patient_name || "—"}</div>
+                <div>ID: {st?.patient_id?.slice(0, 8) || "—"}</div>
+                <div>{st ? new Date(st.study_date).toLocaleDateString("tr-TR") : "—"}</div>
+              </div>
+              <div className="vp-overlay vp-bl">
+                <div>W:{wl.w} L:{wl.l}</div>
+                <div>{wl.name}</div>
+              </div>
+              <div className="vp-overlay vp-br">
+                <div>1.0x</div>
+                <div>2048×2048</div>
+              </div>
+
+              {/* Heatmap overlay */}
+              <div className={`heatmap-sim${heatmap ? " on" : ""}`} />
+
+              {/* Scan line animation */}
+              {(cxrRunning) && <div className="scan" />}
+
+              {/* Center placeholder with medical icon */}
+              <div className="vp-center">
+                <Stethoscope size={80} strokeWidth={0.5} />
+                <div className="vp-center-txt">
+                  {cxrRunning ? "Analiz ediliyor..." : cxrDone ? "Analiz tamamlandı" : "Pipeline başlatın"}
+                </div>
               </div>
             </div>
           )}
@@ -453,22 +543,43 @@ export default function RadyologPage() {
           {/* CT grid */}
           {activePip === 2 && (
             <div className="ct-grid" style={{ flex: 1 }}>
-              {["Axial", "Coronal", "Sagittal", "3D MIP"].map((label) => (
-                <div className="vpane" key={label}>
-                  <div className="vlbl">{label}</div>
-                  <div
-                    style={{
-                      position: "absolute",
-                      inset: 0,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      color: "var(--t3)",
-                      fontSize: 10,
-                      fontFamily: "JetBrains Mono, monospace",
-                    }}
-                  >
-                    {label} — {st?.patient_name || "Seçili değil"}
+              {([
+                { label: "Axial", cls: "vpane-ax", slice: "S:128/256" },
+                { label: "Coronal", cls: "vpane-co", slice: "S:256/512" },
+                { label: "Sagittal", cls: "vpane-sa", slice: "S:256/512" },
+                { label: "3D MIP", cls: "vpane-3d", slice: "" },
+              ]).map(({ label, cls, slice }) => (
+                <div className={`vpane ${cls}`} key={label}>
+                  {/* Corner overlays per pane */}
+                  <div className="vp-overlay vp-tl">
+                    <div className="vp-mod">{label}</div>
+                  </div>
+                  <div className="vp-overlay vp-tr" style={{ fontSize: 8 }}>
+                    <div>{st?.patient_name || "—"}</div>
+                  </div>
+                  <div className="vp-overlay vp-bl" style={{ fontSize: 8 }}>
+                    <div>W:{wl.w} L:{wl.l}</div>
+                  </div>
+                  <div className="vp-overlay vp-br" style={{ fontSize: 8 }}>
+                    {slice && <div>{slice}</div>}
+                  </div>
+
+                  {/* Crosshair lines */}
+                  <div className="crosshair-h" />
+                  <div className="crosshair-v" />
+
+                  {/* Heatmap */}
+                  <div className={`heatmap-sim${heatmap ? " on" : ""}`} />
+
+                  {/* Scan animation on running */}
+                  {ctRunning && <div className="scan" />}
+
+                  {/* Center icon */}
+                  <div className="vp-center">
+                    <Activity size={36} strokeWidth={0.5} />
+                    <div className="vp-center-txt" style={{ fontSize: 8 }}>
+                      {ctRunning ? "İşleniyor..." : ctDone ? "Tamamlandı" : label}
+                    </div>
                   </div>
                 </div>
               ))}
@@ -540,10 +651,18 @@ export default function RadyologPage() {
                 <div className="pbar-w">
                   <div className="pbar-l">CXR Pipeline İlerlemesi</div>
                   <div className="pbar-tr">
-                    <div className="pbar-fl" style={{ width: "50%" }} />
+                    <div
+                      className="pbar-fl animating"
+                      style={{ width: `${cxrInference.progress ? Math.round((cxrInference.progress.step / cxrInference.progress.total_steps) * 100) : 50}%` }}
+                    />
                   </div>
                   <div className="pbar-st">
                     {cxrInference.progress?.current_agent || cxrInference.status || "İşleniyor..."}
+                    {cxrInference.progress && (
+                      <span style={{ float: "right", color: "var(--t3)" }}>
+                        %{Math.round((cxrInference.progress.step / cxrInference.progress.total_steps) * 100)}
+                      </span>
+                    )}
                   </div>
                 </div>
               )}
@@ -614,10 +733,18 @@ export default function RadyologPage() {
                 <div className="pbar-w">
                   <div className="pbar-l">BT Pipeline İlerlemesi</div>
                   <div className="pbar-tr">
-                    <div className="pbar-fl" style={{ width: "50%" }} />
+                    <div
+                      className="pbar-fl animating"
+                      style={{ width: `${ctInference.progress ? Math.round((ctInference.progress.step / ctInference.progress.total_steps) * 100) : 50}%` }}
+                    />
                   </div>
                   <div className="pbar-st">
                     {ctInference.progress?.current_agent || ctInference.status || "İşleniyor..."}
+                    {ctInference.progress && (
+                      <span style={{ float: "right", color: "var(--t3)" }}>
+                        %{Math.round((ctInference.progress.step / ctInference.progress.total_steps) * 100)}
+                      </span>
+                    )}
                   </div>
                 </div>
               )}
@@ -692,6 +819,16 @@ export default function RadyologPage() {
                         <div className="nd">
                           <div className="nsz">{n.size_mm.toFixed(1)} mm</div>
                           <div className="nloc">{n.location || "Konum belirtilmemiş"}</div>
+                          <div style={{ marginTop: 3 }}>
+                            {n.density && (
+                              <span className={`ntag ${n.density === "solid" ? "ntag-solid" : n.density === "part-solid" ? "ntag-ps" : "ntag-ggo"}`}>
+                                {n.density === "solid" ? "Solid" : n.density === "part-solid" ? "Part-Solid" : "GGO"}
+                              </span>
+                            )}
+                            {n.lung_rads && (
+                              <span className="ntag ntag-rads">RADS-{n.lung_rads}</span>
+                            )}
+                          </div>
                           <div className="mbar">
                             <div
                               className="mfill"
@@ -722,6 +859,24 @@ export default function RadyologPage() {
                   </div>
                 </div>
                 {reportText()}
+
+                {/* Report timestamp */}
+                {report && (
+                  <div className="r-stamp">
+                    Rapor oluşturma: {new Date().toLocaleDateString("tr-TR")} {new Date().toLocaleTimeString("tr-TR", { hour: "2-digit", minute: "2-digit" })}
+                    {report.total_processing_seconds && ` · ${report.total_processing_seconds.toFixed(1)}s`}
+                  </div>
+                )}
+
+                {/* Doctor signature */}
+                <div className="r-sign">
+                  <div className="r-sign-av">DR</div>
+                  <div className="r-sign-info">
+                    <div className="r-sign-name">Dr. Radyolog</div>
+                    <div className="r-sign-role">Göğüs Radyolojisi Uzmanı</div>
+                  </div>
+                </div>
+
                 <div style={{ display: "flex", gap: 5, marginTop: 10 }}>
                   <button className="pbtn" onClick={() => showToast("PDF oluşturuldu")}>
                     PDF
