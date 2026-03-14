@@ -1,6 +1,72 @@
 export type Screen = "splash" | "radyolog" | "gelistirici";
 
-// ── Patient Data (matches demo + backend) ──
+// ── Backend API Response Types ──
+
+export interface StudySummary {
+  id: string;
+  patient_id: string;
+  patient_name: string;
+  modality: string;
+  study_date: string;
+  description: string | null;
+  status: string;
+  nodule_count: number | null;
+  lung_rads: string | null;
+}
+
+export interface NoduleFinding {
+  id: string;
+  location: string | null;
+  size_mm: number;
+  volume_mm3: number | null;
+  density: string | null;
+  lung_rads: string | null;
+  malignancy_score: number | null;
+  recommendation: string | null;
+}
+
+export interface LungRADSReport {
+  study_id: string;
+  patient_id: string;
+  report_date: string;
+  overall_lung_rads: string;
+  nodules: NoduleFinding[];
+  cxr_ensemble_score: number | null;
+  cxr_recommendation: string | null;
+  summary_tr: string | null;
+  recommendation_tr: string | null;
+  total_processing_seconds: number | null;
+}
+
+export interface AgentResult {
+  agent_name: string;
+  status: string;
+  confidence: number | null;
+  findings: Record<string, unknown> | null;
+  duration_seconds: number | null;
+}
+
+export interface InferenceResponse {
+  task_id: string;
+  study_id: string;
+  pipeline: "cxr" | "ct";
+  status: string;
+  agents: AgentResult[];
+}
+
+export interface InferenceStatus {
+  task_id: string;
+  status: string;
+  progress?: {
+    current_agent: string;
+    step: number;
+    total_steps: number;
+  };
+  result?: unknown;
+}
+
+// ── UI-only Types (used by dev page) ──
+
 export interface PatientAgent {
   n: string;
   v: string;
@@ -42,7 +108,7 @@ export interface PatientData {
   trend: string;
 }
 
-// ── Agent Data (matches demo) ──
+// ── Agent Data (used by dev page) ──
 export interface AgentData {
   code: string;
   name: string;

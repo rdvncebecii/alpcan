@@ -37,15 +37,26 @@ export default function SplashPage() {
         </div>
       </div>
 
-      <div style={{ display: "flex", gap: 14 }}>
+      <div style={{ display: "flex", gap: 14, flexWrap: "wrap", justifyContent: "center" }}>
         <Link href="/radyolog" style={{ textDecoration: "none", color: "inherit" }}>
           <div className="sp-card">
             <div className="sp-icon">🏥</div>
             <div className="sp-ct">Radyolog Arayüzü</div>
             <div className="sp-cd">
-              CXR → BT otomatik geçiş
+              CXR &rarr; BT otomatik geçiş
               <br />
-              Isı haritası · Lung-RADS · Raporlama
+              Isı haritası &middot; Lung-RADS &middot; Raporlama
+            </div>
+          </div>
+        </Link>
+        <Link href="/yukle" style={{ textDecoration: "none", color: "inherit" }}>
+          <div className="sp-card">
+            <div className="sp-icon">📁</div>
+            <div className="sp-ct">DICOM Yükle</div>
+            <div className="sp-cd">
+              DICOM dosyası yükleme
+              <br />
+              Orthanc PACS entegrasyonu
             </div>
           </div>
         </Link>
@@ -54,9 +65,9 @@ export default function SplashPage() {
             <div className="sp-icon">⚡</div>
             <div className="sp-ct">Geliştirici Paneli</div>
             <div className="sp-cd">
-              Ajan eğitimi · GPU izleme
+              Ajan eğitimi &middot; GPU izleme
               <br />
-              Metrikler · MLflow · Canlı log
+              Metrikler &middot; MLflow &middot; Canlı log
             </div>
           </div>
         </Link>

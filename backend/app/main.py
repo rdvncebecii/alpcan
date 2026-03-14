@@ -21,10 +21,14 @@ async def lifespan(app: FastAPI):
     import app.models.study  # noqa: F401
     import app.models.nodule  # noqa: F401
     import app.models.report  # noqa: F401
+    import app.models.user  # noqa: F401
 
-    async with engine.begin() as conn:
-        await conn.run_sync(Base.metadata.create_all)
-    logger.info("Veritabanı tabloları oluşturuldu")
+    # Development fallback: create tables if they don't exist.
+    # Production should use: alembic upgrade head
+    if settings.debug:
+        async with engine.begin() as conn:
+            await conn.run_sync(Base.metadata.create_all)
+        logger.info("Veritabanı tabloları kontrol edildi (debug mode)")
 
     yield
 
