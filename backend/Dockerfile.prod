@@ -1,0 +1,23 @@
+# AlpCAN Backend — Production build
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# System dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    libgl1-mesa-glx \
+    libglib2.0-0 \
+    && rm -rf /var/lib/apt/lists/*
+
+# Python dependencies (production only, no dev extras)
+COPY pyproject.toml .
+RUN pip install --no-cache-dir -e ".[ml]"
+
+# Application code
+COPY . .
+
+EXPOSE 8000
+
+# Production: gunicorn with uvicorn workers, no reload
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--workers", "2"]

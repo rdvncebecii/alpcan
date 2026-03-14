@@ -1,0 +1,49 @@
+# AlpCAN — Caddy reverse proxy with automatic HTTPS
+# alpcan.alpiss.net → automatic Let's Encrypt certificate
+
+alpcan.alpiss.net {
+    # Frontend (Next.js)
+    handle {
+        reverse_proxy frontend:3000
+    }
+
+    # Backend API
+    handle /api/* {
+        reverse_proxy backend:8000
+    }
+
+    # FastAPI docs
+    handle /docs {
+        reverse_proxy backend:8000
+    }
+    handle /redoc {
+        reverse_proxy backend:8000
+    }
+    handle /openapi.json {
+        reverse_proxy backend:8000
+    }
+
+    # Orthanc DICOM web viewer (restricted)
+    handle /orthanc/* {
+        uri strip_prefix /orthanc
+        reverse_proxy orthanc:8042
+    }
+
+    # Security headers
+    header {
+        X-Content-Type-Options nosniff
+        X-Frame-Options DENY
+        X-XSS-Protection "1; mode=block"
+        Referrer-Policy strict-origin-when-cross-origin
+        -Server
+    }
+
+    # Gzip compression
+    encode gzip
+
+    # Logging
+    log {
+        output file /data/access.log
+        format json
+    }
+}
