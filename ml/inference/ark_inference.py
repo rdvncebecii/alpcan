@@ -145,7 +145,7 @@ class ArkInference(BaseInferenceModel):
 
         # Checkpoint yükle
         logger.info(f"Checkpoint yükleniyor: {weights_path}")
-        checkpoint = torch.load(str(weights_path), map_location="cpu")
+        checkpoint = torch.load(str(weights_path), map_location="cpu", weights_only=False)
 
         logger.info(f"Checkpoint anahtarları: {list(checkpoint.keys())}")
         state_dict = checkpoint[checkpoint_key]
