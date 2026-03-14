@@ -2,6 +2,11 @@
 FROM node:20-alpine AS builder
 
 WORKDIR /app
+
+# Build-time env — Next.js NEXT_PUBLIC_* must be set at build time
+ARG NEXT_PUBLIC_API_URL=https://alpcan.alpiss.net/api/v1
+ENV NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL
+
 COPY package*.json ./
 RUN npm ci
 COPY . .
