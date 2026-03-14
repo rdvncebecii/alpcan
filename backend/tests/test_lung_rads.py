@@ -3,15 +3,23 @@
 import sys
 from pathlib import Path
 
+import pytest
+
 # Add ml/ to path so we can import without install
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "ml"))
 
-from evaluation.lung_rads_scoring import (
-    NoduleInfo,
-    classify_lung_rads,
-    classify_overall_lung_rads,
-    get_recommendation,
-)
+try:
+    from evaluation.lung_rads_scoring import (
+        NoduleInfo,
+        classify_lung_rads,
+        classify_overall_lung_rads,
+        get_recommendation,
+    )
+    HAS_ML = True
+except (ImportError, ModuleNotFoundError):
+    HAS_ML = False
+
+pytestmark = pytest.mark.skipif(not HAS_ML, reason="ML modules not available")
 
 
 def test_solid_small():
