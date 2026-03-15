@@ -1,0 +1,2 @@
+suspicious_auc,risk_accuracy,n_val_samples,n_train_samples,best_epoch,total_epochs
+0.9769056847545219,0.8505747126436781,522,2108,14,40

@@ -65,3 +65,9 @@ mlruns/
 
 # Jupyter
 .ipynb_checkpoints/
+
+# Large notebook outputs (model weights, large predictions)
+notebooks/outputs/**/*.pth
+notebooks/outputs/**/*.pt
+notebooks/outputs/**/*_predictions_full.csv
+notebooks/outputs/**/*_embeddings.npz

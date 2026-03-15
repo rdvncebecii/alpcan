@@ -1,0 +1,19 @@
+{
+  "id": "ridvancebec/alpcan-cxr-ensemble-pipeline",
+  "title": "AlpCAN CXR Ensemble Pipeline",
+  "code_file": "08_cxr_ensemble_pipeline.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": false,
+  "enable_internet": true,
+  "dataset_sources": [
+    "nih-chest-xrays/data"
+  ],
+  "competition_sources": [],
+  "kernel_sources": [
+    "ridvancebec/alpcan-cxr-pipeline-torchxrayvision-baseline",
+    "ridvancebec/alpcan-cxr-pipeline-resnet-50-512-baseline",
+    "ridvancebec/alpcan-cxr-pipeline-ark-zero-shot-baseline"
+  ]
+}

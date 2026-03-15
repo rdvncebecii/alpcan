@@ -1,0 +1,517 @@
+[{"stream_name":"stderr","time":6.262757205,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.262807005,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.262811436,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.262814279,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":6.828628807,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.8286543349999995,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.828658488,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.828664281,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":10.082411241,"data":"\u001b[?25l   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m0.0/431.5 kB\u001b[0m \u001b[31m?\u001b[0m eta \u001b[36m-:--:--\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[91m╸\u001b[0m \u001b[32m430.1/431.5 kB\u001b[0m \u001b[31m18.5 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m431.5/431.5 kB\u001b[0m \u001b[31m12.1 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":26.967151867,"data":"\u001b[?25hPyTorch: 2.9.0+cu126\n"}
+,{"stream_name":"stdout","time":26.967191498,"data":"timm: 0.5.4\n"}
+,{"stream_name":"stdout","time":26.967199583,"data":"GPU: Tesla P100-PCIE-16GB\n"}
+,{"stream_name":"stdout","time":26.967204324,"data":"CUDA: True\n"}
+,{"stream_name":"stdout","time":26.96720938,"data":"GPU Bellek: 17.1 GB\n"}
+,{"stream_name":"stdout","time":229.753407393,"data":"Labels CSV: /kaggle/input/datasets/organizations/nih-chest-xrays/data/Data_Entry_2017.csv\n"}
+,{"stream_name":"stdout","time":229.753464836,"data":"Görüntü klasörleri: 12\n"}
+,{"stream_name":"stdout","time":229.75347549,"data":"  /kaggle/input/datasets/organizations/nih-chest-xrays/data/images_001/images: 4,999 PNG\n"}
+,{"stream_name":"stdout","time":229.753480836,"data":"  /kaggle/input/datasets/organizations/nih-chest-xrays/data/images_002/images: 10,000 PNG\n"}
+,{"stream_name":"stdout","time":229.753486192,"data":"  /kaggle/input/datasets/organizations/nih-chest-xrays/data/images_003/images: 10,000 PNG\n"}
+,{"stream_name":"stdout","time":230.087108866,"data":"  /kaggle/input/datasets/organizations/nih-chest-xrays/data/images_004/images: 10,000 PNG\n"}
+,{"stream_name":"stdout","time":230.087146427,"data":"  /kaggle/input/datasets/organizations/nih-chest-xrays/data/images_005/images: 10,000 PNG\n"}
+,{"stream_name":"stdout","time":230.557772583,"data":"\n"}
+,{"stream_name":"stdout","time":230.557811241,"data":"Toplam indekslenen görüntü: 112,120\n"}
+,{"stream_name":"stdout","time":231.010211425,"data":"CSV kayıt sayısı: 112,120\n"}
+,{"stream_name":"stdout","time":231.010248862,"data":"Hasta sayısı: 30,805\n"}
+,{"stream_name":"stdout","time":231.010256485,"data":"\n"}
+,{"stream_name":"stdout","time":231.010261458,"data":"Sütunlar: ['Image Index', 'Finding Labels', 'Follow-up #', 'Patient ID', 'Patient Age', 'Patient Gender', 'View Position', 'OriginalImage[Width', 'Height]', 'OriginalImagePixelSpacing[x', 'y]', 'Unnamed: 11']\n"}
+,{"stream_name":"stdout","time":231.417251061,"data":"=================================================================\n"}
+,{"stream_name":"stdout","time":231.417288089,"data":"NIH ChestX-ray14 — Patoloji Dağılımı (TAM DATASET)\n"}
+,{"stream_name":"stdout","time":231.417293906,"data":"=================================================================\n"}
+,{"stream_name":"stdout","time":231.417297646,"data":"          Infiltration: 19,894 ( 17.7%)\n"}
+,{"stream_name":"stdout","time":231.417301233,"data":"              Effusion: 13,317 ( 11.9%)\n"}
+,{"stream_name":"stdout","time":231.417304803,"data":"           Atelectasis: 11,559 ( 10.3%)\n"}
+,{"stream_name":"stdout","time":231.41730851,"data":"                Nodule:  6,331 (  5.6%) \u003c\u003c AlpCAN\n"}
+,{"stream_name":"stdout","time":231.417313762,"data":"                  Mass:  5,782 (  5.2%) \u003c\u003c AlpCAN\n"}
+,{"stream_name":"stdout","time":231.417317522,"data":"          Pneumothorax:  5,302 (  4.7%)\n"}
+,{"stream_name":"stdout","time":231.417321261,"data":"         Consolidation:  4,667 (  4.2%)\n"}
+,{"stream_name":"stdout","time":231.417324878,"data":"    Pleural_Thickening:  3,385 (  3.0%)\n"}
+,{"stream_name":"stdout","time":231.417329171,"data":"          Cardiomegaly:  2,776 (  2.5%)\n"}
+,{"stream_name":"stdout","time":231.417332842,"data":"             Emphysema:  2,516 (  2.2%)\n"}
+,{"stream_name":"stdout","time":231.417336863,"data":"                 Edema:  2,303 (  2.1%)\n"}
+,{"stream_name":"stdout","time":231.41734084,"data":"              Fibrosis:  1,686 (  1.5%)\n"}
+,{"stream_name":"stdout","time":231.417344654,"data":"             Pneumonia:  1,431 (  1.3%)\n"}
+,{"stream_name":"stdout","time":231.417348317,"data":"                Hernia:    227 (  0.2%)\n"}
+,{"stream_name":"stdout","time":231.417351923,"data":"            No Finding: 60,361 ( 53.8%)\n"}
+,{"stream_name":"stdout","time":231.417355583,"data":"\n"}
+,{"stream_name":"stdout","time":231.417359233,"data":"  Toplam görüntü: 112,120\n"}
+,{"stream_name":"stdout","time":231.41736293,"data":"  Toplam hasta:   30,805\n"}
+,{"stream_name":"stdout","time":231.417366688,"data":"  Multi-label:    20,796 görüntü birden fazla patoloji içeriyor\n"}
+,{"stream_name":"stdout","time":268.609357465,"data":"Checkpoint Kaggle dataset'ten bulundu: /kaggle/input/datasets/ridvancebec/ark-plus-pretrained-weights-core/Ark6_swinLarge768_ep50.pth.tar\n"}
+,{"stream_name":"stdout","time":268.609391449,"data":"  Boyut: 2.47 GB\n"}
+,{"stream_name":"stdout","time":268.609398532,"data":"\n"}
+,{"stream_name":"stdout","time":268.609403467,"data":"Kullanılacak checkpoint: /kaggle/input/datasets/ridvancebec/ark-plus-pretrained-weights-core/Ark6_swinLarge768_ep50.pth.tar\n"}
+,{"stream_name":"stdout","time":268.609408976,"data":"Boyut: 2.47 GB\n"}
+,{"stream_name":"stdout","time":306.494322707,"data":"\n"}
+,{"stream_name":"stdout","time":306.494355782,"data":"Fine-tuned checkpoint bulunamadı (opsiyonel).\n"}
+,{"stream_name":"stdout","time":306.520137235,"data":"ArkSwinTransformer sınıfı tanımlandı.\n"}
+,{"stream_name":"stdout","time":309.503087691,"data":"Checkpoint yükleniyor: /kaggle/input/datasets/ridvancebec/ark-plus-pretrained-weights-core/Ark6_swinLarge768_ep50.pth.tar\n"}
+,{"stream_name":"stdout","time":324.410912852,"data":"Checkpoint anahtarları: ['epoch', 'lossMIN', 'state_dict', 'teacher', 'optimizer', 'scheduler']\n"}
+,{"stream_name":"stdout","time":324.410957033,"data":"Teacher state_dict anahtar sayısı: 379\n"}
+,{"stream_name":"stdout","time":324.410963012,"data":"Temizlenmiş anahtar sayısı: 379\n"}
+,{"stream_name":"stdout","time":324.410976362,"data":"Örnek anahtarlar: ['patch_embed.proj.weight', 'patch_embed.proj.bias', 'patch_embed.norm.weight', 'patch_embed.norm.bias', 'layers.0.blocks.0.norm1.weight', 'layers.0.blocks.0.norm1.bias', 'layers.0.blocks.0.attn.relative_position_bias_table', 'layers.0.blocks.0.attn.relative_position_index', 'layers.0.blocks.0.attn.qkv.weight', 'layers.0.blocks.0.attn.qkv.bias']\n"}
+,{"stream_name":"stdout","time":324.410980931,"data":"\n"}
+,{"stream_name":"stdout","time":324.410983374,"data":"Yükleme sonucu:\n"}
+,{"stream_name":"stdout","time":324.410985748,"data":"  Eksik anahtarlar: 0\n"}
+,{"stream_name":"stdout","time":324.410988142,"data":"  Beklenmeyen anahtarlar: 2\n"}
+,{"stream_name":"stdout","time":324.410990586,"data":"  Beklenmeyen (ilk 5): ['head.weight', 'head.bias']\n"}
+,{"stream_name":"stdout","time":324.852543181,"data":"\n"}
+,{"stream_name":"stdout","time":324.852579848,"data":"Model özeti:\n"}
+,{"stream_name":"stdout","time":324.852587364,"data":"  Mimari: Swin Transformer Large (768x768)\n"}
+,{"stream_name":"stdout","time":324.852591725,"data":"  Toplam parametre: 197,385,032 (197.4M)\n"}
+,{"stream_name":"stdout","time":324.852596188,"data":"  Projector: Linear(1536 -\u003e 1376)\n"}
+,{"stream_name":"stdout","time":324.852600886,"data":"  Omni-heads: [14, 14, 14, 3, 6, 1]\n"}
+,{"stream_name":"stdout","time":324.852604561,"data":"  NIH14 head (head_n=2): 14 sınıf\n"}
+,{"stream_name":"stdout","time":324.852608606,"data":"  Device: cuda\n"}
+,{"stream_name":"stdout","time":325.423667645,"data":"\n"}
+,{"stream_name":"stdout","time":325.423702526,"data":"Test çıktısı:\n"}
+,{"stream_name":"stdout","time":325.42370805,"data":"  Embedding shape: torch.Size([1, 1376])\n"}
+,{"stream_name":"stdout","time":325.423711578,"data":"  Logits shape: torch.Size([1, 14])\n"}
+,{"stream_name":"stdout","time":325.42371491,"data":"  Logits range: [-6.125, -1.292]\n"}
+,{"stream_name":"stdout","time":325.451185099,"data":"NIH14Dataset sınıfı tanımlandı.\n"}
+,{"stream_name":"stdout","time":325.451208759,"data":"  Giriş boyutu: 768x768x3\n"}
+,{"stream_name":"stdout","time":325.451213177,"data":"  Normalizasyon: ImageNet (mean=[0.485,0.456,0.406], std=[0.229,0.224,0.225])\n"}
+,{"stream_name":"stdout","time":325.451217403,"data":"  Etiket sayısı: 14\n"}
+,{"stream_name":"stdout","time":363.4659012,"data":"Resmi test listesi bulundu: /kaggle/input/datasets/organizations/nih-chest-xrays/data/test_list.txt\n"}
+,{"stream_name":"stdout","time":363.465941095,"data":"  Train: 86,524 görüntü\n"}
+,{"stream_name":"stdout","time":363.465949173,"data":"  Test:  25,596 görüntü\n"}
+,{"stream_name":"stdout","time":363.4659527,"data":"  Test hasta sayısı: 2,797\n"}
+,{"stream_name":"stdout","time":363.465961279,"data":"\n"}
+,{"stream_name":"stdout","time":363.465964407,"data":"Tam dataset: 112,120 görüntü\n"}
+,{"stream_name":"stdout","time":363.46596804,"data":"  Nodule: 6,331\n"}
+,{"stream_name":"stdout","time":363.465971211,"data":"  Mass: 5,782\n"}
+,{"stream_name":"stdout","time":363.500855514,"data":"Ark+ Zero-Shot Inference başlıyor\n"}
+,{"stream_name":"stdout","time":363.500887591,"data":"  Dataset: 112,120 görüntü\n"}
+,{"stream_name":"stdout","time":363.500894541,"data":"  Batch size: 16\n"}
+,{"stream_name":"stdout","time":363.500899935,"data":"  Head: NIH14 (head_n=2)\n"}
+,{"stream_name":"stdout","time":363.500905001,"data":"  Çözünürlük: 768x768\n"}
+,{"stream_name":"stdout","time":363.500910304,"data":"  AMP: Etkin\n"}
+,{"stream_name":"stdout","time":363.500914962,"data":"------------------------------------------------------------\n"}
+,{"stream_name":"stdout","time":450.536900953,"data":"      512/112,120 (  0.5%) | 6 img/s | ETA: 315.5 min\n"}
+,{"stream_name":"stdout","time":533.237558504,"data":"    1,008/112,120 (  0.9%) | 6 img/s | ETA: 311.5 min\n"}
+,{"stream_name":"stdout","time":615.902103608,"data":"    1,504/112,120 (  1.3%) | 6 img/s | ETA: 309.1 min\n"}
+,{"stream_name":"stdout","time":698.572847122,"data":"    2,000/112,120 (  1.8%) | 6 img/s | ETA: 307.3 min\n"}
+,{"stream_name":"stdout","time":783.880271135,"data":"    2,512/112,120 (  2.2%) | 6 img/s | ETA: 305.6 min\n"}
+,{"stream_name":"stdout","time":866.540671953,"data":"    3,008/112,120 (  2.7%) | 6 img/s | ETA: 304.0 min\n"}
+,{"stream_name":"stdout","time":949.206738335,"data":"    3,504/112,120 (  3.1%) | 6 img/s | ETA: 302.5 min\n"}
+,{"stream_name":"stdout","time":1031.858050295,"data":"    4,000/112,120 (  3.6%) | 6 img/s | ETA: 301.0 min\n"}
+,{"stream_name":"stdout","time":1117.177512956,"data":"    4,512/112,120 (  4.0%) | 6 img/s | ETA: 299.5 min\n"}
+,{"stream_name":"stdout","time":1199.836806515,"data":"    5,008/112,120 (  4.5%) | 6 img/s | ETA: 298.1 min\n"}
+,{"stream_name":"stdout","time":1282.498561393,"data":"    5,504/112,120 (  4.9%) | 6 img/s | ETA: 296.6 min\n"}
+,{"stream_name":"stdout","time":1365.15931451,"data":"    6,000/112,120 (  5.4%) | 6 img/s | ETA: 295.2 min\n"}
+,{"stream_name":"stdout","time":1450.495775428,"data":"    6,512/112,120 (  5.8%) | 6 img/s | ETA: 293.7 min\n"}
+,{"stream_name":"stdout","time":1533.146673361,"data":"    7,008/112,120 (  6.3%) | 6 img/s | ETA: 292.3 min\n"}
+,{"stream_name":"stdout","time":1615.79309911,"data":"    7,504/112,120 (  6.7%) | 6 img/s | ETA: 290.9 min\n"}
+,{"stream_name":"stdout","time":1698.451379192,"data":"    8,000/112,120 (  7.1%) | 6 img/s | ETA: 289.5 min\n"}
+,{"stream_name":"stdout","time":1783.786689781,"data":"    8,512/112,120 (  7.6%) | 6 img/s | ETA: 288.1 min\n"}
+,{"stream_name":"stdout","time":1866.465541388,"data":"    9,008/112,120 (  8.0%) | 6 img/s | ETA: 286.7 min\n"}
+,{"stream_name":"stdout","time":1949.119923547,"data":"    9,504/112,120 (  8.5%) | 6 img/s | ETA: 285.3 min\n"}
+,{"stream_name":"stdout","time":2031.79082861,"data":"   10,000/112,120 (  8.9%) | 6 img/s | ETA: 283.9 min\n"}
+,{"stream_name":"stdout","time":2117.111956192,"data":"   10,512/112,120 (  9.4%) | 6 img/s | ETA: 282.5 min\n"}
+,{"stream_name":"stdout","time":2199.76455556,"data":"   11,008/112,120 (  9.8%) | 6 img/s | ETA: 281.1 min\n"}
+,{"stream_name":"stdout","time":2282.412069108,"data":"   11,504/112,120 ( 10.3%) | 6 img/s | ETA: 279.7 min\n"}
+,{"stream_name":"stdout","time":2365.089913251,"data":"   12,000/112,120 ( 10.7%) | 6 img/s | ETA: 278.3 min\n"}
+,{"stream_name":"stdout","time":2450.427680229,"data":"   12,512/112,120 ( 11.2%) | 6 img/s | ETA: 276.9 min\n"}
+,{"stream_name":"stdout","time":2533.092716016,"data":"   13,008/112,120 ( 11.6%) | 6 img/s | ETA: 275.5 min\n"}
+,{"stream_name":"stdout","time":2615.762466497,"data":"   13,504/112,120 ( 12.0%) | 6 img/s | ETA: 274.1 min\n"}
+,{"stream_name":"stdout","time":2698.432705388,"data":"   14,000/112,120 ( 12.5%) | 6 img/s | ETA: 272.7 min\n"}
+,{"stream_name":"stdout","time":2783.784537144,"data":"   14,512/112,120 ( 12.9%) | 6 img/s | ETA: 271.3 min\n"}
+,{"stream_name":"stdout","time":2866.462729102,"data":"   15,008/112,120 ( 13.4%) | 6 img/s | ETA: 269.9 min\n"}
+,{"stream_name":"stdout","time":2949.136502543,"data":"   15,504/112,120 ( 13.8%) | 6 img/s | ETA: 268.5 min\n"}
+,{"stream_name":"stdout","time":3031.801454746,"data":"   16,000/112,120 ( 14.3%) | 6 img/s | ETA: 267.1 min\n"}
+,{"stream_name":"stdout","time":3117.154685577,"data":"   16,512/112,120 ( 14.7%) | 6 img/s | ETA: 265.7 min\n"}
+,{"stream_name":"stdout","time":3199.832582404,"data":"   17,008/112,120 ( 15.2%) | 6 img/s | ETA: 264.3 min\n"}
+,{"stream_name":"stdout","time":3282.497528548,"data":"   17,504/112,120 ( 15.6%) | 6 img/s | ETA: 263.0 min\n"}
+,{"stream_name":"stdout","time":3365.15334012,"data":"   18,000/112,120 ( 16.1%) | 6 img/s | ETA: 261.6 min\n"}
+,{"stream_name":"stdout","time":3450.499031041,"data":"   18,512/112,120 ( 16.5%) | 6 img/s | ETA: 260.1 min\n"}
+,{"stream_name":"stdout","time":3533.169817715,"data":"   19,008/112,120 ( 17.0%) | 6 img/s | ETA: 258.8 min\n"}
+,{"stream_name":"stdout","time":3615.843766124,"data":"   19,504/112,120 ( 17.4%) | 6 img/s | ETA: 257.4 min\n"}
+,{"stream_name":"stdout","time":3698.5056123,"data":"   20,000/112,120 ( 17.8%) | 6 img/s | ETA: 256.0 min\n"}
+,{"stream_name":"stdout","time":3783.832458637,"data":"   20,512/112,120 ( 18.3%) | 6 img/s | ETA: 254.6 min\n"}
+,{"stream_name":"stdout","time":3866.500204375,"data":"   21,008/112,120 ( 18.7%) | 6 img/s | ETA: 253.2 min\n"}
+,{"stream_name":"stdout","time":3949.19831269,"data":"   21,504/112,120 ( 19.2%) | 6 img/s | ETA: 251.8 min\n"}
+,{"stream_name":"stdout","time":4031.874485893,"data":"   22,000/112,120 ( 19.6%) | 6 img/s | ETA: 250.4 min\n"}
+,{"stream_name":"stdout","time":4117.206878808,"data":"   22,512/112,120 ( 20.1%) | 6 img/s | ETA: 249.0 min\n"}
+,{"stream_name":"stdout","time":4199.868770207,"data":"   23,008/112,120 ( 20.5%) | 6 img/s | ETA: 247.6 min\n"}
+,{"stream_name":"stdout","time":4282.537983784,"data":"   23,504/112,120 ( 21.0%) | 6 img/s | ETA: 246.2 min\n"}
+,{"stream_name":"stdout","time":4365.20287233,"data":"   24,000/112,120 ( 21.4%) | 6 img/s | ETA: 244.9 min\n"}
+,{"stream_name":"stdout","time":4450.526350236,"data":"   24,512/112,120 ( 21.9%) | 6 img/s | ETA: 243.4 min\n"}
+,{"stream_name":"stdout","time":4533.194393632,"data":"   25,008/112,120 ( 22.3%) | 6 img/s | ETA: 242.1 min\n"}
+,{"stream_name":"stdout","time":4615.874669704,"data":"   25,504/112,120 ( 22.7%) | 6 img/s | ETA: 240.7 min\n"}
+,{"stream_name":"stdout","time":4698.543122125,"data":"   26,000/112,120 ( 23.2%) | 6 img/s | ETA: 239.3 min\n"}
+,{"stream_name":"stdout","time":4783.894748783,"data":"   26,512/112,120 ( 23.6%) | 6 img/s | ETA: 237.9 min\n"}
+,{"stream_name":"stdout","time":4866.575600919,"data":"   27,008/112,120 ( 24.1%) | 6 img/s | ETA: 236.5 min\n"}
+,{"stream_name":"stdout","time":4949.257196212,"data":"   27,504/112,120 ( 24.5%) | 6 img/s | ETA: 235.1 min\n"}
+,{"stream_name":"stdout","time":5031.914264649,"data":"   28,000/112,120 ( 25.0%) | 6 img/s | ETA: 233.7 min\n"}
+,{"stream_name":"stdout","time":5117.271064346,"data":"   28,512/112,120 ( 25.4%) | 6 img/s | ETA: 232.3 min\n"}
+,{"stream_name":"stdout","time":5199.939929127,"data":"   29,008/112,120 ( 25.9%) | 6 img/s | ETA: 230.9 min\n"}
+,{"stream_name":"stdout","time":5282.634500966,"data":"   29,504/112,120 ( 26.3%) | 6 img/s | ETA: 229.6 min\n"}
+,{"stream_name":"stdout","time":5365.315371699,"data":"   30,000/112,120 ( 26.8%) | 6 img/s | ETA: 228.2 min\n"}
+,{"stream_name":"stdout","time":5450.654644679,"data":"   30,512/112,120 ( 27.2%) | 6 img/s | ETA: 226.8 min\n"}
+,{"stream_name":"stdout","time":5533.34398133,"data":"   31,008/112,120 ( 27.7%) | 6 img/s | ETA: 225.4 min\n"}
+,{"stream_name":"stdout","time":5616.014106334,"data":"   31,504/112,120 ( 28.1%) | 6 img/s | ETA: 224.0 min\n"}
+,{"stream_name":"stdout","time":5698.687788591,"data":"   32,000/112,120 ( 28.5%) | 6 img/s | ETA: 222.6 min\n"}
+,{"stream_name":"stdout","time":5784.019244183,"data":"   32,512/112,120 ( 29.0%) | 6 img/s | ETA: 221.2 min\n"}
+,{"stream_name":"stdout","time":5866.702312513,"data":"   33,008/112,120 ( 29.4%) | 6 img/s | ETA: 219.8 min\n"}
+,{"stream_name":"stdout","time":5949.396091231,"data":"   33,504/112,120 ( 29.9%) | 6 img/s | ETA: 218.4 min\n"}
+,{"stream_name":"stdout","time":6032.072622314,"data":"   34,000/112,120 ( 30.3%) | 6 img/s | ETA: 217.1 min\n"}
+,{"stream_name":"stdout","time":6117.42124411,"data":"   34,512/112,120 ( 30.8%) | 6 img/s | ETA: 215.6 min\n"}
+,{"stream_name":"stdout","time":6200.101048813,"data":"   35,008/112,120 ( 31.2%) | 6 img/s | ETA: 214.3 min\n"}
+,{"stream_name":"stdout","time":6282.781295542,"data":"   35,504/112,120 ( 31.7%) | 6 img/s | ETA: 212.9 min\n"}
+,{"stream_name":"stdout","time":6365.4477387,"data":"   36,000/112,120 ( 32.1%) | 6 img/s | ETA: 211.5 min\n"}
+,{"stream_name":"stdout","time":6450.796436009,"data":"   36,512/112,120 ( 32.6%) | 6 img/s | ETA: 210.1 min\n"}
+,{"stream_name":"stdout","time":6533.473187396,"data":"   37,008/112,120 ( 33.0%) | 6 img/s | ETA: 208.7 min\n"}
+,{"stream_name":"stdout","time":6616.140304362,"data":"   37,504/112,120 ( 33.4%) | 6 img/s | ETA: 207.3 min\n"}
+,{"stream_name":"stdout","time":6698.833441652,"data":"   38,000/112,120 ( 33.9%) | 6 img/s | ETA: 205.9 min\n"}
+,{"stream_name":"stdout","time":6784.174481069,"data":"   38,512/112,120 ( 34.3%) | 6 img/s | ETA: 204.5 min\n"}
+,{"stream_name":"stdout","time":6866.830517894,"data":"   39,008/112,120 ( 34.8%) | 6 img/s | ETA: 203.1 min\n"}
+,{"stream_name":"stdout","time":6949.502404741,"data":"   39,504/112,120 ( 35.2%) | 6 img/s | ETA: 201.8 min\n"}
+,{"stream_name":"stdout","time":7032.186221132,"data":"   40,000/112,120 ( 35.7%) | 6 img/s | ETA: 200.4 min\n"}
+,{"stream_name":"stdout","time":7117.534183176,"data":"   40,512/112,120 ( 36.1%) | 6 img/s | ETA: 199.0 min\n"}
+,{"stream_name":"stdout","time":7200.231574214,"data":"   41,008/112,120 ( 36.6%) | 6 img/s | ETA: 197.6 min\n"}
+,{"stream_name":"stdout","time":7282.91162896,"data":"   41,504/112,120 ( 37.0%) | 6 img/s | ETA: 196.2 min\n"}
+,{"stream_name":"stdout","time":7365.620377067,"data":"   42,000/112,120 ( 37.5%) | 6 img/s | ETA: 194.8 min\n"}
+,{"stream_name":"stdout","time":7450.995355334,"data":"   42,512/112,120 ( 37.9%) | 6 img/s | ETA: 193.4 min\n"}
+,{"stream_name":"stdout","time":7533.676746212,"data":"   43,008/112,120 ( 38.4%) | 6 img/s | ETA: 192.0 min\n"}
+,{"stream_name":"stdout","time":7616.341048769,"data":"   43,504/112,120 ( 38.8%) | 6 img/s | ETA: 190.7 min\n"}
+,{"stream_name":"stdout","time":7699.00341968,"data":"   44,000/112,120 ( 39.2%) | 6 img/s | ETA: 189.3 min\n"}
+,{"stream_name":"stdout","time":7784.344170475,"data":"   44,512/112,120 ( 39.7%) | 6 img/s | ETA: 187.8 min\n"}
+,{"stream_name":"stdout","time":7867.013045076,"data":"   45,008/112,120 ( 40.1%) | 6 img/s | ETA: 186.5 min\n"}
+,{"stream_name":"stdout","time":7949.683563562,"data":"   45,504/112,120 ( 40.6%) | 6 img/s | ETA: 185.1 min\n"}
+,{"stream_name":"stdout","time":8032.354203684,"data":"   46,000/112,120 ( 41.0%) | 6 img/s | ETA: 183.7 min\n"}
+,{"stream_name":"stdout","time":8117.681408544,"data":"   46,512/112,120 ( 41.5%) | 6 img/s | ETA: 182.3 min\n"}
+,{"stream_name":"stdout","time":8200.355620995,"data":"   47,008/112,120 ( 41.9%) | 6 img/s | ETA: 180.9 min\n"}
+,{"stream_name":"stdout","time":8283.046380972,"data":"   47,504/112,120 ( 42.4%) | 6 img/s | ETA: 179.5 min\n"}
+,{"stream_name":"stdout","time":8365.724612689,"data":"   48,000/112,120 ( 42.8%) | 6 img/s | ETA: 178.2 min\n"}
+,{"stream_name":"stdout","time":8451.067696317,"data":"   48,512/112,120 ( 43.3%) | 6 img/s | ETA: 176.7 min\n"}
+,{"stream_name":"stdout","time":8533.758930622,"data":"   49,008/112,120 ( 43.7%) | 6 img/s | ETA: 175.4 min\n"}
+,{"stream_name":"stdout","time":8616.439623096,"data":"   49,504/112,120 ( 44.2%) | 6 img/s | ETA: 174.0 min\n"}
+,{"stream_name":"stdout","time":8699.123352689,"data":"   50,000/112,120 ( 44.6%) | 6 img/s | ETA: 172.6 min\n"}
+,{"stream_name":"stdout","time":8784.467557742,"data":"   50,512/112,120 ( 45.1%) | 6 img/s | ETA: 171.2 min\n"}
+,{"stream_name":"stdout","time":8867.145379039,"data":"   51,008/112,120 ( 45.5%) | 6 img/s | ETA: 169.8 min\n"}
+,{"stream_name":"stdout","time":8949.818151139,"data":"   51,504/112,120 ( 45.9%) | 6 img/s | ETA: 168.4 min\n"}
+,{"stream_name":"stdout","time":9032.500258105,"data":"   52,000/112,120 ( 46.4%) | 6 img/s | ETA: 167.0 min\n"}
+,{"stream_name":"stdout","time":9117.846796478,"data":"   52,512/112,120 ( 46.8%) | 6 img/s | ETA: 165.6 min\n"}
+,{"stream_name":"stdout","time":9200.526703832,"data":"   53,008/112,120 ( 47.3%) | 6 img/s | ETA: 164.2 min\n"}
+,{"stream_name":"stdout","time":9283.192744186,"data":"   53,504/112,120 ( 47.7%) | 6 img/s | ETA: 162.9 min\n"}
+,{"stream_name":"stdout","time":9365.888716127,"data":"   54,000/112,120 ( 48.2%) | 6 img/s | ETA: 161.5 min\n"}
+,{"stream_name":"stdout","time":9451.212173463,"data":"   54,512/112,120 ( 48.6%) | 6 img/s | ETA: 160.1 min\n"}
+,{"stream_name":"stdout","time":9533.896247024,"data":"   55,008/112,120 ( 49.1%) | 6 img/s | ETA: 158.7 min\n"}
+,{"stream_name":"stdout","time":9616.568312938,"data":"   55,504/112,120 ( 49.5%) | 6 img/s | ETA: 157.3 min\n"}
+,{"stream_name":"stdout","time":9699.249352635,"data":"   56,000/112,120 ( 49.9%) | 6 img/s | ETA: 155.9 min\n"}
+,{"stream_name":"stdout","time":9784.581735988,"data":"   56,512/112,120 ( 50.4%) | 6 img/s | ETA: 154.5 min\n"}
+,{"stream_name":"stdout","time":9867.251567302,"data":"   57,008/112,120 ( 50.8%) | 6 img/s | ETA: 153.1 min\n"}
+,{"stream_name":"stdout","time":9949.939166021,"data":"   57,504/112,120 ( 51.3%) | 6 img/s | ETA: 151.7 min\n"}
+,{"stream_name":"stdout","time":10032.61812956,"data":"   58,000/112,120 ( 51.7%) | 6 img/s | ETA: 150.4 min\n"}
+,{"stream_name":"stdout","time":10117.958237938,"data":"   58,512/112,120 ( 52.2%) | 6 img/s | ETA: 148.9 min\n"}
+,{"stream_name":"stdout","time":10200.658774213,"data":"   59,008/112,120 ( 52.6%) | 6 img/s | ETA: 147.6 min\n"}
+,{"stream_name":"stdout","time":10283.325296672,"data":"   59,504/112,120 ( 53.1%) | 6 img/s | ETA: 146.2 min\n"}
+,{"stream_name":"stdout","time":10366.014251668,"data":"   60,000/112,120 ( 53.5%) | 6 img/s | ETA: 144.8 min\n"}
+,{"stream_name":"stdout","time":10451.364333913,"data":"   60,512/112,120 ( 54.0%) | 6 img/s | ETA: 143.4 min\n"}
+,{"stream_name":"stdout","time":10534.046964206,"data":"   61,008/112,120 ( 54.4%) | 6 img/s | ETA: 142.0 min\n"}
+,{"stream_name":"stdout","time":10616.717193128,"data":"   61,504/112,120 ( 54.9%) | 6 img/s | ETA: 140.6 min\n"}
+,{"stream_name":"stdout","time":10699.404673626,"data":"   62,000/112,120 ( 55.3%) | 6 img/s | ETA: 139.3 min\n"}
+,{"stream_name":"stdout","time":10784.730871917,"data":"   62,512/112,120 ( 55.8%) | 6 img/s | ETA: 137.8 min\n"}
+,{"stream_name":"stdout","time":10867.415812246,"data":"   63,008/112,120 ( 56.2%) | 6 img/s | ETA: 136.5 min\n"}
+,{"stream_name":"stdout","time":10950.07407818,"data":"   63,504/112,120 ( 56.6%) | 6 img/s | ETA: 135.1 min\n"}
+,{"stream_name":"stdout","time":11032.734615178,"data":"   64,000/112,120 ( 57.1%) | 6 img/s | ETA: 133.7 min\n"}
+,{"stream_name":"stdout","time":11118.079666788,"data":"   64,512/112,120 ( 57.5%) | 6 img/s | ETA: 132.3 min\n"}
+,{"stream_name":"stdout","time":11200.771171845,"data":"   65,008/112,120 ( 58.0%) | 6 img/s | ETA: 130.9 min\n"}
+,{"stream_name":"stdout","time":11283.436984854,"data":"   65,504/112,120 ( 58.4%) | 6 img/s | ETA: 129.5 min\n"}
+,{"stream_name":"stdout","time":11366.117902942,"data":"   66,000/112,120 ( 58.9%) | 6 img/s | ETA: 128.1 min\n"}
+,{"stream_name":"stdout","time":11451.445230771,"data":"   66,512/112,120 ( 59.3%) | 6 img/s | ETA: 126.7 min\n"}
+,{"stream_name":"stdout","time":11534.098214075,"data":"   67,008/112,120 ( 59.8%) | 6 img/s | ETA: 125.3 min\n"}
+,{"stream_name":"stdout","time":11616.783165523,"data":"   67,504/112,120 ( 60.2%) | 6 img/s | ETA: 124.0 min\n"}
+,{"stream_name":"stdout","time":11699.466454869,"data":"   68,000/112,120 ( 60.6%) | 6 img/s | ETA: 122.6 min\n"}
+,{"stream_name":"stdout","time":11784.787266208,"data":"   68,512/112,120 ( 61.1%) | 6 img/s | ETA: 121.2 min\n"}
+,{"stream_name":"stdout","time":11867.457285917,"data":"   69,008/112,120 ( 61.5%) | 6 img/s | ETA: 119.8 min\n"}
+,{"stream_name":"stdout","time":11950.129932087,"data":"   69,504/112,120 ( 62.0%) | 6 img/s | ETA: 118.4 min\n"}
+,{"stream_name":"stdout","time":12032.796324387,"data":"   70,000/112,120 ( 62.4%) | 6 img/s | ETA: 117.0 min\n"}
+,{"stream_name":"stdout","time":12118.140013691,"data":"   70,512/112,120 ( 62.9%) | 6 img/s | ETA: 115.6 min\n"}
+,{"stream_name":"stdout","time":12200.811863316,"data":"   71,008/112,120 ( 63.3%) | 6 img/s | ETA: 114.2 min\n"}
+,{"stream_name":"stdout","time":12283.480306895,"data":"   71,504/112,120 ( 63.8%) | 6 img/s | ETA: 112.8 min\n"}
+,{"stream_name":"stdout","time":12366.164692007,"data":"   72,000/112,120 ( 64.2%) | 6 img/s | ETA: 111.5 min\n"}
+,{"stream_name":"stdout","time":12451.486876021,"data":"   72,512/112,120 ( 64.7%) | 6 img/s | ETA: 110.0 min\n"}
+,{"stream_name":"stdout","time":12534.150209018,"data":"   73,008/112,120 ( 65.1%) | 6 img/s | ETA: 108.7 min\n"}
+,{"stream_name":"stdout","time":12616.807282067,"data":"   73,504/112,120 ( 65.6%) | 6 img/s | ETA: 107.3 min\n"}
+,{"stream_name":"stdout","time":12699.48774866,"data":"   74,000/112,120 ( 66.0%) | 6 img/s | ETA: 105.9 min\n"}
+,{"stream_name":"stdout","time":12784.808755718,"data":"   74,512/112,120 ( 66.5%) | 6 img/s | ETA: 104.5 min\n"}
+,{"stream_name":"stdout","time":12867.484177509,"data":"   75,008/112,120 ( 66.9%) | 6 img/s | ETA: 103.1 min\n"}
+,{"stream_name":"stdout","time":12950.145947983,"data":"   75,504/112,120 ( 67.3%) | 6 img/s | ETA: 101.7 min\n"}
+,{"stream_name":"stdout","time":13032.820791862,"data":"   76,000/112,120 ( 67.8%) | 6 img/s | ETA: 100.4 min\n"}
+,{"stream_name":"stdout","time":13118.171319638,"data":"   76,512/112,120 ( 68.2%) | 6 img/s | ETA: 98.9 min\n"}
+,{"stream_name":"stdout","time":13200.874104208,"data":"   77,008/112,120 ( 68.7%) | 6 img/s | ETA: 97.6 min\n"}
+,{"stream_name":"stdout","time":13283.527240693,"data":"   77,504/112,120 ( 69.1%) | 6 img/s | ETA: 96.2 min\n"}
+,{"stream_name":"stdout","time":13366.186430923,"data":"   78,000/112,120 ( 69.6%) | 6 img/s | ETA: 94.8 min\n"}
+,{"stream_name":"stdout","time":13451.548803741,"data":"   78,512/112,120 ( 70.0%) | 6 img/s | ETA: 93.4 min\n"}
+,{"stream_name":"stdout","time":13534.237672884,"data":"   79,008/112,120 ( 70.5%) | 6 img/s | ETA: 92.0 min\n"}
+,{"stream_name":"stdout","time":13616.905708549,"data":"   79,504/112,120 ( 70.9%) | 6 img/s | ETA: 90.6 min\n"}
+,{"stream_name":"stdout","time":13699.575663046,"data":"   80,000/112,120 ( 71.4%) | 6 img/s | ETA: 89.2 min\n"}
+,{"stream_name":"stdout","time":13784.905217447,"data":"   80,512/112,120 ( 71.8%) | 6 img/s | ETA: 87.8 min\n"}
+,{"stream_name":"stdout","time":13867.582064186,"data":"   81,008/112,120 ( 72.3%) | 6 img/s | ETA: 86.4 min\n"}
+,{"stream_name":"stdout","time":13950.242484543,"data":"   81,504/112,120 ( 72.7%) | 6 img/s | ETA: 85.1 min\n"}
+,{"stream_name":"stdout","time":14032.92131608,"data":"   82,000/112,120 ( 73.1%) | 6 img/s | ETA: 83.7 min\n"}
+,{"stream_name":"stdout","time":14118.289681055,"data":"   82,512/112,120 ( 73.6%) | 6 img/s | ETA: 82.3 min\n"}
+,{"stream_name":"stdout","time":14200.963621567,"data":"   83,008/112,120 ( 74.0%) | 6 img/s | ETA: 80.9 min\n"}
+,{"stream_name":"stdout","time":14283.62390439,"data":"   83,504/112,120 ( 74.5%) | 6 img/s | ETA: 79.5 min\n"}
+,{"stream_name":"stdout","time":14366.327316842,"data":"   84,000/112,120 ( 74.9%) | 6 img/s | ETA: 78.1 min\n"}
+,{"stream_name":"stdout","time":14451.673415001,"data":"   84,512/112,120 ( 75.4%) | 6 img/s | ETA: 76.7 min\n"}
+,{"stream_name":"stdout","time":14534.344093828,"data":"   85,008/112,120 ( 75.8%) | 6 img/s | ETA: 75.3 min\n"}
+,{"stream_name":"stdout","time":14617.038233803,"data":"   85,504/112,120 ( 76.3%) | 6 img/s | ETA: 73.9 min\n"}
+,{"stream_name":"stdout","time":14699.721976207,"data":"   86,000/112,120 ( 76.7%) | 6 img/s | ETA: 72.6 min\n"}
+,{"stream_name":"stdout","time":14785.094551622,"data":"   86,512/112,120 ( 77.2%) | 6 img/s | ETA: 71.1 min\n"}
+,{"stream_name":"stdout","time":14867.792351508,"data":"   87,008/112,120 ( 77.6%) | 6 img/s | ETA: 69.8 min\n"}
+,{"stream_name":"stdout","time":14950.476123359,"data":"   87,504/112,120 ( 78.0%) | 6 img/s | ETA: 68.4 min\n"}
+,{"stream_name":"stdout","time":15033.148495307,"data":"   88,000/112,120 ( 78.5%) | 6 img/s | ETA: 67.0 min\n"}
+,{"stream_name":"stdout","time":15118.491639232,"data":"   88,512/112,120 ( 78.9%) | 6 img/s | ETA: 65.6 min\n"}
+,{"stream_name":"stdout","time":15201.186841092,"data":"   89,008/112,120 ( 79.4%) | 6 img/s | ETA: 64.2 min\n"}
+,{"stream_name":"stdout","time":15283.889953979,"data":"   89,504/112,120 ( 79.8%) | 6 img/s | ETA: 62.8 min\n"}
+,{"stream_name":"stdout","time":15366.566910804,"data":"   90,000/112,120 ( 80.3%) | 6 img/s | ETA: 61.5 min\n"}
+,{"stream_name":"stdout","time":15451.931391568,"data":"   90,512/112,120 ( 80.7%) | 6 img/s | ETA: 60.0 min\n"}
+,{"stream_name":"stdout","time":15534.623794793,"data":"   91,008/112,120 ( 81.2%) | 6 img/s | ETA: 58.7 min\n"}
+,{"stream_name":"stdout","time":15617.316956028,"data":"   91,504/112,120 ( 81.6%) | 6 img/s | ETA: 57.3 min\n"}
+,{"stream_name":"stdout","time":15699.992911811,"data":"   92,000/112,120 ( 82.1%) | 6 img/s | ETA: 55.9 min\n"}
+,{"stream_name":"stdout","time":15785.356742925,"data":"   92,512/112,120 ( 82.5%) | 6 img/s | ETA: 54.5 min\n"}
+,{"stream_name":"stdout","time":15868.058821972,"data":"   93,008/112,120 ( 83.0%) | 6 img/s | ETA: 53.1 min\n"}
+,{"stream_name":"stdout","time":15950.743840338,"data":"   93,504/112,120 ( 83.4%) | 6 img/s | ETA: 51.7 min\n"}
+,{"stream_name":"stdout","time":16033.429803726,"data":"   94,000/112,120 ( 83.8%) | 6 img/s | ETA: 50.3 min\n"}
+,{"stream_name":"stdout","time":16118.789473197,"data":"   94,512/112,120 ( 84.3%) | 6 img/s | ETA: 48.9 min\n"}
+,{"stream_name":"stdout","time":16201.454279182,"data":"   95,008/112,120 ( 84.7%) | 6 img/s | ETA: 47.5 min\n"}
+,{"stream_name":"stdout","time":16284.143788624,"data":"   95,504/112,120 ( 85.2%) | 6 img/s | ETA: 46.2 min\n"}
+,{"stream_name":"stdout","time":16366.803441822,"data":"   96,000/112,120 ( 85.6%) | 6 img/s | ETA: 44.8 min\n"}
+,{"stream_name":"stdout","time":16452.147253424,"data":"   96,512/112,120 ( 86.1%) | 6 img/s | ETA: 43.4 min\n"}
+,{"stream_name":"stdout","time":16534.820259176,"data":"   97,008/112,120 ( 86.5%) | 6 img/s | ETA: 42.0 min\n"}
+,{"stream_name":"stdout","time":16617.487838104,"data":"   97,504/112,120 ( 87.0%) | 6 img/s | ETA: 40.6 min\n"}
+,{"stream_name":"stdout","time":16700.169170798,"data":"   98,000/112,120 ( 87.4%) | 6 img/s | ETA: 39.2 min\n"}
+,{"stream_name":"stdout","time":16785.532746868,"data":"   98,512/112,120 ( 87.9%) | 6 img/s | ETA: 37.8 min\n"}
+,{"stream_name":"stdout","time":16868.219334064,"data":"   99,008/112,120 ( 88.3%) | 6 img/s | ETA: 36.4 min\n"}
+,{"stream_name":"stdout","time":16950.910288413,"data":"   99,504/112,120 ( 88.7%) | 6 img/s | ETA: 35.1 min\n"}
+,{"stream_name":"stdout","time":17033.600306891,"data":"  100,000/112,120 ( 89.2%) | 6 img/s | ETA: 33.7 min\n"}
+,{"stream_name":"stdout","time":17118.939163757,"data":"  100,512/112,120 ( 89.6%) | 6 img/s | ETA: 32.3 min\n"}
+,{"stream_name":"stdout","time":17201.61186868,"data":"  101,008/112,120 ( 90.1%) | 6 img/s | ETA: 30.9 min\n"}
+,{"stream_name":"stdout","time":17284.276837125,"data":"  101,504/112,120 ( 90.5%) | 6 img/s | ETA: 29.5 min\n"}
+,{"stream_name":"stdout","time":17366.96615307,"data":"  102,000/112,120 ( 91.0%) | 6 img/s | ETA: 28.1 min\n"}
+,{"stream_name":"stdout","time":17452.322499482,"data":"  102,512/112,120 ( 91.4%) | 6 img/s | ETA: 26.7 min\n"}
+,{"stream_name":"stdout","time":17534.985259045,"data":"  103,008/112,120 ( 91.9%) | 6 img/s | ETA: 25.3 min\n"}
+,{"stream_name":"stdout","time":17617.671230167,"data":"  103,504/112,120 ( 92.3%) | 6 img/s | ETA: 23.9 min\n"}
+,{"stream_name":"stdout","time":17700.360855667,"data":"  104,000/112,120 ( 92.8%) | 6 img/s | ETA: 22.6 min\n"}
+,{"stream_name":"stdout","time":17785.717487253,"data":"  104,512/112,120 ( 93.2%) | 6 img/s | ETA: 21.1 min\n"}
+,{"stream_name":"stdout","time":17868.401843771,"data":"  105,008/112,120 ( 93.7%) | 6 img/s | ETA: 19.8 min\n"}
+,{"stream_name":"stdout","time":17951.120608487,"data":"  105,504/112,120 ( 94.1%) | 6 img/s | ETA: 18.4 min\n"}
+,{"stream_name":"stdout","time":18033.788367056,"data":"  106,000/112,120 ( 94.5%) | 6 img/s | ETA: 17.0 min\n"}
+,{"stream_name":"stdout","time":18119.148636076,"data":"  106,512/112,120 ( 95.0%) | 6 img/s | ETA: 15.6 min\n"}
+,{"stream_name":"stdout","time":18201.821693311,"data":"  107,008/112,120 ( 95.4%) | 6 img/s | ETA: 14.2 min\n"}
+,{"stream_name":"stdout","time":18284.524106886,"data":"  107,504/112,120 ( 95.9%) | 6 img/s | ETA: 12.8 min\n"}
+,{"stream_name":"stdout","time":18367.211932138,"data":"  108,000/112,120 ( 96.3%) | 6 img/s | ETA: 11.4 min\n"}
+,{"stream_name":"stdout","time":18452.562346602,"data":"  108,512/112,120 ( 96.8%) | 6 img/s | ETA: 10.0 min\n"}
+,{"stream_name":"stdout","time":18535.255207098,"data":"  109,008/112,120 ( 97.2%) | 6 img/s | ETA: 8.6 min\n"}
+,{"stream_name":"stdout","time":18617.938378716,"data":"  109,504/112,120 ( 97.7%) | 6 img/s | ETA: 7.3 min\n"}
+,{"stream_name":"stdout","time":18700.623410182,"data":"  110,000/112,120 ( 98.1%) | 6 img/s | ETA: 5.9 min\n"}
+,{"stream_name":"stdout","time":18785.971337135,"data":"  110,512/112,120 ( 98.6%) | 6 img/s | ETA: 4.5 min\n"}
+,{"stream_name":"stdout","time":18868.681305765,"data":"  111,008/112,120 ( 99.0%) | 6 img/s | ETA: 3.1 min\n"}
+,{"stream_name":"stdout","time":18951.353371003,"data":"  111,504/112,120 ( 99.5%) | 6 img/s | ETA: 1.7 min\n"}
+,{"stream_name":"stdout","time":19034.032641965,"data":"  112,000/112,120 ( 99.9%) | 6 img/s | ETA: 0.3 min\n"}
+,{"stream_name":"stdout","time":19053.979745775,"data":"  112,120/112,120 (100.0%) | 6 img/s | ETA: 0.0 min\n"}
+,{"stream_name":"stdout","time":19053.979785865,"data":"\n"}
+,{"stream_name":"stdout","time":19053.979792097,"data":"============================================================\n"}
+,{"stream_name":"stdout","time":19053.979797429,"data":"Ark+ Zero-Shot Inference tamamlandı!\n"}
+,{"stream_name":"stdout","time":19053.979809461,"data":"   İşlenen: 112,120 görüntü\n"}
+,{"stream_name":"stdout","time":19053.979814285,"data":"   Süre: 311.5 dakika (6 img/s)\n"}
+,{"stream_name":"stdout","time":19053.979818885,"data":"   Prediction shape: (112120, 14)\n"}
+,{"stream_name":"stdout","time":19053.979823519,"data":"   GT shape: (112120, 14)\n"}
+,{"stream_name":"stdout","time":19053.979827982,"data":"   Prediction range: [0.0000, 0.9946]\n"}
+,{"stream_name":"stdout","time":19054.051360795,"data":"DenseNet-121 AUC sonuçları bulunamadı.\n"}
+,{"stream_name":"stdout","time":19054.051396309,"data":"Karşılaştırma Wang 2017 ile yapılacak.\n"}
+,{"stream_name":"stdout","time":19054.051401733,"data":"\n"}
+,{"stream_name":"stdout","time":19054.051406025,"data":"===========================================================================\n"}
+,{"stream_name":"stdout","time":19054.051409781,"data":"Ark+ (Foundation Ark) Zero-Shot — NIH ChestX-ray14 Performansı\n"}
+,{"stream_name":"stdout","time":19054.051413577,"data":"N = 112,120 görüntü\n"}
+,{"stream_name":"stdout","time":19054.051417169,"data":"===========================================================================\n"}
+,{"stream_name":"stdout","time":19054.05142078,"data":"            Patoloji |  Ark+ AUC | Wang2017 |  D121 AUC |   N_pos |   Prev\n"}
+,{"stream_name":"stdout","time":19054.051424311,"data":"---------------------------------------------------------------------------\n"}
+,{"stream_name":"stdout","time":19054.244940231,"data":"           Atelectasis |    0.8585 |   0.7160 |       N/A |  11,559 |  10.3%\n"}
+,{"stream_name":"stdout","time":19054.244987427,"data":"          Cardiomegaly |    0.9272 |   0.8140 |       N/A |   2,776 |   2.5%\n"}
+,{"stream_name":"stdout","time":19054.322163652,"data":"              Effusion |    0.9019 |   0.7840 |       N/A |  13,317 |  11.9%\n"}
+,{"stream_name":"stdout","time":19054.322203316,"data":"          Infiltration |    0.7457 |   0.6090 |       N/A |  19,894 |  17.7%\n"}
+,{"stream_name":"stdout","time":19054.454119346,"data":"                  Mass |    0.8963 |   0.7060 |       N/A |   5,782 |   5.2% \u003c\u003c\n"}
+,{"stream_name":"stdout","time":19054.454162317,"data":"                Nodule |    0.8429 |   0.6710 |       N/A |   6,331 |   5.6% \u003c\u003c\n"}
+,{"stream_name":"stdout","time":19054.585649689,"data":"             Pneumonia |    0.8032 |   0.6330 |       N/A |   1,431 |   1.3%\n"}
+,{"stream_name":"stdout","time":19054.585686782,"data":"          Pneumothorax |    0.9359 |   0.8060 |       N/A |   5,302 |   4.7%\n"}
+,{"stream_name":"stdout","time":19054.715749091,"data":"         Consolidation |    0.8347 |   0.7080 |       N/A |   4,667 |   4.2%\n"}
+,{"stream_name":"stdout","time":19054.715787383,"data":"                 Edema |    0.9206 |   0.8050 |       N/A |   2,303 |   2.1%\n"}
+,{"stream_name":"stdout","time":19054.843149998,"data":"             Emphysema |    0.9418 |   0.8330 |       N/A |   2,516 |   2.2%\n"}
+,{"stream_name":"stdout","time":19054.843185215,"data":"              Fibrosis |    0.8616 |   0.7860 |       N/A |   1,686 |   1.5%\n"}
+,{"stream_name":"stdout","time":19054.943908475,"data":"    Pleural_Thickening |    0.8400 |   0.6840 |       N/A |   3,385 |   3.0%\n"}
+,{"stream_name":"stdout","time":19054.943940946,"data":"                Hernia |    0.8943 |   0.8720 |       N/A |     227 |   0.2%\n"}
+,{"stream_name":"stdout","time":19054.943946399,"data":"---------------------------------------------------------------------------\n"}
+,{"stream_name":"stdout","time":19054.94395109,"data":"              Ortalama |    0.8718 |\n"}
+,{"stream_name":"stdout","time":19054.94395554,"data":"      Nodule+Mass ort. |    0.8696 |                         \u003c- AlpCAN odak\n"}
+,{"stream_name":"stdout","time":19056.362158926,"data":"Kaydedildi: cxr_ark_performance_comparison.png\n"}
+,{"stream_name":"stdout","time":19056.40279611,"data":"=====================================================================================\n"}
+,{"stream_name":"stdout","time":19056.40282527,"data":"Ark+ vs DenseNet-121 vs Wang et al. 2017 (CVPR)\n"}
+,{"stream_name":"stdout","time":19056.402830197,"data":"=====================================================================================\n"}
+,{"stream_name":"stdout","time":19056.402847668,"data":"            Patoloji |     Ark+ |     Wang |     Fark\n"}
+,{"stream_name":"stdout","time":19056.402851787,"data":"-------------------------------------------------------\n"}
+,{"stream_name":"stdout","time":19056.40285586,"data":"           Atelectasis |   0.8585 |   0.7160 | +0.1425 \u003e\u003e\n"}
+,{"stream_name":"stdout","time":19056.402860983,"data":"          Cardiomegaly |   0.9272 |   0.8140 | +0.1132 \u003e\u003e\n"}
+,{"stream_name":"stdout","time":19056.402865291,"data":"         Consolidation |   0.8347 |   0.7080 | +0.1267 \u003e\u003e\n"}
+,{"stream_name":"stdout","time":19056.402868791,"data":"                 Edema |   0.9206 |   0.8050 | +0.1156 \u003e\u003e\n"}
+,{"stream_name":"stdout","time":19056.402872246,"data":"              Effusion |   0.9019 |   0.7840 | +0.1179 \u003e\u003e\n"}
+,{"stream_name":"stdout","time":19056.402875734,"data":"             Emphysema |   0.9418 |   0.8330 | +0.1088 \u003e\u003e\n"}
+,{"stream_name":"stdout","time":19056.402879801,"data":"              Fibrosis |   0.8616 |   0.7860 | +0.0756 \u003e\u003e\n"}
+,{"stream_name":"stdout","time":19056.402884488,"data":"                Hernia |   0.8943 |   0.8720 | +0.0223 \u003e\u003e\n"}
+,{"stream_name":"stdout","time":19056.402888413,"data":"          Infiltration |   0.7457 |   0.6090 | +0.1367 \u003e\u003e\n"}
+,{"stream_name":"stdout","time":19056.402891955,"data":"                  Mass |   0.8963 |   0.7060 | +0.1903 \u003e\u003e\n"}
+,{"stream_name":"stdout","time":19056.402895394,"data":"                Nodule |   0.8429 |   0.6710 | +0.1719 \u003e\u003e\n"}
+,{"stream_name":"stdout","time":19056.40289881,"data":"    Pleural_Thickening |   0.8400 |   0.6840 | +0.1560 \u003e\u003e\n"}
+,{"stream_name":"stdout","time":19056.402902723,"data":"             Pneumonia |   0.8032 |   0.6330 | +0.1702 \u003e\u003e\n"}
+,{"stream_name":"stdout","time":19056.402906285,"data":"          Pneumothorax |   0.9359 |   0.8060 | +0.1299 \u003e\u003e\n"}
+,{"stream_name":"stdout","time":19056.402909865,"data":"-------------------------------------------------------\n"}
+,{"stream_name":"stdout","time":19056.402913388,"data":"  Ort. fark (Ark-Wang) |          |          | +0.1270\n"}
+,{"stream_name":"stdout","time":19056.484863398,"data":"  Nodule: 500 örnek seçildi (mevcut: 6,331)\n"}
+,{"stream_name":"stdout","time":19056.484895368,"data":"  Mass: 500 örnek seçildi (mevcut: 5,782)\n"}
+,{"stream_name":"stdout","time":19056.48489993,"data":"  Normal: 500 örnek seçildi (mevcut: 60,361)\n"}
+,{"stream_name":"stdout","time":19056.484903685,"data":"  Other: 500 örnek seçildi (mevcut: 40,552)\n"}
+,{"stream_name":"stdout","time":19056.484907588,"data":"\n"}
+,{"stream_name":"stdout","time":19056.484911024,"data":"Toplam embedding örneği: 2,000\n"}
+,{"stream_name":"stdout","time":19056.48491502,"data":"\n"}
+,{"stream_name":"stdout","time":19056.484918716,"data":"Embedding çıkarılıyor...\n"}
+,{"stream_name":"stdout","time":19391.247441274,"data":"Embedding tamamlandı: (2000, 1376) (334.7s)\n"}
+,{"stream_name":"stdout","time":19391.247482903,"data":"  Boyut: 1376 (projector sonrası)\n"}
+,{"stream_name":"stderr","time":19410.733378541,"data":"2026-03-15 03:21:31.757061: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered\n"}
+,{"stream_name":"stderr","time":19410.733782059,"data":"WARNING: All log messages before absl::InitializeLog() is called are written to STDERR\n"}
+,{"stream_name":"stderr","time":19410.733808319,"data":"E0000 00:00:1773544891.937698      24 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered\n"}
+,{"stream_name":"stderr","time":19410.733829174,"data":"E0000 00:00:1773544891.987935      24 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered\n"}
+,{"stream_name":"stderr","time":19410.733833687,"data":"W0000 00:00:1773544892.427345      24 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.\n"}
+,{"stream_name":"stderr","time":19410.733837645,"data":"W0000 00:00:1773544892.427385      24 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.\n"}
+,{"stream_name":"stderr","time":19410.733841666,"data":"W0000 00:00:1773544892.427388      24 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.\n"}
+,{"stream_name":"stderr","time":19410.733845544,"data":"W0000 00:00:1773544892.427391      24 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.\n"}
+,{"stream_name":"stderr","time":19411.295188585,"data":"2026-03-15 03:21:31.757061: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered\n"}
+,{"stream_name":"stderr","time":19411.295223685,"data":"WARNING: All log messages before absl::InitializeLog() is called are written to STDERR\n"}
+,{"stream_name":"stderr","time":19411.295228962,"data":"E0000 00:00:1773544891.937698      24 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered\n"}
+,{"stream_name":"stderr","time":19411.295233418,"data":"E0000 00:00:1773544891.987935      24 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered\n"}
+,{"stream_name":"stderr","time":19411.295237576,"data":"W0000 00:00:1773544892.427345      24 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.\n"}
+,{"stream_name":"stderr","time":19411.295241582,"data":"W0000 00:00:1773544892.427385      24 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.\n"}
+,{"stream_name":"stderr","time":19411.295245612,"data":"W0000 00:00:1773544892.427388      24 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.\n"}
+,{"stream_name":"stderr","time":19411.295249873,"data":"W0000 00:00:1773544892.427391      24 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.\n"}
+,{"stream_name":"stderr","time":19411.295254058,"data":"\n"}
+,{"stream_name":"stderr","time":19411.295257421,"data":"2026-03-15 03:21:31.757061: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered\n"}
+,{"stream_name":"stderr","time":19411.295261446,"data":"WARNING: All log messages before absl::InitializeLog() is called are written to STDERR\n"}
+,{"stream_name":"stderr","time":19411.295265079,"data":"E0000 00:00:1773544891.937698      24 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered\n"}
+,{"stream_name":"stderr","time":19411.295270589,"data":"E0000 00:00:1773544891.987935      24 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered\n"}
+,{"stream_name":"stderr","time":19411.2952872,"data":"W0000 00:00:1773544892.427345      24 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.\n"}
+,{"stream_name":"stderr","time":19411.295290128,"data":"W0000 00:00:1773544892.427385      24 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.\n"}
+,{"stream_name":"stderr","time":19411.295292734,"data":"W0000 00:00:1773544892.427388      24 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.\n"}
+,{"stream_name":"stderr","time":19411.295295375,"data":"W0000 00:00:1773544892.427391      24 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.\n"}
+,{"stream_name":"stdout","time":19427.888207661,"data":"Grup dağılımı:\n"}
+,{"stream_name":"stdout","time":19427.888243386,"data":"  Nodule: 580\n"}
+,{"stream_name":"stdout","time":19427.888248388,"data":"  Mass: 420\n"}
+,{"stream_name":"stdout","time":19427.888252655,"data":"  Normal: 500\n"}
+,{"stream_name":"stdout","time":19427.888256806,"data":"  Other: 500\n"}
+,{"stream_name":"stdout","time":19427.888260875,"data":"t-SNE çalıştırılıyor...\n"}
+,{"stream_name":"stdout","time":19438.231572862,"data":"UMAP çalıştırılıyor...\n"}
+,{"stream_name":"stdout","time":19451.610847241,"data":"Kaydedildi: cxr_ark_embedding_visualization.png\n"}
+,{"stream_name":"stdout","time":19451.691847051,"data":"DenseNet-121 tahminleri bulunamadı.\n"}
+,{"stream_name":"stdout","time":19451.691879944,"data":"Agreement analizi için kernel_sources'a 'ridvancebec/alpcan-cxr-pipeline-torchxrayvision-baseline' ekleyin.\n"}
+,{"stream_name":"stdout","time":19451.691886766,"data":"\n"}
+,{"stream_name":"stdout","time":19451.691891675,"data":"Simülasyon modu ile devam ediliyor...\n"}
+,{"stream_name":"stdout","time":19451.77379068,"data":"\n"}
+,{"stream_name":"stdout","time":19451.773829531,"data":"DenseNet-121 tahminleri mevcut değil — agreement analizi atlanıyor.\n"}
+,{"stream_name":"stdout","time":19451.773836397,"data":"Bu analiz için Notebook 02 çıktılarını kernel_sources olarak ekleyin.\n"}
+,{"stream_name":"stdout","time":19454.065000963,"data":"cxr_ark_predictions_full.csv (112,120 satır, 29 sütun)\n"}
+,{"stream_name":"stdout","time":19454.065054495,"data":"cxr_ark_auc_scores.csv\n"}
+,{"stream_name":"stdout","time":19456.166914686,"data":"cxr_ark_embeddings.npz (2000 örnek, 1376 boyut)\n"}
+,{"stream_name":"stdout","time":19456.166946622,"data":"cxr_ark_comparison.csv\n"}
+,{"stream_name":"stdout","time":19456.166952216,"data":"\n"}
+,{"stream_name":"stdout","time":19456.166957403,"data":"Kaydedilen dosyalar:\n"}
+,{"stream_name":"stdout","time":19456.166963601,"data":"  cxr_ark_auc_scores.csv (0.0 MB)\n"}
+,{"stream_name":"stdout","time":19456.166969076,"data":"  cxr_ark_comparison.csv (0.0 MB)\n"}
+,{"stream_name":"stdout","time":19456.166974321,"data":"  cxr_ark_embedding_visualization.png (0.5 MB)\n"}
+,{"stream_name":"stdout","time":19456.166979628,"data":"  cxr_ark_embeddings.npz (6.2 MB)\n"}
+,{"stream_name":"stdout","time":19456.166984373,"data":"  cxr_ark_performance_comparison.png (0.2 MB)\n"}
+,{"stream_name":"stdout","time":19456.166988909,"data":"  cxr_ark_predictions_full.csv (20.2 MB)\n"}
+,{"stream_name":"stdout","time":19456.219646652,"data":"\n"}
+,{"stream_name":"stdout","time":19456.219676127,"data":"===========================================================================\n"}
+,{"stream_name":"stdout","time":19456.219694033,"data":"AlpCAN CXR Pipeline — Ark+ (Foundation Ark) Zero-Shot Baseline ÖZET\n"}
+,{"stream_name":"stdout","time":19456.219697696,"data":"===========================================================================\n"}
+,{"stream_name":"stdout","time":19456.219700201,"data":"\n"}
+,{"stream_name":"stdout","time":19456.219702468,"data":"--- Dataset ---\n"}
+,{"stream_name":"stdout","time":19456.219704893,"data":"  NIH ChestX-ray14\n"}
+,{"stream_name":"stdout","time":19456.219707227,"data":"  Toplam görüntü: 112,120\n"}
+,{"stream_name":"stdout","time":19456.219709684,"data":"  Toplam hasta:   30,805\n"}
+,{"stream_name":"stdout","time":19456.219712014,"data":"  İşlenen:        112,120\n"}
+,{"stream_name":"stdout","time":19456.219714503,"data":"\n"}
+,{"stream_name":"stdout","time":19456.219716748,"data":"--- Model ---\n"}
+,{"stream_name":"stdout","time":19456.21971913,"data":"  Ark+ (Foundation Ark) — Swin Transformer Large\n"}
+,{"stream_name":"stdout","time":19456.219721556,"data":"  Giriş: 768x768x3, Patch: 4, Window: 12\n"}
+,{"stream_name":"stdout","time":19456.219724041,"data":"  Embed: 192, Depths: (2,2,18,2), Heads: (6,12,24,48)\n"}
+,{"stream_name":"stdout","time":19456.219726454,"data":"  Projector: Linear(1536 -\u003e 1376)\n"}
+,{"stream_name":"stdout","time":19456.219729536,"data":"  Omni-heads: [14, 14, 14, 3, 6, 1] (6 dataset)\n"}
+,{"stream_name":"stdout","time":19456.219732023,"data":"  NIH14 head: head_n=2 (zero-shot)\n"}
+,{"stream_name":"stdout","time":19456.219734387,"data":"  Parametre: 197,385,032 (197.4M)\n"}
+,{"stream_name":"stdout","time":19456.219736789,"data":"  Checkpoint: Ark6_swinLarge768_ep50.pth.tar\n"}
+,{"stream_name":"stdout","time":19456.219739176,"data":"\n"}
+,{"stream_name":"stdout","time":19456.219741489,"data":"--- Performans (AUC-ROC) ---\n"}
+,{"stream_name":"stdout","time":19456.219743847,"data":"  Ortalama AUC:  0.8718\n"}
+,{"stream_name":"stdout","time":19456.219746156,"data":"           Atelectasis: 0.8585 (Wang fark: +0.1425)\n"}
+,{"stream_name":"stdout","time":19456.219748538,"data":"          Cardiomegaly: 0.9272 (Wang fark: +0.1132)\n"}
+,{"stream_name":"stdout","time":19456.219750906,"data":"              Effusion: 0.9019 (Wang fark: +0.1179)\n"}
+,{"stream_name":"stdout","time":19456.219753648,"data":"          Infiltration: 0.7457 (Wang fark: +0.1367)\n"}
+,{"stream_name":"stdout","time":19456.219756026,"data":"                  Mass: 0.8963 (Wang fark: +0.1903) \u003c\u003c AlpCAN\n"}
+,{"stream_name":"stdout","time":19456.219758549,"data":"                Nodule: 0.8429 (Wang fark: +0.1719) \u003c\u003c AlpCAN\n"}
+,{"stream_name":"stdout","time":19456.219760968,"data":"             Pneumonia: 0.8032 (Wang fark: +0.1702)\n"}
+,{"stream_name":"stdout","time":19456.219763359,"data":"          Pneumothorax: 0.9359 (Wang fark: +0.1299)\n"}
+,{"stream_name":"stdout","time":19456.219765699,"data":"         Consolidation: 0.8347 (Wang fark: +0.1267)\n"}
+,{"stream_name":"stdout","time":19456.219768119,"data":"                 Edema: 0.9206 (Wang fark: +0.1156)\n"}
+,{"stream_name":"stdout","time":19456.219771677,"data":"             Emphysema: 0.9418 (Wang fark: +0.1088)\n"}
+,{"stream_name":"stdout","time":19456.219775405,"data":"              Fibrosis: 0.8616 (Wang fark: +0.0756)\n"}
+,{"stream_name":"stdout","time":19456.219779004,"data":"    Pleural_Thickening: 0.8400 (Wang fark: +0.1560)\n"}
+,{"stream_name":"stdout","time":19456.219782906,"data":"                Hernia: 0.8943 (Wang fark: +0.0223)\n"}
+,{"stream_name":"stdout","time":19456.219786885,"data":"\n"}
+,{"stream_name":"stdout","time":19456.219790769,"data":"  Nodule+Mass ort. AUC: 0.8696\n"}
+,{"stream_name":"stdout","time":19456.21979865,"data":"\n"}
+,{"stream_name":"stdout","time":19456.219802238,"data":"--- Embedding ---\n"}
+,{"stream_name":"stdout","time":19456.219805729,"data":"  Boyut: 1376\n"}
+,{"stream_name":"stdout","time":19456.219809138,"data":"  Örnek: 2,000 görüntü\n"}
+,{"stream_name":"stdout","time":19456.219812785,"data":"\n"}
+,{"stream_name":"stdout","time":19456.219815582,"data":"--- Çıktı Dosyaları ---\n"}
+,{"stream_name":"stdout","time":19456.219818093,"data":"  cxr_ark_auc_scores.csv (0.0 MB)\n"}
+,{"stream_name":"stdout","time":19456.219821507,"data":"  cxr_ark_comparison.csv (0.0 MB)\n"}
+,{"stream_name":"stdout","time":19456.219825079,"data":"  cxr_ark_embedding_visualization.png (0.5 MB)\n"}
+,{"stream_name":"stdout","time":19456.219829193,"data":"  cxr_ark_embeddings.npz (6.2 MB)\n"}
+,{"stream_name":"stdout","time":19456.21983373,"data":"  cxr_ark_performance_comparison.png (0.2 MB)\n"}
+,{"stream_name":"stdout","time":19456.219838043,"data":"  cxr_ark_predictions_full.csv (20.2 MB)\n"}
+,{"stream_name":"stdout","time":19456.219842697,"data":"\n"}
+,{"stream_name":"stdout","time":19456.219847203,"data":"--- Sonraki Adımlar ---\n"}
+,{"stream_name":"stdout","time":19456.219851583,"data":"  1. X-Raydar ResNet+Transformer baseline (Agent 7C)\n"}
+,{"stream_name":"stdout","time":19456.219855259,"data":"  2. 4 model gerçek ensemble entegrasyonu\n"}
+,{"stream_name":"stdout","time":19456.219858933,"data":"  3. Ark+ embedding'leri ile downstream task fine-tuning\n"}
+,{"stream_name":"stdout","time":19456.219863553,"data":"  4. CXR pipeline sonuçlarını LIDC-IDRI CT pipeline ile birleştirme\n"}
+,{"stream_name":"stdout","time":19456.219867405,"data":"  5. AlpCAN karar destek sistemi (ensemble + threshold optimizasyon)\n"}
+,{"stream_name":"stdout","time":19456.219870993,"data":"===========================================================================\n"}
+,{"stream_name":"stderr","time":19462.311085747,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":19462.311136342,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":19462.46996186,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":19462.470001135,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":19463.031102434,"data":"/usr/local/lib/python3.12/dist-packages/traitlets/traitlets.py:2915: FutureWarning: --Exporter.preprocessors=[\"remove_papermill_header.RemovePapermillHeader\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":19463.031146614,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":19463.125195532,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":19463.485708403,"data":"[NbConvertApp] Writing 692531 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":19465.854245887,"data":"/usr/local/lib/python3.12/dist-packages/traitlets/traitlets.py:2915: FutureWarning: --Exporter.preprocessors=[\"nbconvert.preprocessors.ExtractOutputPreprocessor\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":19465.854283873,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":19465.877988281,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":19466.914533871,"data":"[NbConvertApp] Support files will be in __results___files/\n"}
+,{"stream_name":"stderr","time":19466.914591965,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":19466.914944471,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":19466.915429736,"data":"[NbConvertApp] Writing 540937 bytes to __results__.html\n"}
+]

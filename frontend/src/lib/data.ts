@@ -10,10 +10,10 @@ export const AGENTS: AgentData[] = [
   },
   {
     code: "A-CXR-1", name: "CXR Ark+ Swin-L", icon: "🧠", pip: 1, st: "ok",
-    model: "Swin Transformer-L", fw: "PyTorch 2.3.1", dev: "GPU RTX 4090",
-    data: "NIH CXR-14 + CheXpert", acc: "AUC 0.921", spd: "2.1s",
-    p: { Epoch: 120, Loss: "0.1243", Val_AUC: "0.921", Params: "197M" },
-    desc: "52+ patoloji sınıflandırma — Nature Medicine 2025",
+    model: "Swin Transformer-L", fw: "PyTorch 2.3.1", dev: "GPU T4 16GB",
+    data: "NIH CXR-14 (112K)", acc: "AUC 0.878", spd: "2.1s",
+    p: { Epoch: "zero-shot", Loss: "N/A", Val_AUC: "0.878", Params: "197M" },
+    desc: "14 patoloji zero-shot — Nodule AUC 0.843, Mass AUC 0.896",
   },
   {
     code: "A-CXR-2", name: "TorchXRayVision", icon: "📊", pip: 1, st: "ok",
@@ -79,18 +79,18 @@ export const AGENTS: AgentData[] = [
     desc: "BT çalışma kalite değerlendirme",
   },
   {
-    code: "A-BT-6", name: "U-Net Nodül Segm.", icon: "🫁", pip: 2, st: "tr",
+    code: "A-BT-6", name: "U-Net Nodül Segm.", icon: "🫁", pip: 2, st: "ok",
     model: "U-Net (ResNet-34 enc.)", fw: "PyTorch 2.3.1", dev: "T4 16GB (Kaggle)",
-    data: "LIDC-IDRI (1018 BT)", acc: "Dice 0.87+", spd: "10-30s",
-    p: { Epoch: "0/50", Loss: "DiceBCE", Optimizer: "AdamW", Params: "24.4M" },
-    desc: "Nodül segmentasyonu — Notebook 06 (Kaggle eğitimde)",
+    data: "LIDC-IDRI (1018 BT)", acc: "Dice 0.622", spd: "10-30s",
+    p: { Epoch: "50/50", Loss: "DiceBCE", Val_Dice: "0.622", Params: "24.4M" },
+    desc: "Nodül segmentasyonu — Notebook 06 (tamamlandı)",
   },
   {
-    code: "A-BT-7", name: "Karakterizasyon", icon: "🧬", pip: 2, st: "tr",
+    code: "A-BT-7", name: "Karakterizasyon", icon: "🧬", pip: 2, st: "ok",
     model: "ResNet-50 + CBAM", fw: "PyTorch 2.3.1", dev: "T4 16GB (Kaggle)",
-    data: "LIDC-IDRI (1018 BT)", acc: "AUC 0.90+", spd: "2-5s",
-    p: { Epoch: "0/80", Loss: "Focal+WCE", Optimizer: "AdamW", Params: "45.2M" },
-    desc: "Nodül karakterizasyonu + Lung-RADS — Notebook 07 (Kaggle eğitimde)",
+    data: "LIDC-IDRI (1018 BT)", acc: "AUC 0.977", spd: "2-5s",
+    p: { Epoch: "14/40", Loss: "Focal+WCE", Val_AUC: "0.9769", Params: "45.2M" },
+    desc: "Nodül karakterizasyonu — Suspicious AUC 0.977, Risk Acc 85.1%",
   },
 ];
 

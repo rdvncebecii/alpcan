@@ -1,0 +1,18 @@
+{
+  "id": "ridvancebec/alpcan-cxr-pipeline-ark-plus-zero-shot-baseline",
+  "title": "AlpCAN CXR Pipeline - Ark+ Zero-Shot Baseline",
+  "code_file": "05_cxr_pipeline_ark_plus.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "dataset_sources": [
+    "nih-chest-xrays/data",
+    "ridvancebec/ark-plus-pretrained-weights-core"
+  ],
+  "competition_sources": [],
+  "kernel_sources": [
+    "ridvancebec/alpcan-cxr-pipeline-torchxrayvision-baseline"
+  ]
+}

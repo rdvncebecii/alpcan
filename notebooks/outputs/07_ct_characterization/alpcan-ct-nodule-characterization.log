@@ -1,0 +1,206 @@
+[{"stream_name":"stderr","time":5.631954776,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":5.632000871,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":5.63200669,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":5.632010836,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":6.171343968,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.1713766549999995,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.171392423,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.171397045,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":9.109216586,"data":"\u001b[?25l     \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m0.0/7.8 MB\u001b[0m \u001b[31m?\u001b[0m eta \u001b[36m-:--:--\u001b[0m\r\u001b[2K     \u001b[91m━━━━━\u001b[0m\u001b[91m╸\u001b[0m\u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m1.1/7.8 MB\u001b[0m \u001b[31m33.1 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K     \u001b[91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[91m╸\u001b[0m \u001b[32m7.8/7.8 MB\u001b[0m \u001b[31m123.5 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K     \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m7.8/7.8 MB\u001b[0m \u001b[31m78.5 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":13.76509518,"data":"\u001b[?25h  Installing build dependencies ... \u001b[?25l\u001b[?25hdone\r\n"}
+,{"stream_name":"stdout","time":13.967848906,"data":"  Getting requirements to build wheel ... \u001b[?25l\u001b[?25hdone\r\n"}
+,{"stream_name":"stdout","time":14.17052319,"data":"  Preparing metadata (pyproject.toml) ... \u001b[?25l\u001b[?25hdone\r\n"}
+,{"stream_name":"stdout","time":14.829160171,"data":"  Building wheel for grad-cam (pyproject.toml) ... \u001b[?25l\u001b[?25hdone\r\n"}
+,{"stream_name":"stdout","time":28.728475813,"data":"PyTorch: 2.9.0+cu126\n"}
+,{"stream_name":"stdout","time":28.728508395,"data":"GPU: Tesla P100-PCIE-16GB\n"}
+,{"stream_name":"stdout","time":28.728513644,"data":"CUDA: True\n"}
+,{"stream_name":"stdout","time":28.728517712,"data":"GPU Bellek: 17.1 GB\n"}
+,{"stream_name":"stdout","time":28.906502407,"data":"Dataset: /kaggle/input/datasets/zhangweiled/lidcidri/LIDC-IDRI-slices\n"}
+,{"stream_name":"stdout","time":32.270600272,"data":"Toplam hasta: 875\n"}
+,{"stream_name":"stdout","time":217.901178629,"data":"\n"}
+,{"stream_name":"stdout","time":217.901222865,"data":"Toplam nodul: 2630\n"}
+,{"stream_name":"stdout","time":217.9012276,"data":"Toplam hasta: 875\n"}
+,{"stream_name":"stdout","time":217.901230955,"data":"\n"}
+,{"stream_name":"stdout","time":217.901234413,"data":"Nodul cap (piksel) istatistikleri:\n"}
+,{"stream_name":"stdout","time":217.901237716,"data":"count    2630.000000\n"}
+,{"stream_name":"stdout","time":217.901240747,"data":"mean        6.834626\n"}
+,{"stream_name":"stdout","time":217.901243766,"data":"std         6.646702\n"}
+,{"stream_name":"stdout","time":217.901256573,"data":"min         0.000000\n"}
+,{"stream_name":"stdout","time":217.901259118,"data":"25%         0.000000\n"}
+,{"stream_name":"stdout","time":217.901261253,"data":"50%         6.383076\n"}
+,{"stream_name":"stdout","time":217.901263495,"data":"75%         9.640876\n"}
+,{"stream_name":"stdout","time":217.901265671,"data":"max        43.262711\n"}
+,{"stream_name":"stdout","time":217.901268234,"data":"Name: diameter_px, dtype: float64\n"}
+,{"stream_name":"stdout","time":217.948881614,"data":"Medyan nodul capi: 6.4 piksel\n"}
+,{"stream_name":"stdout","time":217.948907074,"data":"\n"}
+,{"stream_name":"stdout","time":217.948912188,"data":"Binary siniflandirma (suspicious):\n"}
+,{"stream_name":"stdout","time":217.948916495,"data":"suspicious\n"}
+,{"stream_name":"stdout","time":217.948920738,"data":"0    1316\n"}
+,{"stream_name":"stdout","time":217.948924073,"data":"1    1314\n"}
+,{"stream_name":"stdout","time":217.948927334,"data":"Name: count, dtype: int64\n"}
+,{"stream_name":"stdout","time":217.948930864,"data":"\n"}
+,{"stream_name":"stdout","time":217.948934082,"data":"Risk sinifi dagilimi:\n"}
+,{"stream_name":"stdout","time":217.948937303,"data":"risk_class\n"}
+,{"stream_name":"stdout","time":217.948940219,"data":"0    856\n"}
+,{"stream_name":"stdout","time":217.948942468,"data":"1    460\n"}
+,{"stream_name":"stdout","time":217.948944704,"data":"2    942\n"}
+,{"stream_name":"stdout","time":217.948946947,"data":"3    372\n"}
+,{"stream_name":"stdout","time":217.948949134,"data":"Name: count, dtype: int64\n"}
+,{"stream_name":"stdout","time":217.948951483,"data":"\n"}
+,{"stream_name":"stdout","time":217.948953625,"data":"Boyut kategorisi:\n"}
+,{"stream_name":"stdout","time":217.948955856,"data":"size_category\n"}
+,{"stream_name":"stdout","time":217.948958025,"data":"orta         942\n"}
+,{"stream_name":"stdout","time":217.948960169,"data":"kucuk        460\n"}
+,{"stream_name":"stdout","time":217.948962327,"data":"buyuk        372\n"}
+,{"stream_name":"stdout","time":217.948964528,"data":"cok_kucuk     29\n"}
+,{"stream_name":"stdout","time":217.948966692,"data":"Name: count, dtype: int64\n"}
+,{"stream_name":"stdout","time":218.797903675,"data":"Train: 2108 nodul (700 hasta)\n"}
+,{"stream_name":"stdout","time":218.797927341,"data":"Val:   522 nodul (175 hasta)\n"}
+,{"stream_name":"stdout","time":218.797930502,"data":"\n"}
+,{"stream_name":"stdout","time":218.797932892,"data":"Train suspicious orani: 50.09%\n"}
+,{"stream_name":"stdout","time":218.797935362,"data":"Val suspicious orani:   49.43%\n"}
+,{"stream_name":"stdout","time":218.888626438,"data":"Train: 2108, Val: 522\n"}
+,{"stream_name":"stdout","time":218.888657242,"data":"Patch boyutu: 128x128\n"}
+,{"stream_name":"stdout","time":218.888661695,"data":"Goruntu shape: torch.Size([3, 128, 128]), Suspicious: 1.0, Risk: 3\n"}
+,{"stream_name":"stdout","time":219.356176793,"data":"Downloading: \"https://download.pytorch.org/models/resnet50-11ad3fa6.pth\" to /root/.cache/torch/hub/checkpoints/resnet50-11ad3fa6.pth\n"}
+,{"stream_name":"stderr","time":219.357010505,"data":"\r  0%|          | 0.00/97.8M [00:00\u003c?, ?B/s]\n"}
+,{"stream_name":"stderr","time":219.457564673,"data":"\r  0%|          | 0.00/97.8M [00:00\u003c?, ?B/s]\r 16%|█▌        | 15.2M/97.8M [00:00\u003c00:00, 159MB/s]\n"}
+,{"stream_name":"stderr","time":219.558230301,"data":"\r 16%|█▌        | 15.2M/97.8M [00:00\u003c00:00, 159MB/s]\r 36%|███▋      | 35.5M/97.8M [00:00\u003c00:00, 190MB/s]\n"}
+,{"stream_name":"stderr","time":219.658809199,"data":"\r 36%|███▋      | 35.5M/97.8M [00:00\u003c00:00, 190MB/s]\r 57%|█████▋    | 55.9M/97.8M [00:00\u003c00:00, 200MB/s]\n"}
+,{"stream_name":"stderr","time":219.758995378,"data":"\r 57%|█████▋    | 55.9M/97.8M [00:00\u003c00:00, 200MB/s]\r 78%|███████▊  | 76.2M/97.8M [00:00\u003c00:00, 206MB/s]\n"}
+,{"stream_name":"stderr","time":219.858716361,"data":"\r 78%|███████▊  | 76.2M/97.8M [00:00\u003c00:00, 206MB/s]\r 99%|█████████▉| 97.1M/97.8M [00:00\u003c00:00, 210MB/s]\n"}
+,{"stream_name":"stderr","time":219.862441667,"data":"\r 99%|█████████▉| 97.1M/97.8M [00:00\u003c00:00, 210MB/s]\r100%|██████████| 97.8M/97.8M [00:00\u003c00:00, 203MB/s]\n"}
+,{"stream_name":"stderr","time":219.960013412,"data":"\r100%|██████████| 97.8M/97.8M [00:00\u003c00:00, 203MB/s]\n"}
+,{"stream_name":"stderr","time":219.96005179,"data":"\n"}
+,{"stream_name":"stderr","time":219.960055362,"data":"\n"}
+,{"stream_name":"stdout","time":220.121369181,"data":"Model: ResNet-50 + CBAM\n"}
+,{"stream_name":"stdout","time":220.121403759,"data":"Parametre: 24,042,663 (24.0M)\n"}
+,{"stream_name":"stdout","time":220.12140847,"data":"Device: cuda\n"}
+,{"stream_name":"stdout","time":220.121431881,"data":"Cikislar: suspicious (binary), risk_class (4-sinif)\n"}
+,{"stream_name":"stdout","time":220.152660688,"data":"Risk class weights: [0.6769976  1.2157226  0.60947794 1.497802  ]\n"}
+,{"stream_name":"stdout","time":220.152683351,"data":"Suspicious loss: Focal (alpha=0.25, gamma=2)\n"}
+,{"stream_name":"stdout","time":220.152688294,"data":"Risk loss: Weighted CrossEntropy\n"}
+,{"stream_name":"stdout","time":220.152692815,"data":"Optimizer: AdamW (lr=1e-4, wd=1e-4)\n"}
+,{"stream_name":"stdout","time":220.152696821,"data":"Scheduler: CosineAnnealingLR (T_max=40)\n"}
+,{"stream_name":"stdout","time":220.19116613,"data":"Egitim basliyor -- 40 epoch\n"}
+,{"stream_name":"stdout","time":220.19118591,"data":"Loss agirliklari: suspicious=1.0, risk=0.5\n"}
+,{"stream_name":"stdout","time":220.191190272,"data":"======================================================================\n"}
+,{"stream_name":"stdout","time":248.752149161,"data":"Epoch   1/40 | Train: 0.6374 | Val: 0.4157 | AUC: 0.8664 | Risk Acc: 0.6954 | LR: 0.000100 | 0.5m \u003c\u003c BEST\n"}
+,{"stream_name":"stdout","time":289.466845307,"data":"Epoch   5/40 | Train: 0.2174 | Val: 0.1930 | AUC: 0.9712 | Risk Acc: 0.8295 | LR: 0.000096 | 1.2m \u003c\u003c BEST\n"}
+,{"stream_name":"stdout","time":339.435444466,"data":"Epoch  10/40 | Train: 0.1614 | Val: 0.1731 | AUC: 0.9767 | Risk Acc: 0.8659 | LR: 0.000086 | 2.0m \u003c\u003c BEST\n"}
+,{"stream_name":"stdout","time":388.039997418,"data":"Epoch  15/40 | Train: 0.1293 | Val: 0.2174 | AUC: 0.9718 | Risk Acc: 0.8563 | LR: 0.000069 | 2.8m\n"}
+,{"stream_name":"stdout","time":434.904358425,"data":"Epoch  20/40 | Train: 0.1109 | Val: 0.2094 | AUC: 0.9734 | Risk Acc: 0.8448 | LR: 0.000050 | 3.6m\n"}
+,{"stream_name":"stdout","time":480.763895986,"data":"Epoch  25/40 | Train: 0.0865 | Val: 0.2351 | AUC: 0.9726 | Risk Acc: 0.8448 | LR: 0.000032 | 4.3m\n"}
+,{"stream_name":"stdout","time":529.112545017,"data":"Epoch  30/40 | Train: 0.0726 | Val: 0.2264 | AUC: 0.9735 | Risk Acc: 0.8678 | LR: 0.000015 | 5.1m\n"}
+,{"stream_name":"stdout","time":576.044581842,"data":"Epoch  35/40 | Train: 0.0625 | Val: 0.2621 | AUC: 0.9708 | Risk Acc: 0.8563 | LR: 0.000005 | 5.9m\n"}
+,{"stream_name":"stdout","time":622.05603975,"data":"Epoch  40/40 | Train: 0.0577 | Val: 0.2484 | AUC: 0.9718 | Risk Acc: 0.8563 | LR: 0.000001 | 6.7m\n"}
+,{"stream_name":"stdout","time":622.05608716,"data":"\n"}
+,{"stream_name":"stdout","time":622.056092289,"data":"Egitim tamamlandi! Sure: 6.7 dk\n"}
+,{"stream_name":"stdout","time":622.056116647,"data":"En iyi AUC: 0.9769\n"}
+,{"stream_name":"stdout","time":623.363890672,"data":"Best model yuklendi (Epoch 14, AUC=0.9769)\n"}
+,{"stream_name":"stdout","time":625.794938584,"data":"\n"}
+,{"stream_name":"stdout","time":625.794978826,"data":"Risk Sinifi Classification Report:\n"}
+,{"stream_name":"stdout","time":625.794985315,"data":"              precision    recall  f1-score   support\n"}
+,{"stream_name":"stdout","time":625.794990415,"data":"\n"}
+,{"stream_name":"stdout","time":625.794994572,"data":"       Dusuk       0.99      0.96      0.97       180\n"}
+,{"stream_name":"stdout","time":625.794998486,"data":"      Orta-D       0.60      0.88      0.71        84\n"}
+,{"stream_name":"stdout","time":625.795002927,"data":"      Orta-Y       0.91      0.71      0.80       191\n"}
+,{"stream_name":"stdout","time":625.795007179,"data":"      Yuksek       0.83      0.94      0.88        67\n"}
+,{"stream_name":"stdout","time":625.795011178,"data":"\n"}
+,{"stream_name":"stdout","time":625.795014948,"data":"    accuracy                           0.85       522\n"}
+,{"stream_name":"stdout","time":625.795019368,"data":"   macro avg       0.83      0.87      0.84       522\n"}
+,{"stream_name":"stdout","time":625.795023811,"data":"weighted avg       0.88      0.85      0.85       522\n"}
+,{"stream_name":"stdout","time":625.795027907,"data":"\n"}
+,{"stream_name":"stdout","time":625.98947903,"data":"Grad-CAM hedef katman: Conv2d\n"}
+,{"stream_name":"stdout","time":628.301178141,"data":"Risk Sinifi -\u003e Lung-RADS Esleme:\n"}
+,{"stream_name":"stdout","time":628.301204797,"data":"-----------------------------------------------------------------\n"}
+,{"stream_name":"stdout","time":628.301209604,"data":"  Risk 0 -\u003e Lung-RADS 1:  180 gercek,  174 tahmin\n"}
+,{"stream_name":"stdout","time":628.301214021,"data":"           Negatif -- Nodul yok veya kesinlikle benign\n"}
+,{"stream_name":"stdout","time":628.301218996,"data":"  Risk 1 -\u003e Lung-RADS 2:   84 gercek,  124 tahmin\n"}
+,{"stream_name":"stdout","time":628.3012235,"data":"           Benign -- Benign gorunum veya davranisin nodul\n"}
+,{"stream_name":"stdout","time":628.301227712,"data":"  Risk 2 -\u003e Lung-RADS 3:  191 gercek,  148 tahmin\n"}
+,{"stream_name":"stdout","time":628.30123116,"data":"           Muhtemelen Benign -- Muhtemelen benign, kisa sureli takip\n"}
+,{"stream_name":"stdout","time":628.301234641,"data":"  Risk 3 -\u003e Lung-RADS 4A:   67 gercek,   76 tahmin\n"}
+,{"stream_name":"stdout","time":628.301237951,"data":"           Supheli -- Ek tani veya doku orneklemesi gerekebilir\n"}
+,{"stream_name":"stdout","time":628.301241486,"data":"\n"}
+,{"stream_name":"stdout","time":628.301244719,"data":"Tahminler kaydedildi: ct_char_predictions.csv\n"}
+,{"stream_name":"stdout","time":628.301248076,"data":"Metrikler kaydedildi: ct_char_metrics.csv\n"}
+,{"stream_name":"stdout","time":628.301253217,"data":"Egitim historisi kaydedildi: ct_char_training_history.csv\n"}
+,{"stream_name":"stdout","time":628.301257029,"data":"\n"}
+,{"stream_name":"stdout","time":628.301259189,"data":"Kaydedilen dosyalar:\n"}
+,{"stream_name":"stdout","time":628.301261451,"data":"  ct_char_best_model.pth (92.0 MB)\n"}
+,{"stream_name":"stdout","time":628.301263632,"data":"  ct_char_evaluation.png (95 KB)\n"}
+,{"stream_name":"stdout","time":628.301265842,"data":"  ct_char_gradcam.png (316 KB)\n"}
+,{"stream_name":"stdout","time":628.301267999,"data":"  ct_char_label_distribution.png (77 KB)\n"}
+,{"stream_name":"stdout","time":628.301270286,"data":"  ct_char_metrics.csv (0 KB)\n"}
+,{"stream_name":"stdout","time":628.301281861,"data":"  ct_char_predictions.csv (301 KB)\n"}
+,{"stream_name":"stdout","time":628.301284317,"data":"  ct_char_training_curves.png (145 KB)\n"}
+,{"stream_name":"stdout","time":628.301286524,"data":"  ct_char_training_history.csv (4 KB)\n"}
+,{"stream_name":"stdout","time":628.343628926,"data":"\n"}
+,{"stream_name":"stdout","time":628.343654895,"data":"=================================================================\n"}
+,{"stream_name":"stdout","time":628.343659839,"data":"AlpCAN CT Pipeline -- Nodul Karakterizasyon Egitimi OZET\n"}
+,{"stream_name":"stdout","time":628.343663189,"data":"=================================================================\n"}
+,{"stream_name":"stdout","time":628.343666617,"data":"\n"}
+,{"stream_name":"stdout","time":628.343669649,"data":"--- Dataset ---\n"}
+,{"stream_name":"stdout","time":628.343672838,"data":"  LIDC-IDRI (zhangweiled/lidcidri)\n"}
+,{"stream_name":"stdout","time":628.343676176,"data":"  Train: 2108 nodul (700 hasta)\n"}
+,{"stream_name":"stdout","time":628.343679501,"data":"  Val:   522 nodul (175 hasta)\n"}
+,{"stream_name":"stdout","time":628.343683464,"data":"  Etiket: Boyut bazli risk siniflandirma (4 sinif)\n"}
+,{"stream_name":"stdout","time":628.3436872,"data":"  Suspicious: cap \u003e medyan VE n_annotators \u003e= 3\n"}
+,{"stream_name":"stdout","time":628.343691829,"data":"\n"}
+,{"stream_name":"stdout","time":628.343695868,"data":"--- Model ---\n"}
+,{"stream_name":"stdout","time":628.343699664,"data":"  Mimari: ResNet-50 + CBAM (Channel \u0026 Spatial Attention)\n"}
+,{"stream_name":"stdout","time":628.343702959,"data":"  Giris: 128x128x3 (nodul patch, context dahil)\n"}
+,{"stream_name":"stdout","time":628.343706098,"data":"  Parametre: 24,042,663 (24.0M)\n"}
+,{"stream_name":"stdout","time":628.343709883,"data":"  Loss: Focal (suspicious) + Weighted CE (risk)\n"}
+,{"stream_name":"stdout","time":628.343713466,"data":"  Optimizer: AdamW (lr=1e-4, wd=1e-4)\n"}
+,{"stream_name":"stdout","time":628.343716858,"data":"  Scheduler: CosineAnnealingLR (T_max=40)\n"}
+,{"stream_name":"stdout","time":628.343720749,"data":"  Epoch: 40\n"}
+,{"stream_name":"stdout","time":628.343724151,"data":"  AMP: Evet (torch.cuda.amp)\n"}
+,{"stream_name":"stdout","time":628.343727325,"data":"\n"}
+,{"stream_name":"stdout","time":628.343730554,"data":"--- Performans ---\n"}
+,{"stream_name":"stdout","time":628.343733812,"data":"  Suspicious AUC: 0.9769\n"}
+,{"stream_name":"stdout","time":628.34373704,"data":"  Risk Accuracy:  0.8506\n"}
+,{"stream_name":"stdout","time":628.343740911,"data":"  Best Epoch:     14\n"}
+,{"stream_name":"stdout","time":628.343744139,"data":"\n"}
+,{"stream_name":"stdout","time":628.343747461,"data":"--- Lung-RADS Esleme ---\n"}
+,{"stream_name":"stdout","time":628.343750588,"data":"  Risk 0 -\u003e Lung-RADS 1: Negatif -- Nodul yok veya kesinlikle benign\n"}
+,{"stream_name":"stdout","time":628.343754268,"data":"  Risk 1 -\u003e Lung-RADS 2: Benign -- Benign gorunum veya davranisin nodul\n"}
+,{"stream_name":"stdout","time":628.343757718,"data":"  Risk 2 -\u003e Lung-RADS 3: Muhtemelen Benign -- Muhtemelen benign, kisa sureli takip\n"}
+,{"stream_name":"stdout","time":628.343761576,"data":"  Risk 3 -\u003e Lung-RADS 4A: Supheli -- Ek tani veya doku orneklemesi gerekebilir\n"}
+,{"stream_name":"stdout","time":628.343766411,"data":"\n"}
+,{"stream_name":"stdout","time":628.343769848,"data":"--- Cikti Dosyalari ---\n"}
+,{"stream_name":"stdout","time":628.343773576,"data":"  ct_char_best_model.pth       -- En iyi model agirliklari\n"}
+,{"stream_name":"stdout","time":628.343777411,"data":"  ct_char_metrics.csv           -- Final metrikler\n"}
+,{"stream_name":"stdout","time":628.343792243,"data":"  ct_char_training_history.csv  -- Epoch bazli egitim historisi\n"}
+,{"stream_name":"stdout","time":628.343796064,"data":"  ct_char_training_curves.png   -- Egitim grafikleri\n"}
+,{"stream_name":"stdout","time":628.343799432,"data":"  ct_char_evaluation.png        -- ROC + Confusion Matrix\n"}
+,{"stream_name":"stdout","time":628.343802818,"data":"  ct_char_gradcam.png           -- Grad-CAM dikkat haritalari\n"}
+,{"stream_name":"stdout","time":628.343806186,"data":"  ct_char_predictions.csv       -- Validasyon tahminleri\n"}
+,{"stream_name":"stdout","time":628.343809582,"data":"  ct_char_label_distribution.png-- Etiket dagilim grafigi\n"}
+,{"stream_name":"stdout","time":628.343813143,"data":"\n"}
+,{"stream_name":"stdout","time":628.343817006,"data":"--- Sonraki Adimlar ---\n"}
+,{"stream_name":"stdout","time":628.343820934,"data":"  1. Model agirliklarini AlpCAN backend'e entegre et\n"}
+,{"stream_name":"stdout","time":628.343824956,"data":"  2. characterization_inference.py guncelle\n"}
+,{"stream_name":"stdout","time":628.343829301,"data":"  3. Nodul segmentasyon + karakterizasyon pipeline birlestir\n"}
+,{"stream_name":"stdout","time":628.343832826,"data":"  4. Gercek LIDC-IDRI XML annotasyonlarindan malignite etiketleri\n"}
+,{"stream_name":"stdout","time":628.343836266,"data":"  5. 3D volumetrik analiz (tam BT serisi)\n"}
+,{"stream_name":"stdout","time":628.343839825,"data":"=================================================================\n"}
+,{"stream_name":"stderr","time":633.063374276,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":633.063424569,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":633.206666116,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":633.206693881,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":633.749473413,"data":"/usr/local/lib/python3.12/dist-packages/traitlets/traitlets.py:2915: FutureWarning: --Exporter.preprocessors=[\"remove_papermill_header.RemovePapermillHeader\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":633.749504108,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":633.776029459,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":634.103477154,"data":"[NbConvertApp] Writing 1448361 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":636.393340263,"data":"/usr/local/lib/python3.12/dist-packages/traitlets/traitlets.py:2915: FutureWarning: --Exporter.preprocessors=[\"nbconvert.preprocessors.ExtractOutputPreprocessor\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":636.393372562,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":636.414000363,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":637.376079534,"data":"[NbConvertApp] Support files will be in __results___files/\n"}
+,{"stream_name":"stderr","time":637.376106909,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":637.376372759,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":637.376625801,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":637.376836437,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":637.377584009,"data":"[NbConvertApp] Writing 485975 bytes to __results__.html\n"}
+]

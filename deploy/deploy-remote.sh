@@ -3,15 +3,36 @@
 # AlpCAN — Lokal makineden sunucuya deploy
 # Usage: bash deploy/deploy-remote.sh
 # NOT: Proje kökünden çalıştırılmalı
+#
+# !! DİKKAT — KAPSAM KURALLARI !!
+# Bu script SADECE alpcan projesi ile ilgilenir.
+# Sunucuda 4 farklı proje çalışıyor:
+#   - alpiss.net          -> DOKUNMA
+#   - alpweb.alpiss.net   -> DOKUNMA
+#   - gruweb.alpiss.net   -> DOKUNMA
+#   - alpcan.alpiss.net   -> SADECE BU
+#
+# Portlar (sabit, değiştirme):
+#   Backend:  127.0.0.1:8010:8000
+#   Frontend: 127.0.0.1:3010:3000
+#   Orthanc:  127.0.0.1:8052:8042, 4242:4242
 
 set -e
 
-# Configuration
+# Configuration — SADECE alpcan değerleri, değiştirme
 SERVER_IP="${SERVER_IP:-45.141.150.46}"
 SERVER_USER="${SERVER_USER:-root}"
 DEPLOY_PATH="${DEPLOY_PATH:-/root/alpcan}"
 SSH_KEY="${SSH_KEY:-$HOME/.ssh/id_rsa}"
 COMPOSE_FILE="docker-compose.prod.yml"
+
+# Güvenlik kontrolü: deploy path sadece /root/alpcan olmalı
+if [[ "$DEPLOY_PATH" != "/root/alpcan" ]]; then
+    echo "HATA: Deploy path sadece /root/alpcan olabilir!"
+    echo "  Mevcut: $DEPLOY_PATH"
+    echo "  Diğer projelere deploy yapmayın."
+    exit 1
+fi
 
 echo "======================================"
 echo "AlpCAN Remote Deployment"

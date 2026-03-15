@@ -1,0 +1,148 @@
+[{"stream_name":"stderr","time":6.614823501,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.614887371,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.614893741,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.614897862,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":7.180619671,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.180650485,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.180655981,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.180659971,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":10.555098255,"data":"\u001b[?25l   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m0.0/154.8 kB\u001b[0m \u001b[31m?\u001b[0m eta \u001b[36m-:--:--\u001b[0m\r\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m154.8/154.8 kB\u001b[0m \u001b[31m10.6 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":27.756057299,"data":"\u001b[?25hPyTorch: 2.9.0+cu126\n"}
+,{"stream_name":"stdout","time":27.756093246,"data":"SMP: 0.5.0\n"}
+,{"stream_name":"stdout","time":27.756099569,"data":"GPU: Tesla P100-PCIE-16GB\n"}
+,{"stream_name":"stdout","time":27.756104272,"data":"CUDA: True\n"}
+,{"stream_name":"stdout","time":27.756108801,"data":"GPU Bellek: 17.1 GB\n"}
+,{"stream_name":"stdout","time":27.933290546,"data":"Dataset: /kaggle/input/datasets/zhangweiled/lidcidri/LIDC-IDRI-slices\n"}
+,{"stream_name":"stdout","time":30.027468167,"data":"Toplam hasta dizini: 875\n"}
+,{"stream_name":"stdout","time":326.419429708,"data":"\n"}
+,{"stream_name":"stdout","time":326.419493533,"data":"Toplam dilim (egitim ornegi): 15,548\n"}
+,{"stream_name":"stdout","time":326.419500838,"data":"Toplam hasta: 875\n"}
+,{"stream_name":"stdout","time":326.419505788,"data":"Toplam nodul: 2630\n"}
+,{"stream_name":"stdout","time":326.419510258,"data":"Atlanan nodul dizini: 0\n"}
+,{"stream_name":"stdout","time":326.419514745,"data":"\n"}
+,{"stream_name":"stdout","time":326.419519201,"data":"Annotator dagilimi:\n"}
+,{"stream_name":"stdout","time":326.419523646,"data":"n_annotators\n"}
+,{"stream_name":"stdout","time":326.419529913,"data":"4    15548\n"}
+,{"stream_name":"stdout","time":326.419533498,"data":"Name: count, dtype: int64\n"}
+,{"stream_name":"stdout","time":326.445212337,"data":"Train: 12,655 dilim (700 hasta)\n"}
+,{"stream_name":"stdout","time":326.445231767,"data":"Val:   2,893 dilim (175 hasta)\n"}
+,{"stream_name":"stdout","time":326.44523778,"data":"\n"}
+,{"stream_name":"stdout","time":326.44524264,"data":"Train/Val oran: 81.4% / 18.6%\n"}
+,{"stream_name":"stdout","time":326.594686054,"data":"Train dataset: 12655 ornek\n"}
+,{"stream_name":"stdout","time":326.594708364,"data":"Val dataset:   2893 ornek\n"}
+,{"stream_name":"stdout","time":326.594714736,"data":"Batch size:    16\n"}
+,{"stream_name":"stdout","time":326.59472005,"data":"Train batch:   790\n"}
+,{"stream_name":"stdout","time":326.594725001,"data":"Val batch:     181\n"}
+,{"stream_name":"stdout","time":326.629934203,"data":"\n"}
+,{"stream_name":"stdout","time":326.629972071,"data":"Goruntu shape: torch.Size([3, 256, 256]), dtype: torch.float32\n"}
+,{"stream_name":"stdout","time":326.629979982,"data":"Maske shape:   torch.Size([1, 256, 256]), dtype: torch.float32\n"}
+,{"stream_name":"stdout","time":326.629984447,"data":"Maske unique:  [0.0, 1.0]\n"}
+,{"stream_name":"stdout","time":328.825489314,"data":"Kaydedildi: /kaggle/working/ct_seg_training_samples.png\n"}
+,{"stream_name":"stderr","time":329.434347853,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":329.434378779,"data":"\n"}
+,{"stream_name":"stderr","time":329.434383588,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":334.402750539,"data":"Model:     U-Net (ResNet-34 encoder)\n"}
+,{"stream_name":"stdout","time":334.40279289,"data":"Toplam parametre:  24,436,369 (24.4M)\n"}
+,{"stream_name":"stdout","time":334.402807809,"data":"Egitilecek:        24,436,369\n"}
+,{"stream_name":"stdout","time":334.402812789,"data":"Device:            cuda\n"}
+,{"stream_name":"stdout","time":334.447836283,"data":"Loss:      DiceBCE (0.5 Dice + 0.5 BCE)\n"}
+,{"stream_name":"stdout","time":334.447857926,"data":"Optimizer: AdamW (lr=1e-4, wd=1e-4)\n"}
+,{"stream_name":"stdout","time":334.447862236,"data":"Scheduler: CosineAnnealing (T_max=50, eta_min=1e-6)\n"}
+,{"stream_name":"stdout","time":334.503775294,"data":"Egitim basliyor -- 50 epoch, AMP=ON\n"}
+,{"stream_name":"stdout","time":334.503797336,"data":"======================================================================\n"}
+,{"stream_name":"stdout","time":716.554566642,"data":"Epoch   1/50 | Train: 0.5105 | Val: 0.3583 | Dice: 0.4940 | IoU: 0.4205 | LR: 0.000100 | 382s | Total: 6.4m \u003c\u003c BEST\n"}
+,{"stream_name":"stdout","time":1162.181927423,"data":"Epoch   5/50 | Train: 0.2412 | Val: 0.2647 | Dice: 0.5055 | IoU: 0.4423 | LR: 0.000098 | 110s | Total: 13.8m\n"}
+,{"stream_name":"stdout","time":1716.428208418,"data":"Epoch  10/50 | Train: 0.2356 | Val: 0.2124 | Dice: 0.6074 | IoU: 0.5579 | LR: 0.000091 | 111s | Total: 23.0m \u003c\u003c BEST\n"}
+,{"stream_name":"stdout","time":2270.459335671,"data":"Epoch  15/50 | Train: 0.2187 | Val: 0.2172 | Dice: 0.5884 | IoU: 0.5259 | LR: 0.000080 | 110s | Total: 32.3m\n"}
+,{"stream_name":"stdout","time":2823.107435613,"data":"Epoch  20/50 | Train: 0.2250 | Val: 0.2179 | Dice: 0.5870 | IoU: 0.5370 | LR: 0.000066 | 110s | Total: 41.5m\n"}
+,{"stream_name":"stdout","time":3375.927571246,"data":"Epoch  25/50 | Train: 0.2164 | Val: 0.2156 | Dice: 0.5936 | IoU: 0.5412 | LR: 0.000050 | 110s | Total: 50.7m\n"}
+,{"stream_name":"stdout","time":3928.107892662,"data":"Epoch  30/50 | Train: 0.2144 | Val: 0.2168 | Dice: 0.5901 | IoU: 0.5345 | LR: 0.000035 | 110s | Total: 59.9m\n"}
+,{"stream_name":"stdout","time":4482.203365199,"data":"Epoch  35/50 | Train: 0.2101 | Val: 0.2097 | Dice: 0.6060 | IoU: 0.5565 | LR: 0.000021 | 110s | Total: 69.1m\n"}
+,{"stream_name":"stdout","time":5035.361268324,"data":"Epoch  40/50 | Train: 0.2036 | Val: 0.2065 | Dice: 0.6099 | IoU: 0.5563 | LR: 0.000010 | 111s | Total: 78.3m \u003c\u003c BEST\n"}
+,{"stream_name":"stdout","time":5587.930178341,"data":"Epoch  45/50 | Train: 0.1995 | Val: 0.2023 | Dice: 0.6185 | IoU: 0.5684 | LR: 0.000003 | 110s | Total: 87.6m\n"}
+,{"stream_name":"stdout","time":6139.431077223,"data":"Epoch  50/50 | Train: 0.1977 | Val: 0.2011 | Dice: 0.6211 | IoU: 0.5699 | LR: 0.000001 | 110s | Total: 96.7m\n"}
+,{"stream_name":"stdout","time":6139.431110845,"data":"\n"}
+,{"stream_name":"stdout","time":6139.431125503,"data":"======================================================================\n"}
+,{"stream_name":"stdout","time":6139.431130259,"data":"Egitim tamamlandi! Sure: 96.7 dakika\n"}
+,{"stream_name":"stdout","time":6139.431134589,"data":"En iyi Val Dice: 0.6223 (Epoch 48)\n"}
+,{"stream_name":"stdout","time":6140.311472606,"data":"Kaydedildi: /kaggle/working/ct_seg_training_curves.png\n"}
+,{"stream_name":"stdout","time":6140.853965509,"data":"En iyi model yuklendi (Epoch 48, Dice=0.6223)\n"}
+,{"stream_name":"stdout","time":6144.400719131,"data":"Kaydedildi: /kaggle/working/ct_seg_predictions.png\n"}
+,{"stream_name":"stdout","time":6146.283343935,"data":"Connected Component Analizi (ilk 100 dilim):\n"}
+,{"stream_name":"stdout","time":6146.283380861,"data":"  GT nodul sayisi:         55\n"}
+,{"stream_name":"stdout","time":6146.283387877,"data":"  Tahmin edilen nodul:     59\n"}
+,{"stream_name":"stdout","time":6146.28339279,"data":"  Tespit orani (approx):   100.0%\n"}
+,{"stream_name":"stdout","time":6146.283397414,"data":"  Tahmin nodul alan ort:   1022.8 px\n"}
+,{"stream_name":"stdout","time":6146.283402527,"data":"  GT nodul alan ort:       1149.2 px\n"}
+,{"stream_name":"stdout","time":6159.725593527,"data":"============================================================\n"}
+,{"stream_name":"stdout","time":6159.725624807,"data":"FINAL VALIDASYON SONUCLARI\n"}
+,{"stream_name":"stdout","time":6159.725632581,"data":"============================================================\n"}
+,{"stream_name":"stdout","time":6159.725637045,"data":"  Dice Score:  0.6225 +/- 0.1854\n"}
+,{"stream_name":"stdout","time":6159.725643619,"data":"  IoU:         0.5722 +/- 0.1750\n"}
+,{"stream_name":"stdout","time":6159.725648605,"data":"  Precision:   0.7733 +/- 0.1916\n"}
+,{"stream_name":"stdout","time":6159.725654041,"data":"  Recall:      0.7869 +/- 0.1679\n"}
+,{"stream_name":"stdout","time":6159.725659753,"data":"\n"}
+,{"stream_name":"stdout","time":6159.725665198,"data":"Metrikler kaydedildi: /kaggle/working/ct_seg_metrics.csv\n"}
+,{"stream_name":"stdout","time":6159.725670753,"data":"Egitim historisi:    /kaggle/working/ct_seg_training_history.csv\n"}
+,{"stream_name":"stdout","time":6159.725675683,"data":"\n"}
+,{"stream_name":"stdout","time":6159.725681083,"data":"Model dosyasi:       /kaggle/working/ct_seg_best_model.pth (279.9 MB)\n"}
+,{"stream_name":"stdout","time":6159.778192763,"data":"\n"}
+,{"stream_name":"stdout","time":6159.778219835,"data":"=================================================================\n"}
+,{"stream_name":"stdout","time":6159.778224737,"data":"AlpCAN CT Pipeline -- Nodul Segmentasyon Egitimi OZET\n"}
+,{"stream_name":"stdout","time":6159.778228221,"data":"=================================================================\n"}
+,{"stream_name":"stdout","time":6159.778233239,"data":"\n"}
+,{"stream_name":"stdout","time":6159.778240029,"data":"--- Dataset ---\n"}
+,{"stream_name":"stdout","time":6159.778245675,"data":"  LIDC-IDRI (zhangweiled/lidcidri)\n"}
+,{"stream_name":"stdout","time":6159.778251492,"data":"  Toplam dilim:  15,548\n"}
+,{"stream_name":"stdout","time":6159.778257196,"data":"  Train: 12,655 dilim (700 hasta)\n"}
+,{"stream_name":"stdout","time":6159.778263179,"data":"  Val:   2,893 dilim (175 hasta)\n"}
+,{"stream_name":"stdout","time":6159.778268522,"data":"  Maske: Konsensus (\u003e= %50 annotator uyumu)\n"}
+,{"stream_name":"stdout","time":6159.778273715,"data":"\n"}
+,{"stream_name":"stdout","time":6159.778278229,"data":"--- Model ---\n"}
+,{"stream_name":"stdout","time":6159.778283001,"data":"  Mimari:    U-Net (ResNet-34 encoder, ImageNet pre-trained)\n"}
+,{"stream_name":"stdout","time":6159.778298344,"data":"  Giris:     256x256x3\n"}
+,{"stream_name":"stdout","time":6159.778302073,"data":"  Parametre: 24,436,369 (24.4M)\n"}
+,{"stream_name":"stdout","time":6159.778305681,"data":"  Loss:      DiceBCE (0.5 + 0.5)\n"}
+,{"stream_name":"stdout","time":6159.778309603,"data":"  Optimizer: AdamW (lr=1e-4, wd=1e-4)\n"}
+,{"stream_name":"stdout","time":6159.778315335,"data":"  Scheduler: CosineAnnealing (T_max=50)\n"}
+,{"stream_name":"stdout","time":6159.778318147,"data":"  Epoch:     50\n"}
+,{"stream_name":"stdout","time":6159.778320521,"data":"  AMP:       ON\n"}
+,{"stream_name":"stdout","time":6159.778322868,"data":"\n"}
+,{"stream_name":"stdout","time":6159.77832514,"data":"--- Performans ---\n"}
+,{"stream_name":"stdout","time":6159.778327585,"data":"  Best Epoch:  48\n"}
+,{"stream_name":"stdout","time":6159.778330059,"data":"  Val Dice:    0.6225\n"}
+,{"stream_name":"stdout","time":6159.778333605,"data":"  Val IoU:     0.5722\n"}
+,{"stream_name":"stdout","time":6159.778339155,"data":"  Val Prec:    0.7733\n"}
+,{"stream_name":"stdout","time":6159.778343309,"data":"  Val Recall:  0.7869\n"}
+,{"stream_name":"stdout","time":6159.778347373,"data":"\n"}
+,{"stream_name":"stdout","time":6159.77835175,"data":"--- Cikti Dosyalari ---\n"}
+,{"stream_name":"stdout","time":6159.778356149,"data":"  ct_seg_best_model.pth (279.9 MB)\n"}
+,{"stream_name":"stdout","time":6159.778360491,"data":"  ct_seg_metrics.csv (0.2 KB)\n"}
+,{"stream_name":"stdout","time":6159.778364043,"data":"  ct_seg_predictions.png (1.6 MB)\n"}
+,{"stream_name":"stdout","time":6159.778367683,"data":"  ct_seg_training_curves.png (166.5 KB)\n"}
+,{"stream_name":"stdout","time":6159.778371204,"data":"  ct_seg_training_history.csv (6.9 KB)\n"}
+,{"stream_name":"stdout","time":6159.778374713,"data":"  ct_seg_training_samples.png (804.0 KB)\n"}
+,{"stream_name":"stdout","time":6159.778378317,"data":"\n"}
+,{"stream_name":"stdout","time":6159.778381627,"data":"--- Sonraki Adimlar ---\n"}
+,{"stream_name":"stdout","time":6159.778385065,"data":"  1. Model agirliklarini AlpCAN backend'e entegre et\n"}
+,{"stream_name":"stdout","time":6159.778388663,"data":"  2. nodule_detection_inference.py guncelle\n"}
+,{"stream_name":"stdout","time":6159.778392146,"data":"  3. Nodul karakterizasyon modeli egit (Notebook 07)\n"}
+,{"stream_name":"stdout","time":6159.778395779,"data":"  4. 3D volumetrik segmentasyon (tam BT serisi)\n"}
+,{"stream_name":"stdout","time":6159.778399318,"data":"=================================================================\n"}
+,{"stream_name":"stderr","time":6164.82160051,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":6164.821625333,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":6164.964457022,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":6164.964477838,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":6165.495057833,"data":"/usr/local/lib/python3.12/dist-packages/traitlets/traitlets.py:2915: FutureWarning: --Exporter.preprocessors=[\"remove_papermill_header.RemovePapermillHeader\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":6165.495089581,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":6165.520618591,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":6165.856514215,"data":"[NbConvertApp] Writing 2135165 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":6168.071423608,"data":"/usr/local/lib/python3.12/dist-packages/traitlets/traitlets.py:2915: FutureWarning: --Exporter.preprocessors=[\"nbconvert.preprocessors.ExtractOutputPreprocessor\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":6168.071453473,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":6168.091460159,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":6169.014440727,"data":"[NbConvertApp] Support files will be in __results___files/\n"}
+,{"stream_name":"stderr","time":6169.014467072,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":6169.014928997,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":6169.015192634,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":6169.016000409,"data":"[NbConvertApp] Writing 465888 bytes to __results__.html\n"}
+]
