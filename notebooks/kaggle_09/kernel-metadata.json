@@ -1,0 +1,16 @@
+{
+  "id": "ridvancebec/alpcan-ct-pipeline-integration",
+  "title": "AlpCAN CT Pipeline Integration",
+  "code_file": "09_ct_pipeline_integration.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "dataset_sources": [
+    "zhangweiled/lidcidri",
+    "ridvancebec/alpcan-ct-model-weights"
+  ],
+  "competition_sources": [],
+  "kernel_sources": []
+}

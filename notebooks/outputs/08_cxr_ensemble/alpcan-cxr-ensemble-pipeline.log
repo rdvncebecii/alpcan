@@ -1,0 +1,544 @@
+[{"stream_name":"stderr","time":8.967422487,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":8.967560749,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":8.967570896,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":8.967575892,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":9.863186006,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":9.863226983,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":9.863233607,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":9.863237739,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":15.092197125,"data":"NumPy: 2.0.2\n"}
+,{"stream_name":"stdout","time":15.092271364,"data":"Pandas: 2.3.3\n"}
+,{"stream_name":"stdout","time":15.092275525,"data":"Seaborn: 0.13.2\n"}
+,{"stream_name":"stdout","time":15.092278346,"data":"GPU: Gerekli degil (CPU-only notebook)\n"}
+,{"stream_name":"stdout","time":15.124994067,"data":"Konfiguerasyon tamamlandi.\n"}
+,{"stream_name":"stdout","time":15.125031981,"data":"Ortak patoloji sayisi: 14\n"}
+,{"stream_name":"stdout","time":15.125037692,"data":"Model sayisi: 3\n"}
+,{"stream_name":"stdout","time":15.125042144,"data":"  TorchXRayVision: MEVCUT -- /kaggle/input/alpcan-cxr-model-predictions/cxr_predictions_full.csv\n"}
+,{"stream_name":"stdout","time":15.125047146,"data":"  ResNet-50: MEVCUT -- /kaggle/input/alpcan-cxr-model-predictions/cxr_resnet50_predictions_full.csv\n"}
+,{"stream_name":"stdout","time":15.125051553,"data":"  Ark+: MEVCUT -- /kaggle/input/alpcan-cxr-model-predictions/cxr_ark_predictions_full.csv\n"}
+,{"stream_name":"stdout","time":16.341733442,"data":"TorchXRayVision:\n"}
+,{"stream_name":"stdout","time":16.341776723,"data":"  Dosya: cxr_predictions_full.csv\n"}
+,{"stream_name":"stdout","time":16.341781569,"data":"  Satir: 112,120\n"}
+,{"stream_name":"stdout","time":16.341785975,"data":"  Sutun: 33\n"}
+,{"stream_name":"stdout","time":16.341818857,"data":"  Tahmin sutunlari (18): ['pred_Atelectasis', 'pred_Consolidation', 'pred_Infiltration', 'pred_Pneumothorax', 'pred_Edema']...\n"}
+,{"stream_name":"stdout","time":16.341824378,"data":"  GT sutunlari (14): ['gt_Atelectasis', 'gt_Cardiomegaly', 'gt_Consolidation', 'gt_Edema', 'gt_Effusion']...\n"}
+,{"stream_name":"stdout","time":16.341828867,"data":"\n"}
+,{"stream_name":"stdout","time":17.194664967,"data":"ResNet-50:\n"}
+,{"stream_name":"stdout","time":17.194730571,"data":"  Dosya: cxr_resnet50_predictions_full.csv\n"}
+,{"stream_name":"stdout","time":17.194736625,"data":"  Satir: 112,120\n"}
+,{"stream_name":"stdout","time":17.194740417,"data":"  Sutun: 33\n"}
+,{"stream_name":"stdout","time":17.194744366,"data":"  Tahmin sutunlari (18): ['pred_Atelectasis', 'pred_Consolidation', 'pred_Infiltration', 'pred_Pneumothorax', 'pred_Edema']...\n"}
+,{"stream_name":"stdout","time":17.19474949,"data":"  GT sutunlari (14): ['gt_Atelectasis', 'gt_Cardiomegaly', 'gt_Consolidation', 'gt_Edema', 'gt_Effusion']...\n"}
+,{"stream_name":"stdout","time":17.194753418,"data":"\n"}
+,{"stream_name":"stdout","time":17.695704248,"data":"Ark+:\n"}
+,{"stream_name":"stdout","time":17.695750797,"data":"  Dosya: cxr_ark_predictions_full.csv\n"}
+,{"stream_name":"stdout","time":17.695820676,"data":"  Satir: 112,120\n"}
+,{"stream_name":"stdout","time":17.695830765,"data":"  Sutun: 29\n"}
+,{"stream_name":"stdout","time":17.695834989,"data":"  Tahmin sutunlari (14): ['pred_Atelectasis', 'pred_Cardiomegaly', 'pred_Effusion', 'pred_Infiltration', 'pred_Mass']...\n"}
+,{"stream_name":"stdout","time":17.695838955,"data":"  GT sutunlari (14): ['gt_Atelectasis', 'gt_Cardiomegaly', 'gt_Effusion', 'gt_Infiltration', 'gt_Mass']...\n"}
+,{"stream_name":"stdout","time":17.695842993,"data":"\n"}
+,{"stream_name":"stdout","time":17.813183565,"data":"\n"}
+,{"stream_name":"stdout","time":17.813226751,"data":"TorchXRayVision isleniyor...\n"}
+,{"stream_name":"stdout","time":17.81323253,"data":"  Tahmin shape: (112120, 15)\n"}
+,{"stream_name":"stdout","time":17.813244988,"data":"  GT shape: (112120, 15)\n"}
+,{"stream_name":"stdout","time":17.813248663,"data":"\n"}
+,{"stream_name":"stdout","time":17.81325261,"data":"ResNet-50 isleniyor...\n"}
+,{"stream_name":"stdout","time":17.813256818,"data":"  Tahmin shape: (112120, 15)\n"}
+,{"stream_name":"stdout","time":17.813260971,"data":"  GT shape: (112120, 15)\n"}
+,{"stream_name":"stdout","time":17.813264615,"data":"\n"}
+,{"stream_name":"stdout","time":17.813268399000002,"data":"Ark+ isleniyor...\n"}
+,{"stream_name":"stdout","time":17.813271975,"data":"  Tahmin shape: (112120, 15)\n"}
+,{"stream_name":"stdout","time":17.813275618,"data":"  GT shape: (112120, 15)\n"}
+,{"stream_name":"stdout","time":17.813279092,"data":"\n"}
+,{"stream_name":"stdout","time":17.813283136,"data":"Tum modeller islendi.\n"}
+,{"stream_name":"stdout","time":18.027503111,"data":"Model bazinda goruntu sayilari:\n"}
+,{"stream_name":"stdout","time":18.027553529,"data":"  TorchXRayVision: 112,120\n"}
+,{"stream_name":"stdout","time":18.027558759,"data":"  ResNet-50: 112,120\n"}
+,{"stream_name":"stdout","time":18.027563049,"data":"  Ark+: 112,120\n"}
+,{"stream_name":"stdout","time":18.027567219,"data":"\n"}
+,{"stream_name":"stdout","time":18.027571037,"data":"Ortak goruntu sayisi (kesisim): 112,120\n"}
+,{"stream_name":"stdout","time":18.688103689,"data":"\n"}
+,{"stream_name":"stdout","time":18.688147,"data":"Hizalama tamamlandi: 112,120 goruntu x 14 patoloji x 3 model\n"}
+,{"stream_name":"stdout","time":18.688152868,"data":"\n"}
+,{"stream_name":"stdout","time":18.688156964,"data":"Patoloji dagilimi (N=112,120):\n"}
+,{"stream_name":"stdout","time":18.688161184,"data":"           Atelectasis: 11,559 ( 10.3%)\n"}
+,{"stream_name":"stdout","time":18.688164705,"data":"          Cardiomegaly:  2,776 (  2.5%)\n"}
+,{"stream_name":"stdout","time":18.688168776,"data":"         Consolidation:  4,667 (  4.2%)\n"}
+,{"stream_name":"stdout","time":18.688172995,"data":"                 Edema:  2,303 (  2.1%)\n"}
+,{"stream_name":"stdout","time":18.688176995,"data":"              Effusion: 13,317 ( 11.9%)\n"}
+,{"stream_name":"stdout","time":18.68818146,"data":"             Emphysema:  2,516 (  2.2%)\n"}
+,{"stream_name":"stdout","time":18.688185254,"data":"              Fibrosis:  1,686 (  1.5%)\n"}
+,{"stream_name":"stdout","time":18.688188982,"data":"                Hernia:    227 (  0.2%)\n"}
+,{"stream_name":"stdout","time":18.688192872,"data":"          Infiltration: 19,894 ( 17.7%)\n"}
+,{"stream_name":"stdout","time":18.688196483,"data":"                  Mass:  5,782 (  5.2%) \u003c\u003c AlpCAN\n"}
+,{"stream_name":"stdout","time":18.688200784,"data":"                Nodule:  6,331 (  5.6%) \u003c\u003c AlpCAN\n"}
+,{"stream_name":"stdout","time":18.6882047,"data":"    Pleural_Thickening:  3,385 (  3.0%)\n"}
+,{"stream_name":"stdout","time":18.688232446,"data":"             Pneumonia:  1,431 (  1.3%)\n"}
+,{"stream_name":"stdout","time":18.688237549,"data":"          Pneumothorax:  5,302 (  4.7%)\n"}
+,{"stream_name":"stdout","time":18.885180049,"data":"================================================================================\n"}
+,{"stream_name":"stdout","time":18.885221245,"data":"Bireysel Model Performanslari (AUC-ROC)\n"}
+,{"stream_name":"stdout","time":18.88522642,"data":"N = 112,120 goruntu\n"}
+,{"stream_name":"stdout","time":18.88522992,"data":"================================================================================\n"}
+,{"stream_name":"stdout","time":18.88523331,"data":"            Patoloji |  TorchXRayVision |        ResNet-50 |             Ark+ | En Iyi Model\n"}
+,{"stream_name":"stdout","time":18.885236158,"data":"----------------------------------------------------------------------------------------------------\n"}
+,{"stream_name":"stdout","time":18.885238989,"data":"           Atelectasis |           0.7648 |           0.7944 |           0.8585 | Ark+\n"}
+,{"stream_name":"stdout","time":18.955310496,"data":"          Cardiomegaly |           0.8783 |           0.9112 |           0.9272 | Ark+\n"}
+,{"stream_name":"stdout","time":19.125695452,"data":"         Consolidation |           0.7733 |           0.8071 |           0.8347 | Ark+\n"}
+,{"stream_name":"stdout","time":19.125737281,"data":"                 Edema |           0.8488 |           0.9022 |           0.9206 | Ark+\n"}
+,{"stream_name":"stdout","time":19.211890574,"data":"              Effusion |           0.8543 |           0.8757 |           0.9019 | Ark+\n"}
+,{"stream_name":"stdout","time":19.375421924,"data":"             Emphysema |           0.7114 |           0.9092 |           0.9418 | Ark+\n"}
+,{"stream_name":"stdout","time":19.375468695,"data":"              Fibrosis |           0.7268 |           0.8174 |           0.8616 | Ark+\n"}
+,{"stream_name":"stdout","time":19.464323443,"data":"                Hernia |           0.9062 |           0.9435 |           0.8943 | ResNet-50\n"}
+,{"stream_name":"stdout","time":19.631280833,"data":"          Infiltration |           0.6814 |           0.6998 |           0.7457 | Ark+\n"}
+,{"stream_name":"stdout","time":19.631326929,"data":"                  Mass |           0.8049 |           0.8390 |           0.8963 | Ark+ \u003c\u003c\n"}
+,{"stream_name":"stdout","time":19.718414605,"data":"                Nodule |           0.6909 |           0.7799 |           0.8429 | Ark+ \u003c\u003c\n"}
+,{"stream_name":"stdout","time":19.880460542,"data":"    Pleural_Thickening |           0.7434 |           0.7947 |           0.8400 | Ark+\n"}
+,{"stream_name":"stdout","time":19.88051482,"data":"             Pneumonia |           0.7185 |           0.7369 |           0.8032 | Ark+\n"}
+,{"stream_name":"stdout","time":19.941763437,"data":"          Pneumothorax |           0.7566 |           0.8844 |           0.9359 | Ark+\n"}
+,{"stream_name":"stdout","time":19.94183092,"data":"----------------------------------------------------------------------------------------------------\n"}
+,{"stream_name":"stdout","time":19.941838926,"data":"              ORTALAMA |           0.7757 |           0.8354 |           0.8718\n"}
+,{"stream_name":"stdout","time":19.941844282,"data":"      Nodule+Mass ort. |           0.7479 |           0.8094 |           0.8696 | \u003c- AlpCAN odak\n"}
+,{"stream_name":"stdout","time":19.969333865,"data":"AUC Matrisi:\n"}
+,{"stream_name":"stdout","time":19.984141105,"data":"                    TorchXRayVision  ResNet-50    Ark+\n"}
+,{"stream_name":"stdout","time":19.984183683,"data":"Patoloji                                              \n"}
+,{"stream_name":"stdout","time":19.984212818,"data":"Atelectasis                  0.7648     0.7944  0.8585\n"}
+,{"stream_name":"stdout","time":19.984217053,"data":"Cardiomegaly                 0.8783     0.9112  0.9272\n"}
+,{"stream_name":"stdout","time":19.984220661,"data":"Consolidation                0.7733     0.8071  0.8347\n"}
+,{"stream_name":"stdout","time":19.984224763,"data":"Edema                        0.8488     0.9022  0.9206\n"}
+,{"stream_name":"stdout","time":19.984228635,"data":"Effusion                     0.8543     0.8757  0.9019\n"}
+,{"stream_name":"stdout","time":19.984232375,"data":"Emphysema                    0.7114     0.9092  0.9418\n"}
+,{"stream_name":"stdout","time":19.984236248,"data":"Fibrosis                     0.7268     0.8174  0.8616\n"}
+,{"stream_name":"stdout","time":19.984239851,"data":"Hernia                       0.9062     0.9435  0.8943\n"}
+,{"stream_name":"stdout","time":19.984243691,"data":"Infiltration                 0.6814     0.6998  0.7457\n"}
+,{"stream_name":"stdout","time":19.984247614,"data":"Mass                         0.8049     0.8390  0.8963\n"}
+,{"stream_name":"stdout","time":19.98425134,"data":"Nodule                       0.6909     0.7799  0.8429\n"}
+,{"stream_name":"stdout","time":19.984255236,"data":"Pleural_Thickening           0.7434     0.7947  0.8400\n"}
+,{"stream_name":"stdout","time":19.984258914,"data":"Pneumonia                    0.7185     0.7369  0.8032\n"}
+,{"stream_name":"stdout","time":19.98426209,"data":"Pneumothorax                 0.7566     0.8844  0.9359\n"}
+,{"stream_name":"stdout","time":19.984265891,"data":"\n"}
+,{"stream_name":"stdout","time":19.984269287,"data":"Patoloji bazinda en iyi model:\n"}
+,{"stream_name":"stdout","time":19.984273487,"data":"           Atelectasis: Ark+ (0.8585)\n"}
+,{"stream_name":"stdout","time":19.984277676,"data":"          Cardiomegaly: Ark+ (0.9272)\n"}
+,{"stream_name":"stdout","time":19.984281122,"data":"         Consolidation: Ark+ (0.8347)\n"}
+,{"stream_name":"stdout","time":19.98428505,"data":"                 Edema: Ark+ (0.9206)\n"}
+,{"stream_name":"stdout","time":19.984288889,"data":"              Effusion: Ark+ (0.9019)\n"}
+,{"stream_name":"stdout","time":19.984292334,"data":"             Emphysema: Ark+ (0.9418)\n"}
+,{"stream_name":"stdout","time":19.984295725,"data":"              Fibrosis: Ark+ (0.8616)\n"}
+,{"stream_name":"stdout","time":19.984299266,"data":"                Hernia: ResNet-50 (0.9435)\n"}
+,{"stream_name":"stdout","time":19.98430285,"data":"          Infiltration: Ark+ (0.7457)\n"}
+,{"stream_name":"stdout","time":19.984306351,"data":"                  Mass: Ark+ (0.8963)\n"}
+,{"stream_name":"stdout","time":19.984309681,"data":"                Nodule: Ark+ (0.8429)\n"}
+,{"stream_name":"stdout","time":19.984313595,"data":"    Pleural_Thickening: Ark+ (0.8400)\n"}
+,{"stream_name":"stdout","time":19.984316906,"data":"             Pneumonia: Ark+ (0.8032)\n"}
+,{"stream_name":"stdout","time":19.984320788,"data":"          Pneumothorax: Ark+ (0.9359)\n"}
+,{"stream_name":"stdout","time":19.984324517,"data":"\n"}
+,{"stream_name":"stdout","time":19.98432815,"data":"Model bazinda 'en iyi' patoloji sayisi:\n"}
+,{"stream_name":"stdout","time":19.984332411,"data":"  TorchXRayVision: 0/14 patolojide en iyi\n"}
+,{"stream_name":"stdout","time":19.984336083,"data":"  ResNet-50: 1/14 patolojide en iyi\n"}
+,{"stream_name":"stdout","time":19.984339803,"data":"  Ark+: 13/14 patolojide en iyi\n"}
+,{"stream_name":"stdout","time":21.323131353,"data":"Kaydedildi: cxr_ensemble_heatmap_individual.png\n"}
+,{"stream_name":"stdout","time":21.396546794,"data":"Yardimci fonksiyonlar tanimlandi.\n"}
+,{"stream_name":"stdout","time":21.396639791,"data":"Ornek: get_all_preds('Nodule').shape = (112120, 3)\n"}
+,{"stream_name":"stdout","time":21.519362694,"data":"Ensemble 1: Basit Ortalama\n"}
+,{"stream_name":"stdout","time":21.519412238,"data":"--------------------------------------------------\n"}
+,{"stream_name":"stdout","time":21.519418467,"data":"           Atelectasis: AUC=0.8344 (vs en iyi bireysel: -0.0241)\n"}
+,{"stream_name":"stdout","time":21.519422832,"data":"          Cardiomegaly: AUC=0.9078 (vs en iyi bireysel: -0.0194)\n"}
+,{"stream_name":"stdout","time":21.595851871,"data":"         Consolidation: AUC=0.8188 (vs en iyi bireysel: -0.0159)\n"}
+,{"stream_name":"stdout","time":21.595894298,"data":"                 Edema: AUC=0.8956 (vs en iyi bireysel: -0.0251)\n"}
+,{"stream_name":"stdout","time":21.632185936,"data":"              Effusion: AUC=0.8906 (vs en iyi bireysel: -0.0113)\n"}
+,{"stream_name":"stdout","time":21.733222789,"data":"             Emphysema: AUC=0.9094 (vs en iyi bireysel: -0.0324)\n"}
+,{"stream_name":"stdout","time":21.733271206,"data":"              Fibrosis: AUC=0.8079 (vs en iyi bireysel: -0.0537)\n"}
+,{"stream_name":"stdout","time":21.733277792,"data":"                Hernia: AUC=0.9218 (vs en iyi bireysel: -0.0218)\n"}
+,{"stream_name":"stdout","time":21.801111053,"data":"          Infiltration: AUC=0.7302 (vs en iyi bireysel: -0.0155)\n"}
+,{"stream_name":"stdout","time":21.801155012,"data":"                  Mass: AUC=0.8680 (vs en iyi bireysel: -0.0283)\n"}
+,{"stream_name":"stdout","time":21.836324705,"data":"                Nodule: AUC=0.8033 (vs en iyi bireysel: -0.0396)\n"}
+,{"stream_name":"stdout","time":21.912001268,"data":"    Pleural_Thickening: AUC=0.7943 (vs en iyi bireysel: -0.0456)\n"}
+,{"stream_name":"stdout","time":21.912053729,"data":"             Pneumonia: AUC=0.7437 (vs en iyi bireysel: -0.0595)\n"}
+,{"stream_name":"stdout","time":21.912060167,"data":"          Pneumothorax: AUC=0.9020 (vs en iyi bireysel: -0.0339)\n"}
+,{"stream_name":"stdout","time":21.912064723,"data":"\n"}
+,{"stream_name":"stdout","time":21.912068257,"data":"  Ortalama AUC: 0.8448\n"}
+,{"stream_name":"stdout","time":22.006839756,"data":"Ensemble 2: Agirlikli Ortalama\n"}
+,{"stream_name":"stdout","time":22.006885512,"data":"  Agirliklar (genel AUC'ye oranli):\n"}
+,{"stream_name":"stdout","time":22.006891509,"data":"    TorchXRayVision: 0.3124 (AUC=0.7757)\n"}
+,{"stream_name":"stdout","time":22.006895867,"data":"    ResNet-50: 0.3365 (AUC=0.8354)\n"}
+,{"stream_name":"stdout","time":22.006899996,"data":"    Ark+: 0.3511 (AUC=0.8718)\n"}
+,{"stream_name":"stdout","time":22.006904534,"data":"\n"}
+,{"stream_name":"stdout","time":22.006908172,"data":"                     |  Agirlikli |      Basit |     Fark\n"}
+,{"stream_name":"stdout","time":22.006912473,"data":"------------------------------------------------------------\n"}
+,{"stream_name":"stdout","time":22.006916384,"data":"           Atelectasis |     0.8362 |     0.8344 | +0.0018\n"}
+,{"stream_name":"stdout","time":22.043551763,"data":"          Cardiomegaly |     0.9091 |     0.9078 | +0.0013\n"}
+,{"stream_name":"stdout","time":22.150253099,"data":"         Consolidation |     0.8197 |     0.8188 | +0.0009\n"}
+,{"stream_name":"stdout","time":22.150292757,"data":"                 Edema |     0.8970 |     0.8956 | +0.0014\n"}
+,{"stream_name":"stdout","time":22.150299187,"data":"              Effusion |     0.8915 |     0.8906 | +0.0009\n"}
+,{"stream_name":"stdout","time":22.221731156,"data":"             Emphysema |     0.9111 |     0.9094 | +0.0018\n"}
+,{"stream_name":"stdout","time":22.221820076,"data":"              Fibrosis |     0.8098 |     0.8079 | +0.0019\n"}
+,{"stream_name":"stdout","time":22.259213874,"data":"                Hernia |     0.9224 |     0.9218 | +0.0007\n"}
+,{"stream_name":"stdout","time":22.368183985,"data":"          Infiltration |     0.7313 |     0.7302 | +0.0011\n"}
+,{"stream_name":"stdout","time":22.368235654,"data":"                  Mass |     0.8694 |     0.8680 | +0.0014\n"}
+,{"stream_name":"stdout","time":22.368239678,"data":"                Nodule |     0.8059 |     0.8033 | +0.0026\n"}
+,{"stream_name":"stdout","time":22.445477692,"data":"    Pleural_Thickening |     0.7960 |     0.7943 | +0.0017\n"}
+,{"stream_name":"stdout","time":22.445519477,"data":"             Pneumonia |     0.7449 |     0.7437 | +0.0012\n"}
+,{"stream_name":"stdout","time":22.463495557,"data":"          Pneumothorax |     0.9034 |     0.9020 | +0.0015\n"}
+,{"stream_name":"stdout","time":22.463545484,"data":"\n"}
+,{"stream_name":"stdout","time":22.463551281,"data":"  Ortalama AUC: 0.8463\n"}
+,{"stream_name":"stdout","time":22.590612082,"data":"Ensemble 3: Maksimum\n"}
+,{"stream_name":"stdout","time":22.590671665,"data":"--------------------------------------------------\n"}
+,{"stream_name":"stdout","time":22.590677379,"data":"           Atelectasis: AUC=0.7915 (vs en iyi bireysel: -0.0670)\n"}
+,{"stream_name":"stdout","time":22.590681277,"data":"          Cardiomegaly: AUC=0.8855 (vs en iyi bireysel: -0.0417)\n"}
+,{"stream_name":"stdout","time":22.664089379,"data":"         Consolidation: AUC=0.7747 (vs en iyi bireysel: -0.0600)\n"}
+,{"stream_name":"stdout","time":22.664139522,"data":"                 Edema: AUC=0.8588 (vs en iyi bireysel: -0.0619)\n"}
+,{"stream_name":"stdout","time":22.699026336,"data":"              Effusion: AUC=0.8708 (vs en iyi bireysel: -0.0311)\n"}
+,{"stream_name":"stdout","time":22.819168301,"data":"             Emphysema: AUC=0.7948 (vs en iyi bireysel: -0.1470)\n"}
+,{"stream_name":"stdout","time":22.819217783,"data":"              Fibrosis: AUC=0.7294 (vs en iyi bireysel: -0.1322)\n"}
+,{"stream_name":"stdout","time":22.819222758,"data":"                Hernia: AUC=0.9150 (vs en iyi bireysel: -0.0285)\n"}
+,{"stream_name":"stdout","time":22.896405858,"data":"          Infiltration: AUC=0.6861 (vs en iyi bireysel: -0.0596)\n"}
+,{"stream_name":"stdout","time":22.896454038,"data":"                  Mass: AUC=0.8167 (vs en iyi bireysel: -0.0796)\n"}
+,{"stream_name":"stdout","time":22.936959746,"data":"                Nodule: AUC=0.7140 (vs en iyi bireysel: -0.1289)\n"}
+,{"stream_name":"stdout","time":23.055309914,"data":"    Pleural_Thickening: AUC=0.7470 (vs en iyi bireysel: -0.0930)\n"}
+,{"stream_name":"stdout","time":23.055357944,"data":"             Pneumonia: AUC=0.7225 (vs en iyi bireysel: -0.0807)\n"}
+,{"stream_name":"stdout","time":23.06003038,"data":"          Pneumothorax: AUC=0.8469 (vs en iyi bireysel: -0.0890)\n"}
+,{"stream_name":"stdout","time":23.060186877,"data":"\n"}
+,{"stream_name":"stdout","time":23.060213003,"data":"  Ortalama AUC: 0.7967\n"}
+,{"stream_name":"stdout","time":23.135070967,"data":"Ensemble 4: Rank (Percentile) Ortalamasi\n"}
+,{"stream_name":"stdout","time":23.135114794,"data":"--------------------------------------------------\n"}
+,{"stream_name":"stdout","time":23.260991578,"data":"           Atelectasis: AUC=0.8289 (vs en iyi bireysel: -0.0296)\n"}
+,{"stream_name":"stdout","time":23.405064497,"data":"          Cardiomegaly: AUC=0.9275 (vs en iyi bireysel: +0.0003)\n"}
+,{"stream_name":"stdout","time":23.405106445,"data":"         Consolidation: AUC=0.8237 (vs en iyi bireysel: -0.0110)\n"}
+,{"stream_name":"stdout","time":23.503943962,"data":"                 Edema: AUC=0.9093 (vs en iyi bireysel: -0.0113)\n"}
+,{"stream_name":"stdout","time":23.697935403,"data":"              Effusion: AUC=0.8916 (vs en iyi bireysel: -0.0103)\n"}
+,{"stream_name":"stdout","time":23.697980548,"data":"             Emphysema: AUC=0.9050 (vs en iyi bireysel: -0.0368)\n"}
+,{"stream_name":"stdout","time":23.795976777,"data":"              Fibrosis: AUC=0.8405 (vs en iyi bireysel: -0.0211)\n"}
+,{"stream_name":"stdout","time":23.990731557,"data":"                Hernia: AUC=0.9404 (vs en iyi bireysel: -0.0032)\n"}
+,{"stream_name":"stdout","time":23.990773524,"data":"          Infiltration: AUC=0.7297 (vs en iyi bireysel: -0.0160)\n"}
+,{"stream_name":"stdout","time":24.086086166,"data":"                  Mass: AUC=0.8708 (vs en iyi bireysel: -0.0255)\n"}
+,{"stream_name":"stdout","time":24.278138955,"data":"                Nodule: AUC=0.8066 (vs en iyi bireysel: -0.0363)\n"}
+,{"stream_name":"stdout","time":24.278185839,"data":"    Pleural_Thickening: AUC=0.8213 (vs en iyi bireysel: -0.0187)\n"}
+,{"stream_name":"stdout","time":24.376326628,"data":"             Pneumonia: AUC=0.7814 (vs en iyi bireysel: -0.0218)\n"}
+,{"stream_name":"stdout","time":24.472248414,"data":"          Pneumothorax: AUC=0.9019 (vs en iyi bireysel: -0.0340)\n"}
+,{"stream_name":"stdout","time":24.472290478,"data":"\n"}
+,{"stream_name":"stdout","time":24.472296452,"data":"  Ortalama AUC: 0.8556\n"}
+,{"stream_name":"stdout","time":24.575300298,"data":"Ensemble 5: Optimal Agirlikli (Oracle Grid Search)\n"}
+,{"stream_name":"stdout","time":24.575353827,"data":"UYARI: Bu bir oracle analizidir! Gercek performans icin cross-validation gereklidir.\n"}
+,{"stream_name":"stdout","time":24.575360634,"data":"----------------------------------------------------------------------\n"}
+,{"stream_name":"stdout","time":32.591563121,"data":"           Atelectasis: AUC=0.8589 (vs en iyi bireysel: +0.0004) w=[0.00, 0.10, 0.90]\n"}
+,{"stream_name":"stdout","time":40.34669093,"data":"          Cardiomegaly: AUC=0.9323 (vs en iyi bireysel: +0.0051) w=[0.00, 0.40, 0.60]\n"}
+,{"stream_name":"stdout","time":48.518580598,"data":"         Consolidation: AUC=0.8372 (vs en iyi bireysel: +0.0025) w=[0.00, 0.25, 0.75]\n"}
+,{"stream_name":"stdout","time":56.352045393,"data":"                 Edema: AUC=0.9231 (vs en iyi bireysel: +0.0025) w=[0.00, 0.20, 0.80]\n"}
+,{"stream_name":"stdout","time":64.219405586,"data":"              Effusion: AUC=0.9028 (vs en iyi bireysel: +0.0009) w=[0.00, 0.20, 0.80]\n"}
+,{"stream_name":"stdout","time":71.915205675,"data":"             Emphysema: AUC=0.9440 (vs en iyi bireysel: +0.0022) w=[0.00, 0.15, 0.85]\n"}
+,{"stream_name":"stdout","time":79.612366273,"data":"              Fibrosis: AUC=0.8663 (vs en iyi bireysel: +0.0047) w=[0.00, 0.25, 0.75]\n"}
+,{"stream_name":"stdout","time":87.675812626,"data":"                Hernia: AUC=0.9520 (vs en iyi bireysel: +0.0085) w=[0.00, 0.80, 0.20]\n"}
+,{"stream_name":"stdout","time":95.587332014,"data":"          Infiltration: AUC=0.7465 (vs en iyi bireysel: +0.0007) w=[0.00, 0.10, 0.90]\n"}
+,{"stream_name":"stdout","time":103.406042538,"data":"                  Mass: AUC=0.8974 (vs en iyi bireysel: +0.0011) w=[0.00, 0.10, 0.90]\n"}
+,{"stream_name":"stdout","time":111.343313326,"data":"                Nodule: AUC=0.8445 (vs en iyi bireysel: +0.0016) w=[0.00, 0.15, 0.85]\n"}
+,{"stream_name":"stdout","time":119.523472497,"data":"    Pleural_Thickening: AUC=0.8440 (vs en iyi bireysel: +0.0040) w=[0.00, 0.15, 0.85]\n"}
+,{"stream_name":"stdout","time":127.61046225,"data":"             Pneumonia: AUC=0.8055 (vs en iyi bireysel: +0.0023) w=[0.00, 0.05, 0.95]\n"}
+,{"stream_name":"stdout","time":135.621700162,"data":"          Pneumothorax: AUC=0.9366 (vs en iyi bireysel: +0.0007) w=[0.00, 0.05, 0.95]\n"}
+,{"stream_name":"stdout","time":135.62176459,"data":"\n"}
+,{"stream_name":"stdout","time":135.621771364,"data":"  Ortalama AUC: 0.8779\n"}
+,{"stream_name":"stdout","time":135.621776036,"data":"\n"}
+,{"stream_name":"stdout","time":135.621779722,"data":"Optimal Agirlik Ozeti:\n"}
+,{"stream_name":"stdout","time":135.621783087,"data":"           Atelectasis: {'TorchXRayVision': np.float64(0.0), 'ResNet-50': np.float64(0.1), 'Ark+': np.float64(0.9)} -\u003e Dominant: Ark+\n"}
+,{"stream_name":"stdout","time":135.621787516,"data":"          Cardiomegaly: {'TorchXRayVision': np.float64(0.0), 'ResNet-50': np.float64(0.4), 'Ark+': np.float64(0.6)} -\u003e Dominant: Ark+\n"}
+,{"stream_name":"stdout","time":135.621823199,"data":"         Consolidation: {'TorchXRayVision': np.float64(0.0), 'ResNet-50': np.float64(0.25), 'Ark+': np.float64(0.75)} -\u003e Dominant: Ark+\n"}
+,{"stream_name":"stdout","time":135.621829829,"data":"                 Edema: {'TorchXRayVision': np.float64(0.0), 'ResNet-50': np.float64(0.2), 'Ark+': np.float64(0.8)} -\u003e Dominant: Ark+\n"}
+,{"stream_name":"stdout","time":135.621835777,"data":"              Effusion: {'TorchXRayVision': np.float64(0.0), 'ResNet-50': np.float64(0.2), 'Ark+': np.float64(0.8)} -\u003e Dominant: Ark+\n"}
+,{"stream_name":"stdout","time":135.621841508,"data":"             Emphysema: {'TorchXRayVision': np.float64(0.0), 'ResNet-50': np.float64(0.15), 'Ark+': np.float64(0.85)} -\u003e Dominant: Ark+\n"}
+,{"stream_name":"stdout","time":135.621847297,"data":"              Fibrosis: {'TorchXRayVision': np.float64(0.0), 'ResNet-50': np.float64(0.25), 'Ark+': np.float64(0.75)} -\u003e Dominant: Ark+\n"}
+,{"stream_name":"stdout","time":135.62185303,"data":"                Hernia: {'TorchXRayVision': np.float64(0.0), 'ResNet-50': np.float64(0.8), 'Ark+': np.float64(0.2)} -\u003e Dominant: ResNet-50\n"}
+,{"stream_name":"stdout","time":135.621858767,"data":"          Infiltration: {'TorchXRayVision': np.float64(0.0), 'ResNet-50': np.float64(0.1), 'Ark+': np.float64(0.9)} -\u003e Dominant: Ark+\n"}
+,{"stream_name":"stdout","time":135.621864958,"data":"                  Mass: {'TorchXRayVision': np.float64(0.0), 'ResNet-50': np.float64(0.1), 'Ark+': np.float64(0.9)} -\u003e Dominant: Ark+\n"}
+,{"stream_name":"stdout","time":135.621870528,"data":"                Nodule: {'TorchXRayVision': np.float64(0.0), 'ResNet-50': np.float64(0.15), 'Ark+': np.float64(0.85)} -\u003e Dominant: Ark+\n"}
+,{"stream_name":"stdout","time":135.621876531,"data":"    Pleural_Thickening: {'TorchXRayVision': np.float64(0.0), 'ResNet-50': np.float64(0.15), 'Ark+': np.float64(0.85)} -\u003e Dominant: Ark+\n"}
+,{"stream_name":"stdout","time":135.621880993,"data":"             Pneumonia: {'TorchXRayVision': np.float64(0.0), 'ResNet-50': np.float64(0.05), 'Ark+': np.float64(0.95)} -\u003e Dominant: Ark+\n"}
+,{"stream_name":"stdout","time":135.621884944,"data":"          Pneumothorax: {'TorchXRayVision': np.float64(0.0), 'ResNet-50': np.float64(0.05), 'Ark+': np.float64(0.95)} -\u003e Dominant: Ark+\n"}
+,{"stream_name":"stdout","time":135.701331313,"data":"========================================================================================================================\n"}
+,{"stream_name":"stdout","time":135.701376349,"data":"Tam AUC-ROC Karsilastirma Matrisi\n"}
+,{"stream_name":"stdout","time":135.701383206,"data":"========================================================================================================================\n"}
+,{"stream_name":"stdout","time":135.701388957,"data":"                    TorchXRayVision  ResNet-50    Ark+  Simple Average  Weighted Average  Maximum  Rank Average  Optimal Weighted\n"}
+,{"stream_name":"stdout","time":135.701411279,"data":"Patoloji                                                                                                                         \n"}
+,{"stream_name":"stdout","time":135.701414367,"data":"Atelectasis                  0.7648     0.7944  0.8585          0.8344            0.8362   0.7915        0.8289            0.8589\n"}
+,{"stream_name":"stdout","time":135.701417221,"data":"Cardiomegaly                 0.8783     0.9112  0.9272          0.9078            0.9091   0.8855        0.9275            0.9323\n"}
+,{"stream_name":"stdout","time":135.701420186,"data":"Consolidation                0.7733     0.8071  0.8347          0.8188            0.8197   0.7747        0.8237            0.8372\n"}
+,{"stream_name":"stdout","time":135.701422814,"data":"Edema                        0.8488     0.9022  0.9206          0.8956            0.8970   0.8588        0.9093            0.9231\n"}
+,{"stream_name":"stdout","time":135.701425522,"data":"Effusion                     0.8543     0.8757  0.9019          0.8906            0.8915   0.8708        0.8916            0.9028\n"}
+,{"stream_name":"stdout","time":135.701428289,"data":"Emphysema                    0.7114     0.9092  0.9418          0.9094            0.9111   0.7948        0.9050            0.9440\n"}
+,{"stream_name":"stdout","time":135.701430973,"data":"Fibrosis                     0.7268     0.8174  0.8616          0.8079            0.8098   0.7294        0.8405            0.8663\n"}
+,{"stream_name":"stdout","time":135.701433619,"data":"Hernia                       0.9062     0.9435  0.8943          0.9218            0.9224   0.9150        0.9404            0.9520\n"}
+,{"stream_name":"stdout","time":135.701436311,"data":"Infiltration                 0.6814     0.6998  0.7457          0.7302            0.7313   0.6861        0.7297            0.7465\n"}
+,{"stream_name":"stdout","time":135.701438906,"data":"Mass                         0.8049     0.8390  0.8963          0.8680            0.8694   0.8167        0.8708            0.8974\n"}
+,{"stream_name":"stdout","time":135.701444594,"data":"Nodule                       0.6909     0.7799  0.8429          0.8033            0.8059   0.7140        0.8066            0.8445\n"}
+,{"stream_name":"stdout","time":135.701450549,"data":"Pleural_Thickening           0.7434     0.7947  0.8400          0.7943            0.7960   0.7470        0.8213            0.8440\n"}
+,{"stream_name":"stdout","time":135.701454825,"data":"Pneumonia                    0.7185     0.7369  0.8032          0.7437            0.7449   0.7225        0.7814            0.8055\n"}
+,{"stream_name":"stdout","time":135.701459261,"data":"Pneumothorax                 0.7566     0.8844  0.9359          0.9020            0.9034   0.8469        0.9019            0.9366\n"}
+,{"stream_name":"stdout","time":135.701463899,"data":"ORTALAMA                     0.7757     0.8354  0.8718          0.8448            0.8463   0.7967        0.8556            0.8779\n"}
+,{"stream_name":"stdout","time":135.701468374,"data":"\n"}
+,{"stream_name":"stdout","time":135.701472381,"data":"Kaydedildi: cxr_ensemble_auc_comparison.csv\n"}
+,{"stream_name":"stdout","time":136.44555499,"data":"Kaydedildi: cxr_ensemble_mean_auc_comparison.png\n"}
+,{"stream_name":"stdout","time":136.486956105,"data":"================================================================================\n"}
+,{"stream_name":"stdout","time":136.48699538,"data":"Ensemble Iyilestirme Analizi (vs En Iyi Bireysel Model)\n"}
+,{"stream_name":"stdout","time":136.487000465,"data":"================================================================================\n"}
+,{"stream_name":"stdout","time":136.487004511,"data":"\n"}
+,{"stream_name":"stdout","time":136.487006981,"data":"Simple Average:\n"}
+,{"stream_name":"stdout","time":136.48703001,"data":"  Ortalama iyilestirme: -0.0304\n"}
+,{"stream_name":"stdout","time":136.487032842,"data":"  Daha iyi: 0/14 patoloji\n"}
+,{"stream_name":"stdout","time":136.48703537,"data":"  Daha kotu: 14/14 patoloji\n"}
+,{"stream_name":"stdout","time":136.487037902,"data":"  Esit: 0/14 patoloji\n"}
+,{"stream_name":"stdout","time":136.487040265,"data":"\n"}
+,{"stream_name":"stdout","time":136.487042628,"data":"Weighted Average:\n"}
+,{"stream_name":"stdout","time":136.487045111,"data":"  Ortalama iyilestirme: -0.0290\n"}
+,{"stream_name":"stdout","time":136.487047508,"data":"  Daha iyi: 0/14 patoloji\n"}
+,{"stream_name":"stdout","time":136.487050221,"data":"  Daha kotu: 14/14 patoloji\n"}
+,{"stream_name":"stdout","time":136.487052651,"data":"  Esit: 0/14 patoloji\n"}
+,{"stream_name":"stdout","time":136.487055173,"data":"\n"}
+,{"stream_name":"stdout","time":136.487058173,"data":"Maximum:\n"}
+,{"stream_name":"stdout","time":136.487060549,"data":"  Ortalama iyilestirme: -0.0786\n"}
+,{"stream_name":"stdout","time":136.487062901,"data":"  Daha iyi: 0/14 patoloji\n"}
+,{"stream_name":"stdout","time":136.48706529,"data":"  Daha kotu: 14/14 patoloji\n"}
+,{"stream_name":"stdout","time":136.487067654,"data":"  Esit: 0/14 patoloji\n"}
+,{"stream_name":"stdout","time":136.487070303,"data":"\n"}
+,{"stream_name":"stdout","time":136.487072649,"data":"Rank Average:\n"}
+,{"stream_name":"stdout","time":136.48707516,"data":"  Ortalama iyilestirme: -0.0197\n"}
+,{"stream_name":"stdout","time":136.487077596,"data":"  Daha iyi: 0/14 patoloji\n"}
+,{"stream_name":"stdout","time":136.487080146,"data":"  Daha kotu: 13/14 patoloji\n"}
+,{"stream_name":"stdout","time":136.487086784,"data":"  Esit: 1/14 patoloji\n"}
+,{"stream_name":"stdout","time":136.487089506,"data":"\n"}
+,{"stream_name":"stdout","time":136.487091779,"data":"Optimal Weighted:\n"}
+,{"stream_name":"stdout","time":136.487096269,"data":"  Ortalama iyilestirme: +0.0027\n"}
+,{"stream_name":"stdout","time":136.487099834,"data":"  Daha iyi: 10/14 patoloji\n"}
+,{"stream_name":"stdout","time":136.487102466,"data":"  Daha kotu: 0/14 patoloji\n"}
+,{"stream_name":"stdout","time":136.487105034,"data":"  Esit: 4/14 patoloji\n"}
+,{"stream_name":"stdout","time":136.560600665,"data":"================================================================================\n"}
+,{"stream_name":"stdout","time":136.560643911,"data":"Patoloji Bazinda En Iyi Yontem\n"}
+,{"stream_name":"stdout","time":136.560650057,"data":"================================================================================\n"}
+,{"stream_name":"stdout","time":136.560654577,"data":"           Atelectasis:     Optimal Weighted (AUC=0.8589) [ENSEMBLE]\n"}
+,{"stream_name":"stdout","time":136.560658861,"data":"          Cardiomegaly:     Optimal Weighted (AUC=0.9323) [ENSEMBLE]\n"}
+,{"stream_name":"stdout","time":136.560663709,"data":"         Consolidation:     Optimal Weighted (AUC=0.8372) [ENSEMBLE]\n"}
+,{"stream_name":"stdout","time":136.560668028,"data":"                 Edema:     Optimal Weighted (AUC=0.9231) [ENSEMBLE]\n"}
+,{"stream_name":"stdout","time":136.560671825,"data":"              Effusion:     Optimal Weighted (AUC=0.9028) [ENSEMBLE]\n"}
+,{"stream_name":"stdout","time":136.560675662,"data":"             Emphysema:     Optimal Weighted (AUC=0.9440) [ENSEMBLE]\n"}
+,{"stream_name":"stdout","time":136.560678763,"data":"              Fibrosis:     Optimal Weighted (AUC=0.8663) [ENSEMBLE]\n"}
+,{"stream_name":"stdout","time":136.560681305,"data":"                Hernia:     Optimal Weighted (AUC=0.9520) [ENSEMBLE]\n"}
+,{"stream_name":"stdout","time":136.560703542,"data":"          Infiltration:     Optimal Weighted (AUC=0.7465) [ENSEMBLE]\n"}
+,{"stream_name":"stdout","time":136.560706527,"data":"                  Mass:     Optimal Weighted (AUC=0.8974) [ENSEMBLE] \u003c\u003c AlpCAN\n"}
+,{"stream_name":"stdout","time":136.560709989,"data":"                Nodule:     Optimal Weighted (AUC=0.8445) [ENSEMBLE] \u003c\u003c AlpCAN\n"}
+,{"stream_name":"stdout","time":136.560712677,"data":"    Pleural_Thickening:     Optimal Weighted (AUC=0.8440) [ENSEMBLE]\n"}
+,{"stream_name":"stdout","time":136.560715647,"data":"             Pneumonia:     Optimal Weighted (AUC=0.8055) [ENSEMBLE]\n"}
+,{"stream_name":"stdout","time":136.560719284,"data":"          Pneumothorax:     Optimal Weighted (AUC=0.9366) [ENSEMBLE]\n"}
+,{"stream_name":"stdout","time":136.560723162,"data":"\n"}
+,{"stream_name":"stdout","time":136.5607268,"data":"Ozet: Ensemble 14/14, Bireysel 0/14 patolojide en iyi\n"}
+,{"stream_name":"stdout","time":136.604717574,"data":"================================================================================\n"}
+,{"stream_name":"stdout","time":136.604766549,"data":"AlpCAN Kritik Patolojiler: Nodule ve Mass Detayli Analiz\n"}
+,{"stream_name":"stdout","time":136.604780403,"data":"================================================================================\n"}
+,{"stream_name":"stdout","time":136.604784748,"data":"\n"}
+,{"stream_name":"stdout","time":136.604788233,"data":"--- Nodule ---\n"}
+,{"stream_name":"stdout","time":136.604812717,"data":"  Pozitif: 6,331 / 112,120 (5.65%)\n"}
+,{"stream_name":"stdout","time":136.604816516,"data":"\n"}
+,{"stream_name":"stdout","time":136.604819904,"data":"                     Yontem |      AUC | Fark (vs Ark+)\n"}
+,{"stream_name":"stdout","time":136.604823731,"data":"  -------------------------------------------------------\n"}
+,{"stream_name":"stdout","time":136.604827654,"data":"            TorchXRayVision |   0.6909 |       -0.1520\n"}
+,{"stream_name":"stdout","time":136.604831873,"data":"                  ResNet-50 |   0.7799 |       -0.0630\n"}
+,{"stream_name":"stdout","time":136.60483626,"data":"                       Ark+ |   0.8429 |       +0.0000\n"}
+,{"stream_name":"stdout","time":136.60484041,"data":"             Simple Average |   0.8033 |       -0.0396\n"}
+,{"stream_name":"stdout","time":136.604844884,"data":"           Weighted Average |   0.8059 |       -0.0370\n"}
+,{"stream_name":"stdout","time":136.604849214,"data":"                    Maximum |   0.7140 |       -0.1289\n"}
+,{"stream_name":"stdout","time":136.604858461,"data":"               Rank Average |   0.8066 |       -0.0363\n"}
+,{"stream_name":"stdout","time":136.604861865,"data":"           Optimal Weighted |   0.8445 |       +0.0016 \u003c-- EN IYI\n"}
+,{"stream_name":"stdout","time":136.604865439,"data":"\n"}
+,{"stream_name":"stdout","time":136.60486792,"data":"  Optimal agirliklar: {'TorchXRayVision': np.float64(0.0), 'ResNet-50': np.float64(0.15), 'Ark+': np.float64(0.85)}\n"}
+,{"stream_name":"stdout","time":136.604871099,"data":"\n"}
+,{"stream_name":"stdout","time":136.604873585,"data":"--- Mass ---\n"}
+,{"stream_name":"stdout","time":136.604876049,"data":"  Pozitif: 5,782 / 112,120 (5.16%)\n"}
+,{"stream_name":"stdout","time":136.604878644,"data":"\n"}
+,{"stream_name":"stdout","time":136.604880904,"data":"                     Yontem |      AUC | Fark (vs Ark+)\n"}
+,{"stream_name":"stdout","time":136.604883364,"data":"  -------------------------------------------------------\n"}
+,{"stream_name":"stdout","time":136.604885802,"data":"            TorchXRayVision |   0.8049 |       -0.0914\n"}
+,{"stream_name":"stdout","time":136.604888228,"data":"                  ResNet-50 |   0.8390 |       -0.0573\n"}
+,{"stream_name":"stdout","time":136.604909621,"data":"                       Ark+ |   0.8963 |       +0.0000\n"}
+,{"stream_name":"stdout","time":136.604912476,"data":"             Simple Average |   0.8680 |       -0.0283\n"}
+,{"stream_name":"stdout","time":136.604915167,"data":"           Weighted Average |   0.8694 |       -0.0269\n"}
+,{"stream_name":"stdout","time":136.604917737,"data":"                    Maximum |   0.8167 |       -0.0796\n"}
+,{"stream_name":"stdout","time":136.604920232,"data":"               Rank Average |   0.8708 |       -0.0255\n"}
+,{"stream_name":"stdout","time":136.604923131,"data":"           Optimal Weighted |   0.8974 |       +0.0011 \u003c-- EN IYI\n"}
+,{"stream_name":"stdout","time":136.604925655,"data":"\n"}
+,{"stream_name":"stdout","time":136.604927976,"data":"  Optimal agirliklar: {'TorchXRayVision': np.float64(0.0), 'ResNet-50': np.float64(0.1), 'Ark+': np.float64(0.9)}\n"}
+,{"stream_name":"stdout","time":136.705662639,"data":"Model Tahminleri Arasi Korelasyon Analizi\n"}
+,{"stream_name":"stdout","time":136.705707503,"data":"(Modeller ne kadar tamamlayici?)\n"}
+,{"stream_name":"stdout","time":136.705723461,"data":"============================================================\n"}
+,{"stream_name":"stdout","time":140.436018869,"data":"Kaydedildi: cxr_ensemble_correlation.png\n"}
+,{"stream_name":"stdout","time":140.436070436,"data":"\n"}
+,{"stream_name":"stdout","time":140.4360783,"data":"Genel Korelasyon Ozeti (tum patolojiler ortalamasi):\n"}
+,{"stream_name":"stdout","time":140.436085051,"data":"  TorchXRayVision vs ResNet-50: 0.4571\n"}
+,{"stream_name":"stdout","time":140.436090389,"data":"  TorchXRayVision vs Ark+: 0.4308\n"}
+,{"stream_name":"stdout","time":140.436096196,"data":"  ResNet-50 vs Ark+: 0.6687\n"}
+,{"stream_name":"stdout","time":140.436101605,"data":"\n"}
+,{"stream_name":"stdout","time":140.436106488,"data":"  Not: Dusuk korelasyon ensemble icin daha faydalıdir.\n"}
+,{"stream_name":"stdout","time":140.568212804,"data":"================================================================================\n"}
+,{"stream_name":"stdout","time":140.568267994,"data":"Tahmin Uyumu Analizi (threshold = 0.5)\n"}
+,{"stream_name":"stdout","time":140.568275509,"data":"================================================================================\n"}
+,{"stream_name":"stdout","time":140.56828083,"data":"           Atelectasis: Tam uyum  60.5% | 3/3:   686 | 2/3: 3,594 | 1/3:40,660 | 0/3:67,180\n"}
+,{"stream_name":"stdout","time":140.568286542,"data":"          Cardiomegaly: Tam uyum  87.6% | 3/3:   308 | 2/3:   680 | 1/3:13,248 | 0/3:97,884\n"}
+,{"stream_name":"stdout","time":140.568292134,"data":"         Consolidation: Tam uyum  62.5% | 3/3:     8 | 2/3:   280 | 1/3:41,731 | 0/3:70,101\n"}
+,{"stream_name":"stdout","time":140.568297413,"data":"                 Edema: Tam uyum  82.1% | 3/3:    31 | 2/3:   158 | 1/3:19,917 | 0/3:92,014\n"}
+,{"stream_name":"stdout","time":140.56830314,"data":"              Effusion: Tam uyum  76.2% | 3/3: 4,634 | 2/3: 5,351 | 1/3:21,379 | 0/3:80,756\n"}
+,{"stream_name":"stdout","time":140.568308264,"data":"             Emphysema: Tam uyum  47.4% | 3/3:   416 | 2/3:   845 | 1/3:58,097 | 0/3:52,762\n"}
+,{"stream_name":"stdout","time":140.568313279,"data":"              Fibrosis: Tam uyum  44.5% | 3/3:    10 | 2/3:   176 | 1/3:62,055 | 0/3:49,879\n"}
+,{"stream_name":"stdout","time":140.613298876,"data":"                Hernia: Tam uyum  97.0% | 3/3:     1 | 2/3:    44 | 1/3: 3,366 | 0/3:108,709\n"}
+,{"stream_name":"stdout","time":140.61334534,"data":"          Infiltration: Tam uyum  33.3% | 3/3: 1,925 | 2/3: 5,818 | 1/3:68,974 | 0/3:35,403\n"}
+,{"stream_name":"stdout","time":140.61338979800001,"data":"                  Mass: Tam uyum  48.4% | 3/3: 1,101 | 2/3: 2,191 | 1/3:55,608 | 0/3:53,220 \u003c\u003c AlpCAN\n"}
+,{"stream_name":"stdout","time":140.613394607,"data":"                Nodule: Tam uyum  43.5% | 3/3:   511 | 2/3: 1,702 | 1/3:61,678 | 0/3:48,229 \u003c\u003c AlpCAN\n"}
+,{"stream_name":"stdout","time":140.613398608,"data":"    Pleural_Thickening: Tam uyum  64.8% | 3/3:    24 | 2/3:   483 | 1/3:38,946 | 0/3:72,667\n"}
+,{"stream_name":"stdout","time":140.613402506,"data":"             Pneumonia: Tam uyum  66.5% | 3/3:     0 | 2/3: 2,748 | 1/3:34,762 | 0/3:74,610\n"}
+,{"stream_name":"stdout","time":140.613406527,"data":"          Pneumothorax: Tam uyum  60.2% | 3/3: 1,262 | 2/3: 3,289 | 1/3:41,319 | 0/3:66,250\n"}
+,{"stream_name":"stdout","time":140.61340948,"data":"\n"}
+,{"stream_name":"stdout","time":140.61341184,"data":"Ortalama tam uyum orani: 62.5%\n"}
+,{"stream_name":"stdout","time":140.726246683,"data":"================================================================================\n"}
+,{"stream_name":"stdout","time":140.726303327,"data":"Yuksek Guven Analizi (tum modeller \u003e 0.7)\n"}
+,{"stream_name":"stdout","time":140.726309363,"data":"================================================================================\n"}
+,{"stream_name":"stdout","time":140.726313977,"data":"           Atelectasis: Yuksek-poz=   25 (prec=0.880) | Yuksek-neg=51,891 (NPV=0.976)\n"}
+,{"stream_name":"stdout","time":140.726318339,"data":"          Cardiomegaly: Yuksek-poz=   72 (prec=0.653) | Yuksek-neg=91,026 (NPV=0.993)\n"}
+,{"stream_name":"stdout","time":140.726322525,"data":"         Consolidation: Yuksek-poz=    0 (prec=N/A) | Yuksek-neg=61,168 (NPV=0.990)\n"}
+,{"stream_name":"stdout","time":140.726326931,"data":"                 Edema: Yuksek-poz=    0 (prec=N/A) | Yuksek-neg=85,601 (NPV=0.994)\n"}
+,{"stream_name":"stdout","time":140.726331564,"data":"              Effusion: Yuksek-poz=1,384 (prec=0.780) | Yuksek-neg=72,431 (NPV=0.976)\n"}
+,{"stream_name":"stdout","time":140.726335751,"data":"             Emphysema: Yuksek-poz=    0 (prec=N/A) | Yuksek-neg=40,752 (NPV=0.996)\n"}
+,{"stream_name":"stdout","time":140.773922091,"data":"              Fibrosis: Yuksek-poz=    0 (prec=N/A) | Yuksek-neg=36,628 (NPV=0.996)\n"}
+,{"stream_name":"stdout","time":140.773964704,"data":"                Hernia: Yuksek-poz=    0 (prec=N/A) | Yuksek-neg=106,771 (NPV=0.999)\n"}
+,{"stream_name":"stdout","time":140.773968855,"data":"          Infiltration: Yuksek-poz=    2 (prec=0.500) | Yuksek-neg=16,356 (NPV=0.944)\n"}
+,{"stream_name":"stdout","time":140.77397181,"data":"                  Mass: Yuksek-poz=  313 (prec=0.732) | Yuksek-neg=43,038 (NPV=0.990)\n"}
+,{"stream_name":"stdout","time":140.773974559,"data":"                Nodule: Yuksek-poz=   13 (prec=0.462) | Yuksek-neg=26,226 (NPV=0.981)\n"}
+,{"stream_name":"stdout","time":140.773977582,"data":"    Pleural_Thickening: Yuksek-poz=    0 (prec=N/A) | Yuksek-neg=57,946 (NPV=0.989)\n"}
+,{"stream_name":"stdout","time":140.78816202,"data":"             Pneumonia: Yuksek-poz=    0 (prec=N/A) | Yuksek-neg=67,365 (NPV=0.994)\n"}
+,{"stream_name":"stdout","time":140.78821496,"data":"          Pneumothorax: Yuksek-poz=    0 (prec=N/A) | Yuksek-neg=53,466 (NPV=0.992)\n"}
+,{"stream_name":"stdout","time":142.81484103,"data":"Kaydedildi: cxr_ensemble_agreement.png\n"}
+,{"stream_name":"stdout","time":142.916149161,"data":"================================================================================\n"}
+,{"stream_name":"stdout","time":142.91620882,"data":"AlpCAN CXR Pipeline — Onerilen Ensemble Konfigurasyonu\n"}
+,{"stream_name":"stdout","time":142.916216712,"data":"================================================================================\n"}
+,{"stream_name":"stdout","time":142.916255852,"data":"\n"}
+,{"stream_name":"stdout","time":142.916260583,"data":"En iyi genel yontem (oracle haric): Ark+\n"}
+,{"stream_name":"stdout","time":142.916265286,"data":"  Ortalama AUC: 0.8718\n"}
+,{"stream_name":"stdout","time":142.916268152,"data":"  Nodule AUC: 0.8429\n"}
+,{"stream_name":"stdout","time":142.916270565,"data":"  Mass AUC: 0.8963\n"}
+,{"stream_name":"stdout","time":142.916272963,"data":"\n"}
+,{"stream_name":"stdout","time":142.916275463,"data":"  Not: En iyi yontem bireysel model (Ark+).\n"}
+,{"stream_name":"stdout","time":142.916278013,"data":"  AlpCAN pipeline icin yine de ensemble (Weighted Average) onerilir.\n"}
+,{"stream_name":"stdout","time":142.916280813,"data":"\n"}
+,{"stream_name":"stdout","time":142.916283121,"data":"Kullanilan final yontem: Weighted Average\n"}
+,{"stream_name":"stdout","time":146.507165451,"data":"Kaydedildi: cxr_ensemble_predictions.csv\n"}
+,{"stream_name":"stdout","time":146.507225609,"data":"  Satir: 112,120\n"}
+,{"stream_name":"stdout","time":146.507232432,"data":"  Sutun: 29\n"}
+,{"stream_name":"stdout","time":146.507237703,"data":"  Yontem: Weighted Average\n"}
+,{"stream_name":"stdout","time":146.507242557,"data":"\n"}
+,{"stream_name":"stdout","time":146.507247197,"data":"Kaydedildi: cxr_ensemble_weights.json\n"}
+,{"stream_name":"stdout","time":146.50725249,"data":"Kaydedildi: cxr_ensemble_summary.csv\n"}
+,{"stream_name":"stdout","time":146.507257777,"data":"\n"}
+,{"stream_name":"stdout","time":146.507262795,"data":"          method       type  mean_auc  nodule_auc  mass_auc  nodule_mass_mean  min_auc  max_auc\n"}
+,{"stream_name":"stdout","time":146.507268047,"data":"Optimal Weighted   ensemble    0.8779      0.8445    0.8974            0.8710   0.7465   0.9520\n"}
+,{"stream_name":"stdout","time":146.507273442,"data":"            Ark+ individual    0.8718      0.8429    0.8963            0.8696   0.7457   0.9418\n"}
+,{"stream_name":"stdout","time":146.507278304,"data":"    Rank Average   ensemble    0.8556      0.8066    0.8708            0.8387   0.7297   0.9404\n"}
+,{"stream_name":"stdout","time":146.507283099,"data":"Weighted Average   ensemble    0.8463      0.8059    0.8694            0.8376   0.7313   0.9224\n"}
+,{"stream_name":"stdout","time":146.507287177,"data":"  Simple Average   ensemble    0.8448      0.8033    0.8680            0.8356   0.7302   0.9218\n"}
+,{"stream_name":"stdout","time":146.507291002,"data":"       ResNet-50 individual    0.8354      0.7799    0.8390            0.8094   0.6998   0.9435\n"}
+,{"stream_name":"stdout","time":146.507294585,"data":"         Maximum   ensemble    0.7967      0.7140    0.8167            0.7654   0.6861   0.9150\n"}
+,{"stream_name":"stdout","time":146.507298141,"data":" TorchXRayVision individual    0.7757      0.6909    0.8049            0.7479   0.6814   0.9062\n"}
+,{"stream_name":"stdout","time":149.715681071,"data":"Kaydedildi: cxr_ensemble_roc_curves.png\n"}
+,{"stream_name":"stdout","time":150.898939944,"data":"Kaydedildi: cxr_ensemble_radar.png\n"}
+,{"stream_name":"stdout","time":152.552270653,"data":"Kaydedildi: cxr_ensemble_heatmap.png\n"}
+,{"stream_name":"stdout","time":152.702774371,"data":"================================================================================\n"}
+,{"stream_name":"stdout","time":152.702839971,"data":"Kaydedilen Dosyalar\n"}
+,{"stream_name":"stdout","time":152.702847721,"data":"================================================================================\n"}
+,{"stream_name":"stdout","time":152.702853785,"data":"  cxr_ensemble_agreement.png (150.8 KB)\n"}
+,{"stream_name":"stdout","time":152.702883094,"data":"  cxr_ensemble_auc_comparison.csv (2.5 KB)\n"}
+,{"stream_name":"stdout","time":152.702887366,"data":"  cxr_ensemble_correlation.png (187.3 KB)\n"}
+,{"stream_name":"stdout","time":152.702891259,"data":"  cxr_ensemble_heatmap.png (265.3 KB)\n"}
+,{"stream_name":"stdout","time":152.70289519,"data":"  cxr_ensemble_heatmap_individual.png (147.8 KB)\n"}
+,{"stream_name":"stdout","time":152.702898911,"data":"  cxr_ensemble_mean_auc_comparison.png (118.8 KB)\n"}
+,{"stream_name":"stdout","time":152.702903331,"data":"  cxr_ensemble_predictions.csv (35.0 MB)\n"}
+,{"stream_name":"stdout","time":152.702907253,"data":"  cxr_ensemble_radar.png (315.0 KB)\n"}
+,{"stream_name":"stdout","time":152.702911409,"data":"  cxr_ensemble_roc_curves.png (380.0 KB)\n"}
+,{"stream_name":"stdout","time":152.702921112,"data":"  cxr_ensemble_summary.csv (1.1 KB)\n"}
+,{"stream_name":"stdout","time":152.702924634,"data":"  cxr_ensemble_weights.json (2.0 KB)\n"}
+,{"stream_name":"stdout","time":152.702928981,"data":"\n"}
+,{"stream_name":"stdout","time":152.702932915,"data":"Toplam: 11 dosya\n"}
+,{"stream_name":"stdout","time":152.791521631,"data":"\n"}
+,{"stream_name":"stdout","time":152.791569128,"data":"================================================================================\n"}
+,{"stream_name":"stdout","time":152.791575314,"data":"AlpCAN CXR Multi-Model Ensemble Pipeline — FINAL OZET\n"}
+,{"stream_name":"stdout","time":152.791580612,"data":"================================================================================\n"}
+,{"stream_name":"stdout","time":152.791584404,"data":"\n"}
+,{"stream_name":"stdout","time":152.79158787,"data":"--- Veri Seti ---\n"}
+,{"stream_name":"stdout","time":152.791591171,"data":"  NIH ChestX-ray14\n"}
+,{"stream_name":"stdout","time":152.791594866,"data":"  Ortak goruntu sayisi: 112,120\n"}
+,{"stream_name":"stdout","time":152.791598678,"data":"  Patoloji sayisi: 14\n"}
+,{"stream_name":"stdout","time":152.791602387,"data":"\n"}
+,{"stream_name":"stdout","time":152.791606194,"data":"--- Modeller ---\n"}
+,{"stream_name":"stdout","time":152.791610511,"data":"       TorchXRayVision: Ortalama AUC = 0.7757\n"}
+,{"stream_name":"stdout","time":152.791614522,"data":"             ResNet-50: Ortalama AUC = 0.8354\n"}
+,{"stream_name":"stdout","time":152.791618958,"data":"                  Ark+: Ortalama AUC = 0.8718\n"}
+,{"stream_name":"stdout","time":152.791622502,"data":"\n"}
+,{"stream_name":"stdout","time":152.791626117,"data":"--- Ensemble Sonuclari ---\n"}
+,{"stream_name":"stdout","time":152.791630141,"data":"        Simple Average: Ortalama AUC = 0.8448 (vs en iyi bireysel: -0.0269)\n"}
+,{"stream_name":"stdout","time":152.791634854,"data":"      Weighted Average: Ortalama AUC = 0.8463 (vs en iyi bireysel: -0.0255)\n"}
+,{"stream_name":"stdout","time":152.791639003,"data":"               Maximum: Ortalama AUC = 0.7967 (vs en iyi bireysel: -0.0751)\n"}
+,{"stream_name":"stdout","time":152.791643274,"data":"          Rank Average: Ortalama AUC = 0.8556 (vs en iyi bireysel: -0.0161)\n"}
+,{"stream_name":"stdout","time":152.791647043,"data":"      Optimal Weighted: Ortalama AUC = 0.8779 (vs en iyi bireysel: +0.0062)\n"}
+,{"stream_name":"stdout","time":152.791651274,"data":"\n"}
+,{"stream_name":"stdout","time":152.791654634,"data":"--- AlpCAN Kritik Patolojiler ---\n"}
+,{"stream_name":"stdout","time":152.791658234,"data":"  Nodule:\n"}
+,{"stream_name":"stdout","time":152.79166187,"data":"              TorchXRayVision: 0.6909\n"}
+,{"stream_name":"stdout","time":152.791665991,"data":"                    ResNet-50: 0.7799\n"}
+,{"stream_name":"stdout","time":152.791692401,"data":"                         Ark+: 0.8429\n"}
+,{"stream_name":"stdout","time":152.791697258,"data":"               Simple Average: 0.8033\n"}
+,{"stream_name":"stdout","time":152.791701342,"data":"             Weighted Average: 0.8059\n"}
+,{"stream_name":"stdout","time":152.791705442,"data":"                      Maximum: 0.7140\n"}
+,{"stream_name":"stdout","time":152.791709322,"data":"                 Rank Average: 0.8066\n"}
+,{"stream_name":"stdout","time":152.791713202,"data":"             Optimal Weighted: 0.8445 \u003c- en iyi\n"}
+,{"stream_name":"stdout","time":152.791717868,"data":"  Mass:\n"}
+,{"stream_name":"stdout","time":152.791722031,"data":"              TorchXRayVision: 0.8049\n"}
+,{"stream_name":"stdout","time":152.791726459,"data":"                    ResNet-50: 0.8390\n"}
+,{"stream_name":"stdout","time":152.791730415,"data":"                         Ark+: 0.8963\n"}
+,{"stream_name":"stdout","time":152.791734394,"data":"               Simple Average: 0.8680\n"}
+,{"stream_name":"stdout","time":152.791737823,"data":"             Weighted Average: 0.8694\n"}
+,{"stream_name":"stdout","time":152.791741546,"data":"                      Maximum: 0.8167\n"}
+,{"stream_name":"stdout","time":152.791745334,"data":"                 Rank Average: 0.8708\n"}
+,{"stream_name":"stdout","time":152.791749022,"data":"             Optimal Weighted: 0.8974 \u003c- en iyi\n"}
+,{"stream_name":"stdout","time":152.791753043,"data":"\n"}
+,{"stream_name":"stdout","time":152.79175651,"data":"--- Onerilen Konfiguerasyon ---\n"}
+,{"stream_name":"stdout","time":152.791760194,"data":"  Yontem: Weighted Average\n"}
+,{"stream_name":"stdout","time":152.791763758,"data":"  Ortalama AUC: 0.8463\n"}
+,{"stream_name":"stdout","time":152.791767494,"data":"  Agirliklar:\n"}
+,{"stream_name":"stdout","time":152.791770706,"data":"    TorchXRayVision: 0.3124\n"}
+,{"stream_name":"stdout","time":152.791774354,"data":"    ResNet-50: 0.3365\n"}
+,{"stream_name":"stdout","time":152.791778203,"data":"    Ark+: 0.3511\n"}
+,{"stream_name":"stdout","time":152.791782366,"data":"\n"}
+,{"stream_name":"stdout","time":152.791785865,"data":"--- Model Tamamlayicilik ---\n"}
+,{"stream_name":"stdout","time":152.791809246,"data":"  TorchXRayVision vs ResNet-50: r=0.4571 (Yuksek tamamlayicilik)\n"}
+,{"stream_name":"stdout","time":152.791820843,"data":"  TorchXRayVision vs Ark+: r=0.4308 (Yuksek tamamlayicilik)\n"}
+,{"stream_name":"stdout","time":152.791825032,"data":"  ResNet-50 vs Ark+: r=0.6687 (Orta tamamlayicilik)\n"}
+,{"stream_name":"stdout","time":152.791828826,"data":"\n"}
+,{"stream_name":"stdout","time":152.791833086,"data":"--- Sonraki Adimlar ---\n"}
+,{"stream_name":"stdout","time":152.791836853,"data":"  1. Cross-validation ile optimal agirliklari dogrula\n"}
+,{"stream_name":"stdout","time":152.791843988,"data":"  2. Ensemble tahminlerini CXR Pipeline Agent'a entegre et\n"}
+,{"stream_name":"stdout","time":152.791847918,"data":"  3. CT Pipeline sonuclari ile CXR ensemble'i birlestir\n"}
+,{"stream_name":"stdout","time":152.791851878,"data":"  4. AlpCAN karar destek sistemi threshold optimizasyonu\n"}
+,{"stream_name":"stdout","time":152.791856053,"data":"  5. Klinik senaryo bazli performans degerlendirmesi\n"}
+,{"stream_name":"stdout","time":152.791860057,"data":"================================================================================\n"}
+,{"stream_name":"stderr","time":157.285284412,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":157.285331018,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":157.52845277,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":157.528492306,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":158.351680138,"data":"/usr/local/lib/python3.12/dist-packages/traitlets/traitlets.py:2915: FutureWarning: --Exporter.preprocessors=[\"remove_papermill_header.RemovePapermillHeader\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":158.351719587,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":158.391639878,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":158.920493598,"data":"[NbConvertApp] Writing 2253114 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":162.621270556,"data":"/usr/local/lib/python3.12/dist-packages/traitlets/traitlets.py:2915: FutureWarning: --Exporter.preprocessors=[\"nbconvert.preprocessors.ExtractOutputPreprocessor\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":162.621312923,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":162.649679966,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":164.260905095,"data":"[NbConvertApp] Support files will be in __results___files/\n"}
+,{"stream_name":"stderr","time":164.260940684,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":164.261619979,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":164.261772206,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":164.262146273,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":164.262383271,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":164.262942846,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":164.263393043,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":164.263837949,"data":"[NbConvertApp] Writing 555799 bytes to __results__.html\n"}
+]

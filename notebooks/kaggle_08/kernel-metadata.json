@@ -8,12 +8,8 @@
   "enable_gpu": false,
   "enable_internet": true,
   "dataset_sources": [
-    "nih-chest-xrays/data"
+    "ridvancebec/alpcan-cxr-model-predictions"
   ],
   "competition_sources": [],
-  "kernel_sources": [
-    "ridvancebec/alpcan-cxr-pipeline-torchxrayvision-baseline",
-    "ridvancebec/alpcan-cxr-pipeline-resnet-50-512-baseline",
-    "ridvancebec/alpcan-cxr-pipeline-ark-zero-shot-baseline"
-  ]
+  "kernel_sources": []
 }

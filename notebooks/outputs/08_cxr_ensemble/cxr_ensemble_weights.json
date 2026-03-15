@@ -1,0 +1,108 @@
+{
+  "ensemble_method": "Weighted Average",
+  "models": [
+    "TorchXRayVision",
+    "ResNet-50",
+    "Ark+"
+  ],
+  "n_images": 112120,
+  "pathologies": [
+    "Atelectasis",
+    "Cardiomegaly",
+    "Consolidation",
+    "Edema",
+    "Effusion",
+    "Emphysema",
+    "Fibrosis",
+    "Hernia",
+    "Infiltration",
+    "Mass",
+    "Nodule",
+    "Pleural_Thickening",
+    "Pneumonia",
+    "Pneumothorax"
+  ],
+  "global_weights": {
+    "TorchXRayVision": 0.3124,
+    "ResNet-50": 0.3365,
+    "Ark+": 0.3511
+  },
+  "optimal_weights_per_pathology": {
+    "Atelectasis": {
+      "TorchXRayVision": 0.0,
+      "ResNet-50": 0.1,
+      "Ark+": 0.9
+    },
+    "Cardiomegaly": {
+      "TorchXRayVision": 0.0,
+      "ResNet-50": 0.4,
+      "Ark+": 0.6
+    },
+    "Consolidation": {
+      "TorchXRayVision": 0.0,
+      "ResNet-50": 0.25,
+      "Ark+": 0.75
+    },
+    "Edema": {
+      "TorchXRayVision": 0.0,
+      "ResNet-50": 0.2,
+      "Ark+": 0.8
+    },
+    "Effusion": {
+      "TorchXRayVision": 0.0,
+      "ResNet-50": 0.2,
+      "Ark+": 0.8
+    },
+    "Emphysema": {
+      "TorchXRayVision": 0.0,
+      "ResNet-50": 0.15,
+      "Ark+": 0.85
+    },
+    "Fibrosis": {
+      "TorchXRayVision": 0.0,
+      "ResNet-50": 0.25,
+      "Ark+": 0.75
+    },
+    "Hernia": {
+      "TorchXRayVision": 0.0,
+      "ResNet-50": 0.8,
+      "Ark+": 0.2
+    },
+    "Infiltration": {
+      "TorchXRayVision": 0.0,
+      "ResNet-50": 0.1,
+      "Ark+": 0.9
+    },
+    "Mass": {
+      "TorchXRayVision": 0.0,
+      "ResNet-50": 0.1,
+      "Ark+": 0.9
+    },
+    "Nodule": {
+      "TorchXRayVision": 0.0,
+      "ResNet-50": 0.15,
+      "Ark+": 0.85
+    },
+    "Pleural_Thickening": {
+      "TorchXRayVision": 0.0,
+      "ResNet-50": 0.15,
+      "Ark+": 0.85
+    },
+    "Pneumonia": {
+      "TorchXRayVision": 0.0,
+      "ResNet-50": 0.05,
+      "Ark+": 0.95
+    },
+    "Pneumothorax": {
+      "TorchXRayVision": 0.0,
+      "ResNet-50": 0.05,
+      "Ark+": 0.95
+    }
+  },
+  "model_mean_aucs": {
+    "TorchXRayVision": 0.7757,
+    "ResNet-50": 0.8354,
+    "Ark+": 0.8718
+  },
+  "ensemble_mean_auc": 0.8463
+}
