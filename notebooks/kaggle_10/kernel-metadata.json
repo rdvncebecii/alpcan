@@ -1,0 +1,16 @@
+{
+  "id": "ridvancebec/alpcan-system-performance-report",
+  "title": "AlpCAN System Performance Report",
+  "code_file": "10_system_performance_report.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": false,
+  "enable_internet": true,
+  "dataset_sources": [
+    "ridvancebec/alpcan-cxr-model-predictions",
+    "ridvancebec/alpcan-ct-model-weights"
+  ],
+  "competition_sources": [],
+  "kernel_sources": []
+}
