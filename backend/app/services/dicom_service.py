@@ -14,17 +14,21 @@ class DicomService:
         self.orthanc_url = settings.orthanc_url
 
     async def upload_to_orthanc(self, dicom_bytes: bytes) -> dict:
-        """DICOM dosyasını Orthanc'a yükle."""
-        async with httpx.AsyncClient() as client:
-            response = await client.post(
-                f"{self.orthanc_url}/instances",
-                content=dicom_bytes,
-                headers={"Content-Type": "application/dicom"},
-            )
-            if response.status_code == 200:
-                return response.json()
-            logger.error(f"Orthanc upload failed: {response.status_code}")
-            return {"error": response.text}
+        """DICOM dosyasını Orthanc'a yükle. Orthanc yoksa hata döner, exception fırlatmaz."""
+        try:
+            async with httpx.AsyncClient(timeout=5.0) as client:
+                response = await client.post(
+                    f"{self.orthanc_url}/instances",
+                    content=dicom_bytes,
+                    headers={"Content-Type": "application/dicom"},
+                )
+                if response.status_code == 200:
+                    return response.json()
+                logger.warning(f"Orthanc upload failed: {response.status_code}")
+                return {"error": response.text}
+        except Exception as e:
+            logger.warning(f"Orthanc bağlanamadı (dev modunda normal): {e}")
+            return {"error": str(e), "orthanc_offline": True}
 
     async def get_studies(self) -> list[dict]:
         """Orthanc'taki tüm çalışmaları listele."""
