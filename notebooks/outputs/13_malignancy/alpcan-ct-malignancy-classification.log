@@ -1,0 +1,163 @@
+[{"stream_name":"stderr","time":5.978811956,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":5.978892184,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":5.978896386,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":5.978898929,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":6.574978041,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.575009861,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.57501344,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.575016016,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":23.500535316,"data":"PyTorch: 2.9.0+cu126\n"}
+,{"stream_name":"stdout","time":23.500584753,"data":"GPU: Tesla P100-PCIE-16GB\n"}
+,{"stream_name":"stdout","time":23.500592428,"data":"CUDA: True\n"}
+,{"stream_name":"stdout","time":23.5005976,"data":"GPU Bellek: 17.1 GB\n"}
+,{"stream_name":"stdout","time":23.66882536,"data":"Dataset: /kaggle/input/datasets/zhangweiled/lidcidri/LIDC-IDRI-slices\n"}
+,{"stream_name":"stdout","time":28.873041485,"data":"Toplam hasta: 875\n"}
+,{"stream_name":"stdout","time":28.873079513,"data":"Device: cuda\n"}
+,{"stream_name":"stdout","time":28.873084057,"data":"Patch boyutu: 128, Batch: 32, Epoch: 50\n"}
+,{"stream_name":"stdout","time":29.069207076,"data":"Ozellik cikarimi basliyor...\n"}
+,{"stream_name":"stdout","time":114.18388562,"data":"  200/875 hasta islendi, 461 nodul, 85s\n"}
+,{"stream_name":"stdout","time":167.201353428,"data":"  400/875 hasta islendi, 850 nodul, 138s\n"}
+,{"stream_name":"stdout","time":225.627468762,"data":"  600/875 hasta islendi, 1258 nodul, 197s\n"}
+,{"stream_name":"stdout","time":285.770583937,"data":"  800/875 hasta islendi, 1657 nodul, 257s\n"}
+,{"stream_name":"stdout","time":306.320091482,"data":"\n"}
+,{"stream_name":"stdout","time":306.320125632,"data":"Ozellik cikarimi tamamlandi: 277s\n"}
+,{"stream_name":"stdout","time":306.320132246,"data":"Toplam nodul: 1794\n"}
+,{"stream_name":"stdout","time":306.320137375,"data":"Toplam hasta: 772\n"}
+,{"stream_name":"stdout","time":306.320142217,"data":"\n"}
+,{"stream_name":"stdout","time":306.320147719,"data":"--- Ozellik Istatistikleri ---\n"}
+,{"stream_name":"stdout","time":306.320153022,"data":"       diameter_px  consensus_area  compactness  eccentricity  solidity  margin_sharpness  intensity_mean  intensity_std  contrast_ratio  glcm_homogeneity  glcm_contrast  glcm_energy  glcm_correlation  n_annotators  n_slices\n"}
+,{"stream_name":"stdout","time":306.320160049,"data":"count     1794.000        1794.000     1794.000      1794.000  1794.000          1794.000        1794.000       1794.000        1794.000          1794.000       1794.000     1794.000          1794.000        1794.0  1794.000\n"}
+,{"stream_name":"stdout","time":306.320165592,"data":"mean        10.012         104.623        0.928         0.628     0.926           213.421         110.182         21.428           2.934             0.212       2220.159        0.193             0.548           4.0     6.327\n"}
+,{"stream_name":"stdout","time":306.320171535,"data":"std          5.743         146.957        0.118         0.166     0.056           116.853          39.162         13.090           1.503             0.117       1958.313        0.079             0.235           0.0     5.047\n"}
+,{"stream_name":"stdout","time":306.320193244,"data":"min          2.257           4.000        0.300         0.000     0.518            19.022          17.875          0.500           0.689             0.002          0.500        0.074            -0.562           4.0     1.000\n"}
+,{"stream_name":"stdout","time":306.320197588,"data":"25%          6.283          31.000        0.890         0.520     0.905           127.818          84.173         12.846           1.750             0.127        926.476        0.143             0.408           4.0     3.000\n"}
+,{"stream_name":"stdout","time":306.320201544,"data":"50%          8.137          52.000        1.000         0.643     0.935           196.084         105.342         18.563           2.707             0.190       1535.634        0.172             0.572           4.0     5.000\n"}
+,{"stream_name":"stdout","time":306.320205315,"data":"75%         11.658         106.750        1.000         0.750     0.960           268.134         136.759         25.372           3.716             0.278       2906.323        0.220             0.731           4.0     8.000\n"}
+,{"stream_name":"stdout","time":306.320210861,"data":"max         43.263        1470.000        1.000         0.987     1.000           787.325         233.553         79.205           9.944             0.888      14521.777        0.876             0.943           4.0    56.000\n"}
+,{"stream_name":"stdout","time":306.384273877,"data":"--- Malignite Proxy Skor Dagilimi ---\n"}
+,{"stream_name":"stdout","time":306.384311238,"data":"count    1794.000000\n"}
+,{"stream_name":"stdout","time":306.384315895,"data":"mean        2.259948\n"}
+,{"stream_name":"stdout","time":306.38432014,"data":"std         0.226751\n"}
+,{"stream_name":"stdout","time":306.384325493,"data":"min         1.539725\n"}
+,{"stream_name":"stdout","time":306.38433015,"data":"25%         2.110347\n"}
+,{"stream_name":"stdout","time":306.38433336,"data":"50%         2.194420\n"}
+,{"stream_name":"stdout","time":306.384337089,"data":"75%         2.350324\n"}
+,{"stream_name":"stdout","time":306.384342926,"data":"max         3.256505\n"}
+,{"stream_name":"stdout","time":306.384346642,"data":"Name: malignancy_score, dtype: float64\n"}
+,{"stream_name":"stdout","time":306.384350074,"data":"\n"}
+,{"stream_name":"stdout","time":306.384354311,"data":"--- Binary Dagilim ---\n"}
+,{"stream_name":"stdout","time":306.384358464,"data":"Benign (0): 1794\n"}
+,{"stream_name":"stdout","time":306.384362877,"data":"Malign (1): 0\n"}
+,{"stream_name":"stdout","time":306.384366761,"data":"Malign oran: 0.00%\n"}
+,{"stream_name":"stdout","time":306.384371212,"data":"\n"}
+,{"stream_name":"stdout","time":306.384375698,"data":"--- 5-Sinif Dagilim ---\n"}
+,{"stream_name":"stdout","time":306.38437957,"data":"  Sinif 0 (Kesinlikle Benign):     3 (0.2%)\n"}
+,{"stream_name":"stdout","time":306.384383449,"data":"  Sinif 1 (Muhtemelen Benign):  1628 (90.7%)\n"}
+,{"stream_name":"stdout","time":306.384387242,"data":"  Sinif 2 (Belirsiz):   163 (9.1%)\n"}
+,{"stream_name":"stdout","time":306.384390844,"data":"  Sinif 3 (Muhtemelen Malign):     0 (0.0%)\n"}
+,{"stream_name":"stdout","time":306.384394625,"data":"  Sinif 4 (Kesinlikle Malign):     0 (0.0%)\n"}
+,{"stream_name":"stdout","time":306.38439828,"data":"\n"}
+,{"stream_name":"stdout","time":306.384402048,"data":"--- Sub-skor istatistikleri ---\n"}
+,{"stream_name":"stdout","time":306.384405791,"data":"           size  irregularity  spiculation  elongation  margin_blur  contrast  heterogeneity  texture_irregular  texture_contrast\n"}
+,{"stream_name":"stdout","time":306.384410798,"data":"count  1794.000      1794.000     1794.000    1794.000     1794.000  1794.000       1794.000           1794.000          1794.000\n"}
+,{"stream_name":"stdout","time":306.384434708,"data":"mean      0.189         0.103        0.154       0.637        0.747     0.243          0.266              0.762             0.153\n"}
+,{"stream_name":"stdout","time":306.384438196,"data":"std       0.140         0.168        0.116       0.168        0.152     0.162          0.166              0.132             0.135\n"}
+,{"stream_name":"stdout","time":306.384441993,"data":"min       0.000         0.000        0.000       0.000        0.000     0.000          0.000              0.000             0.000\n"}
+,{"stream_name":"stdout","time":306.384448059,"data":"25%       0.098         0.000        0.083       0.527        0.676     0.115          0.157              0.688             0.064\n"}
+,{"stream_name":"stdout","time":306.384452846,"data":"50%       0.143         0.000        0.135       0.652        0.770     0.218          0.229              0.787             0.106\n"}
+,{"stream_name":"stdout","time":306.384458031,"data":"75%       0.229         0.157        0.198       0.760        0.858     0.327          0.316              0.859             0.200\n"}
+,{"stream_name":"stdout","time":306.384463061,"data":"max       1.000         1.000        1.000       1.000        1.000     1.000          1.000              1.000             1.000\n"}
+,{"stream_name":"stdout","time":308.483567643,"data":"Dagilim grafigi kaydedildi.\n"}
+,{"stream_name":"stdout","time":308.572188772,"data":"Train: 1445 nodul (617 hasta)\n"}
+,{"stream_name":"stdout","time":308.572222805,"data":"Val:   349 nodul (155 hasta)\n"}
+,{"stream_name":"stdout","time":308.572227602,"data":"Train malign oran: 0.00%\n"}
+,{"stream_name":"stdout","time":308.57223114,"data":"Val   malign oran: 0.00%\n"}
+,{"stream_name":"stdout","time":308.572234564,"data":"Tabular ozellik sayisi: 19\n"}
+,{"stream_name":"stdout","time":308.57223804,"data":"Train dataset: 1445, Val dataset: 349\n"}
+,{"stream_name":"stdout","time":308.572241971,"data":"Goruntu: torch.Size([3, 128, 128]), Tabular: torch.Size([19]), Binary: 0.0, Class: 2\n"}
+,{"stream_name":"stdout","time":308.735184313,"data":"Downloading: \"https://download.pytorch.org/models/efficientnet_b0_rwightman-7f5810bc.pth\" to /root/.cache/torch/hub/checkpoints/efficientnet_b0_rwightman-7f5810bc.pth\n"}
+,{"stream_name":"stderr","time":308.788854059,"data":"\r  0%|          | 0.00/20.5M [00:00\u003c?, ?B/s]\n"}
+,{"stream_name":"stderr","time":308.890353206,"data":"\r  0%|          | 0.00/20.5M [00:00\u003c?, ?B/s]\r 67%|██████▋   | 13.6M/20.5M [00:00\u003c00:00, 142MB/s]\n"}
+,{"stream_name":"stderr","time":308.921863982,"data":"\r 67%|██████▋   | 13.6M/20.5M [00:00\u003c00:00, 142MB/s]\r100%|██████████| 20.5M/20.5M [00:00\u003c00:00, 162MB/s]\n"}
+,{"stream_name":"stderr","time":308.991038941,"data":"\r100%|██████████| 20.5M/20.5M [00:00\u003c00:00, 162MB/s]\n"}
+,{"stream_name":"stderr","time":308.991072476,"data":"\n"}
+,{"stream_name":"stderr","time":308.991077087,"data":"\n"}
+,{"stream_name":"stdout","time":309.112202674,"data":"Model: EfficientNet-B0 + Tabular Fusion\n"}
+,{"stream_name":"stdout","time":309.112238852,"data":"Toplam parametre: 4,358,850 (4.4M)\n"}
+,{"stream_name":"stdout","time":309.112244517,"data":"Trainable: 4,358,850 (4.4M)\n"}
+,{"stream_name":"stdout","time":309.112248104,"data":"Image branch: 1280-dim\n"}
+,{"stream_name":"stdout","time":309.112251501,"data":"Tabular branch: 19 -\u003e 64-dim\n"}
+,{"stream_name":"stdout","time":309.112255196,"data":"Fusion: 1344 -\u003e 256 -\u003e binary + 5-class\n"}
+,{"stream_name":"stdout","time":309.15102742,"data":"5-sinif agirliklari: [4.836463   0.01472287 0.14881425]\n"}
+,{"stream_name":"stdout","time":309.151076547,"data":"\n"}
+,{"stream_name":"stdout","time":309.151082253,"data":"Binary loss: Focal (alpha=0.25, gamma=2)\n"}
+,{"stream_name":"stdout","time":309.151086608,"data":"5-sinif loss: Label Smoothing CE (smoothing=0.1)\n"}
+,{"stream_name":"stdout","time":309.151090703,"data":"Optimizer: AdamW (lr=1e-4, wd=1e-4)\n"}
+,{"stream_name":"stdout","time":309.151094345,"data":"Scheduler: CosineAnnealingLR (T_max=50)\n"}
+,{"stream_name":"stdout","time":309.151098311,"data":"Loss agirliklari: binary=1.0, malignancy=0.5\n"}
+,{"stream_name":"stdout","time":309.19750614,"data":"Egitim basliyor -- 50 epoch\n"}
+,{"stream_name":"stdout","time":309.197537179,"data":"Loss agirliklari: binary=1.0, malignancy=0.5\n"}
+,{"stream_name":"stdout","time":309.197540647,"data":"===========================================================================\n"}
+,{"stream_name":"stderr","time":314.235419111,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":314.235447601,"data":"  File \"\u003cstring\u003e\", line 1, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":314.235460933,"data":"  File \"/usr/local/lib/python3.12/dist-packages/papermill/execute.py\", line 131, in execute_notebook\n"}
+,{"stream_name":"stderr","time":314.235558309,"data":"    raise_for_execution_errors(nb, output_path)\n"}
+,{"stream_name":"stderr","time":314.235566892,"data":"  File \"/usr/local/lib/python3.12/dist-packages/papermill/execute.py\", line 251, in raise_for_execution_errors\n"}
+,{"stream_name":"stderr","time":314.235756683,"data":"    raise error\n"}
+,{"stream_name":"stderr","time":314.236152775,"data":"papermill.exceptions.PapermillExecutionError: \n"}
+,{"stream_name":"stderr","time":314.236171554,"data":"---------------------------------------------------------------------------\n"}
+,{"stream_name":"stderr","time":314.236176418,"data":"Exception encountered at \"In [10]\":\n"}
+,{"stream_name":"stderr","time":314.236180521,"data":"---------------------------------------------------------------------------\n"}
+,{"stream_name":"stderr","time":314.236184521,"data":"RuntimeError                              Traceback (most recent call last)\n"}
+,{"stream_name":"stderr","time":314.236188765,"data":"/tmp/ipykernel_24/1403830328.py in \u003ccell line: 0\u003e()\n"}
+,{"stream_name":"stderr","time":314.236193188,"data":"     29             bin_pred, cls_pred = model(images, tabular)\n"}
+,{"stream_name":"stderr","time":314.236197351,"data":"     30             loss_bin = criterion_binary(bin_pred, bin_labels)\n"}
+,{"stream_name":"stderr","time":314.236201133,"data":"---\u003e 31             loss_cls = criterion_malignancy(cls_pred, cls_labels)\n"}
+,{"stream_name":"stderr","time":314.236205301,"data":"     32             loss = BINARY_WEIGHT * loss_bin + MALIGNANCY_WEIGHT * loss_cls\n"}
+,{"stream_name":"stderr","time":314.236208943,"data":"     33 \n"}
+,{"stream_name":"stderr","time":314.236213245,"data":"\n"}
+,{"stream_name":"stderr","time":314.23621678,"data":"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py in _wrapped_call_impl(self, *args, **kwargs)\n"}
+,{"stream_name":"stderr","time":314.236220398,"data":"   1773             return self._compiled_call_impl(*args, **kwargs)  # type: ignore[misc]\n"}
+,{"stream_name":"stderr","time":314.236224638,"data":"   1774         else:\n"}
+,{"stream_name":"stderr","time":314.23622838,"data":"-\u003e 1775             return self._call_impl(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":314.236232726,"data":"   1776 \n"}
+,{"stream_name":"stderr","time":314.236237168,"data":"   1777     # torchrec tests the code consistency with the following code\n"}
+,{"stream_name":"stderr","time":314.236256768,"data":"\n"}
+,{"stream_name":"stderr","time":314.236260526,"data":"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py in _call_impl(self, *args, **kwargs)\n"}
+,{"stream_name":"stderr","time":314.236264651,"data":"   1784                 or _global_backward_pre_hooks or _global_backward_hooks\n"}
+,{"stream_name":"stderr","time":314.236268367,"data":"   1785                 or _global_forward_hooks or _global_forward_pre_hooks):\n"}
+,{"stream_name":"stderr","time":314.236272136,"data":"-\u003e 1786             return forward_call(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":314.236275674,"data":"   1787 \n"}
+,{"stream_name":"stderr","time":314.236279031,"data":"   1788         result = None\n"}
+,{"stream_name":"stderr","time":314.236282287,"data":"\n"}
+,{"stream_name":"stderr","time":314.236285488,"data":"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/loss.py in forward(self, input, target)\n"}
+,{"stream_name":"stderr","time":314.236290844,"data":"   1383     def forward(self, input: Tensor, target: Tensor) -\u003e Tensor:\n"}
+,{"stream_name":"stderr","time":314.236294245,"data":"   1384         \"\"\"Runs the forward pass.\"\"\"\n"}
+,{"stream_name":"stderr","time":314.236297796,"data":"-\u003e 1385         return F.cross_entropy(\n"}
+,{"stream_name":"stderr","time":314.236300301,"data":"   1386             input,\n"}
+,{"stream_name":"stderr","time":314.236302688,"data":"   1387             target,\n"}
+,{"stream_name":"stderr","time":314.23630505,"data":"\n"}
+,{"stream_name":"stderr","time":314.236307396,"data":"/usr/local/lib/python3.12/dist-packages/torch/nn/functional.py in cross_entropy(input, target, weight, size_average, ignore_index, reduce, reduction, label_smoothing)\n"}
+,{"stream_name":"stderr","time":314.236309997,"data":"   3456     if size_average is not None or reduce is not None:\n"}
+,{"stream_name":"stderr","time":314.236312445,"data":"   3457         reduction = _Reduction.legacy_get_string(size_average, reduce)\n"}
+,{"stream_name":"stderr","time":314.236315577,"data":"-\u003e 3458     return torch._C._nn.cross_entropy_loss(\n"}
+,{"stream_name":"stderr","time":314.236317958,"data":"   3459         input,\n"}
+,{"stream_name":"stderr","time":314.236320318,"data":"   3460         target,\n"}
+,{"stream_name":"stderr","time":314.236322604,"data":"\n"}
+,{"stream_name":"stderr","time":314.236324832,"data":"RuntimeError: weight tensor should be defined either for all 5 classes or no classes but got weight tensor of shape: [3]\n"}
+,{"stream_name":"stderr","time":314.236327355,"data":"\n"}
+,{"stream_name":"stderr","time":316.565622492,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":316.565658803,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":316.726055357,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":316.726082519,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":317.291845155,"data":"/usr/local/lib/python3.12/dist-packages/traitlets/traitlets.py:2915: FutureWarning: --Exporter.preprocessors=[\"remove_papermill_header.RemovePapermillHeader\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":317.291880278,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":317.368128388,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":317.702642963,"data":"[NbConvertApp] Writing 330473 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":320.198883655,"data":"/usr/local/lib/python3.12/dist-packages/traitlets/traitlets.py:2915: FutureWarning: --Exporter.preprocessors=[\"nbconvert.preprocessors.ExtractOutputPreprocessor\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":320.198918584,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":320.219650189,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":321.327529164,"data":"[NbConvertApp] Support files will be in __results___files/\n"}
+,{"stream_name":"stderr","time":321.327561661,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":321.327989965,"data":"[NbConvertApp] Writing 541049 bytes to __results__.html\n"}
+]

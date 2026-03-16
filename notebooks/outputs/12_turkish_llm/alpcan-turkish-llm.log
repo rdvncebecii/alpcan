@@ -1,0 +1,641 @@
+[{"stream_name":"stderr","time":6.081316365,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.081375299,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.081379499,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.08138202,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":6.651796849,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.6518319980000005,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.65183737,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.651841602,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":10.936373456,"data":"\u001b[?25l   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m0.0/60.7 MB\u001b[0m \u001b[31m?\u001b[0m eta \u001b[36m-:--:--\u001b[0m\r\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m0.3/60.7 MB\u001b[0m \u001b[31m9.1 MB/s\u001b[0m eta \u001b[36m0:00:07\u001b[0m\r\u001b[2K   \u001b[91m━\u001b[0m\u001b[91m╸\u001b[0m\u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m2.5/60.7 MB\u001b[0m \u001b[31m37.3 MB/s\u001b[0m eta \u001b[36m0:00:02\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━\u001b[0m\u001b[90m╺\u001b[0m\u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m9.4/60.7 MB\u001b[0m \u001b[31m94.9 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━\u001b[0m\u001b[90m╺\u001b[0m\u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m9.4/60.7 MB\u001b[0m \u001b[31m94.9 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━\u001b[0m\u001b[90m╺\u001b[0m\u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m9.4/60.7 MB\u001b[0m \u001b[31m94.9 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━\u001b[0m\u001b[90m╺\u001b[0m\u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m9.4/60.7 MB\u001b[0m \u001b[31m94.9 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━\u001b[0m\u001b[90m╺\u001b[0m\u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m9.6/60.7 MB\u001b[0m \u001b[31m39.6 MB/s\u001b[0m eta \u001b[36m0:00:02\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━\u001b[0m\u001b[90m╺\u001b[0m\u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m18.5/60.7 MB\u001b[0m \u001b[31m56.2 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━\u001b[0m\u001b[91m╸\u001b[0m\u001b[90m━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m27.2/60.7 MB\u001b[0m \u001b[31m249.1 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[91m╸\u001b[0m\u001b[90m━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m36.0/60.7 MB\u001b[0m \u001b[31m252.8 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[91m╸\u001b[0m\u001b[90m━━━━━━━━━━\u001b[0m \u001b[32m45.2/60.7 MB\u001b[0m \u001b[31m263.4 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[91m╸\u001b[0m\u001b[90m━━━━\u001b[0m \u001b[32m54.3/60.7 MB\u001b[0m \u001b[31m260.5 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[91m╸\u001b[0m \u001b[32m60.7/60.7 MB\u001b[0m \u001b[31m256.4 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[91m╸\u001b[0m \u001b[32m60.7/60.7 MB\u001b[0m \u001b[31m256.4 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[91m╸\u001b[0m \u001b[32m60.7/60.7 MB\u001b[0m \u001b[31m256.4 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[91m╸\u001b[0m \u001b[32m60.7/60.7 MB\u001b[0m \u001b[31m256.4 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[91m╸\u001b[0m \u001b[32m60.7/60.7 MB\u001b[0m \u001b[31m256.4 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[91m╸\u001b[0m \u001b[32m60.7/60.7 MB\u001b[0m \u001b[31m256.4 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[91m╸\u001b[0m \u001b[32m60.7/60.7 MB\u001b[0m \u001b[31m256.4 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[91m╸\u001b[0m \u001b[32m60.7/60.7 MB\u001b[0m \u001b[31m256.4 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m60.7/60.7 MB\u001b[0m \u001b[31m33.5 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":10.987390513,"data":"\u001b[?25h\u001b[?25l   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m0.0/528.8 kB\u001b[0m \u001b[31m?\u001b[0m eta \u001b[36m-:--:--\u001b[0m\r\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m528.8/528.8 kB\u001b[0m \u001b[31m19.1 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":20.929933659,"data":"\u001b[?25hPyTorch: 2.9.0+cu126\n"}
+,{"stream_name":"stdout","time":20.929971508,"data":"CUDA mevcut: True\n"}
+,{"stream_name":"stdout","time":20.929977582,"data":"GPU: Tesla P100-PCIE-16GB\n"}
+,{"stream_name":"stdout","time":20.929982286,"data":"GPU Bellek: 17.1 GB\n"}
+,{"stream_name":"stdout","time":20.929988231,"data":"CUDA Version: 12.6\n"}
+,{"stream_name":"stdout","time":41.131981857,"data":"\n"}
+,{"stream_name":"stdout","time":41.132018729,"data":"Transformers, PEFT, TRL yüklendi.\n"}
+,{"stream_name":"stdout","time":41.159837559,"data":"Varsayılan yol bulunamadı, rglob ile aranıyor...\n"}
+,{"stream_name":"stdout","time":41.159862993,"data":"Bulundu: /kaggle/input/datasets/ridvancebec/alpcan-chexpert-reports/chexpert_reports.csv\n"}
+,{"stream_name":"stdout","time":41.159868644,"data":"CSV yolu: /kaggle/input/datasets/ridvancebec/alpcan-chexpert-reports/chexpert_reports.csv\n"}
+,{"stream_name":"stdout","time":41.159873707,"data":"Çıktı dizini: /kaggle/working\n"}
+,{"stream_name":"stdout","time":41.159880082,"data":"\n"}
+,{"stream_name":"stdout","time":41.159885983,"data":"--- Konfigürasyon ---\n"}
+,{"stream_name":"stdout","time":41.159890617,"data":"  Çeviri modeli:      Helsinki-NLP/opus-mt-en-tr\n"}
+,{"stream_name":"stdout","time":41.159895881,"data":"  LLM modeli:         microsoft/Phi-3.5-mini-instruct\n"}
+,{"stream_name":"stdout","time":41.159901335,"data":"  Çeviri alt küme:    5,000\n"}
+,{"stream_name":"stdout","time":41.159906647,"data":"  LoRA r/alpha:       16/32\n"}
+,{"stream_name":"stdout","time":41.159911782,"data":"  Epoch:              3\n"}
+,{"stream_name":"stdout","time":41.159916275,"data":"  Batch (efektif):    8\n"}
+,{"stream_name":"stdout","time":41.159920653,"data":"  Max seq length:     512\n"}
+,{"stream_name":"stdout","time":41.159924991,"data":"  Learning rate:      0.0002\n"}
+,{"stream_name":"stdout","time":41.332503063,"data":"CheXpert Plus raporları yükleniyor...\n"}
+,{"stream_name":"stdout","time":46.194631185,"data":"Yükleme süresi: 4.8s\n"}
+,{"stream_name":"stdout","time":46.194672841,"data":"Toplam satır: 223,462\n"}
+,{"stream_name":"stdout","time":46.194678568,"data":"Sütunlar: ['path_to_image', 'frontal_lateral', 'ap_pa', 'deid_patient_id', 'report', 'section_clinical_history', 'section_comparison', 'section_findings', 'section_impression', 'age', 'sex', 'split']\n"}
+,{"stream_name":"stdout","time":46.194684899,"data":"\n"}
+,{"stream_name":"stdout","time":46.194710924,"data":"============================================================\n"}
+,{"stream_name":"stdout","time":46.194718887,"data":"VERİ SETİ İSTATİSTİKLERİ\n"}
+,{"stream_name":"stdout","time":46.19472412,"data":"============================================================\n"}
+,{"stream_name":"stdout","time":46.19472894,"data":"\n"}
+,{"stream_name":"stdout","time":46.194733483,"data":"Sütun                                Dolu       Oran\n"}
+,{"stream_name":"stdout","time":46.19473824,"data":"-------------------------------------------------------\n"}
+,{"stream_name":"stdout","time":46.194742981,"data":"report                            223,462     100.0%\n"}
+,{"stream_name":"stdout","time":46.194747558,"data":"section_findings                   59,469      26.6%\n"}
+,{"stream_name":"stdout","time":46.194752133,"data":"section_impression                223,317      99.9%\n"}
+,{"stream_name":"stdout","time":46.194756807,"data":"section_clinical_history          138,866      62.1%\n"}
+,{"stream_name":"stdout","time":46.194761472,"data":"section_comparison                213,125      95.4%\n"}
+,{"stream_name":"stdout","time":46.194766256,"data":"\n"}
+,{"stream_name":"stdout","time":46.194770874,"data":"--- Demografik ---\n"}
+,{"stream_name":"stdout","time":46.194775355,"data":"  Cinsiyet dağılımı: {'Male': 132482, 'Female': 90701, 'Unknown': 279}\n"}
+,{"stream_name":"stdout","time":46.194780147,"data":"  Yaş aralığı: 0 - 89 (ort: 60.4)\n"}
+,{"stream_name":"stdout","time":46.194801241,"data":"  Split dağılımı: {'train': 223228, 'valid': 234}\n"}
+,{"stream_name":"stdout","time":46.194805,"data":"  Frontal/Lateral: {'Frontal': 191071, 'Lateral': 32391}\n"}
+,{"stream_name":"stdout","time":46.194808808,"data":"  AP/PA: {'AP': 161622, 'PA': 29432, 'LL': 16, 'RL': 1}\n"}
+,{"stream_name":"stdout","time":46.19481216,"data":"  Benzersiz hasta: 64,725\n"}
+,{"stream_name":"stdout","time":48.000417745,"data":"\n"}
+,{"stream_name":"stdout","time":48.000453527,"data":"Impression bölümü dolu olan rapor sayısı: 223,317\n"}
+,{"stream_name":"stdout","time":48.000461387,"data":"Findings bölümü dolu olan rapor sayısı: 59,469\n"}
+,{"stream_name":"stdout","time":48.19905153,"data":"Çeviri modeli yükleniyor: Helsinki-NLP/opus-mt-en-tr\n"}
+,{"stream_name":"stdout","time":48.586145163,"data":"UYARI: Çeviri modeli yüklenemedi: Helsinki-NLP/opus-mt-en-tr is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'\n"}
+,{"stream_name":"stdout","time":48.586182876,"data":"If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `hf auth login` or by passing `token=\u003cyour_token\u003e`\n"}
+,{"stream_name":"stdout","time":48.586188808,"data":"Basit kural tabanlı çeviriye geçiliyor...\n"}
+,{"stream_name":"stdout","time":48.822587861,"data":"\n"}
+,{"stream_name":"stdout","time":48.82263496,"data":"Dolu impression bulunan rapor: 223,296\n"}
+,{"stream_name":"stdout","time":48.822642092,"data":"Çevrilecek alt küme: 5,000\n"}
+,{"stream_name":"stdout","time":48.82266774,"data":"Kural tabanlı basit çeviri uygulanıyor (demo)...\n"}
+,{"stream_name":"stdout","time":48.822673196,"data":"  5,000 metin işlendi (kural tabanlı).\n"}
+,{"stream_name":"stdout","time":48.822679046,"data":"Çeviriler kaydedildi: /kaggle/working/translated_impressions.csv\n"}
+,{"stream_name":"stdout","time":48.922390788,"data":"================================================================================\n"}
+,{"stream_name":"stdout","time":48.922425918,"data":"ÇEVİRİ ÖRNEKLERİ: İngilizce → Türkçe\n"}
+,{"stream_name":"stdout","time":48.922432685,"data":"================================================================================\n"}
+,{"stream_name":"stdout","time":48.922440652,"data":"\n"}
+,{"stream_name":"stdout","time":48.922446368,"data":"--- Örnek 1 ---\n"}
+,{"stream_name":"stdout","time":48.922453025,"data":"  EN: 1.TRACHEOSTOMY TUBE REMAINS IN PLACE.  RIGHT PICC IS IN STABLE AND \n"}
+,{"stream_name":"stdout","time":48.922459358,"data":"STANDARD POSITION.  THE ENTERIC TUBE HAS BEEN REMOVED.\n"}
+,{"stream_name":"stdout","time":48.922465653,"data":" \n"}
+,{"stream_name":"stdout","time":48.922470808,"data":"2.NO EVIDENCE OF PNEUMOTHORAX.  SLIGHTLY IMPROVED AERATION OF THE \n"}
+,{"stream_name":"stdout","time":48.922476176,"data":"BILATERAL LUNGS WITH NO EVIDENCE OF FOCAL AIR SPACE OPACITIES OR \n"}
+,{"stream_name":"stdout","time":48.922481564,"data":"PLEURAL EFFUSIONS.\n"}
+,{"stream_name":"stdout","time":48.922486697,"data":"  TR: 1.TRACHEOSTOMY TUBE REMAINS IN PLACE.  RIGHT PICC IS IN STABLE AND \n"}
+,{"stream_name":"stdout","time":48.922494123999996,"data":"STANDARD POSITION.  THE ENTERIC TUBE HAS BEEN REMOVED.\n"}
+,{"stream_name":"stdout","time":48.922498326,"data":" \n"}
+,{"stream_name":"stdout","time":48.922501807,"data":"2.NO EVIDENCE OF PNEUMOTHORAX.  SLIGHTLY IMPROVED AERATION OF THE \n"}
+,{"stream_name":"stdout","time":48.922505568,"data":"BILATERAL LUNGS WITH NO EVIDENCE OF FOCAL AIR SPACE OPACITIES OR \n"}
+,{"stream_name":"stdout","time":48.922509135,"data":"PLEURAL EFFUSIONS.\n"}
+,{"stream_name":"stdout","time":48.92252705,"data":"\n"}
+,{"stream_name":"stdout","time":48.922530715,"data":"--- Örnek 2 ---\n"}
+,{"stream_name":"stdout","time":48.922536836,"data":"  EN: 1.TRACHEOSTOMY AND SUBDIAPHRAGMATIC ENTERIC TUBE REMAIN IN PLACE.  \n"}
+,{"stream_name":"stdout","time":48.922541066,"data":"RIGHT PICC IS ALSO UNCHANGED IN POSITION.\n"}
+,{"stream_name":"stdout","time":48.922545951000004,"data":" \n"}
+,{"stream_name":"stdout","time":48.922550656,"data":"2.LUNGS REMAIN CLEAR WITH MINIMAL LINEAR ATELECTASIS WITHIN THE RIGHT \n"}
+,{"stream_name":"stdout","time":48.922556051,"data":"LUNG BASE.  NO EVIDENCE OF PNEUMOTHORAX.\n"}
+,{"stream_name":"stdout","time":48.922560727,"data":"  TR: 1.TRACHEOSTOMY AND SUBDIAPHRAGMATIC ENTERIC TUBE REMAIN IN PLACE.  \n"}
+,{"stream_name":"stdout","time":48.92256489,"data":"RIGHT PICC IS ALSO UNCHANGED IN POSITION.\n"}
+,{"stream_name":"stdout","time":48.92256875,"data":" \n"}
+,{"stream_name":"stdout","time":48.922572464,"data":"2.LUNGS REMAIN CLEAR WITH MINIMAL LINEAR ATELECTASIS WITHIN THE RIGHT \n"}
+,{"stream_name":"stdout","time":48.922576432,"data":"LUNG BASE.  NO EVIDENCE OF PNEUMOTHORAX.\n"}
+,{"stream_name":"stdout","time":48.922580337,"data":"\n"}
+,{"stream_name":"stdout","time":48.922584077,"data":"--- Örnek 3 ---\n"}
+,{"stream_name":"stdout","time":48.922587925,"data":"  EN: 1.SINGLE PORTABLE SEMIUPRIGHT AP VIEW OF THE CHEST DEMONSTRATES \n"}
+,{"stream_name":"stdout","time":48.922591841,"data":"INTERVAL PLACEMENT OF AN ENTERIC TUBE WITH THE DISTAL PORTION LOOPED \n"}
+,{"stream_name":"stdout","time":48.922595918,"data":"IN THE STOMACH.  ENDOTRACHEAL TUBE TIP IS 2.7 CM PROXIMAL TO THE \n"}
+,{"stream_name":"stdout","time":48.922599875,"data":"CARINA.  STABLE POSITION OF THE RIGHT INTERNAL JUGULAR CENTRAL VENOUS \n"}
+,{"stream_name":"stdout","time":48.922603986,"data":"CATHETER WITH THE TIP IN THE...\n"}
+,{"stream_name":"stdout","time":48.922610475,"data":"  TR: 1.SINGLE PORTABLE SEMIUPRIGHT AP VIEW OF THE CHEST DEMONSTRATES \n"}
+,{"stream_name":"stdout","time":48.922613591,"data":"INTERVAL PLACEMENT OF AN ENTERIC TUBE WITH THE DISTAL PORTION LOOPED \n"}
+,{"stream_name":"stdout","time":48.922616229,"data":"IN THE STOMACH.  ENDOTRACHEAL TUBE TIP IS 2.7 CM PROXIMAL TO THE \n"}
+,{"stream_name":"stdout","time":48.922618858999996,"data":"CARINA.  STABLE POSITION OF THE RIGHT INTERNAL JUGULAR CENTRAL VENOUS \n"}
+,{"stream_name":"stdout","time":48.922621907,"data":"CATHETER WITH THE TIP IN THE...\n"}
+,{"stream_name":"stdout","time":48.922624895,"data":"\n"}
+,{"stream_name":"stdout","time":48.922628739,"data":"--- Örnek 4 ---\n"}
+,{"stream_name":"stdout","time":48.922634557,"data":"  EN: 1.  PATCHY SUBSEGMENTAL BIBASILAR (LEFT GREATER THAN RIGHT) \n"}
+,{"stream_name":"stdout","time":48.922641007,"data":"PULMONARY ATELECTASIS AND/OR CONSOLIDATION PERSISTS.  PULMONARY \n"}
+,{"stream_name":"stdout","time":48.922646516,"data":"VASCULARITY IS NORMAL.  CARDIAC SIZE IS WITHIN NORMAL LIMITS.  \n"}
+,{"stream_name":"stdout","time":48.922651347,"data":"TRACHEOSTOMY AND FEEDING TUBES AS WELL AS RIGHT UPPER EXTREMITY PICC \n"}
+,{"stream_name":"stdout","time":48.922655448,"data":"REMAIN IN PLACE.\n"}
+,{"stream_name":"stdout","time":48.922659313,"data":"  TR: 1.  PATCHY SUBSEGMENTAL BIBASILAR (LEFT GREATER THAN RIGHT) \n"}
+,{"stream_name":"stdout","time":48.92266345,"data":"PULMONARY ATELECTASIS AND/OR CONSOLIDATION PERSISTS.  PULMONARY \n"}
+,{"stream_name":"stdout","time":48.922667452,"data":"VASCULARITY IS NORMAL.  CARDIAC SIZE IS WITHIN NORMAL LIMITS.  \n"}
+,{"stream_name":"stdout","time":48.922671476,"data":"TRACHEOSTOMY AND FEEDING TUBES AS WELL AS RIGHT UPPER EXTREMITY PICC \n"}
+,{"stream_name":"stdout","time":48.922679913,"data":"REMAIN IN PLACE.\n"}
+,{"stream_name":"stdout","time":48.922683903,"data":"\n"}
+,{"stream_name":"stdout","time":48.922705976,"data":"--- Örnek 5 ---\n"}
+,{"stream_name":"stdout","time":48.922714527,"data":"  EN: 1.UPRIGHT FRONTAL VIEW OF THE CHEST DEMONSTRATES STABLE POSITIONING \n"}
+,{"stream_name":"stdout","time":48.922718989,"data":"OF TRACHEOSTOMY TUBE AND RIGHT SUBCLAVIAN LINE WITH ITS TIP AT THE \n"}
+,{"stream_name":"stdout","time":48.922723103,"data":"CAVAL ATRIAL JUNCTION.  A FEEDING TUBE HAS BEEN INSERTED WITH ITS TIP \n"}
+,{"stream_name":"stdout","time":48.922727185,"data":"COURSING OFF THE EDGE OF THE FILM.\n"}
+,{"stream_name":"stdout","time":48.922731099,"data":" \n"}
+,{"stream_name":"stdout","time":48.922734877,"data":"2. MINIMAL ATELECTASIS AT THE BASES.  NO EVIDENCE OF ED...\n"}
+,{"stream_name":"stdout","time":48.922738825,"data":"  TR: 1.UPRIGHT FRONTAL VIEW OF THE CHEST DEMONSTRATES STABLE POSITIONING \n"}
+,{"stream_name":"stdout","time":48.922742865000004,"data":"OF TRACHEOSTOMY TUBE AND RIGHT SUBCLAVIAN LINE WITH ITS TIP AT THE \n"}
+,{"stream_name":"stdout","time":48.922746835,"data":"CAVAL ATRIAL JUNCTION.  A FEEDING TUBE HAS BEEN INSERTED WITH ITS TIP \n"}
+,{"stream_name":"stdout","time":48.922750879,"data":"COURSING OFF THE EDGE OF THE FILM.\n"}
+,{"stream_name":"stdout","time":48.922754873,"data":" \n"}
+,{"stream_name":"stdout","time":48.922758605,"data":"2. MINIMAL ATELECTASIS AT THE BASES.  NO EVIDENCE OF ED...\n"}
+,{"stream_name":"stdout","time":49.677554001,"data":"\n"}
+,{"stream_name":"stdout","time":49.677589451,"data":"Ortalama EN uzunluk: 306 karakter\n"}
+,{"stream_name":"stdout","time":49.677594645,"data":"Ortalama TR uzunluk: 306 karakter\n"}
+,{"stream_name":"stdout","time":49.677598286,"data":"Oran (TR/EN medyan): 1.00\n"}
+,{"stream_name":"stdout","time":49.725518117,"data":"Eğitim örnekleri oluşturuluyor...\n"}
+,{"stream_name":"stdout","time":50.008980425,"data":"\n"}
+,{"stream_name":"stdout","time":50.009027544,"data":"Oluşturulan örnek: 5,000\n"}
+,{"stream_name":"stdout","time":50.009033522,"data":"Atlanan (yetersiz veri): 0\n"}
+,{"stream_name":"stdout","time":50.009037547,"data":"\n"}
+,{"stream_name":"stdout","time":50.009041561,"data":"Eğitim seti: 4,500\n"}
+,{"stream_name":"stdout","time":50.009045637,"data":"Doğrulama seti: 500\n"}
+,{"stream_name":"stdout","time":50.209329282,"data":"\n"}
+,{"stream_name":"stdout","time":50.209364922,"data":"Train dataset: Dataset({\n"}
+,{"stream_name":"stdout","time":50.209368647,"data":"    features: ['text', 'user_input', 'turkish_output'],\n"}
+,{"stream_name":"stdout","time":50.209371178,"data":"    num_rows: 4500\n"}
+,{"stream_name":"stdout","time":50.209373485,"data":"})\n"}
+,{"stream_name":"stdout","time":50.20937565,"data":"Val dataset: Dataset({\n"}
+,{"stream_name":"stdout","time":50.209377877,"data":"    features: ['text', 'user_input', 'turkish_output'],\n"}
+,{"stream_name":"stdout","time":50.20938039,"data":"    num_rows: 500\n"}
+,{"stream_name":"stdout","time":50.209383429,"data":"})\n"}
+,{"stream_name":"stdout","time":50.512133801,"data":"\n"}
+,{"stream_name":"stdout","time":50.512172815,"data":"--- Örnek Eğitim Metni ---\n"}
+,{"stream_name":"stdout","time":50.512179461,"data":"\u003c|system|\u003e\n"}
+,{"stream_name":"stdout","time":50.512184321,"data":"Sen bir radyoloji uzmanısın. Verilen bulgulardan Türkçe radyoloji raporu yaz.\u003c|end|\u003e\n"}
+,{"stream_name":"stdout","time":50.512189386,"data":"\u003c|user|\u003e\n"}
+,{"stream_name":"stdout","time":50.512213195,"data":"Klinik bilgi: 70 years of age, Female, Intubated.\n"}
+,{"stream_name":"stdout","time":50.512217838,"data":"Bulgular: Single view chest 10-9-2001 at 1924 demonstrates stable tubes \n"}
+,{"stream_name":"stdout","time":50.512221972,"data":"and lines including endotracheal tube, Swan-Ganz catheter with tip in \n"}
+,{"stream_name":"stdout","time":50.512226121,"data":"the main pulmonary artery, L5, mediastinal drains, right chest tube. \n"}
+,{"stream_name":"stdout","time":50.512230323,"data":"Left chest wall AICD, prosthetic valve. Moderate in size right \n"}
+,{"stream_name":"stdout","time":50.512234452,"data":"pleural effusion and right basilar opacity likely atelectasis \n"}
+,{"stream_name":"stdout","time":50.512238416,"data":"slightly increased. Improved aeration of the left lower lobe and \n"}
+,{"stream_name":"stdout","time":50.512242643,"data":"slight decrease in left pleural effusi\n"}
+,{"stream_name":"stdout","time":50.710388661,"data":"Model yükleniyor: microsoft/Phi-3.5-mini-instruct\n"}
+,{"stream_name":"stdout","time":50.710426274,"data":"4-bit quantization (NF4) kullanılıyor...\n"}
+,{"stream_name":"stdout","time":50.710431713,"data":"GPU Compute Capability: 6.0 -- BF16: Hayir\n"}
+,{"stream_name":"stderr","time":51.015226517,"data":"A new version of the following files was downloaded from https://huggingface.co/microsoft/Phi-3.5-mini-instruct:\n"}
+,{"stream_name":"stderr","time":51.015252447,"data":"- configuration_phi3.py\n"}
+,{"stream_name":"stderr","time":51.015256921,"data":". Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.\n"}
+,{"stream_name":"stderr","time":51.01526277,"data":"\n"}
+,{"stream_name":"stderr","time":51.01526584,"data":"A new version of the following files was downloaded from https://huggingface.co/microsoft/Phi-3.5-mini-instruct:\n"}
+,{"stream_name":"stderr","time":51.015268775,"data":"- configuration_phi3.py\n"}
+,{"stream_name":"stderr","time":51.015271892,"data":". Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.\n"}
+,{"stream_name":"stderr","time":51.233180636,"data":"This model config has set a `rope_parameters['original_max_position_embeddings']` field, to be used together with `max_position_embeddings` to determine a scaling factor. Please set the `factor` field of `rope_parameters`with this ratio instead -- we recommend the use of this field over `original_max_position_embeddings`, as it is compatible with most model architectures.\n"}
+,{"stream_name":"stderr","time":51.233207988,"data":"\n"}
+,{"stream_name":"stderr","time":51.233211217,"data":"This model config has set a `rope_parameters['original_max_position_embeddings']` field, to be used together with `max_position_embeddings` to determine a scaling factor. Please set the `factor` field of `rope_parameters`with this ratio instead -- we recommend the use of this field over `original_max_position_embeddings`, as it is compatible with most model architectures.\n"}
+,{"stream_name":"stderr","time":51.445920275,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":51.445950254,"data":"\n"}
+,{"stream_name":"stderr","time":51.445953872,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":55.571945915,"data":"`torch_dtype` is deprecated! Use `dtype` instead!\n"}
+,{"stream_name":"stderr","time":55.571983857,"data":"\n"}
+,{"stream_name":"stderr","time":55.572003018,"data":"`torch_dtype` is deprecated! Use `dtype` instead!\n"}
+,{"stream_name":"stderr","time":55.825225185,"data":"A new version of the following files was downloaded from https://huggingface.co/microsoft/Phi-3.5-mini-instruct:\n"}
+,{"stream_name":"stderr","time":55.825252164,"data":"- modeling_phi3.py\n"}
+,{"stream_name":"stderr","time":55.825256983,"data":". Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.\n"}
+,{"stream_name":"stderr","time":55.825261145,"data":"\n"}
+,{"stream_name":"stderr","time":55.825264605,"data":"A new version of the following files was downloaded from https://huggingface.co/microsoft/Phi-3.5-mini-instruct:\n"}
+,{"stream_name":"stderr","time":55.825268315,"data":"- modeling_phi3.py\n"}
+,{"stream_name":"stderr","time":55.825271823,"data":". Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.\n"}
+,{"stream_name":"stderr","time":55.845462715,"data":"`flash-attention` package not found, consider installing for better performance: No module named 'flash_attn'.\n"}
+,{"stream_name":"stderr","time":55.845490445,"data":"\n"}
+,{"stream_name":"stderr","time":55.845495716,"data":"`flash-attention` package not found, consider installing for better performance: No module named 'flash_attn'.\n"}
+,{"stream_name":"stderr","time":55.846777258,"data":"Current `flash-attention` does not support `window_size`. Either upgrade or use `attn_implementation='eager'`.\n"}
+,{"stream_name":"stderr","time":55.846797143,"data":"\n"}
+,{"stream_name":"stderr","time":55.846801472,"data":"Current `flash-attention` does not support `window_size`. Either upgrade or use `attn_implementation='eager'`.\n"}
+,{"stream_name":"stdout","time":91.648617558,"data":"Model yüklendi (40.9s)\n"}
+,{"stream_name":"stdout","time":91.648682628,"data":"\n"}
+,{"stream_name":"stdout","time":91.648705079,"data":"LoRA konfigürasyonu uygulanıyor...\n"}
+,{"stream_name":"stdout","time":91.649531678,"data":"\n"}
+,{"stream_name":"stdout","time":91.649555508,"data":"--- Model Parametreleri ---\n"}
+,{"stream_name":"stdout","time":91.649561683,"data":"  Toplam parametre:     2,018,053,120\n"}
+,{"stream_name":"stdout","time":91.649566285,"data":"  Eğitilebilir:             8,912,896\n"}
+,{"stream_name":"stdout","time":91.649571669,"data":"  Oran:                         0.44%\n"}
+,{"stream_name":"stdout","time":91.649578443,"data":"\n"}
+,{"stream_name":"stdout","time":91.649581862,"data":"--- Parametre Dtype Dağılımı ---\n"}
+,{"stream_name":"stdout","time":91.64958542,"data":"  torch.float32: 206,113,792\n"}
+,{"stream_name":"stdout","time":91.649588558,"data":"  torch.uint8: 1,811,939,328\n"}
+,{"stream_name":"stdout","time":91.649592287,"data":"  OK: BFloat16 parametre yok, P100 uyumlu.\n"}
+,{"stream_name":"stdout","time":91.649598978,"data":"\n"}
+,{"stream_name":"stdout","time":91.649603661,"data":"--- GPU Bellek ---\n"}
+,{"stream_name":"stdout","time":91.649608777,"data":"  Ayrılmış: 2.69 GB / 17.06 GB\n"}
+,{"stream_name":"stdout","time":91.760418494,"data":"Eğitim başlatılıyor...\n"}
+,{"stream_name":"stdout","time":91.760458018,"data":"  Epoch: 3\n"}
+,{"stream_name":"stdout","time":91.760464864,"data":"  Batch size: 2 (× 4 grad accum = 8 efektif)\n"}
+,{"stream_name":"stdout","time":91.760470937,"data":"  Learning rate: 0.0002\n"}
+,{"stream_name":"stdout","time":91.760476412,"data":"  Max seq length: 512\n"}
+,{"stream_name":"stdout","time":91.76048136,"data":"  Toplam adım (tahmini): 1687\n"}
+,{"stream_name":"stdout","time":91.760499424,"data":"  fp16: False, bf16: False (GPU cap: (6, 0))\n"}
+,{"stream_name":"stdout","time":95.830985733,"data":"\n"}
+,{"stream_name":"stdout","time":95.831018116,"data":"============================================================\n"}
+,{"stream_name":"stderr","time":96.008146709,"data":"--- Logging error ---\n"}
+,{"stream_name":"stderr","time":96.008185752,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":96.008192065,"data":"  File \"/usr/lib/python3.12/logging/__init__.py\", line 1160, in emit\n"}
+,{"stream_name":"stderr","time":96.00819696,"data":"    msg = self.format(record)\n"}
+,{"stream_name":"stderr","time":96.008201208,"data":"          ^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":96.008205088,"data":"  File \"/usr/lib/python3.12/logging/__init__.py\", line 999, in format\n"}
+,{"stream_name":"stderr","time":96.008209271,"data":"    return fmt.format(record)\n"}
+,{"stream_name":"stderr","time":96.008213093,"data":"           ^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":96.008217526,"data":"  File \"/usr/lib/python3.12/logging/__init__.py\", line 703, in format\n"}
+,{"stream_name":"stderr","time":96.008221864,"data":"    record.message = record.getMessage()\n"}
+,{"stream_name":"stderr","time":96.008225634,"data":"                     ^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":96.00823001,"data":"  File \"/usr/lib/python3.12/logging/__init__.py\", line 392, in getMessage\n"}
+,{"stream_name":"stderr","time":96.008234179,"data":"    msg = msg % self.args\n"}
+,{"stream_name":"stderr","time":96.008238253,"data":"          ~~~~^~~~~~~~~~~\n"}
+,{"stream_name":"stderr","time":96.008242504,"data":"TypeError: not all arguments converted during string formatting\n"}
+,{"stream_name":"stderr","time":96.008246215,"data":"Call stack:\n"}
+,{"stream_name":"stderr","time":96.008250153,"data":"  File \"\u003cfrozen runpy\u003e\", line 198, in _run_module_as_main\n"}
+,{"stream_name":"stderr","time":96.008254628,"data":"  File \"\u003cfrozen runpy\u003e\", line 88, in _run_code\n"}
+,{"stream_name":"stderr","time":96.008259081,"data":"  File \"/usr/local/lib/python3.12/dist-packages/colab_kernel_launcher.py\", line 37, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":96.00826433,"data":"    ColabKernelApp.launch_instance()\n"}
+,{"stream_name":"stderr","time":96.008268209,"data":"  File \"/usr/local/lib/python3.12/dist-packages/traitlets/config/application.py\", line 992, in launch_instance\n"}
+,{"stream_name":"stderr","time":96.008272644,"data":"    app.start()\n"}
+,{"stream_name":"stderr","time":96.008276853,"data":"  File \"/usr/local/lib/python3.12/dist-packages/ipykernel/kernelapp.py\", line 712, in start\n"}
+,{"stream_name":"stderr","time":96.008281269,"data":"    self.io_loop.start()\n"}
+,{"stream_name":"stderr","time":96.008285384,"data":"  File \"/usr/local/lib/python3.12/dist-packages/tornado/platform/asyncio.py\", line 211, in start\n"}
+,{"stream_name":"stderr","time":96.008289854,"data":"    self.asyncio_loop.run_forever()\n"}
+,{"stream_name":"stderr","time":96.008294024,"data":"  File \"/usr/lib/python3.12/asyncio/base_events.py\", line 645, in run_forever\n"}
+,{"stream_name":"stderr","time":96.008298622,"data":"    self._run_once()\n"}
+,{"stream_name":"stderr","time":96.008302407,"data":"  File \"/usr/lib/python3.12/asyncio/base_events.py\", line 1999, in _run_once\n"}
+,{"stream_name":"stderr","time":96.008306915,"data":"    handle._run()\n"}
+,{"stream_name":"stderr","time":96.008310736,"data":"  File \"/usr/lib/python3.12/asyncio/events.py\", line 88, in _run\n"}
+,{"stream_name":"stderr","time":96.008330785,"data":"    self._context.run(self._callback, *self._args)\n"}
+,{"stream_name":"stderr","time":96.008335242,"data":"  File \"/usr/local/lib/python3.12/dist-packages/ipykernel/kernelbase.py\", line 510, in dispatch_queue\n"}
+,{"stream_name":"stderr","time":96.008339653,"data":"    await self.process_one()\n"}
+,{"stream_name":"stderr","time":96.008344148,"data":"  File \"/usr/local/lib/python3.12/dist-packages/ipykernel/kernelbase.py\", line 499, in process_one\n"}
+,{"stream_name":"stderr","time":96.008348114,"data":"    await dispatch(*args)\n"}
+,{"stream_name":"stderr","time":96.00835193,"data":"  File \"/usr/local/lib/python3.12/dist-packages/ipykernel/kernelbase.py\", line 406, in dispatch_shell\n"}
+,{"stream_name":"stderr","time":96.008356184,"data":"    await result\n"}
+,{"stream_name":"stderr","time":96.009110953,"data":"  File \"/usr/local/lib/python3.12/dist-packages/ipykernel/kernelbase.py\", line 730, in execute_request\n"}
+,{"stream_name":"stderr","time":96.00913251,"data":"    reply_content = await reply_content\n"}
+,{"stream_name":"stderr","time":96.009137025,"data":"  File \"/usr/local/lib/python3.12/dist-packages/ipykernel/ipkernel.py\", line 383, in do_execute\n"}
+,{"stream_name":"stderr","time":96.009141344,"data":"    res = shell.run_cell(\n"}
+,{"stream_name":"stderr","time":96.009145852,"data":"  File \"/usr/local/lib/python3.12/dist-packages/ipykernel/zmqshell.py\", line 528, in run_cell\n"}
+,{"stream_name":"stderr","time":96.009150397,"data":"    return super().run_cell(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":96.00915465,"data":"  File \"/usr/local/lib/python3.12/dist-packages/IPython/core/interactiveshell.py\", line 2975, in run_cell\n"}
+,{"stream_name":"stderr","time":96.009159447,"data":"    result = self._run_cell(\n"}
+,{"stream_name":"stderr","time":96.009163658,"data":"  File \"/usr/local/lib/python3.12/dist-packages/IPython/core/interactiveshell.py\", line 3030, in _run_cell\n"}
+,{"stream_name":"stderr","time":96.009168163,"data":"    return runner(coro)\n"}
+,{"stream_name":"stderr","time":96.009171459,"data":"  File \"/usr/local/lib/python3.12/dist-packages/IPython/core/async_helpers.py\", line 78, in _pseudo_sync_runner\n"}
+,{"stream_name":"stderr","time":96.009175525,"data":"    coro.send(None)\n"}
+,{"stream_name":"stderr","time":96.009196111,"data":"  File \"/usr/local/lib/python3.12/dist-packages/IPython/core/interactiveshell.py\", line 3257, in run_cell_async\n"}
+,{"stream_name":"stderr","time":96.009200652,"data":"    has_raised = await self.run_ast_nodes(code_ast.body, cell_name,\n"}
+,{"stream_name":"stderr","time":96.009205641,"data":"  File \"/usr/local/lib/python3.12/dist-packages/IPython/core/interactiveshell.py\", line 3473, in run_ast_nodes\n"}
+,{"stream_name":"stderr","time":96.009210398,"data":"    if (await self.run_code(code, result,  async_=asy)):\n"}
+,{"stream_name":"stderr","time":96.009214725,"data":"  File \"/usr/local/lib/python3.12/dist-packages/IPython/core/interactiveshell.py\", line 3553, in run_code\n"}
+,{"stream_name":"stderr","time":96.009219607,"data":"    exec(code_obj, self.user_global_ns, self.user_ns)\n"}
+,{"stream_name":"stderr","time":96.0092236,"data":"  File \"/tmp/ipykernel_24/2479101678.py\", line 101, in \u003ccell line: 0\u003e\n"}
+,{"stream_name":"stderr","time":96.009229322,"data":"    train_result = trainer.train()\n"}
+,{"stream_name":"stderr","time":96.009233389,"data":"  File \"/usr/local/lib/python3.12/dist-packages/transformers/trainer.py\", line 1412, in train\n"}
+,{"stream_name":"stderr","time":96.009237898,"data":"    return inner_training_loop(\n"}
+,{"stream_name":"stderr","time":96.009252186,"data":"  File \"/usr/local/lib/python3.12/dist-packages/transformers/trainer.py\", line 1742, in _inner_training_loop\n"}
+,{"stream_name":"stderr","time":96.009257736,"data":"    tr_loss_step = self.training_step(model, inputs, num_items_in_batch)\n"}
+,{"stream_name":"stderr","time":96.009261942,"data":"  File \"/usr/local/lib/python3.12/dist-packages/trl/trainer/sft_trainer.py\", line 1320, in training_step\n"}
+,{"stream_name":"stderr","time":96.009266461,"data":"    return super().training_step(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":96.009271571,"data":"  File \"/usr/local/lib/python3.12/dist-packages/transformers/trainer.py\", line 1951, in training_step\n"}
+,{"stream_name":"stderr","time":96.009275948,"data":"    loss = self.compute_loss(model, inputs, num_items_in_batch=num_items_in_batch)\n"}
+,{"stream_name":"stderr","time":96.009281694,"data":"  File \"/usr/local/lib/python3.12/dist-packages/trl/trainer/sft_trainer.py\", line 1216, in compute_loss\n"}
+,{"stream_name":"stderr","time":96.009286703,"data":"    (loss, outputs) = super().compute_loss(\n"}
+,{"stream_name":"stderr","time":96.009290724,"data":"  File \"/usr/local/lib/python3.12/dist-packages/transformers/trainer.py\", line 2022, in compute_loss\n"}
+,{"stream_name":"stderr","time":96.009295102,"data":"    outputs = model(**inputs)\n"}
+,{"stream_name":"stderr","time":96.009299262,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py\", line 1775, in _wrapped_call_impl\n"}
+,{"stream_name":"stderr","time":96.009304151,"data":"    return self._call_impl(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":96.009308624,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py\", line 1786, in _call_impl\n"}
+,{"stream_name":"stderr","time":96.009313259,"data":"    return forward_call(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":96.009318042,"data":"  File \"/usr/local/lib/python3.12/dist-packages/peft/peft_model.py\", line 1923, in forward\n"}
+,{"stream_name":"stderr","time":96.009322738,"data":"    return self.base_model(\n"}
+,{"stream_name":"stderr","time":96.009330712,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py\", line 1775, in _wrapped_call_impl\n"}
+,{"stream_name":"stderr","time":96.009334739,"data":"    return self._call_impl(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":96.009338507,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py\", line 1786, in _call_impl\n"}
+,{"stream_name":"stderr","time":96.00934337,"data":"    return forward_call(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":96.009348514,"data":"  File \"/usr/local/lib/python3.12/dist-packages/peft/tuners/tuners_utils.py\", line 311, in forward\n"}
+,{"stream_name":"stderr","time":96.009353411,"data":"    return self.model.forward(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":96.009358042,"data":"  File \"/root/.cache/huggingface/modules/transformers_modules/microsoft/Phi_hyphen_3_dot_5_hyphen_mini_hyphen_instruct/2fe192450127e6a83f7441aef6e3ca586c338b77/modeling_phi3.py\", line 1243, in forward\n"}
+,{"stream_name":"stderr","time":96.00936308,"data":"    outputs = self.model(\n"}
+,{"stream_name":"stderr","time":96.009367505,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py\", line 1775, in _wrapped_call_impl\n"}
+,{"stream_name":"stderr","time":96.009372202,"data":"    return self._call_impl(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":96.009376703,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py\", line 1786, in _call_impl\n"}
+,{"stream_name":"stderr","time":96.009381236,"data":"    return forward_call(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":96.009389296,"data":"  File \"/root/.cache/huggingface/modules/transformers_modules/microsoft/Phi_hyphen_3_dot_5_hyphen_mini_hyphen_instruct/2fe192450127e6a83f7441aef6e3ca586c338b77/modeling_phi3.py\", line 1091, in forward\n"}
+,{"stream_name":"stderr","time":96.009394466,"data":"    attention_mask = _prepare_4d_causal_attention_mask(\n"}
+,{"stream_name":"stderr","time":96.009398962,"data":"  File \"/usr/local/lib/python3.12/dist-packages/transformers/modeling_attn_mask_utils.py\", line 350, in _prepare_4d_causal_attention_mask\n"}
+,{"stream_name":"stderr","time":96.009404741,"data":"    attn_mask_converter = AttentionMaskConverter(is_causal=True, sliding_window=sliding_window)\n"}
+,{"stream_name":"stderr","time":96.009409514,"data":"  File \"/usr/local/lib/python3.12/dist-packages/transformers/modeling_attn_mask_utils.py\", line 74, in __init__\n"}
+,{"stream_name":"stderr","time":96.009414656,"data":"    logger.warning_once(DEPRECATION_MESSAGE, FutureWarning)\n"}
+,{"stream_name":"stderr","time":96.009418815,"data":"  File \"/usr/local/lib/python3.12/dist-packages/transformers/utils/logging.py\", line 327, in warning_once\n"}
+,{"stream_name":"stderr","time":96.009423638,"data":"    self.warning(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":96.009427932,"data":"Message: 'The attention mask API under `transformers.modeling_attn_mask_utils` (`AttentionMaskConverter`) is deprecated and will be removed in Transformers v5.10. Please use the new API in `transformers.masking_utils`.'\n"}
+,{"stream_name":"stderr","time":96.00943281,"data":"Arguments: (\u003cclass 'FutureWarning'\u003e,)\n"}
+,{"stream_name":"stderr","time":96.009437253,"data":"\n"}
+,{"stream_name":"stderr","time":96.009441371,"data":"--- Logging error ---\n"}
+,{"stream_name":"stderr","time":96.009445918,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":96.009450053,"data":"  File \"/usr/lib/python3.12/logging/__init__.py\", line 1160, in emit\n"}
+,{"stream_name":"stderr","time":96.009454514,"data":"    msg = self.format(record)\n"}
+,{"stream_name":"stderr","time":96.009458658,"data":"          ^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":96.009462909,"data":"  File \"/usr/lib/python3.12/logging/__init__.py\", line 999, in format\n"}
+,{"stream_name":"stderr","time":96.009467097,"data":"    return fmt.format(record)\n"}
+,{"stream_name":"stderr","time":96.009471648,"data":"           ^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":96.009476154,"data":"  File \"/usr/lib/python3.12/logging/__init__.py\", line 703, in format\n"}
+,{"stream_name":"stderr","time":96.009481172,"data":"    record.message = record.getMessage()\n"}
+,{"stream_name":"stderr","time":96.00948571,"data":"                     ^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":96.009489604,"data":"  File \"/usr/lib/python3.12/logging/__init__.py\", line 392, in getMessage\n"}
+,{"stream_name":"stderr","time":96.0094947,"data":"    msg = msg % self.args\n"}
+,{"stream_name":"stderr","time":96.009498858,"data":"          ~~~~^~~~~~~~~~~\n"}
+,{"stream_name":"stderr","time":96.009503164,"data":"TypeError: not all arguments converted during string formatting\n"}
+,{"stream_name":"stderr","time":96.009507564,"data":"Call stack:\n"}
+,{"stream_name":"stderr","time":96.009512219,"data":"  File \"\u003cfrozen runpy\u003e\", line 198, in _run_module_as_main\n"}
+,{"stream_name":"stderr","time":96.009517131,"data":"  File \"\u003cfrozen runpy\u003e\", line 88, in _run_code\n"}
+,{"stream_name":"stderr","time":96.009521582,"data":"  File \"/usr/local/lib/python3.12/dist-packages/colab_kernel_launcher.py\", line 37, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":96.009530148,"data":"    ColabKernelApp.launch_instance()\n"}
+,{"stream_name":"stderr","time":96.009534696,"data":"  File \"/usr/local/lib/python3.12/dist-packages/traitlets/config/application.py\", line 992, in launch_instance\n"}
+,{"stream_name":"stderr","time":96.009539369,"data":"    app.start()\n"}
+,{"stream_name":"stderr","time":96.00954383,"data":"  File \"/usr/local/lib/python3.12/dist-packages/ipykernel/kernelapp.py\", line 712, in start\n"}
+,{"stream_name":"stderr","time":96.009548804,"data":"    self.io_loop.start()\n"}
+,{"stream_name":"stderr","time":96.009552977,"data":"  File \"/usr/local/lib/python3.12/dist-packages/tornado/platform/asyncio.py\", line 211, in start\n"}
+,{"stream_name":"stderr","time":96.009557611,"data":"    self.asyncio_loop.run_forever()\n"}
+,{"stream_name":"stderr","time":96.009561939,"data":"  File \"/usr/lib/python3.12/asyncio/base_events.py\", line 645, in run_forever\n"}
+,{"stream_name":"stderr","time":96.009566402,"data":"    self._run_once()\n"}
+,{"stream_name":"stderr","time":96.009571413,"data":"  File \"/usr/lib/python3.12/asyncio/base_events.py\", line 1999, in _run_once\n"}
+,{"stream_name":"stderr","time":96.009576292,"data":"    handle._run()\n"}
+,{"stream_name":"stderr","time":96.009580386,"data":"  File \"/usr/lib/python3.12/asyncio/events.py\", line 88, in _run\n"}
+,{"stream_name":"stderr","time":96.009585114,"data":"    self._context.run(self._callback, *self._args)\n"}
+,{"stream_name":"stderr","time":96.009589291,"data":"  File \"/usr/local/lib/python3.12/dist-packages/ipykernel/kernelbase.py\", line 510, in dispatch_queue\n"}
+,{"stream_name":"stderr","time":96.009593824,"data":"    await self.process_one()\n"}
+,{"stream_name":"stderr","time":96.009598116,"data":"  File \"/usr/local/lib/python3.12/dist-packages/ipykernel/kernelbase.py\", line 499, in process_one\n"}
+,{"stream_name":"stderr","time":96.009602769,"data":"    await dispatch(*args)\n"}
+,{"stream_name":"stderr","time":96.009606842,"data":"  File \"/usr/local/lib/python3.12/dist-packages/ipykernel/kernelbase.py\", line 406, in dispatch_shell\n"}
+,{"stream_name":"stderr","time":96.009611846,"data":"    await result\n"}
+,{"stream_name":"stderr","time":96.009616245,"data":"  File \"/usr/local/lib/python3.12/dist-packages/ipykernel/kernelbase.py\", line 730, in execute_request\n"}
+,{"stream_name":"stderr","time":96.009621076,"data":"    reply_content = await reply_content\n"}
+,{"stream_name":"stderr","time":96.009625481,"data":"  File \"/usr/local/lib/python3.12/dist-packages/ipykernel/ipkernel.py\", line 383, in do_execute\n"}
+,{"stream_name":"stderr","time":96.009630256,"data":"    res = shell.run_cell(\n"}
+,{"stream_name":"stderr","time":96.009634604,"data":"  File \"/usr/local/lib/python3.12/dist-packages/ipykernel/zmqshell.py\", line 528, in run_cell\n"}
+,{"stream_name":"stderr","time":96.0096397,"data":"    return super().run_cell(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":96.009643908,"data":"  File \"/usr/local/lib/python3.12/dist-packages/IPython/core/interactiveshell.py\", line 2975, in run_cell\n"}
+,{"stream_name":"stderr","time":96.009648693,"data":"    result = self._run_cell(\n"}
+,{"stream_name":"stderr","time":96.009653084,"data":"  File \"/usr/local/lib/python3.12/dist-packages/IPython/core/interactiveshell.py\", line 3030, in _run_cell\n"}
+,{"stream_name":"stderr","time":96.009657803,"data":"    return runner(coro)\n"}
+,{"stream_name":"stderr","time":96.009662312,"data":"  File \"/usr/local/lib/python3.12/dist-packages/IPython/core/async_helpers.py\", line 78, in _pseudo_sync_runner\n"}
+,{"stream_name":"stderr","time":96.009667278,"data":"    coro.send(None)\n"}
+,{"stream_name":"stderr","time":96.009674906,"data":"  File \"/usr/local/lib/python3.12/dist-packages/IPython/core/interactiveshell.py\", line 3257, in run_cell_async\n"}
+,{"stream_name":"stderr","time":96.009679727,"data":"    has_raised = await self.run_ast_nodes(code_ast.body, cell_name,\n"}
+,{"stream_name":"stderr","time":96.009684466,"data":"  File \"/usr/local/lib/python3.12/dist-packages/IPython/core/interactiveshell.py\", line 3473, in run_ast_nodes\n"}
+,{"stream_name":"stderr","time":96.009689078,"data":"    if (await self.run_code(code, result,  async_=asy)):\n"}
+,{"stream_name":"stderr","time":96.009693307,"data":"  File \"/usr/local/lib/python3.12/dist-packages/IPython/core/interactiveshell.py\", line 3553, in run_code\n"}
+,{"stream_name":"stderr","time":96.009698114,"data":"    exec(code_obj, self.user_global_ns, self.user_ns)\n"}
+,{"stream_name":"stderr","time":96.009702544,"data":"  File \"/tmp/ipykernel_24/2479101678.py\", line 101, in \u003ccell line: 0\u003e\n"}
+,{"stream_name":"stderr","time":96.009726352,"data":"    train_result = trainer.train()\n"}
+,{"stream_name":"stderr","time":96.009731111,"data":"  File \"/usr/local/lib/python3.12/dist-packages/transformers/trainer.py\", line 1412, in train\n"}
+,{"stream_name":"stderr","time":96.009736423,"data":"    return inner_training_loop(\n"}
+,{"stream_name":"stderr","time":96.00974064,"data":"  File \"/usr/local/lib/python3.12/dist-packages/transformers/trainer.py\", line 1742, in _inner_training_loop\n"}
+,{"stream_name":"stderr","time":96.009745342,"data":"    tr_loss_step = self.training_step(model, inputs, num_items_in_batch)\n"}
+,{"stream_name":"stderr","time":96.009749826,"data":"  File \"/usr/local/lib/python3.12/dist-packages/trl/trainer/sft_trainer.py\", line 1320, in training_step\n"}
+,{"stream_name":"stderr","time":96.009754574,"data":"    return super().training_step(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":96.009758685,"data":"  File \"/usr/local/lib/python3.12/dist-packages/transformers/trainer.py\", line 1951, in training_step\n"}
+,{"stream_name":"stderr","time":96.009763704,"data":"    loss = self.compute_loss(model, inputs, num_items_in_batch=num_items_in_batch)\n"}
+,{"stream_name":"stderr","time":96.009768736,"data":"  File \"/usr/local/lib/python3.12/dist-packages/trl/trainer/sft_trainer.py\", line 1216, in compute_loss\n"}
+,{"stream_name":"stderr","time":96.009773524,"data":"    (loss, outputs) = super().compute_loss(\n"}
+,{"stream_name":"stderr","time":96.009777578,"data":"  File \"/usr/local/lib/python3.12/dist-packages/transformers/trainer.py\", line 2022, in compute_loss\n"}
+,{"stream_name":"stderr","time":96.00978233,"data":"    outputs = model(**inputs)\n"}
+,{"stream_name":"stderr","time":96.009786582,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py\", line 1775, in _wrapped_call_impl\n"}
+,{"stream_name":"stderr","time":96.009791344,"data":"    return self._call_impl(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":96.00979549,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py\", line 1786, in _call_impl\n"}
+,{"stream_name":"stderr","time":96.009800182,"data":"    return forward_call(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":96.009804528,"data":"  File \"/usr/local/lib/python3.12/dist-packages/peft/peft_model.py\", line 1923, in forward\n"}
+,{"stream_name":"stderr","time":96.009809139,"data":"    return self.base_model(\n"}
+,{"stream_name":"stderr","time":96.009813645,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py\", line 1775, in _wrapped_call_impl\n"}
+,{"stream_name":"stderr","time":96.009818018,"data":"    return self._call_impl(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":96.009827738,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py\", line 1786, in _call_impl\n"}
+,{"stream_name":"stderr","time":96.009832465,"data":"    return forward_call(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":96.009836622,"data":"  File \"/usr/local/lib/python3.12/dist-packages/peft/tuners/tuners_utils.py\", line 311, in forward\n"}
+,{"stream_name":"stderr","time":96.009841294,"data":"    return self.model.forward(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":96.009845665,"data":"  File \"/root/.cache/huggingface/modules/transformers_modules/microsoft/Phi_hyphen_3_dot_5_hyphen_mini_hyphen_instruct/2fe192450127e6a83f7441aef6e3ca586c338b77/modeling_phi3.py\", line 1243, in forward\n"}
+,{"stream_name":"stderr","time":96.009851398,"data":"    outputs = self.model(\n"}
+,{"stream_name":"stderr","time":96.009854999,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py\", line 1775, in _wrapped_call_impl\n"}
+,{"stream_name":"stderr","time":96.009861784,"data":"    return self._call_impl(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":96.00986594,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py\", line 1786, in _call_impl\n"}
+,{"stream_name":"stderr","time":96.00987118,"data":"    return forward_call(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":96.0098756,"data":"  File \"/root/.cache/huggingface/modules/transformers_modules/microsoft/Phi_hyphen_3_dot_5_hyphen_mini_hyphen_instruct/2fe192450127e6a83f7441aef6e3ca586c338b77/modeling_phi3.py\", line 1091, in forward\n"}
+,{"stream_name":"stderr","time":96.009880909,"data":"    attention_mask = _prepare_4d_causal_attention_mask(\n"}
+,{"stream_name":"stderr","time":96.00988607,"data":"  File \"/usr/local/lib/python3.12/dist-packages/transformers/modeling_attn_mask_utils.py\", line 350, in _prepare_4d_causal_attention_mask\n"}
+,{"stream_name":"stderr","time":96.009890851,"data":"    attn_mask_converter = AttentionMaskConverter(is_causal=True, sliding_window=sliding_window)\n"}
+,{"stream_name":"stderr","time":96.009895532,"data":"  File \"/usr/local/lib/python3.12/dist-packages/transformers/modeling_attn_mask_utils.py\", line 74, in __init__\n"}
+,{"stream_name":"stderr","time":96.009899923,"data":"    logger.warning_once(DEPRECATION_MESSAGE, FutureWarning)\n"}
+,{"stream_name":"stderr","time":96.009904434,"data":"  File \"/usr/local/lib/python3.12/dist-packages/transformers/utils/logging.py\", line 327, in warning_once\n"}
+,{"stream_name":"stderr","time":96.009909322,"data":"    self.warning(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":96.009913162,"data":"Message: 'The attention mask API under `transformers.modeling_attn_mask_utils` (`AttentionMaskConverter`) is deprecated and will be removed in Transformers v5.10. Please use the new API in `transformers.masking_utils`.'\n"}
+,{"stream_name":"stderr","time":96.009918012,"data":"Arguments: (\u003cclass 'FutureWarning'\u003e,)\n"}
+,{"stream_name":"stderr","time":96.128229319,"data":"You are not running the flash-attention implementation, expect numerical differences.\n"}
+,{"stream_name":"stderr","time":96.128263508,"data":"\n"}
+,{"stream_name":"stderr","time":96.128266909,"data":"You are not running the flash-attention implementation, expect numerical differences.\n"}
+,{"stream_name":"stdout","time":18314.326940168,"data":"============================================================\n"}
+,{"stream_name":"stdout","time":18314.327009231,"data":"Eğitim tamamlandı! Süre: 18219s (5.1 saat)\n"}
+,{"stream_name":"stdout","time":18314.327019285,"data":"  Son loss: 0.9074\n"}
+,{"stream_name":"stdout","time":18314.327035416,"data":"  Global adım: 1689\n"}
+,{"stream_name":"stdout","time":18314.523629896,"data":"Loss eğrisi kaydedildi: /kaggle/working/training_loss_curve.png\n"}
+,{"stream_name":"stdout","time":18314.723233882,"data":"Örnek rapor üretimi başlıyor...\n"}
+,{"stream_name":"stdout","time":18314.723262268,"data":"\n"}
+,{"stream_name":"stdout","time":18314.72326548,"data":"================================================================================\n"}
+,{"stream_name":"stdout","time":18314.72326829,"data":"ÖRNEK TÜRKÇE RAPOR ÜRETİMLERİ (10 örnek)\n"}
+,{"stream_name":"stdout","time":18314.72327091,"data":"================================================================================\n"}
+,{"stream_name":"stdout","time":18314.723273468,"data":"\n"}
+,{"stream_name":"stdout","time":18314.723275667,"data":"--- Örnek 1/10 ---\n"}
+,{"stream_name":"stdout","time":18314.723278277,"data":"  GİRDİ:      Klinik bilgi: S/p central line placement\n"}
+,{"stream_name":"stdout","time":18314.723280766,"data":"Bulgular: Chest x-ray on 9/5/19 at 1642 shows bilateral perihilar and right \n"}
+,{"stream_name":"stdout","time":18314.723283345,"data":"upper lobe opacities, from edema versus infection.  Evaluation of the \n"}
+,{"stream_name":"stdout","time":18314.723285663,"data":"lungs is su...\n"}
+,{"stream_name":"stdout","time":18314.723288138,"data":"  REFERANS:   1.SERIES OF 4 CHEST X-RAYS SHOWING BILATERAL PERIHILAR AND RIGHT \n"}
+,{"stream_name":"stdout","time":18314.723290458,"data":"UPPER LOBE OPACITIES, FROM EDEMA VERSUS INFECTION.\n"}
+,{"stream_name":"stdout","time":18314.72329319,"data":" \n"}
+,{"stream_name":"stdout","time":18314.723295497,"data":"2.THE FIRST FILM SHOWS A NEW SWAN-GANZ CATHETER, TIP IN A RIGHT LOWER \n"}
+,{"stream_name":"stdout","time":18314.723297978,"data":"LOBE PULMO...\n"}
+,{"stream_name":"stdout","time":18314.723300248,"data":"  ÜRETİLEN:   [Üretim hatası: 'DynamicCache' object has no attribute 'seen_tokens']\n"}
+,{"stream_name":"stdout","time":18314.723302633,"data":"\n"}
+,{"stream_name":"stdout","time":18314.723304883,"data":"--- Örnek 2/10 ---\n"}
+,{"stream_name":"stdout","time":18314.723307127,"data":"  GİRDİ:      Klinik bilgi: 37 years of age, Male, Infxn.\n"}
+,{"stream_name":"stdout","time":18314.723309425,"data":"Bulgular: There is underpenetration of the radiograph due to large body \n"}
+,{"stream_name":"stdout","time":18314.72331172,"data":"habitus. Support devices unchanged. Greatly diminished lung volumes. \n"}
+,{"stream_name":"stdout","time":18314.723314095,"data":"Increased opa...\n"}
+,{"stream_name":"stdout","time":18314.723316333,"data":"  REFERANS:   1.  Increased opacification throughout the right lung could be due to \n"}
+,{"stream_name":"stdout","time":18314.723318659,"data":"underpenetration and technique. Recommend correlation with physical \n"}
+,{"stream_name":"stdout","time":18314.723320948,"data":"exam to late for developing konsolidasyon.\n"}
+,{"stream_name":"stdout","time":18314.723323283,"data":" \n"}
+,{"stream_name":"stdout","time":18314.723325462,"data":"2.  Findings di...\n"}
+,{"stream_name":"stdout","time":18314.72332767,"data":"  ÜRETİLEN:   [Üretim hatası: 'DynamicCache' object has no attribute 'seen_tokens']\n"}
+,{"stream_name":"stdout","time":18314.723330048,"data":"\n"}
+,{"stream_name":"stdout","time":18314.723332195,"data":"--- Örnek 3/10 ---\n"}
+,{"stream_name":"stdout","time":18314.723334417,"data":"  GİRDİ:      Hasta: 24 yaş, Female\n"}
+,{"stream_name":"stdout","time":18314.723336701,"data":"  REFERANS:   1. POSTTRANSPLANT CHEST DEMONSTRATES STABLE POSITION OF LEFT-SIDED\n"}
+,{"stream_name":"stdout","time":18314.723339092,"data":"CHEST TUBE. THERE HAS BEEN INTERVAL PLACEMENT OF A LEFT-SIDED PICC\n"}
+,{"stream_name":"stdout","time":18314.723351004,"data":"LINE, WHOSE TIP IS LOCATED NEAR THE CAVOATRIAL JUNCTION.\n"}
+,{"stream_name":"stdout","time":18314.723353512,"data":"2. SMALL ...\n"}
+,{"stream_name":"stdout","time":18314.723355744,"data":"  ÜRETİLEN:   [Üretim hatası: 'DynamicCache' object has no attribute 'seen_tokens']\n"}
+,{"stream_name":"stdout","time":18314.723358109,"data":"\n"}
+,{"stream_name":"stdout","time":18314.723360299,"data":"--- Örnek 4/10 ---\n"}
+,{"stream_name":"stdout","time":18314.723362743,"data":"  GİRDİ:      Klinik bilgi: Shortness of breath\n"}
+,{"stream_name":"stdout","time":18314.723365095,"data":"Bulgular: No definite evidence for focal air space consolidation. Pulmonary\n"}
+,{"stream_name":"stdout","time":18314.723367392,"data":"vascularity appears somewhat indistinct, and there appears to be a\n"}
+,{"stream_name":"stdout","time":18314.723369681,"data":"small amount of fluid i...\n"}
+,{"stream_name":"stdout","time":18314.723371936,"data":"  REFERANS:   Suggestion of very mild interstitial pulmonary ödem associated\n"}
+,{"stream_name":"stdout","time":18314.723375562,"data":"with small amount of fluid within the fissures.\n"}
+,{"stream_name":"stdout","time":18314.723377883,"data":"No definite evidence for air space konsolidasyon.\n"}
+,{"stream_name":"stdout","time":18314.723380198,"data":"  ÜRETİLEN:   [Üretim hatası: 'DynamicCache' object has no attribute 'seen_tokens']\n"}
+,{"stream_name":"stdout","time":18314.723382627,"data":"\n"}
+,{"stream_name":"stdout","time":18314.723384904,"data":"--- Örnek 5/10 ---\n"}
+,{"stream_name":"stdout","time":18314.723387125,"data":"  GİRDİ:      Klinik bilgi: None provided.\n"}
+,{"stream_name":"stdout","time":18314.723389421,"data":"Karşılaştırma: 5/10/2020\n"}
+,{"stream_name":"stdout","time":18314.723391692,"data":"Hasta: 75 yaş, Female\n"}
+,{"stream_name":"stdout","time":18314.723394061,"data":"  REFERANS:   1.  MILD INTERSTITIAL PULMONARY EDEMA.\n"}
+,{"stream_name":"stdout","time":18314.7233964,"data":"2.  POSSIBLE TINY PLEURAL EFFUSION, UNCLEAR WHICH SIDE.\n"}
+,{"stream_name":"stdout","time":18314.723398695,"data":"3.  MILD CARDIOMEGALY.\n"}
+,{"stream_name":"stdout","time":18314.723400955,"data":"  ÜRETİLEN:   [Üretim hatası: 'DynamicCache' object has no attribute 'seen_tokens']\n"}
+,{"stream_name":"stdout","time":18314.723403408,"data":"\n"}
+,{"stream_name":"stdout","time":18314.723405533,"data":"--- Örnek 6/10 ---\n"}
+,{"stream_name":"stdout","time":18314.723407749,"data":"  GİRDİ:      Klinik bilgi: 23-year-old female with idiopathic pulmonary\n"}
+,{"stream_name":"stdout","time":18314.72341011,"data":"hemorrhage. Status post double lung transplant. Chest tube\n"}
+,{"stream_name":"stdout","time":18314.723412487,"data":"removed.\n"}
+,{"stream_name":"stdout","time":18314.723414667,"data":"Karşılaştırma: March 11th.\n"}
+,{"stream_name":"stdout","time":18314.72341692,"data":"Hasta: 24 yaş, Female\n"}
+,{"stream_name":"stdout","time":18314.723419235,"data":"  REFERANS:   1. INTERVAL REMOVAL OF TWO LEFT-SIDED CHEST TUBES.\n"}
+,{"stream_name":"stdout","time":18314.723421602,"data":"2. SMALL LEFT APICAL PNEUMOTHORAX REMAINS.\n"}
+,{"stream_name":"stdout","time":18314.723423948,"data":"  ÜRETİLEN:   [Üretim hatası: 'DynamicCache' object has no attribute 'seen_tokens']\n"}
+,{"stream_name":"stdout","time":18314.723426303,"data":"\n"}
+,{"stream_name":"stdout","time":18314.723428476,"data":"--- Örnek 7/10 ---\n"}
+,{"stream_name":"stdout","time":18314.72343071,"data":"  GİRDİ:      Klinik bilgi: Thirty-year-old male, rule out infiltrate.\n"}
+,{"stream_name":"stdout","time":18314.72343308,"data":"Karşılaştırma: 4-16-2001.\n"}
+,{"stream_name":"stdout","time":18314.723438601,"data":"Hasta: 37 yaş, Male\n"}
+,{"stream_name":"stdout","time":18314.723440998,"data":"  REFERANS:   1.   STABLE TRACHEOSTOMY. \n"}
+,{"stream_name":"stdout","time":18314.723443287,"data":" \n"}
+,{"stream_name":"stdout","time":18314.723445432,"data":" 2.   INTERVAL INCREASED PULMONARY EDEMA WITH DENSE OPACIFICATION OF \n"}
+,{"stream_name":"stdout","time":18314.723447779,"data":"THE LEFT LOWER LOBE CHEST, MAY REFLECT ASPIRATION, INFECTION, OR \n"}
+,{"stream_name":"stdout","time":18314.723450117,"data":"ATELECTASIS. \n"}
+,{"stream_name":"stdout","time":18314.7234523,"data":" \n"}
+,{"stream_name":"stdout","time":18314.723454519,"data":" 3.   LOW LUNG VOLU...\n"}
+,{"stream_name":"stdout","time":18314.723456761,"data":"  ÜRETİLEN:   [Üretim hatası: 'DynamicCache' object has no attribute 'seen_tokens']\n"}
+,{"stream_name":"stdout","time":18314.723459253,"data":"\n"}
+,{"stream_name":"stdout","time":18314.723461378,"data":"--- Örnek 8/10 ---\n"}
+,{"stream_name":"stdout","time":18314.723463598,"data":"  GİRDİ:      Klinik bilgi: Chest tube to w/s\n"}
+,{"stream_name":"stdout","time":18314.723465903,"data":"Karşılaştırma: 6/7/05 CXR\n"}
+,{"stream_name":"stdout","time":18314.723468114,"data":"Hasta: 50 yaş, Male\n"}
+,{"stream_name":"stdout","time":18314.723470403,"data":"  REFERANS:   1.STABLE POSITION OF RIGHT-SIDED CHEST TUBE AND RIGHT CENTRAL VENOUS \n"}
+,{"stream_name":"stdout","time":18314.723472725,"data":"LINE.\n"}
+,{"stream_name":"stdout","time":18314.723474892,"data":" \n"}
+,{"stream_name":"stdout","time":18314.723477057,"data":"2.STABLE MODERATELY SIZED RIGHT PNEUMOTHORAX.  REDEMONSTRATION OF \n"}
+,{"stream_name":"stdout","time":18314.723479365,"data":"SUBDIAPHRAGMATIC GAS BILATERALLY.\n"}
+,{"stream_name":"stdout","time":18314.723481608,"data":"  ÜRETİLEN:   [Üretim hatası: 'DynamicCache' object has no attribute 'seen_tokens']\n"}
+,{"stream_name":"stdout","time":18314.72348395,"data":"\n"}
+,{"stream_name":"stdout","time":18314.723486098,"data":"--- Örnek 9/10 ---\n"}
+,{"stream_name":"stdout","time":18314.723488323,"data":"  GİRDİ:      Karşılaştırma: 1/21/2002.\n"}
+,{"stream_name":"stdout","time":18314.72349069,"data":"Hasta: 51 yaş, Female\n"}
+,{"stream_name":"stdout","time":18314.723492914,"data":"  REFERANS:   1. single frontal upright few of the göğüs demonstrates single\n"}
+,{"stream_name":"stdout","time":18314.723495362,"data":"position of a right upper extremity PICC line. The tracheostomy tube\n"}
+,{"stream_name":"stdout","time":18314.723497665,"data":"remains in place.\n"}
+,{"stream_name":"stdout","time":18314.723500105,"data":" 2. Tiny left plevral efüzyon, not definitely seen...\n"}
+,{"stream_name":"stdout","time":18314.723502473,"data":"  ÜRETİLEN:   [Üretim hatası: 'DynamicCache' object has no attribute 'seen_tokens']\n"}
+,{"stream_name":"stdout","time":18314.723504816,"data":"\n"}
+,{"stream_name":"stdout","time":18314.723506978,"data":"--- Örnek 10/10 ---\n"}
+,{"stream_name":"stdout","time":18314.723509205,"data":"  GİRDİ:      Klinik bilgi: 77 year-old male with history of thoracic aortic\n"}
+,{"stream_name":"stdout","time":18314.723511586,"data":"aneurysm, status post repair.\n"}
+,{"stream_name":"stdout","time":18314.723513877,"data":"Karşılaştırma: Comparison is made to study dated april 14.\n"}
+,{"stream_name":"stdout","time":18314.72351618,"data":"Hasta: 77 yaş, Male\n"}
+,{"stream_name":"stdout","time":18314.723518445,"data":"  REFERANS:   1. MARKEDLY ABNORMAL MEDIASTINAL SILHOUETTE THAT IS STABLE FROM\n"}
+,{"stream_name":"stdout","time":18314.723520779,"data":"PRIOR STUDY AND DUE TO KNOWN THORACIC AORTIC ANEURYSM.\n"}
+,{"stream_name":"stdout","time":18314.723523115,"data":"2. LEFT PLEURAL EFFUSION, INCREASED IN SIZE FROM COMPARISON STUDY.\n"}
+,{"stream_name":"stdout","time":18314.72352801,"data":"3. INTERVAL IM...\n"}
+,{"stream_name":"stdout","time":18314.723530325,"data":"  ÜRETİLEN:   [Üretim hatası: 'DynamicCache' object has no attribute 'seen_tokens']\n"}
+,{"stream_name":"stdout","time":18315.11726404,"data":"\n"}
+,{"stream_name":"stdout","time":18315.117294398,"data":"============================================================\n"}
+,{"stream_name":"stdout","time":18315.117300226,"data":"BLEU Skoru (ortalama): 0.0000\n"}
+,{"stream_name":"stdout","time":18315.117304748,"data":"BLEU Skorları: ['0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0004', '0.0000']\n"}
+,{"stream_name":"stdout","time":18315.117309688,"data":"\n"}
+,{"stream_name":"stdout","time":18315.117313566,"data":"--- Uzunluk İstatistikleri ---\n"}
+,{"stream_name":"stdout","time":18315.117317842,"data":"  Referans ortalama: 232 karakter\n"}
+,{"stream_name":"stdout","time":18315.117322066,"data":"  Üretilen ortalama: 69 karakter\n"}
+,{"stream_name":"stdout","time":18315.31708905,"data":"LoRA adapter ağırlıkları kaydediliyor...\n"}
+,{"stream_name":"stdout","time":18315.675001614,"data":"  Adapter kaydedildi: /kaggle/working/turkish_report_llm_outputs/lora_adapter\n"}
+,{"stream_name":"stdout","time":18315.67503111,"data":"  Adapter boyutu: 20.5 MB\n"}
+,{"stream_name":"stdout","time":18315.675035434,"data":"Örnek üretimler kaydedildi: /kaggle/working/turkish_report_llm_outputs/sample_generations.csv\n"}
+,{"stream_name":"stdout","time":18315.675039678,"data":"Eğitim metrikleri kaydedildi: /kaggle/working/turkish_report_llm_outputs/training_metrics.json\n"}
+,{"stream_name":"stdout","time":18315.675043335,"data":"Pipeline config kaydedildi: /kaggle/working/turkish_report_llm_outputs/pipeline_config.json\n"}
+,{"stream_name":"stdout","time":18315.675049222,"data":"Grafik kopyalandı: training_loss_curve.png\n"}
+,{"stream_name":"stdout","time":18315.675052827,"data":"Grafik kopyalandı: translation_analysis.png\n"}
+,{"stream_name":"stdout","time":18315.675055715,"data":"Grafik kopyalandı: training_data_lengths.png\n"}
+,{"stream_name":"stdout","time":18315.675058152,"data":"Grafik kopyalandı: report_length_distribution.png\n"}
+,{"stream_name":"stdout","time":18315.675060545,"data":"\n"}
+,{"stream_name":"stdout","time":18315.675062746,"data":"--- Çıktı Dizini: /kaggle/working/turkish_report_llm_outputs ---\n"}
+,{"stream_name":"stdout","time":18315.675065562,"data":"  lora_adapter/ (20.5 MB)\n"}
+,{"stream_name":"stdout","time":18315.675067814,"data":"  pipeline_config.json (1.4 KB)\n"}
+,{"stream_name":"stdout","time":18315.675070049,"data":"  report_length_distribution.png (103.5 KB)\n"}
+,{"stream_name":"stdout","time":18315.675072342,"data":"  sample_generations.csv (5.3 KB)\n"}
+,{"stream_name":"stdout","time":18315.675074523,"data":"  training_data_lengths.png (51.7 KB)\n"}
+,{"stream_name":"stdout","time":18315.675076717,"data":"  training_loss_curve.png (63.9 KB)\n"}
+,{"stream_name":"stdout","time":18315.675078981,"data":"  training_metrics.json (0.2 KB)\n"}
+,{"stream_name":"stdout","time":18315.675081222,"data":"  translation_analysis.png (97.2 KB)\n"}
+,{"stream_name":"stdout","time":18315.708472885,"data":"\n"}
+,{"stream_name":"stdout","time":18315.708498152,"data":"======================================================================\n"}
+,{"stream_name":"stdout","time":18315.708502985,"data":"AlpCAN Türkçe Radyoloji Rapor LLM -- FİNAL ÖZET\n"}
+,{"stream_name":"stdout","time":18315.708507461,"data":"======================================================================\n"}
+,{"stream_name":"stdout","time":18315.70851095,"data":"\n"}
+,{"stream_name":"stdout","time":18315.708526035,"data":"--- Veri Seti ---\n"}
+,{"stream_name":"stdout","time":18315.708529639,"data":"  Kaynak:               CheXpert Plus (ridvancebec/alpcan-chexpert-reports)\n"}
+,{"stream_name":"stdout","time":18315.70853305,"data":"  Toplam rapor:         223,462\n"}
+,{"stream_name":"stdout","time":18315.708536318,"data":"  Çevrilen alt küme:    5,000\n"}
+,{"stream_name":"stdout","time":18315.708539763,"data":"  Eğitim örnekleri:     4,500\n"}
+,{"stream_name":"stdout","time":18315.708543275,"data":"  Doğrulama örnekleri:  500\n"}
+,{"stream_name":"stdout","time":18315.708546632,"data":"\n"}
+,{"stream_name":"stdout","time":18315.708549797,"data":"--- Çeviri ---\n"}
+,{"stream_name":"stdout","time":18315.708553109,"data":"  Model:                Helsinki-NLP/opus-mt-en-tr\n"}
+,{"stream_name":"stdout","time":18315.708556692,"data":"  Çevrilen metin:       5,000\n"}
+,{"stream_name":"stdout","time":18315.708560029,"data":"  Batch boyutu:         32\n"}
+,{"stream_name":"stdout","time":18315.708563239,"data":"\n"}
+,{"stream_name":"stdout","time":18315.708566452,"data":"--- LLM Model ---\n"}
+,{"stream_name":"stdout","time":18315.708569899,"data":"  Base model:           microsoft/Phi-3.5-mini-instruct\n"}
+,{"stream_name":"stdout","time":18315.708573346,"data":"  Quantization:         4-bit NF4 (double quant)\n"}
+,{"stream_name":"stdout","time":18315.708576824,"data":"  LoRA r/alpha:         16/32\n"}
+,{"stream_name":"stdout","time":18315.708580173,"data":"  Eğitilebilir param:   8,912,896 (0.44%)\n"}
+,{"stream_name":"stdout","time":18315.70858395,"data":"  Toplam param:         2,018,053,120\n"}
+,{"stream_name":"stdout","time":18315.708587217,"data":"\n"}
+,{"stream_name":"stdout","time":18315.708590516,"data":"--- Eğitim ---\n"}
+,{"stream_name":"stdout","time":18315.70859389,"data":"  Epoch:                3\n"}
+,{"stream_name":"stdout","time":18315.708597334,"data":"  Efektif batch:        8\n"}
+,{"stream_name":"stdout","time":18315.708601515,"data":"  Learning rate:        0.0002\n"}
+,{"stream_name":"stdout","time":18315.708605419,"data":"  Eğitim süresi:        5.1 saat\n"}
+,{"stream_name":"stdout","time":18315.70860882,"data":"  Son loss:             0.9073984757056951\n"}
+,{"stream_name":"stdout","time":18315.708612209,"data":"  Global adım:          1689\n"}
+,{"stream_name":"stdout","time":18315.708615674,"data":"  GPU:                  Kaggle T4 16GB\n"}
+,{"stream_name":"stdout","time":18315.708619075,"data":"\n"}
+,{"stream_name":"stdout","time":18315.7086236,"data":"--- Değerlendirme ---\n"}
+,{"stream_name":"stdout","time":18315.708627559,"data":"  BLEU skoru:           0.0000\n"}
+,{"stream_name":"stdout","time":18315.708631078,"data":"  Üretilen örnek:       10\n"}
+,{"stream_name":"stdout","time":18315.708635142,"data":"\n"}
+,{"stream_name":"stdout","time":18315.708638436,"data":"--- Çıktı Dosyaları ---\n"}
+,{"stream_name":"stdout","time":18315.708641927,"data":"  lora_adapter/ (20.5 MB)\n"}
+,{"stream_name":"stdout","time":18315.70864542,"data":"  pipeline_config.json (1.4 KB)\n"}
+,{"stream_name":"stdout","time":18315.708648933,"data":"  report_length_distribution.png (103.5 KB)\n"}
+,{"stream_name":"stdout","time":18315.70865271,"data":"  sample_generations.csv (5.3 KB)\n"}
+,{"stream_name":"stdout","time":18315.708656953,"data":"  training_data_lengths.png (51.7 KB)\n"}
+,{"stream_name":"stdout","time":18315.70866059,"data":"  training_loss_curve.png (63.9 KB)\n"}
+,{"stream_name":"stdout","time":18315.70866434,"data":"  training_metrics.json (0.2 KB)\n"}
+,{"stream_name":"stdout","time":18315.708668033,"data":"  translation_analysis.png (97.2 KB)\n"}
+,{"stream_name":"stdout","time":18315.70867954,"data":"\n"}
+,{"stream_name":"stdout","time":18315.708682799,"data":"--- Sonraki Adımlar ---\n"}
+,{"stream_name":"stdout","time":18315.708685573,"data":"  1. Daha fazla rapor çevir (10K-50K) -\u003e daha iyi Türkçe kalitesi\n"}
+,{"stream_name":"stdout","time":18315.708718345,"data":"  2. Daha büyük model dene (Phi-3-medium veya Llama-3.1-8B)\n"}
+,{"stream_name":"stdout","time":18315.708723301,"data":"  3. ROUGE/BERTScore metrikleri ile detaylı değerlendirme\n"}
+,{"stream_name":"stdout","time":18315.708727113,"data":"  4. LoRA adapter'ı AlpCAN backend'e entegre et\n"}
+,{"stream_name":"stdout","time":18315.708730563,"data":"  5. Gerçek radyoloji uzmanları ile kalitatif değerlendirme\n"}
+,{"stream_name":"stdout","time":18315.708734086,"data":"  6. Türkçe tıbbi terminoloji sözlüğü ile post-processing\n"}
+,{"stream_name":"stdout","time":18315.708737874,"data":"======================================================================\n"}
+,{"stream_name":"stderr","time":18320.681461707,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":18320.681493067,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":18320.819529325,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":18320.819556532,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":18321.373010686,"data":"/usr/local/lib/python3.12/dist-packages/traitlets/traitlets.py:2915: FutureWarning: --Exporter.preprocessors=[\"remove_papermill_header.RemovePapermillHeader\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":18321.373045806,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":18321.405722606,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":18321.770203356,"data":"[NbConvertApp] Writing 593641 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":18324.264321673,"data":"/usr/local/lib/python3.12/dist-packages/traitlets/traitlets.py:2915: FutureWarning: --Exporter.preprocessors=[\"nbconvert.preprocessors.ExtractOutputPreprocessor\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":18324.264354323,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":18324.284769408,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":18325.228946407,"data":"[NbConvertApp] Support files will be in __results___files/\n"}
+,{"stream_name":"stderr","time":18325.228972887,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":18325.229264051,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":18325.229455357,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":18325.229641241,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":18325.229884973,"data":"[NbConvertApp] Writing 683119 bytes to __results__.html\n"}
+]

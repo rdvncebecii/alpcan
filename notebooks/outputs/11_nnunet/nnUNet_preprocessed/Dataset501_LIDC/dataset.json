@@ -1,0 +1,11 @@
+{
+  "channel_names": {
+    "0": "CT"
+  },
+  "labels": {
+    "background": 0,
+    "nodule": 1
+  },
+  "numTraining": 15538,
+  "file_ending": ".png"
+}

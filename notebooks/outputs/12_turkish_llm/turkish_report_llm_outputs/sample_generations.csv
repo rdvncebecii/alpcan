@@ -1,0 +1,102 @@
+input,reference,generated
+"Klinik bilgi: S/p central line placement
+Bulgular: Chest x-ray on 9/5/19 at 1642 shows bilateral perihilar and right 
+upper lobe opacities, from edema versus infection.  Evaluation of the 
+lungs is suboptimal due to the large number of cutaneous 
+neurofibromas.  Cardiomegaly again seen.  New NG tube extending into 
+stomach.  New right IJ Swan-Ganz catheter, tip in a right lower lobe 
+pulmonary artery.  Stable ET tube, right upper extremity PICC.
+ 
+Chest x-ray on 9/5/2019 at 2112 shows slight retraction of the 
+Swan-Ganz catheter.
+ 
+Chest x-ray on 9-5-2019 at 2210 shows slight further retraction of 
+the Swan-Ganz catheter.
+ 
+Chest x-ray on 9-5-2019 at 2305 shows further retraction of the 
+Swan-Ganz catheter, with the tip now in the right main pulmonary 
+artery.
+Karşılaştırma: 9/5/2019 at 0242
+Hasta: 48 yaş, Female","1.SERIES OF 4 CHEST X-RAYS SHOWING BILATERAL PERIHILAR AND RIGHT 
+UPPER LOBE OPACITIES, FROM EDEMA VERSUS INFECTION.
+ 
+2.THE FIRST FILM SHOWS A NEW SWAN-GANZ CATHETER, TIP IN A RIGHT LOWER 
+LOBE PULMONARY ARTERY, AND THE LAST FILM SHOWS RETRACTION OF THE 
+CATHETER INTO THE RIGHT MAIN PULMONARY ARTERY.
+ 
+3.CARDIOMEGALY.
+ 
+4.NUMEROUS CUTANEOUS NEUROFIBROMAS.",[Üretim hatası: 'DynamicCache' object has no attribute 'seen_tokens']
+"Klinik bilgi: 37 years of age, Male, Infxn.
+Bulgular: There is underpenetration of the radiograph due to large body 
+habitus. Support devices unchanged. Greatly diminished lung volumes. 
+Increased opacity is noted throughout the right lung. Persistent left 
+base opacification in the retrocardiac region.
+Karşılaştırma: 8-16-00
+Hasta: 37 yaş, Male","1.  Increased opacification throughout the right lung could be due to 
+underpenetration and technique. Recommend correlation with physical 
+exam to late for developing konsolidasyon.
+ 
+2.  Findings discussed with Walls, Evelynn at 4:20 PM.
+ 
+   
+ 
+""Physician to Physician Radiology Consult Line: (223) 260-8762""",[Üretim hatası: 'DynamicCache' object has no attribute 'seen_tokens']
+"Hasta: 24 yaş, Female","1. POSTTRANSPLANT CHEST DEMONSTRATES STABLE POSITION OF LEFT-SIDED
+CHEST TUBE. THERE HAS BEEN INTERVAL PLACEMENT OF A LEFT-SIDED PICC
+LINE, WHOSE TIP IS LOCATED NEAR THE CAVOATRIAL JUNCTION.
+2. SMALL MINIMAL RESIDUAL LEFT APICAL PNEUMOTHORAX IS
+DEMONSTRATED. OTHERWISE, THE LUNGS ARE CLEAR, WITHOUT PLEURAL
+EFFUSION.",[Üretim hatası: 'DynamicCache' object has no attribute 'seen_tokens']
+"Klinik bilgi: Shortness of breath
+Bulgular: No definite evidence for focal air space consolidation. Pulmonary
+vascularity appears somewhat indistinct, and there appears to be a
+small amount of fluid in the fissures. The cardiomediastinal
+silhouette is unremarkable. No definite acute bony or soft tissue
+abnormality appreciated.
+Karşılaştırma: None.
+Hasta: 76 yaş, Male","Suggestion of very mild interstitial pulmonary ödem associated
+with small amount of fluid within the fissures.
+No definite evidence for air space konsolidasyon.",[Üretim hatası: 'DynamicCache' object has no attribute 'seen_tokens']
+"Klinik bilgi: None provided.
+Karşılaştırma: 5/10/2020
+Hasta: 75 yaş, Female","1.  MILD INTERSTITIAL PULMONARY EDEMA.
+2.  POSSIBLE TINY PLEURAL EFFUSION, UNCLEAR WHICH SIDE.
+3.  MILD CARDIOMEGALY.",[Üretim hatası: 'DynamicCache' object has no attribute 'seen_tokens']
+"Klinik bilgi: 23-year-old female with idiopathic pulmonary
+hemorrhage. Status post double lung transplant. Chest tube
+removed.
+Karşılaştırma: March 11th.
+Hasta: 24 yaş, Female","1. INTERVAL REMOVAL OF TWO LEFT-SIDED CHEST TUBES.
+2. SMALL LEFT APICAL PNEUMOTHORAX REMAINS.",[Üretim hatası: 'DynamicCache' object has no attribute 'seen_tokens']
+"Klinik bilgi: Thirty-year-old male, rule out infiltrate.
+Karşılaştırma: 4-16-2001.
+Hasta: 37 yaş, Male","1.   STABLE TRACHEOSTOMY. 
+ 
+ 2.   INTERVAL INCREASED PULMONARY EDEMA WITH DENSE OPACIFICATION OF 
+THE LEFT LOWER LOBE CHEST, MAY REFLECT ASPIRATION, INFECTION, OR 
+ATELECTASIS. 
+ 
+ 3.   LOW LUNG VOLUMES WITH CARDIOMEGALY.",[Üretim hatası: 'DynamicCache' object has no attribute 'seen_tokens']
+"Klinik bilgi: Chest tube to w/s
+Karşılaştırma: 6/7/05 CXR
+Hasta: 50 yaş, Male","1.STABLE POSITION OF RIGHT-SIDED CHEST TUBE AND RIGHT CENTRAL VENOUS 
+LINE.
+ 
+2.STABLE MODERATELY SIZED RIGHT PNEUMOTHORAX.  REDEMONSTRATION OF 
+SUBDIAPHRAGMATIC GAS BILATERALLY.",[Üretim hatası: 'DynamicCache' object has no attribute 'seen_tokens']
+"Karşılaştırma: 1/21/2002.
+Hasta: 51 yaş, Female","1. single frontal upright few of the göğüs demonstrates single
+position of a right upper extremity PICC line. The tracheostomy tube
+remains in place.
+ 2. Tiny left plevral efüzyon, not definitely seen on the prior
+exam, with no other interval change.",[Üretim hatası: 'DynamicCache' object has no attribute 'seen_tokens']
+"Klinik bilgi: 77 year-old male with history of thoracic aortic
+aneurysm, status post repair.
+Karşılaştırma: Comparison is made to study dated april 14.
+Hasta: 77 yaş, Male","1. MARKEDLY ABNORMAL MEDIASTINAL SILHOUETTE THAT IS STABLE FROM
+PRIOR STUDY AND DUE TO KNOWN THORACIC AORTIC ANEURYSM.
+2. LEFT PLEURAL EFFUSION, INCREASED IN SIZE FROM COMPARISON STUDY.
+3. INTERVAL IMPROVED AERATION OF THE RIGHT LUNG BASE.
+4. INTERVAL REMOVAL OF TRACHEOSTOMY TUBE, RIGHT IJ LINE, AND
+FEEDING TUBE.",[Üretim hatası: 'DynamicCache' object has no attribute 'seen_tokens']

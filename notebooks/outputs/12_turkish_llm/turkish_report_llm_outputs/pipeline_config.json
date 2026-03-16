@@ -1,0 +1,60 @@
+{
+  "notebook": "12_turkish_report_llm",
+  "agent": "BT-5: Turkish Report LLM",
+  "project": "AlpCAN",
+  "dataset": {
+    "name": "CheXpert Plus Reports",
+    "kaggle_slug": "ridvancebec/alpcan-chexpert-reports",
+    "total_reports": 223462,
+    "translated_subset": 5000,
+    "training_examples": 4500,
+    "validation_examples": 500
+  },
+  "translation": {
+    "model": "Helsinki-NLP/opus-mt-en-tr",
+    "subset_size": 5000,
+    "batch_size": 32
+  },
+  "model": {
+    "base_model": "microsoft/Phi-3.5-mini-instruct",
+    "quantization": "4-bit NF4",
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lora_target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ],
+    "trainable_params": 8912896,
+    "total_params": 2018053120,
+    "trainable_pct": 0.44
+  },
+  "training": {
+    "epochs": 3,
+    "batch_size": 2,
+    "gradient_accumulation": 4,
+    "effective_batch_size": 8,
+    "learning_rate": 0.0002,
+    "max_seq_length": 512,
+    "warmup_steps": 100,
+    "fp16": true,
+    "optimizer": "paged_adamw_8bit",
+    "gpu": "T4 16GB"
+  },
+  "results": {
+    "final_loss": 0.9073984757056951,
+    "training_time_hours": 5.060787109732628,
+    "bleu_score": 4.4896030224236124e-05,
+    "global_steps": 1689
+  },
+  "output_files": [
+    "lora_adapter/",
+    "sample_generations.csv",
+    "training_metrics.json",
+    "pipeline_config.json"
+  ]
+}
