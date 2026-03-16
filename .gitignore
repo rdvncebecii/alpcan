@@ -67,6 +67,30 @@ mlruns/
 .ipynb_checkpoints/
 
 # Large notebook outputs (model weights, large predictions)
+# ---------------------------------------------------------------
+# GitHub'a PUSH EDİLMEYENLER ve NEDENLERİ:
+#
+# 1. Model ağırlıkları (*.pth, *.pt) — GitHub 100MB sınırı nedeniyle
+#    kabul etmez. Bu dosyalar Kaggle output olarak güvende kalır;
+#    her kernel çalışmasının "Output" sekmesinden indirilebilir.
+#    Örnekler: ct_seg_best_model.pth (280MB), ct_char_best_model.pth (92MB)
+#
+# 2. Optimizer/scheduler checkpoint'leri (checkpoint-*/optimizer.pt vb.)
+#    Sadece eğitimi DEVAM ettirmek için gerekir, inference için değil.
+#    Kaggle'da checkpoint olarak zaten saklanır.
+#
+# 3. *_embeddings.npz — Büyük numpy embedding matrisleri (onlarca MB).
+#    Notebook yeniden çalıştırılarak üretilebilir.
+#
+# 4. *_predictions_full.csv — Tüm dataset tahminleri (20MB+).
+#    Küçük summary/metrics CSV'leri push edilir, full tahminler değil.
+#
+# PUSH EDİLENLER:
+#   - Metrik CSV'leri (*_metrics.csv, *_history.csv)
+#   - PNG grafikler (training curves, confusion matrix vb.)
+#   - pipeline_config.json, summary JSON'lar
+#   - Log dosyaları (*.log)
+# ---------------------------------------------------------------
 notebooks/outputs/**/*.pth
 notebooks/outputs/**/*.pt
 notebooks/outputs/**/*_predictions_full.csv
