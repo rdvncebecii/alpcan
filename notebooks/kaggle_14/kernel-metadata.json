@@ -1,0 +1,13 @@
+{
+  "id": "ridvancebec/alpcan-reporting-engine",
+  "title": "AlpCAN Reporting Engine",
+  "code_file": "14_reporting_engine.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": false,
+  "enable_internet": false,
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": []
+}

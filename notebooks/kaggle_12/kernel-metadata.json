@@ -1,0 +1,15 @@
+{
+  "id": "ridvancebec/alpcan-turkish-llm",
+  "title": "AlpCAN Turkish LLM",
+  "code_file": "12_turkish_report_llm.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "dataset_sources": [
+    "ridvancebec/alpcan-chexpert-reports"
+  ],
+  "competition_sources": [],
+  "kernel_sources": []
+}

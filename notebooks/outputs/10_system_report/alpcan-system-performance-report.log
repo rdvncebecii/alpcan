@@ -1,0 +1,164 @@
+[{"stream_name":"stderr","time":9.378404731,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":9.378510877,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":9.378522749,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":9.378527796,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":10.233446379,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":10.233516952,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":10.233524461,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":10.233527578,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":15.481409112,"data":"AlpCAN Sistem Performans Raporu - Konfigürasyon tamamlandı.\n"}
+,{"stream_name":"stdout","time":15.481516425,"data":"Pandas: 2.3.3, NumPy: 2.0.2, Matplotlib: 3.10.0\n"}
+,{"stream_name":"stdout","time":15.519141648,"data":"  [OK] TorchXRayVision Predictions: /kaggle/input/datasets/ridvancebec/alpcan-cxr-model-predictions/cxr_predictions_full.csv\n"}
+,{"stream_name":"stdout","time":15.519188856,"data":"  [OK] ResNet-50 Predictions: /kaggle/input/datasets/ridvancebec/alpcan-cxr-model-predictions/cxr_resnet50_predictions_full.csv\n"}
+,{"stream_name":"stdout","time":15.519195209,"data":"  [OK] Ark+ Predictions: /kaggle/input/datasets/ridvancebec/alpcan-cxr-model-predictions/cxr_ark_predictions_full.csv\n"}
+,{"stream_name":"stdout","time":15.519199865000001,"data":"  [OK] TorchXRayVision AUC: /kaggle/input/datasets/ridvancebec/alpcan-cxr-model-predictions/cxr_auc_scores.csv\n"}
+,{"stream_name":"stdout","time":15.519204009,"data":"  [OK] ResNet-50 AUC: /kaggle/input/datasets/ridvancebec/alpcan-cxr-model-predictions/cxr_resnet50_auc_scores.csv\n"}
+,{"stream_name":"stdout","time":15.519208245,"data":"  [OK] Ark+ AUC: /kaggle/input/datasets/ridvancebec/alpcan-cxr-model-predictions/cxr_ark_auc_scores.csv\n"}
+,{"stream_name":"stdout","time":15.519212021,"data":"  [OK] CT Characterization: /kaggle/input/datasets/ridvancebec/alpcan-ct-model-weights/ct_char_predictions.csv\n"}
+,{"stream_name":"stdout","time":15.519215848,"data":"\n"}
+,{"stream_name":"stdout","time":15.519219482,"data":"Dosya kontrolü tamamlandı.\n"}
+,{"stream_name":"stdout","time":15.691495072,"data":"====================================================================================================\n"}
+,{"stream_name":"stdout","time":15.691534713,"data":"ALpCAN PROJESİ — KULLANILAN VERİ SETLERİ\n"}
+,{"stream_name":"stdout","time":15.691542252,"data":"====================================================================================================\n"}
+,{"stream_name":"stdout","time":15.694247062,"data":"\n"}
+,{"stream_name":"stdout","time":15.69428452,"data":"Toplam CXR görüntüsü: 112.120 (NIH CXR-14)\n"}
+,{"stream_name":"stdout","time":15.694293371,"data":"Toplam CT hastası: ~1.018 (LIDC-IDRI)\n"}
+,{"stream_name":"stdout","time":15.694299466,"data":"Toplam işlenen veri: ~336K+ görüntü/kesit\n"}
+,{"stream_name":"stdout","time":15.75788239,"data":"CXR tahmin dosyaları yükleniyor...\n"}
+,{"stream_name":"stdout","time":17.81303626,"data":"  TorchXRayVision: 112,120 satır, 33 sütun\n"}
+,{"stream_name":"stdout","time":17.813095662,"data":"  ResNet-50:       112,120 satır, 33 sütun\n"}
+,{"stream_name":"stdout","time":17.813128561,"data":"  Ark+ Swin-L:     112,120 satır, 29 sütun\n"}
+,{"stream_name":"stdout","time":17.813133915999998,"data":"\n"}
+,{"stream_name":"stdout","time":17.813137784,"data":"AUC dosyaları yüklendi:\n"}
+,{"stream_name":"stdout","time":17.813141661,"data":"  TorchXRayVision: 14 patoloji\n"}
+,{"stream_name":"stdout","time":17.813145925,"data":"  ResNet-50:       14 patoloji\n"}
+,{"stream_name":"stdout","time":17.813149867,"data":"  Ark+ Swin-L:     14 patoloji\n"}
+,{"stream_name":"stdout","time":17.865037284,"data":"TorchXRayVision patolojileri: ['Hernia', 'Cardiomegaly', 'Effusion', 'Edema', 'Mass']...\n"}
+,{"stream_name":"stdout","time":17.865088313,"data":"ResNet-50 patolojileri: ['Hernia', 'Cardiomegaly', 'Emphysema', 'Edema', 'Pneumothorax']...\n"}
+,{"stream_name":"stdout","time":17.865094894,"data":"Ark+ patolojileri: ['Emphysema', 'Pneumothorax', 'Cardiomegaly', 'Edema', 'Effusion']...\n"}
+,{"stream_name":"stdout","time":17.865099518,"data":"==========================================================================================\n"}
+,{"stream_name":"stdout","time":17.865104684,"data":"CXR PER-PATOLOJİ AUC KARŞILAŞTIRMASI (14 Ortak Patoloji)\n"}
+,{"stream_name":"stdout","time":17.865110812,"data":"==========================================================================================\n"}
+,{"stream_name":"stdout","time":17.871410725,"data":"\n"}
+,{"stream_name":"stdout","time":17.871447874,"data":"En iyi tekil model ortalama AUC: 0.745\n"}
+,{"stream_name":"stdout","time":17.87147565,"data":"Ensemble (ağırlıklı) ortalama AUC: 0.112\n"}
+,{"stream_name":"stdout","time":17.871485465,"data":"Ensemble (optimal) ortalama AUC: 0.749\n"}
+,{"stream_name":"stdout","time":19.394546325,"data":"Kaydedildi: alpcan_cxr_performance.png\n"}
+,{"stream_name":"stdout","time":21.071556183,"data":"Kaydedildi: alpcan_cxr_comparison.png\n"}
+,{"stream_name":"stdout","time":21.136234691,"data":"============================================================\n"}
+,{"stream_name":"stdout","time":21.136275284,"data":"CT NODÜL SEGMENTASYONU — PERFORMANS METRİKLERİ (NB06)\n"}
+,{"stream_name":"stdout","time":21.13628267,"data":"============================================================\n"}
+,{"stream_name":"stdout","time":21.138488206,"data":"\n"}
+,{"stream_name":"stdout","time":21.138536172,"data":"Not: Dice skoru 0.622 ile mevcut segmentasyon baseline seviyesindedir.\n"}
+,{"stream_name":"stdout","time":21.138543279,"data":"nnU-Net entegrasyonu ile Dice \u003e 0.75 hedeflenmektedir (Phase 3).\n"}
+,{"stream_name":"stdout","time":21.21497832,"data":"CT karakterizasyon tahminleri yükleniyor...\n"}
+,{"stream_name":"stdout","time":21.215018449,"data":"  Satır sayısı: 522\n"}
+,{"stream_name":"stdout","time":21.215026353,"data":"  Sütunlar: ['patient_id', 'nodule', 'image_path', 'mask_dirs', 'n_annotators', 'avg_mask_area', 'consensus_area', 'diameter_px', 'n_slices', 'size_category', 'suspicious', 'risk_class', 'susp_pred', 'risk_pred', 'lung_rads_pred', 'risk_prob_low', 'risk_prob_mid_low', 'risk_prob_mid_high', 'risk_prob_high']\n"}
+,{"stream_name":"stdout","time":21.215033206,"data":"\n"}
+,{"stream_name":"stdout","time":21.215037586,"data":"  Suspicious (Şüpheli Nodül) AUC: 0.977\n"}
+,{"stream_name":"stdout","time":21.215043518,"data":"  Risk Sınıflandırma Doğruluğu: 85.1%\n"}
+,{"stream_name":"stdout","time":21.215048036,"data":"  Risk sınıfları: [np.int64(0), np.int64(1), np.int64(2), np.int64(3)]\n"}
+,{"stream_name":"stdout","time":21.215052455,"data":"\n"}
+,{"stream_name":"stdout","time":21.215056181,"data":"  Lung-RADS Dağılımı:\n"}
+,{"stream_name":"stdout","time":21.215062298,"data":"    Kategori 1: 174 nodül (33.3%)\n"}
+,{"stream_name":"stdout","time":21.215113366,"data":"    Kategori 2: 124 nodül (23.8%)\n"}
+,{"stream_name":"stdout","time":21.215118,"data":"    Kategori 3: 148 nodül (28.4%)\n"}
+,{"stream_name":"stdout","time":21.215121972,"data":"    Kategori 4A: 76 nodül (14.6%)\n"}
+,{"stream_name":"stdout","time":23.140581192,"data":"Kaydedildi: alpcan_ct_performance.png\n"}
+,{"stream_name":"stdout","time":23.223995363,"data":"====================================================================================================\n"}
+,{"stream_name":"stdout","time":23.224037048,"data":"ALpCAN UÇTAN UCA PİPELINE — AŞAMA BAZLI PERFORMANS\n"}
+,{"stream_name":"stdout","time":23.224044643,"data":"====================================================================================================\n"}
+,{"stream_name":"stdout","time":23.273306635,"data":"======================================================================\n"}
+,{"stream_name":"stdout","time":23.273368522,"data":"DARBOĞAZ ANALİZİ\n"}
+,{"stream_name":"stdout","time":23.273382501,"data":"======================================================================\n"}
+,{"stream_name":"stdout","time":23.372513475,"data":"==========================================================================================\n"}
+,{"stream_name":"stdout","time":23.372550519,"data":"LİTERATÜR KARŞILAŞTIRMASI — CXR PATOLOJİ AUC\n"}
+,{"stream_name":"stdout","time":23.372557397,"data":"==========================================================================================\n"}
+,{"stream_name":"stdout","time":23.377154924,"data":"\n"}
+,{"stream_name":"stdout","time":23.377195865,"data":"AlpCAN Ensemble, 13/14 patolojide Wang 2017'yi geçmektedir.\n"}
+,{"stream_name":"stdout","time":23.377203577,"data":"Ortalama fark: +0.007\n"}
+,{"stream_name":"stdout","time":24.823965189,"data":"Kaydedildi: alpcan_literature_comparison.png\n"}
+,{"stream_name":"stdout","time":24.928069416,"data":"==============================================================================================================\n"}
+,{"stream_name":"stdout","time":24.928129612,"data":"ALpCAN AGENT PERFORMANS TABLOSU\n"}
+,{"stream_name":"stdout","time":24.928135254,"data":"==============================================================================================================\n"}
+,{"stream_name":"stdout","time":24.931868257,"data":"\n"}
+,{"stream_name":"stdout","time":24.932003217,"data":"Eğitilmiş ajanlar: 6/13 (46%)\n"}
+,{"stream_name":"stdout","time":24.932020061,"data":"Planlanan ajanlar: 7/13 (54%)\n"}
+,{"stream_name":"stdout","time":25.992834401,"data":"Kaydedildi: alpcan_agent_status.png\n"}
+,{"stream_name":"stdout","time":26.108464615,"data":"================================================================================\n"}
+,{"stream_name":"stdout","time":26.108525392,"data":"ALpCAN PROJESİ — ÖNE ÇIKAN BULGULAR\n"}
+,{"stream_name":"stdout","time":26.108530976,"data":"================================================================================\n"}
+,{"stream_name":"stdout","time":26.112181628,"data":"\n"}
+,{"stream_name":"stdout","time":26.11221849,"data":"==================================================\n"}
+,{"stream_name":"stdout","time":26.112224363,"data":"GÜÇLÜ YÖNLER\n"}
+,{"stream_name":"stdout","time":26.112229739,"data":"==================================================\n"}
+,{"stream_name":"stdout","time":26.112234077,"data":"  1. Çoklu model ensemble yaklaşımı ile robüst tahmin\n"}
+,{"stream_name":"stdout","time":26.112238819,"data":"  2. Zero-shot foundation model (Ark+) entegrasyonu\n"}
+,{"stream_name":"stdout","time":26.112268051,"data":"  3. Uçtan uca CXR ve CT pipeline tasarımı\n"}
+,{"stream_name":"stdout","time":26.112271223,"data":"  4. Nodül karakterizasyon AUC 0.977 — klinik seviye\n"}
+,{"stream_name":"stdout","time":26.112274082,"data":"  5. Modüler agent mimarisi — kolay genişletilebilirlik\n"}
+,{"stream_name":"stdout","time":26.112276888,"data":"  6. Wang 2017 baseline'ını 13/14 patolojide geçme\n"}
+,{"stream_name":"stdout","time":26.112279667,"data":"\n"}
+,{"stream_name":"stdout","time":26.112282228,"data":"==================================================\n"}
+,{"stream_name":"stdout","time":26.112285057,"data":"SINIRLILIKLAR\n"}
+,{"stream_name":"stdout","time":26.112287785,"data":"==================================================\n"}
+,{"stream_name":"stdout","time":26.112290457,"data":"  1. CT segmentasyon Dice skoru (0.622) iyileştirme gerektirir\n"}
+,{"stream_name":"stdout","time":26.112293201,"data":"  2. CXR Nodule ve Infiltration AUC'leri düşüktür\n"}
+,{"stream_name":"stdout","time":26.112296158,"data":"  3. Henüz 7/13 agent geliştirilme aşamasındadır\n"}
+,{"stream_name":"stdout","time":26.112298921,"data":"  4. Klinik doğrulama henüz yapılmamıştır\n"}
+,{"stream_name":"stdout","time":26.112301696,"data":"  5. Türkçe rapor üretimi henüz entegre edilmemiştir\n"}
+,{"stream_name":"stdout","time":26.112304569,"data":"  6. Dış veri seti doğrulaması (CheXpert, NLST) beklemektedir\n"}
+,{"stream_name":"stdout","time":28.115015473,"data":"Kaydedildi: alpcan_clinical_analysis.png\n"}
+,{"stream_name":"stdout","time":28.191451034,"data":"======================================================================\n"}
+,{"stream_name":"stdout","time":28.191508753,"data":"ÇALIŞMA NOKTASI ANALİZİ — ÖNERİLEN KLİNİK EŞİKLER\n"}
+,{"stream_name":"stdout","time":28.191516577,"data":"======================================================================\n"}
+,{"stream_name":"stdout","time":28.194161847,"data":"\n"}
+,{"stream_name":"stdout","time":28.194198304,"data":"Not: Bu değerler retrospektif analize dayalı tahminlerdir.\n"}
+,{"stream_name":"stdout","time":28.194205246,"data":"Klinik doğrulama çalışması ile kesinleştirilecektir.\n"}
+,{"stream_name":"stdout","time":28.33509583,"data":"====================================================================================================\n"}
+,{"stream_name":"stdout","time":28.335155618,"data":"ALpCAN PROJESİ — YOL HARİTASI\n"}
+,{"stream_name":"stdout","time":28.335166653,"data":"====================================================================================================\n"}
+,{"stream_name":"stdout","time":28.339948241,"data":"\n"}
+,{"stream_name":"stdout","time":28.339980803,"data":"Tamamlanan: 5/15 (33%)\n"}
+,{"stream_name":"stdout","time":28.339991466,"data":"Devam eden: 3/15 (20%)\n"}
+,{"stream_name":"stdout","time":28.339996348,"data":"Planlanan:  7/15 (47%)\n"}
+,{"stream_name":"stdout","time":28.34000094,"data":"\n"}
+,{"stream_name":"stdout","time":28.340006925,"data":"Genel ilerleme: 43%\n"}
+,{"stream_name":"stdout","time":28.480531107,"data":"Kaydedildi: alpcan_system_report.csv (76 satır)\n"}
+,{"stream_name":"stdout","time":28.480568192,"data":"Kaydedildi: alpcan_system_summary.json\n"}
+,{"stream_name":"stdout","time":28.551175931,"data":"======================================================================\n"}
+,{"stream_name":"stdout","time":28.551214347,"data":"ALpCAN SİSTEM PERFORMANS RAPORU — ÇIKTI DOSYALARI\n"}
+,{"stream_name":"stdout","time":28.551220938,"data":"======================================================================\n"}
+,{"stream_name":"stdout","time":28.551248641,"data":"  [OK] alpcan_system_report.csv                 — Tüm metrikler tablosu (3.2 KB)\n"}
+,{"stream_name":"stdout","time":28.551253531,"data":"  [OK] alpcan_cxr_performance.png               — CXR patoloji AUC heatmap (252.8 KB)\n"}
+,{"stream_name":"stdout","time":28.551257821,"data":"  [OK] alpcan_cxr_comparison.png                — CXR model karşılaştırma grafikleri (172.9 KB)\n"}
+,{"stream_name":"stdout","time":28.551262281,"data":"  [OK] alpcan_ct_performance.png                — CT pipeline performans görseli (197.3 KB)\n"}
+,{"stream_name":"stdout","time":28.551266547,"data":"  [OK] alpcan_literature_comparison.png         — Literatür karşılaştırma grafikleri (235.2 KB)\n"}
+,{"stream_name":"stdout","time":28.551271266,"data":"  [OK] alpcan_agent_status.png                  — Agent hazırlık durumu görseli (203.1 KB)\n"}
+,{"stream_name":"stdout","time":28.551275552,"data":"  [OK] alpcan_clinical_analysis.png             — Klinik etki analizi görseli (332.3 KB)\n"}
+,{"stream_name":"stdout","time":28.551279867,"data":"  [OK] alpcan_system_summary.json               — Makine okunabilir sistem özeti (0.9 KB)\n"}
+,{"stream_name":"stdout","time":28.551283917,"data":"\n"}
+,{"stream_name":"stdout","time":28.551287603,"data":"======================================================================\n"}
+,{"stream_name":"stdout","time":28.551291874,"data":"ALpCAN Sistem Performans Raporu tamamlandı.\n"}
+,{"stream_name":"stdout","time":28.551295863,"data":"TÜSEB / Giresun Üniversitesi\n"}
+,{"stream_name":"stdout","time":28.551299899,"data":"======================================================================\n"}
+,{"stream_name":"stderr","time":32.431919809,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":32.431965557,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":32.652380413,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":32.652418137,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":33.413207071,"data":"/usr/local/lib/python3.12/dist-packages/traitlets/traitlets.py:2915: FutureWarning: --Exporter.preprocessors=[\"remove_papermill_header.RemovePapermillHeader\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":33.413257636,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":33.466567214,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":33.942352679,"data":"[NbConvertApp] Writing 2058442 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":37.103346528,"data":"/usr/local/lib/python3.12/dist-packages/traitlets/traitlets.py:2915: FutureWarning: --Exporter.preprocessors=[\"nbconvert.preprocessors.ExtractOutputPreprocessor\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":37.103389353,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":37.131851586,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":38.51362646,"data":"[NbConvertApp] Support files will be in __results___files/\n"}
+,{"stream_name":"stderr","time":38.513678899,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":38.514288638,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":38.514825679,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":38.515252015,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":38.515645587,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":38.516038449,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":38.516611161,"data":"[NbConvertApp] Writing 591312 bytes to __results__.html\n"}
+]

@@ -1,0 +1,844 @@
+[
+  {
+    "hasta": {
+      "hasta_id": "GRU-2025-100",
+      "hasta_adi": "Ahmet Kilic",
+      "yas": 50,
+      "cinsiyet": "E",
+      "protokol_no": "BATCH-100",
+      "tarih": "16.03.2025 11:08",
+      "klinik_bilgi": "Kilo kaybi"
+    },
+    "modalite": "Gogus Rontgeni",
+    "teknik": "PA (posteroanterior) gogus rontgenogrami, dijital sistem",
+    "bulgular": [
+      "Kardiyotorasik oran artmis olup olasi kardiyomegali ile uyumludur (AI skoru: 0.54).",
+      "Kemik yapilar degerlendirme sinirlari dahilinde intaktir."
+    ],
+    "izlenim": [
+      "Kardiyomegali acisindan kuskulu bulgular mevcuttur, klinik korelasyon onerilir."
+    ],
+    "lung_rads": null,
+    "aciliyet": "Normal",
+    "takip_onerisi": "Rutin takip yeterlidir.",
+    "ai_ozet": {
+      "rapor_no": 1,
+      "modalite": "CXR",
+      "tarih": "16.03.2025 11:08",
+      "toplam_bulgu": 2,
+      "aciliyet": "Normal",
+      "lung_rads": null,
+      "pipeline_version": "AlpCAN v1.0",
+      "cxr_patolojiler": {
+        "Atelectasis": 0.406,
+        "Cardiomegaly": 0.535,
+        "Fibrosis": 0.303,
+        "Nodule": 0.39,
+        "Pleural_Thickening": 0.327,
+        "Pneumothorax": 0.354
+      }
+    }
+  },
+  {
+    "hasta": {
+      "hasta_id": "GRU-2025-101",
+      "hasta_adi": "Ibrahim Erdogan",
+      "yas": 52,
+      "cinsiyet": "E",
+      "protokol_no": "BATCH-101",
+      "tarih": "16.03.2025 10:13",
+      "klinik_bilgi": "Gogus agrisi"
+    },
+    "modalite": "Bilgisayarli Tomografi",
+    "teknik": "Toraks BT, IV kontrastsiz, 1 mm kesit kalinligi, dusuk doz protokol",
+    "bulgular": [
+      "Akciger parankiminde noduler lezyon saptanmamistir.",
+      "Mediastinal ve hiler lenf nodlari dogal boyutlardadir.",
+      "Plevral alanda patolojik bulgu izlenmemistir."
+    ],
+    "izlenim": [
+      "BT incelemesinde akciger parankiminde noduler lezyon saptanmamistir."
+    ],
+    "lung_rads": "1",
+    "aciliyet": "Normal",
+    "takip_onerisi": "Yillik dusuk doz BT taramasi ile takip onerilir.",
+    "ai_ozet": {
+      "rapor_no": 2,
+      "modalite": "BT",
+      "tarih": "16.03.2025 10:13",
+      "toplam_bulgu": 3,
+      "aciliyet": "Normal",
+      "lung_rads": "1",
+      "pipeline_version": "AlpCAN v1.0",
+      "bt_toplam_nodul": 0,
+      "bt_en_buyuk_mm": 0.0
+    }
+  },
+  {
+    "hasta": {
+      "hasta_id": "GRU-2025-102",
+      "hasta_adi": "Ayse Korkmaz",
+      "yas": 57,
+      "cinsiyet": "K",
+      "protokol_no": "BATCH-102",
+      "tarih": "16.03.2025 17:16",
+      "klinik_bilgi": "Gogus agrisi"
+    },
+    "modalite": "Gogus Rontgeni",
+    "teknik": "PA (posteroanterior) gogus rontgenogrami, dijital sistem",
+    "bulgular": [
+      "Akciger parankiminde olasi konsolidasyon alani izlenmektedir (AI skoru: 0.58). Pnomoni on tanisi ile klinik korelasyon onerilir.",
+      "Olasi infiltrasyon bulgusu mevcuttur (AI skoru: 0.52).",
+      "Kardiyomediastinal siluet dogaldir.",
+      "Kemik yapilar degerlendirme sinirlari dahilinde intaktir."
+    ],
+    "izlenim": [
+      "Konsolidasyon acisindan kuskulu bulgular mevcuttur, klinik korelasyon onerilir.",
+      "Infiltrasyon acisindan kuskulu bulgular mevcuttur, klinik korelasyon onerilir."
+    ],
+    "lung_rads": null,
+    "aciliyet": "Normal",
+    "takip_onerisi": "Rutin takip yeterlidir.",
+    "ai_ozet": {
+      "rapor_no": 3,
+      "modalite": "CXR",
+      "tarih": "16.03.2025 17:16",
+      "toplam_bulgu": 4,
+      "aciliyet": "Normal",
+      "lung_rads": null,
+      "pipeline_version": "AlpCAN v1.0",
+      "cxr_patolojiler": {
+        "Atelectasis": 0.438,
+        "Cardiomegaly": 0.322,
+        "Consolidation": 0.584,
+        "Effusion": 0.331,
+        "Emphysema": 0.498,
+        "Fibrosis": 0.371,
+        "Infiltration": 0.517,
+        "Mass": 0.346,
+        "Nodule": 0.423
+      }
+    }
+  },
+  {
+    "hasta": {
+      "hasta_id": "GRU-2025-103",
+      "hasta_adi": "Ibrahim Kilic",
+      "yas": 64,
+      "cinsiyet": "E",
+      "protokol_no": "BATCH-103",
+      "tarih": "16.03.2025 13:10",
+      "klinik_bilgi": "Nefes darligi"
+    },
+    "modalite": "Bilgisayarli Tomografi",
+    "teknik": "Toraks BT, IV kontrastsiz, 1 mm kesit kalinligi, dusuk doz protokol",
+    "bulgular": [
+      "Akciger parankiminde noduler lezyon saptanmamistir.",
+      "Mediastinal ve hiler lenf nodlari dogal boyutlardadir.",
+      "Plevral alanda patolojik bulgu izlenmemistir."
+    ],
+    "izlenim": [
+      "BT incelemesinde akciger parankiminde noduler lezyon saptanmamistir."
+    ],
+    "lung_rads": "1",
+    "aciliyet": "Normal",
+    "takip_onerisi": "Yillik dusuk doz BT taramasi ile takip onerilir.",
+    "ai_ozet": {
+      "rapor_no": 4,
+      "modalite": "BT",
+      "tarih": "16.03.2025 13:10",
+      "toplam_bulgu": 3,
+      "aciliyet": "Normal",
+      "lung_rads": "1",
+      "pipeline_version": "AlpCAN v1.0",
+      "bt_toplam_nodul": 0,
+      "bt_en_buyuk_mm": 0.0
+    }
+  },
+  {
+    "hasta": {
+      "hasta_id": "GRU-2025-104",
+      "hasta_adi": "Ayse Yildiz",
+      "yas": 75,
+      "cinsiyet": "K",
+      "protokol_no": "BATCH-104",
+      "tarih": "16.03.2025 10:34",
+      "klinik_bilgi": "Kilo kaybi"
+    },
+    "modalite": "Gogus Rontgeni",
+    "teknik": "PA (posteroanterior) gogus rontgenogrami, dijital sistem",
+    "bulgular": [
+      "Muhtemel amfizem bulgusu mevcuttur (AI skoru: 0.75).",
+      "Akciger parankiminde muhtemel konsolidasyon alani izlenmektedir (AI skoru: 0.64). Pnomoni on tanisi ile klinik korelasyon onerilir.",
+      "Akciger parankiminde olasi konsolidasyon alani izlenmektedir (AI skoru: 0.59). Pnomoni on tanisi ile klinik korelasyon onerilir.",
+      "Olasi fibrozis bulgusu mevcuttur (AI skoru: 0.51).",
+      "Kardiyomediastinal siluet dogaldir.",
+      "Kemik yapilar degerlendirme sinirlari dahilinde intaktir."
+    ],
+    "izlenim": [
+      "Amfizem ile uyumlu bulgular mevcuttur.",
+      "Pnomoni acisindan kuskulu bulgular mevcuttur, klinik korelasyon onerilir.",
+      "Konsolidasyon acisindan kuskulu bulgular mevcuttur, klinik korelasyon onerilir.",
+      "Fibrozis acisindan kuskulu bulgular mevcuttur, klinik korelasyon onerilir."
+    ],
+    "lung_rads": null,
+    "aciliyet": "Normal",
+    "takip_onerisi": "Rutin takip yeterlidir.",
+    "ai_ozet": {
+      "rapor_no": 5,
+      "modalite": "CXR",
+      "tarih": "16.03.2025 10:34",
+      "toplam_bulgu": 6,
+      "aciliyet": "Normal",
+      "lung_rads": null,
+      "pipeline_version": "AlpCAN v1.0",
+      "cxr_patolojiler": {
+        "Consolidation": 0.594,
+        "Edema": 0.384,
+        "Effusion": 0.334,
+        "Emphysema": 0.75,
+        "Fibrosis": 0.506,
+        "Infiltration": 0.466,
+        "Pneumonia": 0.635
+      }
+    }
+  },
+  {
+    "hasta": {
+      "hasta_id": "GRU-2025-105",
+      "hasta_adi": "Emine Kilic",
+      "yas": 43,
+      "cinsiyet": "K",
+      "protokol_no": "BATCH-105",
+      "tarih": "16.03.2025 11:47",
+      "klinik_bilgi": "Sigara oykusu, kontrol"
+    },
+    "modalite": "Bilgisayarli Tomografi",
+    "teknik": "Toraks BT, IV kontrastsiz, 1 mm kesit kalinligi, dusuk doz protokol",
+    "bulgular": [
+      "Akciger parankiminde toplam 2 adet noduler lezyon tespit edilmistir:",
+      "  1. Sag akciger ust lob'da 13.4 mm capinda yuvarlak, buzlu cam nodul, Lung-RADS 4A (AI guven: 70%).",
+      "     * Bu nodul yuksek malignite riski tasimaktadir (skor: 3.9/5). Ileri degerlendirme onerilir.",
+      "  2. Sag akciger alt lob'da 11.9 mm capinda yuvarlak, buzlu cam nodul, Lung-RADS 4A (AI guven: 72%).",
+      "Mediastinal ve hiler lenf nodlari degerlendirme sinirlari dahilinde dogal boyutlardadir.",
+      "Plevral alanda patolojik bulgu izlenmemistir."
+    ],
+    "izlenim": [
+      "Akciger parankiminde 2 adet noduler lezyon saptanmistir.",
+      "En buyuk nodul 13.4 mm capindadir.",
+      "Genel degerlendirme: Lung-RADS Kategori 4A.",
+      "Malignite acisindan supheli bulgular mevcuttur. Ileri degerlendirme ve/veya biyopsi onerilir."
+    ],
+    "lung_rads": "4A",
+    "aciliyet": "Takip Gerekli",
+    "takip_onerisi": "3 ay sonra dusuk doz BT veya PET/BT onerilir. Klinik korelasyon gereklidir.",
+    "ai_ozet": {
+      "rapor_no": 6,
+      "modalite": "BT",
+      "tarih": "16.03.2025 11:47",
+      "toplam_bulgu": 6,
+      "aciliyet": "Takip Gerekli",
+      "lung_rads": "4A",
+      "pipeline_version": "AlpCAN v1.0",
+      "bt_toplam_nodul": 2,
+      "bt_en_buyuk_mm": 13.4
+    }
+  },
+  {
+    "hasta": {
+      "hasta_id": "GRU-2025-106",
+      "hasta_adi": "Gulsum Demir",
+      "yas": 59,
+      "cinsiyet": "K",
+      "protokol_no": "BATCH-106",
+      "tarih": "16.03.2025 14:38",
+      "klinik_bilgi": "Akciger kanseri taramasi"
+    },
+    "modalite": "Bilgisayarli Tomografi",
+    "teknik": "Toraks BT, IV kontrastsiz, 1 mm kesit kalinligi, dusuk doz protokol",
+    "bulgular": [
+      "Akciger parankiminde toplam 3 adet noduler lezyon tespit edilmistir:",
+      "  1. Sag akciger ust lob'da 21.8 mm capinda duzensiz konturlu, buzlu cam nodul, Lung-RADS 4B (AI guven: 87%).",
+      "  2. Sag akciger ust lob'da 19.5 mm capinda duzensiz konturlu, buzlu cam nodul, Lung-RADS 4B (AI guven: 94%).",
+      "  3. Sag akciger orta lob'da 9.8 mm capinda duzensiz konturlu, buzlu cam nodul, Lung-RADS 4A (AI guven: 80%).",
+      "Mediastinal ve hiler lenf nodlari degerlendirme sinirlari dahilinde dogal boyutlardadir.",
+      "Plevral alanda patolojik bulgu izlenmemistir."
+    ],
+    "izlenim": [
+      "Akciger parankiminde 3 adet noduler lezyon saptanmistir.",
+      "En buyuk nodul 21.8 mm capindadir.",
+      "Genel degerlendirme: Lung-RADS Kategori 4B.",
+      "Malignite acisindan supheli bulgular mevcuttur. Ileri degerlendirme ve/veya biyopsi onerilir."
+    ],
+    "lung_rads": "4B",
+    "aciliyet": "Acil Konsultasyon",
+    "takip_onerisi": "Gogus cerrahisi konsultasyonu ve biyopsi/PET-BT onerilir.",
+    "ai_ozet": {
+      "rapor_no": 7,
+      "modalite": "BT",
+      "tarih": "16.03.2025 14:38",
+      "toplam_bulgu": 6,
+      "aciliyet": "Acil Konsultasyon",
+      "lung_rads": "4B",
+      "pipeline_version": "AlpCAN v1.0",
+      "bt_toplam_nodul": 3,
+      "bt_en_buyuk_mm": 21.8
+    }
+  },
+  {
+    "hasta": {
+      "hasta_id": "GRU-2025-107",
+      "hasta_adi": "Ali Korkmaz",
+      "yas": 45,
+      "cinsiyet": "E",
+      "protokol_no": "BATCH-107",
+      "tarih": "16.03.2025 16:49",
+      "klinik_bilgi": "Sigara oykusu, kontrol"
+    },
+    "modalite": "Gogus Rontgeni",
+    "teknik": "PA (posteroanterior) gogus rontgenogrami, dijital sistem",
+    "bulgular": [
+      "Akciger parankiminde muhtemel konsolidasyon alani izlenmektedir (AI skoru: 0.74). Pnomoni on tanisi ile klinik korelasyon onerilir.",
+      "Muhtemel pnomotoraks bulgusu saptanmistir (AI skoru: 0.60). Klinik korelasyon onerilir.",
+      "Olasi plevral efuzyon bulgusu izlenmektedir (AI skoru: 0.59).",
+      "Kardiyomediastinal siluet dogaldir.",
+      "Kemik yapilar degerlendirme sinirlari dahilinde intaktir."
+    ],
+    "izlenim": [
+      "Konsolidasyon ile uyumlu bulgular mevcuttur.",
+      "Pnomotoraks acisindan kuskulu bulgular mevcuttur, klinik korelasyon onerilir.",
+      "Plevral Efuzyon acisindan kuskulu bulgular mevcuttur, klinik korelasyon onerilir."
+    ],
+    "lung_rads": null,
+    "aciliyet": "Kritik - Hemen Bildirim",
+    "takip_onerisi": "ACIL: Sorumlu klinisyen derhal bilgilendirilmelidir. Acil mudahale gerekebilir.",
+    "ai_ozet": {
+      "rapor_no": 8,
+      "modalite": "CXR",
+      "tarih": "16.03.2025 16:49",
+      "toplam_bulgu": 5,
+      "aciliyet": "Kritik - Hemen Bildirim",
+      "lung_rads": null,
+      "pipeline_version": "AlpCAN v1.0",
+      "cxr_patolojiler": {
+        "Atelectasis": 0.359,
+        "Consolidation": 0.74,
+        "Effusion": 0.591,
+        "Emphysema": 0.484,
+        "Mass": 0.34,
+        "Pleural_Thickening": 0.439,
+        "Pneumonia": 0.49,
+        "Pneumothorax": 0.601
+      }
+    }
+  },
+  {
+    "hasta": {
+      "hasta_id": "GRU-2025-108",
+      "hasta_adi": "Havva Yildiz",
+      "yas": 62,
+      "cinsiyet": "K",
+      "protokol_no": "BATCH-108",
+      "tarih": "16.03.2025 11:59",
+      "klinik_bilgi": "Sigara oykusu, kontrol"
+    },
+    "modalite": "Gogus Rontgeni",
+    "teknik": "PA (posteroanterior) gogus rontgenogrami, dijital sistem",
+    "bulgular": [
+      "Olasi plevral efuzyon bulgusu izlenmektedir (AI skoru: 0.54).",
+      "Kardiyomediastinal siluet dogaldir.",
+      "Kemik yapilar degerlendirme sinirlari dahilinde intaktir."
+    ],
+    "izlenim": [
+      "Plevral Efuzyon acisindan kuskulu bulgular mevcuttur, klinik korelasyon onerilir."
+    ],
+    "lung_rads": null,
+    "aciliyet": "Normal",
+    "takip_onerisi": "Rutin takip yeterlidir.",
+    "ai_ozet": {
+      "rapor_no": 9,
+      "modalite": "CXR",
+      "tarih": "16.03.2025 11:59",
+      "toplam_bulgu": 3,
+      "aciliyet": "Normal",
+      "lung_rads": null,
+      "pipeline_version": "AlpCAN v1.0",
+      "cxr_patolojiler": {
+        "Atelectasis": 0.428,
+        "Consolidation": 0.403,
+        "Effusion": 0.54,
+        "Nodule": 0.332,
+        "Pleural_Thickening": 0.353,
+        "Pneumothorax": 0.425
+      }
+    }
+  },
+  {
+    "hasta": {
+      "hasta_id": "GRU-2025-109",
+      "hasta_adi": "Huseyin Demir",
+      "yas": 67,
+      "cinsiyet": "E",
+      "protokol_no": "BATCH-109",
+      "tarih": "16.03.2025 11:17",
+      "klinik_bilgi": "Kilo kaybi"
+    },
+    "modalite": "Bilgisayarli Tomografi",
+    "teknik": "Toraks BT, IV kontrastsiz, 1 mm kesit kalinligi, dusuk doz protokol",
+    "bulgular": [
+      "Akciger parankiminde noduler lezyon saptanmamistir.",
+      "Mediastinal ve hiler lenf nodlari dogal boyutlardadir.",
+      "Plevral alanda patolojik bulgu izlenmemistir."
+    ],
+    "izlenim": [
+      "BT incelemesinde akciger parankiminde noduler lezyon saptanmamistir."
+    ],
+    "lung_rads": "1",
+    "aciliyet": "Normal",
+    "takip_onerisi": "Yillik dusuk doz BT taramasi ile takip onerilir.",
+    "ai_ozet": {
+      "rapor_no": 10,
+      "modalite": "BT",
+      "tarih": "16.03.2025 11:17",
+      "toplam_bulgu": 3,
+      "aciliyet": "Normal",
+      "lung_rads": "1",
+      "pipeline_version": "AlpCAN v1.0",
+      "bt_toplam_nodul": 0,
+      "bt_en_buyuk_mm": 0.0
+    }
+  },
+  {
+    "hasta": {
+      "hasta_id": "GRU-2025-110",
+      "hasta_adi": "Omer Tas",
+      "yas": 65,
+      "cinsiyet": "E",
+      "protokol_no": "BATCH-110",
+      "tarih": "16.03.2025 11:50",
+      "klinik_bilgi": "Akciger kanseri taramasi"
+    },
+    "modalite": "Bilgisayarli Tomografi",
+    "teknik": "Toraks BT, IV kontrastsiz, 1 mm kesit kalinligi, dusuk doz protokol",
+    "bulgular": [
+      "Akciger parankiminde noduler lezyon saptanmamistir.",
+      "Mediastinal ve hiler lenf nodlari dogal boyutlardadir.",
+      "Plevral alanda patolojik bulgu izlenmemistir."
+    ],
+    "izlenim": [
+      "BT incelemesinde akciger parankiminde noduler lezyon saptanmamistir."
+    ],
+    "lung_rads": "1",
+    "aciliyet": "Normal",
+    "takip_onerisi": "Yillik dusuk doz BT taramasi ile takip onerilir.",
+    "ai_ozet": {
+      "rapor_no": 11,
+      "modalite": "BT",
+      "tarih": "16.03.2025 11:50",
+      "toplam_bulgu": 3,
+      "aciliyet": "Normal",
+      "lung_rads": "1",
+      "pipeline_version": "AlpCAN v1.0",
+      "bt_toplam_nodul": 0,
+      "bt_en_buyuk_mm": 0.0
+    }
+  },
+  {
+    "hasta": {
+      "hasta_id": "GRU-2025-111",
+      "hasta_adi": "Ibrahim Korkmaz",
+      "yas": 62,
+      "cinsiyet": "E",
+      "protokol_no": "BATCH-111",
+      "tarih": "16.03.2025 14:29",
+      "klinik_bilgi": "Gogus agrisi"
+    },
+    "modalite": "Gogus Rontgeni",
+    "teknik": "PA (posteroanterior) gogus rontgenogrami, dijital sistem",
+    "bulgular": [
+      "Belirgin pnomotoraks bulgusu saptanmistir (AI skoru: 0.90). Klinik korelasyon onerilir.",
+      "Kardiyotorasik oran artmis olup olasi kardiyomegali ile uyumludur (AI skoru: 0.59).",
+      "Olasi amfizem bulgusu mevcuttur (AI skoru: 0.52).",
+      "Kemik yapilar degerlendirme sinirlari dahilinde intaktir."
+    ],
+    "izlenim": [
+      "Pnomotoraks ile uyumlu bulgular mevcuttur.",
+      "Kardiyomegali acisindan kuskulu bulgular mevcuttur, klinik korelasyon onerilir.",
+      "Amfizem acisindan kuskulu bulgular mevcuttur, klinik korelasyon onerilir."
+    ],
+    "lung_rads": null,
+    "aciliyet": "Kritik - Hemen Bildirim",
+    "takip_onerisi": "ACIL: Sorumlu klinisyen derhal bilgilendirilmelidir. Acil mudahale gerekebilir.",
+    "ai_ozet": {
+      "rapor_no": 12,
+      "modalite": "CXR",
+      "tarih": "16.03.2025 14:29",
+      "toplam_bulgu": 4,
+      "aciliyet": "Kritik - Hemen Bildirim",
+      "lung_rads": null,
+      "pipeline_version": "AlpCAN v1.0",
+      "cxr_patolojiler": {
+        "Atelectasis": 0.404,
+        "Cardiomegaly": 0.59,
+        "Emphysema": 0.517,
+        "Pneumothorax": 0.895
+      }
+    }
+  },
+  {
+    "hasta": {
+      "hasta_id": "GRU-2025-112",
+      "hasta_adi": "Yusuf Yilmaz",
+      "yas": 40,
+      "cinsiyet": "E",
+      "protokol_no": "BATCH-112",
+      "tarih": "16.03.2025 11:10",
+      "klinik_bilgi": "Akciger kanseri taramasi"
+    },
+    "modalite": "Bilgisayarli Tomografi",
+    "teknik": "Toraks BT, IV kontrastsiz, 1 mm kesit kalinligi, dusuk doz protokol",
+    "bulgular": [
+      "Akciger parankiminde toplam 1 adet noduler lezyon tespit edilmistir:",
+      "  1. Sag akciger orta lob'da 21.9 mm capinda duzensiz konturlu, kismi solid nodul, Lung-RADS 4B (AI guven: 78%).",
+      "     * Bu nodul yuksek malignite riski tasimaktadir (skor: 4.6/5). Ileri degerlendirme onerilir.",
+      "Mediastinal ve hiler lenf nodlari degerlendirme sinirlari dahilinde dogal boyutlardadir.",
+      "Plevral alanda patolojik bulgu izlenmemistir."
+    ],
+    "izlenim": [
+      "Akciger parankiminde 1 adet noduler lezyon saptanmistir.",
+      "En buyuk nodul 21.9 mm capindadir.",
+      "Genel degerlendirme: Lung-RADS Kategori 4B.",
+      "Malignite acisindan supheli bulgular mevcuttur. Ileri degerlendirme ve/veya biyopsi onerilir."
+    ],
+    "lung_rads": "4B",
+    "aciliyet": "Acil Konsultasyon",
+    "takip_onerisi": "Gogus cerrahisi konsultasyonu ve biyopsi/PET-BT onerilir.",
+    "ai_ozet": {
+      "rapor_no": 13,
+      "modalite": "BT",
+      "tarih": "16.03.2025 11:10",
+      "toplam_bulgu": 5,
+      "aciliyet": "Acil Konsultasyon",
+      "lung_rads": "4B",
+      "pipeline_version": "AlpCAN v1.0",
+      "bt_toplam_nodul": 1,
+      "bt_en_buyuk_mm": 21.9
+    }
+  },
+  {
+    "hasta": {
+      "hasta_id": "GRU-2025-113",
+      "hasta_adi": "Zeynep Kurt",
+      "yas": 79,
+      "cinsiyet": "K",
+      "protokol_no": "BATCH-113",
+      "tarih": "16.03.2025 16:42",
+      "klinik_bilgi": "Kilo kaybi"
+    },
+    "modalite": "Bilgisayarli Tomografi",
+    "teknik": "Toraks BT, IV kontrastsiz, 1 mm kesit kalinligi, dusuk doz protokol",
+    "bulgular": [
+      "Akciger parankiminde noduler lezyon saptanmamistir.",
+      "Mediastinal ve hiler lenf nodlari dogal boyutlardadir.",
+      "Plevral alanda patolojik bulgu izlenmemistir."
+    ],
+    "izlenim": [
+      "BT incelemesinde akciger parankiminde noduler lezyon saptanmamistir."
+    ],
+    "lung_rads": "1",
+    "aciliyet": "Normal",
+    "takip_onerisi": "Yillik dusuk doz BT taramasi ile takip onerilir.",
+    "ai_ozet": {
+      "rapor_no": 14,
+      "modalite": "BT",
+      "tarih": "16.03.2025 16:42",
+      "toplam_bulgu": 3,
+      "aciliyet": "Normal",
+      "lung_rads": "1",
+      "pipeline_version": "AlpCAN v1.0",
+      "bt_toplam_nodul": 0,
+      "bt_en_buyuk_mm": 0.0
+    }
+  },
+  {
+    "hasta": {
+      "hasta_id": "GRU-2025-114",
+      "hasta_adi": "Hatice Kaya",
+      "yas": 72,
+      "cinsiyet": "K",
+      "protokol_no": "BATCH-114",
+      "tarih": "16.03.2025 16:03",
+      "klinik_bilgi": "Kilo kaybi"
+    },
+    "modalite": "Bilgisayarli Tomografi",
+    "teknik": "Toraks BT, IV kontrastsiz, 1 mm kesit kalinligi, dusuk doz protokol",
+    "bulgular": [
+      "Akciger parankiminde noduler lezyon saptanmamistir.",
+      "Mediastinal ve hiler lenf nodlari dogal boyutlardadir.",
+      "Plevral alanda patolojik bulgu izlenmemistir."
+    ],
+    "izlenim": [
+      "BT incelemesinde akciger parankiminde noduler lezyon saptanmamistir."
+    ],
+    "lung_rads": "1",
+    "aciliyet": "Normal",
+    "takip_onerisi": "Yillik dusuk doz BT taramasi ile takip onerilir.",
+    "ai_ozet": {
+      "rapor_no": 15,
+      "modalite": "BT",
+      "tarih": "16.03.2025 16:03",
+      "toplam_bulgu": 3,
+      "aciliyet": "Normal",
+      "lung_rads": "1",
+      "pipeline_version": "AlpCAN v1.0",
+      "bt_toplam_nodul": 0,
+      "bt_en_buyuk_mm": 0.0
+    }
+  },
+  {
+    "hasta": {
+      "hasta_id": "GRU-2025-115",
+      "hasta_adi": "Havva Polat",
+      "yas": 45,
+      "cinsiyet": "K",
+      "protokol_no": "BATCH-115",
+      "tarih": "16.03.2025 08:32",
+      "klinik_bilgi": "Rutin tarama"
+    },
+    "modalite": "Gogus Rontgeni",
+    "teknik": "PA (posteroanterior) gogus rontgenogrami, dijital sistem",
+    "bulgular": [
+      "Muhtemel amfizem bulgusu mevcuttur (AI skoru: 0.71).",
+      "Akciger parankiminde muhtemel konsolidasyon alani izlenmektedir (AI skoru: 0.65). Pnomoni on tanisi ile klinik korelasyon onerilir.",
+      "Olasi plevral efuzyon bulgusu izlenmektedir (AI skoru: 0.56).",
+      "Akciger parankiminde olasi konsolidasyon alani izlenmektedir (AI skoru: 0.52). Pnomoni on tanisi ile klinik korelasyon onerilir.",
+      "Kardiyomediastinal siluet dogaldir.",
+      "Kemik yapilar degerlendirme sinirlari dahilinde intaktir."
+    ],
+    "izlenim": [
+      "Amfizem ile uyumlu bulgular mevcuttur.",
+      "Pnomoni acisindan kuskulu bulgular mevcuttur, klinik korelasyon onerilir.",
+      "Plevral Efuzyon acisindan kuskulu bulgular mevcuttur, klinik korelasyon onerilir.",
+      "Konsolidasyon acisindan kuskulu bulgular mevcuttur, klinik korelasyon onerilir."
+    ],
+    "lung_rads": null,
+    "aciliyet": "Normal",
+    "takip_onerisi": "Rutin takip yeterlidir.",
+    "ai_ozet": {
+      "rapor_no": 16,
+      "modalite": "CXR",
+      "tarih": "16.03.2025 08:32",
+      "toplam_bulgu": 6,
+      "aciliyet": "Normal",
+      "lung_rads": null,
+      "pipeline_version": "AlpCAN v1.0",
+      "cxr_patolojiler": {
+        "Consolidation": 0.517,
+        "Effusion": 0.565,
+        "Emphysema": 0.708,
+        "Fibrosis": 0.347,
+        "Nodule": 0.394,
+        "Pleural_Thickening": 0.339,
+        "Pneumonia": 0.645
+      }
+    }
+  },
+  {
+    "hasta": {
+      "hasta_id": "GRU-2025-116",
+      "hasta_adi": "Sultan Erdogan",
+      "yas": 39,
+      "cinsiyet": "K",
+      "protokol_no": "BATCH-116",
+      "tarih": "16.03.2025 08:29",
+      "klinik_bilgi": "Sigara oykusu, kontrol"
+    },
+    "modalite": "Gogus Rontgeni",
+    "teknik": "PA (posteroanterior) gogus rontgenogrami, dijital sistem",
+    "bulgular": [
+      "Akciger parankiminde olasi konsolidasyon alani izlenmektedir (AI skoru: 0.59). Pnomoni on tanisi ile klinik korelasyon onerilir.",
+      "Olasi odem bulgusu mevcuttur (AI skoru: 0.56).",
+      "Olasi plevral efuzyon bulgusu izlenmektedir (AI skoru: 0.53).",
+      "Olasi amfizem bulgusu mevcuttur (AI skoru: 0.53).",
+      "Akciger parankiminde olasi noduler/kitlesel lezyon izlenmektedir (AI skoru: 0.50). BT ile ileri degerlendirme onerilir.",
+      "Kardiyomediastinal siluet dogaldir.",
+      "Kemik yapilar degerlendirme sinirlari dahilinde intaktir."
+    ],
+    "izlenim": [
+      "Pnomoni acisindan kuskulu bulgular mevcuttur, klinik korelasyon onerilir.",
+      "Odem acisindan kuskulu bulgular mevcuttur, klinik korelasyon onerilir.",
+      "Plevral Efuzyon acisindan kuskulu bulgular mevcuttur, klinik korelasyon onerilir.",
+      "Amfizem acisindan kuskulu bulgular mevcuttur, klinik korelasyon onerilir.",
+      "Kitle acisindan kuskulu bulgular mevcuttur, klinik korelasyon onerilir."
+    ],
+    "lung_rads": null,
+    "aciliyet": "Normal",
+    "takip_onerisi": "Rutin takip yeterlidir.",
+    "ai_ozet": {
+      "rapor_no": 17,
+      "modalite": "CXR",
+      "tarih": "16.03.2025 08:29",
+      "toplam_bulgu": 7,
+      "aciliyet": "Normal",
+      "lung_rads": null,
+      "pipeline_version": "AlpCAN v1.0",
+      "cxr_patolojiler": {
+        "Edema": 0.56,
+        "Effusion": 0.529,
+        "Emphysema": 0.528,
+        "Mass": 0.5,
+        "Nodule": 0.422,
+        "Pleural_Thickening": 0.367,
+        "Pneumonia": 0.592,
+        "Pneumothorax": 0.392
+      }
+    }
+  },
+  {
+    "hasta": {
+      "hasta_id": "GRU-2025-117",
+      "hasta_adi": "Ayse Ozturk",
+      "yas": 51,
+      "cinsiyet": "K",
+      "protokol_no": "BATCH-117",
+      "tarih": "16.03.2025 09:56",
+      "klinik_bilgi": "Rutin tarama"
+    },
+    "modalite": "Gogus Rontgeni",
+    "teknik": "PA (posteroanterior) gogus rontgenogrami, dijital sistem",
+    "bulgular": [
+      "Olasi infiltrasyon bulgusu mevcuttur (AI skoru: 0.54).",
+      "Akciger parankiminde olasi noduler/kitlesel lezyon izlenmektedir (AI skoru: 0.51). BT ile ileri degerlendirme onerilir.",
+      "Kardiyomediastinal siluet dogaldir.",
+      "Kemik yapilar degerlendirme sinirlari dahilinde intaktir."
+    ],
+    "izlenim": [
+      "Infiltrasyon acisindan kuskulu bulgular mevcuttur, klinik korelasyon onerilir.",
+      "Kitle acisindan kuskulu bulgular mevcuttur, klinik korelasyon onerilir."
+    ],
+    "lung_rads": null,
+    "aciliyet": "Normal",
+    "takip_onerisi": "Rutin takip yeterlidir.",
+    "ai_ozet": {
+      "rapor_no": 18,
+      "modalite": "CXR",
+      "tarih": "16.03.2025 09:56",
+      "toplam_bulgu": 4,
+      "aciliyet": "Normal",
+      "lung_rads": null,
+      "pipeline_version": "AlpCAN v1.0",
+      "cxr_patolojiler": {
+        "Cardiomegaly": 0.363,
+        "Consolidation": 0.431,
+        "Effusion": 0.381,
+        "Infiltration": 0.543,
+        "Mass": 0.508
+      }
+    }
+  },
+  {
+    "hasta": {
+      "hasta_id": "GRU-2025-118",
+      "hasta_adi": "Emine Bulut",
+      "yas": 70,
+      "cinsiyet": "K",
+      "protokol_no": "BATCH-118",
+      "tarih": "16.03.2025 14:35",
+      "klinik_bilgi": "Rutin tarama"
+    },
+    "modalite": "Gogus Rontgeni",
+    "teknik": "PA (posteroanterior) gogus rontgenogrami, dijital sistem",
+    "bulgular": [
+      "Akciger parankiminde olasi konsolidasyon alani izlenmektedir (AI skoru: 0.54). Pnomoni on tanisi ile klinik korelasyon onerilir.",
+      "Akciger parankiminde olasi noduler/kitlesel lezyon izlenmektedir (AI skoru: 0.54). BT ile ileri degerlendirme onerilir.",
+      "Olasi pnomotoraks bulgusu saptanmistir (AI skoru: 0.54). Klinik korelasyon onerilir.",
+      "Kardiyotorasik oran artmis olup olasi kardiyomegali ile uyumludur (AI skoru: 0.53).",
+      "Akciger parankiminde olasi konsolidasyon alani izlenmektedir (AI skoru: 0.52). Pnomoni on tanisi ile klinik korelasyon onerilir.",
+      "Olasi plevral efuzyon bulgusu izlenmektedir (AI skoru: 0.50).",
+      "Kemik yapilar degerlendirme sinirlari dahilinde intaktir."
+    ],
+    "izlenim": [
+      "Konsolidasyon acisindan kuskulu bulgular mevcuttur, klinik korelasyon onerilir.",
+      "Nodul acisindan kuskulu bulgular mevcuttur, klinik korelasyon onerilir.",
+      "Pnomotoraks acisindan kuskulu bulgular mevcuttur, klinik korelasyon onerilir.",
+      "Kardiyomegali acisindan kuskulu bulgular mevcuttur, klinik korelasyon onerilir.",
+      "Pnomoni acisindan kuskulu bulgular mevcuttur, klinik korelasyon onerilir.",
+      "Plevral Efuzyon acisindan kuskulu bulgular mevcuttur, klinik korelasyon onerilir."
+    ],
+    "lung_rads": null,
+    "aciliyet": "Normal",
+    "takip_onerisi": "Rutin takip yeterlidir.",
+    "ai_ozet": {
+      "rapor_no": 19,
+      "modalite": "CXR",
+      "tarih": "16.03.2025 14:35",
+      "toplam_bulgu": 7,
+      "aciliyet": "Normal",
+      "lung_rads": null,
+      "pipeline_version": "AlpCAN v1.0",
+      "cxr_patolojiler": {
+        "Cardiomegaly": 0.53,
+        "Consolidation": 0.542,
+        "Edema": 0.327,
+        "Effusion": 0.501,
+        "Emphysema": 0.35,
+        "Nodule": 0.539,
+        "Pleural_Thickening": 0.478,
+        "Pneumonia": 0.516,
+        "Pneumothorax": 0.539
+      }
+    }
+  },
+  {
+    "hasta": {
+      "hasta_id": "GRU-2025-119",
+      "hasta_adi": "Huseyin Aktas",
+      "yas": 61,
+      "cinsiyet": "E",
+      "protokol_no": "BATCH-119",
+      "tarih": "16.03.2025 17:47",
+      "klinik_bilgi": "Oksuruk, ates"
+    },
+    "modalite": "Gogus Rontgeni",
+    "teknik": "PA (posteroanterior) gogus rontgenogrami, dijital sistem",
+    "bulgular": [
+      "Kardiyotorasik oran artmis olup olasi kardiyomegali ile uyumludur (AI skoru: 0.59).",
+      "Olasi infiltrasyon bulgusu mevcuttur (AI skoru: 0.56).",
+      "Olasi odem bulgusu mevcuttur (AI skoru: 0.53).",
+      "Olasi atelektazi bulgusu mevcuttur (AI skoru: 0.52).",
+      "Akciger parankiminde olasi noduler/kitlesel lezyon izlenmektedir (AI skoru: 0.52). BT ile ileri degerlendirme onerilir.",
+      "Kemik yapilar degerlendirme sinirlari dahilinde intaktir."
+    ],
+    "izlenim": [
+      "Kardiyomegali acisindan kuskulu bulgular mevcuttur, klinik korelasyon onerilir.",
+      "Infiltrasyon acisindan kuskulu bulgular mevcuttur, klinik korelasyon onerilir.",
+      "Odem acisindan kuskulu bulgular mevcuttur, klinik korelasyon onerilir.",
+      "Atelektazi acisindan kuskulu bulgular mevcuttur, klinik korelasyon onerilir.",
+      "Nodul acisindan kuskulu bulgular mevcuttur, klinik korelasyon onerilir."
+    ],
+    "lung_rads": null,
+    "aciliyet": "Normal",
+    "takip_onerisi": "Rutin takip yeterlidir.",
+    "ai_ozet": {
+      "rapor_no": 20,
+      "modalite": "CXR",
+      "tarih": "16.03.2025 17:47",
+      "toplam_bulgu": 6,
+      "aciliyet": "Normal",
+      "lung_rads": null,
+      "pipeline_version": "AlpCAN v1.0",
+      "cxr_patolojiler": {
+        "Atelectasis": 0.519,
+        "Cardiomegaly": 0.586,
+        "Consolidation": 0.486,
+        "Edema": 0.529,
+        "Emphysema": 0.442,
+        "Infiltration": 0.558,
+        "Mass": 0.481,
+        "Nodule": 0.518,
+        "Pleural_Thickening": 0.486,
+        "Pneumothorax": 0.472
+      }
+    }
+  }
+]

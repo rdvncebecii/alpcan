@@ -1,0 +1,13 @@
+{
+  "id": "ridvancebec/alpcan-ct-malignancy-classification",
+  "title": "AlpCAN CT Malignancy Classification",
+  "code_file": "13_malignancy_classification.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "dataset_sources": ["zhangweiled/lidcidri"],
+  "competition_sources": [],
+  "kernel_sources": []
+}

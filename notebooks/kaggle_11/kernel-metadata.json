@@ -1,0 +1,13 @@
+{
+  "id": "ridvancebec/alpcan-nnu-net-nodule-segmentation",
+  "title": "AlpCAN nnU-Net Nodule Segmentation",
+  "code_file": "11_nnunet_nodule_segmentation.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "dataset_sources": ["zhangweiled/lidcidri"],
+  "competition_sources": [],
+  "kernel_sources": []
+}

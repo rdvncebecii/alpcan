@@ -1,0 +1,10 @@
+metric,value
+detection_rate,0.7231
+mean_dice_detected,0.6795
+mean_dice_all,0.6799
+n_patients,20.0
+n_nodules_total,65.0
+n_nodules_detected,47.0
+risk_accuracy,0.7234
+suspicious_auc,0.8518
+avg_time_per_patient_s,0.163

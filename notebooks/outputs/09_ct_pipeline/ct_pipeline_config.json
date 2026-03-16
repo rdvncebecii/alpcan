@@ -1,0 +1,37 @@
+{
+  "pipeline_version": "1.0",
+  "segmentation": {
+    "model": "smp.Unet (ResNet-34 encoder)",
+    "input_size": 256,
+    "threshold": 0.5,
+    "min_nodule_area": 10,
+    "weights_file": "ct_seg_best_model.pth",
+    "n_parameters": 24436369
+  },
+  "characterization": {
+    "model": "ResNet-50 + CBAM",
+    "input_size": 128,
+    "suspicious_threshold": 0.5,
+    "n_risk_classes": 4,
+    "weights_file": "ct_char_best_model.pth",
+    "n_parameters": 24042663
+  },
+  "lung_rads_mapping": {
+    "0": "2",
+    "1": "3",
+    "2": "4A",
+    "3": "4B"
+  },
+  "followup_recommendations": {
+    "2": "Rutin tarama -- 12 aylik BT kontrolu yeterli.",
+    "3": "6 aylik takip BT onerilir. Boyut degisimi yakından izlenmeli.",
+    "4A": "3 aylik takip BT veya PET/CT onerilir. Klinik korelasyon gerekli.",
+    "4B": "Doku orneklemesi (biyopsi) onerilir. Multidisipliner konsey degerlendirmesi."
+  },
+  "risk_names": [
+    "Dusuk Risk",
+    "Orta-Dusuk",
+    "Orta-Yuksek",
+    "Yuksek Risk"
+  ]
+}

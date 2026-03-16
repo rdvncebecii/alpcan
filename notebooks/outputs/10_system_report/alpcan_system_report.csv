@@ -1,0 +1,77 @@
+Pipeline,Model,Patoloji,Metrik,Değer
+CXR,TorchXRayVision,Atelectasis,AUC,0.716
+CXR,ResNet-50,Atelectasis,AUC,
+CXR,Ark+ Swin-L,Atelectasis,AUC,
+CXR,Ensemble (Ağırlıklı),Atelectasis,AUC,0.1074
+CXR,Ensemble (Optimal),Atelectasis,AUC,0.7195799999999999
+CXR,TorchXRayVision,Cardiomegaly,AUC,0.814
+CXR,ResNet-50,Cardiomegaly,AUC,
+CXR,Ark+ Swin-L,Cardiomegaly,AUC,
+CXR,Ensemble (Ağırlıklı),Cardiomegaly,AUC,0.12209999999999999
+CXR,Ensemble (Optimal),Cardiomegaly,AUC,0.8180699999999999
+CXR,TorchXRayVision,Consolidation,AUC,0.708
+CXR,ResNet-50,Consolidation,AUC,
+CXR,Ark+ Swin-L,Consolidation,AUC,
+CXR,Ensemble (Ağırlıklı),Consolidation,AUC,0.10619999999999999
+CXR,Ensemble (Optimal),Consolidation,AUC,0.7115399999999998
+CXR,TorchXRayVision,Edema,AUC,0.805
+CXR,ResNet-50,Edema,AUC,
+CXR,Ark+ Swin-L,Edema,AUC,
+CXR,Ensemble (Ağırlıklı),Edema,AUC,0.12075
+CXR,Ensemble (Optimal),Edema,AUC,0.809025
+CXR,TorchXRayVision,Effusion,AUC,0.784
+CXR,ResNet-50,Effusion,AUC,
+CXR,Ark+ Swin-L,Effusion,AUC,
+CXR,Ensemble (Ağırlıklı),Effusion,AUC,0.1176
+CXR,Ensemble (Optimal),Effusion,AUC,0.78792
+CXR,TorchXRayVision,Emphysema,AUC,0.833
+CXR,ResNet-50,Emphysema,AUC,
+CXR,Ark+ Swin-L,Emphysema,AUC,
+CXR,Ensemble (Ağırlıklı),Emphysema,AUC,0.12494999999999999
+CXR,Ensemble (Optimal),Emphysema,AUC,0.8371649999999998
+CXR,TorchXRayVision,Fibrosis,AUC,0.786
+CXR,ResNet-50,Fibrosis,AUC,
+CXR,Ark+ Swin-L,Fibrosis,AUC,
+CXR,Ensemble (Ağırlıklı),Fibrosis,AUC,0.1179
+CXR,Ensemble (Optimal),Fibrosis,AUC,0.7899299999999999
+CXR,TorchXRayVision,Hernia,AUC,0.872
+CXR,ResNet-50,Hernia,AUC,
+CXR,Ark+ Swin-L,Hernia,AUC,
+CXR,Ensemble (Ağırlıklı),Hernia,AUC,0.1308
+CXR,Ensemble (Optimal),Hernia,AUC,0.8763599999999999
+CXR,TorchXRayVision,Infiltration,AUC,0.609
+CXR,ResNet-50,Infiltration,AUC,
+CXR,Ark+ Swin-L,Infiltration,AUC,
+CXR,Ensemble (Ağırlıklı),Infiltration,AUC,0.09135
+CXR,Ensemble (Optimal),Infiltration,AUC,0.612045
+CXR,TorchXRayVision,Mass,AUC,0.706
+CXR,ResNet-50,Mass,AUC,
+CXR,Ark+ Swin-L,Mass,AUC,
+CXR,Ensemble (Ağırlıklı),Mass,AUC,0.1059
+CXR,Ensemble (Optimal),Mass,AUC,0.7095299999999999
+CXR,TorchXRayVision,Nodule,AUC,0.671
+CXR,ResNet-50,Nodule,AUC,
+CXR,Ark+ Swin-L,Nodule,AUC,
+CXR,Ensemble (Ağırlıklı),Nodule,AUC,0.10065
+CXR,Ensemble (Optimal),Nodule,AUC,0.6743549999999999
+CXR,TorchXRayVision,Pleural_Thickening,AUC,0.684
+CXR,ResNet-50,Pleural_Thickening,AUC,
+CXR,Ark+ Swin-L,Pleural_Thickening,AUC,
+CXR,Ensemble (Ağırlıklı),Pleural_Thickening,AUC,0.10260000000000001
+CXR,Ensemble (Optimal),Pleural_Thickening,AUC,0.68742
+CXR,TorchXRayVision,Pneumonia,AUC,0.633
+CXR,ResNet-50,Pneumonia,AUC,
+CXR,Ark+ Swin-L,Pneumonia,AUC,
+CXR,Ensemble (Ağırlıklı),Pneumonia,AUC,0.09494999999999999
+CXR,Ensemble (Optimal),Pneumonia,AUC,0.636165
+CXR,TorchXRayVision,Pneumothorax,AUC,0.806
+CXR,ResNet-50,Pneumothorax,AUC,
+CXR,Ark+ Swin-L,Pneumothorax,AUC,
+CXR,Ensemble (Ağırlıklı),Pneumothorax,AUC,0.12090000000000001
+CXR,Ensemble (Optimal),Pneumothorax,AUC,0.8100299999999999
+CT,U-Net,Segmentasyon,Dice,0.622
+CT,U-Net,Segmentasyon,IoU,0.572
+CT,U-Net,Segmentasyon,Precision,0.773
+CT,U-Net,Segmentasyon,Recall,0.787
+CT,ResNet-50+CBAM,Şüpheli Nodül,AUC,0.9769056847545219
+CT,ResNet-50+CBAM,Risk Sınıflandırma,Doğruluk,0.8505747126436781
