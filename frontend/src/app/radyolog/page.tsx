@@ -3,11 +3,12 @@
 import { useState, useRef, useCallback, useEffect } from "react";
 import Link from "next/link";
 import { useStudies, useInference, useReport } from "@/lib/hooks";
+import { updateReport, downloadReportPdf, updateStudyStatus } from "@/lib/api";
 import type { StudySummary } from "@/lib/types";
 import {
   Move, Ruler, ZoomIn, Triangle, RotateCw, FlipHorizontal, RefreshCcw,
   Layers, Thermometer, Trash2, ChevronDown, Monitor,
-  FileImage, Box, Stethoscope, Activity,
+  FileImage, Box, Stethoscope, Activity, Pencil, Save, X, Download,
 } from "lucide-react";
 
 /* ── W/L presets ── */
@@ -21,12 +22,12 @@ const WL_PRESETS = [
 
 /* ── helper: Lung-RADS → UI display ── */
 const RADS_META: Record<string, { rc: string; color: string; name: string; act: string }> = {
-  "1": { rc: "r1b", color: "var(--r1)", name: "Negatif", act: "Yillik tarama yeterli" },
-  "2": { rc: "r2b", color: "var(--r2)", name: "Benign Gorünüm", act: "Yillik tarama yeterli" },
+  "1": { rc: "r1b", color: "var(--r1)", name: "Negatif", act: "Yıllık tarama yeterli" },
+  "2": { rc: "r2b", color: "var(--r2)", name: "Benign Görünüm", act: "Yıllık tarama yeterli" },
   "3": { rc: "r3b", color: "var(--r3)", name: "Muhtemelen Benign", act: "6 ay sonra DDBT kontrolü" },
-  "4A": { rc: "r4ab", color: "var(--r4a)", name: "Süpheli — Düsük Risk", act: "3 ay sonra DDBT kontrolü" },
-  "4B": { rc: "r4bb", color: "var(--r4b)", name: "Süpheli — Yüksek Risk", act: "Biyopsi / Cerrahi konsültasyon" },
-  "4X": { rc: "r4bb", color: "var(--r4b)", name: "Ek Bulgularla Yüksek Süphe", act: "Ileri tetkik gerekli" },
+  "4A": { rc: "r4ab", color: "var(--r4a)", name: "Şüpheli — Düşük Risk", act: "3 ay sonra DDBT kontrolü" },
+  "4B": { rc: "r4bb", color: "var(--r4b)", name: "Şüpheli — Yüksek Risk", act: "Biyopsi / Cerrahi konsültasyon" },
+  "4X": { rc: "r4bb", color: "var(--r4b)", name: "Ek Bulgularla Yüksek Şüphe", act: "İleri tetkik gerekli" },
 };
 
 const getRads = (r: string | null) =>
@@ -39,9 +40,6 @@ const statusToPri = (s: StudySummary): "h" | "m" | "l" => {
   if (s.status === "queued" || s.status === "processing" || rads === "3") return "m";
   return "l";
 };
-
-const priLabel = (p: "h" | "m" | "l") =>
-  p === "h" ? "Acil" : p === "m" ? "Bekliyor" : "Normal";
 
 /* ── pipeline step definitions ── */
 const CXR_STEPS = [
@@ -87,7 +85,7 @@ export default function RadyologPage() {
   const [activeTool, setActiveTool] = useState<"pan" | "ruler" | "zoom" | "angle" | "rotate" | "flip" | "reset">("pan");
   const [aiLayer, setAiLayer] = useState(false);
   const [heatmap, setHeatmap] = useState(false);
-  const [wlPreset, setWlPreset] = useState(0); // Akciğer
+  const [wlPreset, setWlPreset] = useState(0);
   const [wlOpen, setWlOpen] = useState(false);
 
   // toast
@@ -102,6 +100,13 @@ export default function RadyologPage() {
   const [pip1State, setPip1State] = useState<"" | "on" | "done">("");
   const [pip2State, setPip2State] = useState<"" | "ready" | "on" | "done">("");
   const [pipMsg, setPipMsg] = useState("");
+
+  // report editing
+  const [editMode, setEditMode] = useState(false);
+  const [editSummary, setEditSummary] = useState("");
+  const [editReco, setEditReco] = useState("");
+  const [editSaving, setEditSaving] = useState(false);
+  const [pdfLoading, setPdfLoading] = useState(false);
 
   // W/L current values
   const wl = WL_PRESETS[wlPreset];
@@ -126,6 +131,24 @@ export default function RadyologPage() {
   // report
   const selectedStudy = studies[selIdx] || null;
   const { report, fetchReport } = useReport(selectedStudy?.id || null);
+
+  /* ── Auto-load report for already-completed studies ── */
+  useEffect(() => {
+    if (!selectedStudy) return;
+    if (selectedStudy.status === "completed" || selectedStudy.lung_rads) {
+      fetchReport();
+      setCxrDone(true);
+      setCtDone(true);
+      setShowRads(true);
+      setShowNodules(true);
+      setShowAgents(true);
+      setShowPipeSteps(true);
+      setPip1State("done");
+      setPip2State("done");
+      setPipMsg("Analiz tamamlandı");
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedStudy?.id]);
 
   /* ── filtered studies ── */
   const filtered = studies.filter(
@@ -166,6 +189,7 @@ export default function RadyologPage() {
       setPip2State("");
       setPipMsg("");
       setRightTab(0);
+      setEditMode(false);
     },
     [cxrInference, ctInference]
   );
@@ -178,12 +202,9 @@ export default function RadyologPage() {
       setPipMsg("CXR analizi tamamlandı");
       showToast("CXR Pipeline tamamlandı");
       setShowAgents(true);
-
-      // Fetch report and check if CT is needed
-      if (selectedStudy) {
-        fetchReport();
-      }
+      if (selectedStudy) fetchReport();
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cxrInference.status]);
 
   /* ── Watch CT inference status ── */
@@ -197,13 +218,9 @@ export default function RadyologPage() {
       setShowPipeSteps(true);
       setShowNodules(true);
       setRightTab(0);
-
-      // Refresh report
-      if (selectedStudy) {
-        fetchReport();
-        refetch();
-      }
+      if (selectedStudy) { fetchReport(); refetch(); }
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ctInference.status]);
 
   /* ── Check if CT is recommended after CXR report loads ── */
@@ -216,7 +233,8 @@ export default function RadyologPage() {
         setPipMsg("BT yönlendirmesi önerildi — Pipeline 2 hazır");
       }
     }
-  }, [report, cxrDone, ctDone, selectedStudy]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [report, cxrDone, ctDone]);
 
   /* ── run CXR pipeline ── */
   const runCXR = useCallback(() => {
@@ -237,15 +255,80 @@ export default function RadyologPage() {
     ctInference.start(selectedStudy.id, "ct");
   }, [selectedStudy, ctInference]);
 
+  /* ── PDF download ── */
+  const handlePdfDownload = useCallback(async () => {
+    if (!selectedStudy || !report) {
+      showToast("Önce raporu yükleyin");
+      return;
+    }
+    setPdfLoading(true);
+    try {
+      const blob = await downloadReportPdf(selectedStudy.id);
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `alpcan_rapor_${selectedStudy.patient_id.replace(/\s+/g, "_")}_${selectedStudy.id.slice(0, 8)}.pdf`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showToast("PDF indirildi");
+    } catch (err) {
+      showToast(err instanceof Error ? err.message : "PDF oluşturulamadı");
+    } finally {
+      setPdfLoading(false);
+    }
+  }, [selectedStudy, report, showToast]);
+
+  /* ── Enter edit mode ── */
+  const startEdit = useCallback(() => {
+    if (!report) { showToast("Düzenlenecek rapor yok"); return; }
+    setEditSummary(report.summary_tr || "");
+    setEditReco(report.recommendation_tr || "");
+    setEditMode(true);
+    setRightTab(1);
+  }, [report, showToast]);
+
+  /* ── Save edited report ── */
+  const saveEdit = useCallback(async () => {
+    if (!selectedStudy) return;
+    setEditSaving(true);
+    try {
+      await updateReport(selectedStudy.id, {
+        summary_tr: editSummary,
+        recommendation_tr: editReco,
+      });
+      await fetchReport();
+      setEditMode(false);
+      showToast("Rapor kaydedildi");
+    } catch (err) {
+      showToast(err instanceof Error ? err.message : "Kayıt başarısız");
+    } finally {
+      setEditSaving(false);
+    }
+  }, [selectedStudy, editSummary, editReco, fetchReport, showToast]);
+
+  /* ── Approve & send to PACS ── */
+  const handleApprove = useCallback(async () => {
+    if (!selectedStudy) return;
+    try {
+      await updateStudyStatus(selectedStudy.id, "completed");
+      showToast("Rapor onaylandı — PACS'a gönderildi");
+      refetch();
+    } catch {
+      showToast("Onay gönderilemedi");
+    }
+  }, [selectedStudy, showToast, refetch]);
+
   /* ── current study display info ── */
   const st = selectedStudy;
   const radsInfo = getRads(report?.overall_lung_rads || st?.lung_rads || null);
   const radsVal = report?.overall_lung_rads || st?.lung_rads || "-";
-  const cxrRunning = cxrInference.status === "queued" || cxrInference.status === "PENDING" || cxrInference.status === "STARTED" || cxrInference.status === "PROGRESS" || cxrInference.status === "starting";
-  const ctRunning = ctInference.status === "queued" || ctInference.status === "PENDING" || ctInference.status === "STARTED" || ctInference.status === "PROGRESS" || ctInference.status === "starting";
+  const cxrRunning = ["queued", "PENDING", "STARTED", "PROGRESS", "starting"].includes(cxrInference.status);
+  const ctRunning = ["queued", "PENDING", "STARTED", "PROGRESS", "starting"].includes(ctInference.status);
 
-  /* ── build report text ── */
-  const reportText = () => {
+  /* ── build report text (view mode) ── */
+  const reportViewContent = () => {
     if (!report) {
       return (
         <>
@@ -257,9 +340,7 @@ export default function RadyologPage() {
     return (
       <>
         <div className="rs">BULGULAR</div>
-        <div className="rtxt">
-          {report.summary_tr || "Rapor özeti mevcut değil."}
-        </div>
+        <div className="rtxt">{report.summary_tr || "Rapor özeti mevcut değil."}</div>
         <div className="rs">LUNG-RADS</div>
         <div className="rtxt">
           Lung-RADS <span className="rhl">{report.overall_lung_rads}</span> — {radsInfo.name}
@@ -271,6 +352,11 @@ export default function RadyologPage() {
             <div className="rs">İŞLEM SÜRESİ</div>
             <div className="rtxt">{report.total_processing_seconds.toFixed(1)} saniye</div>
           </>
+        )}
+        {report.edited && (
+          <div style={{ marginTop: 8, fontSize: 9, color: "var(--warn)", fontFamily: "JetBrains Mono, monospace" }}>
+            ✎ Radyolog tarafından düzenlendi
+          </div>
         )}
       </>
     );
@@ -312,10 +398,12 @@ export default function RadyologPage() {
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", height: "calc(100vh - 52px)", gap: 16 }}>
           <div style={{ fontSize: 48, opacity: 0.3 }}>📂</div>
           <div style={{ color: "var(--t2)", fontSize: 14 }}>Henüz çalışma yok</div>
-          <div style={{ color: "var(--t3)", fontSize: 11 }}>DICOM dosyası yükleyerek başlayın</div>
-          <Link href="/yukle" className="ai-btn" style={{ marginTop: 8, textDecoration: "none" }}>
-            DICOM Yükle
-          </Link>
+          <div style={{ color: "var(--t3)", fontSize: 11 }}>DICOM yükleyin veya demo veri yükleyin</div>
+          <div style={{ display: "flex", gap: 8, marginTop: 8 }}>
+            <Link href="/yukle" className="ai-btn" style={{ textDecoration: "none" }}>
+              DICOM Yükle / Demo
+            </Link>
+          </div>
         </div>
       </>
     );
@@ -504,7 +592,6 @@ export default function RadyologPage() {
           {/* CXR viewer */}
           {activePip === 1 && (
             <div className="cxr-wrap">
-              {/* Corner overlays — OHIF style */}
               <div className="vp-overlay vp-tl">
                 <div className="vp-mod">{st?.modality === "CT" ? "CT" : st?.modality === "DX" ? "DX" : "CR"}</div>
                 <div>PA AKCİĞER GRAFİSİ</div>
@@ -524,13 +611,9 @@ export default function RadyologPage() {
                 <div>2048×2048</div>
               </div>
 
-              {/* Heatmap overlay */}
               <div className={`heatmap-sim${heatmap ? " on" : ""}`} />
+              {cxrRunning && <div className="scan" />}
 
-              {/* Scan line animation */}
-              {(cxrRunning) && <div className="scan" />}
-
-              {/* Center placeholder with medical icon */}
               <div className="vp-center">
                 <Stethoscope size={80} strokeWidth={0.5} />
                 <div className="vp-center-txt">
@@ -550,7 +633,6 @@ export default function RadyologPage() {
                 { label: "3D MIP", cls: "vpane-3d", slice: "" },
               ]).map(({ label, cls, slice }) => (
                 <div className={`vpane ${cls}`} key={label}>
-                  {/* Corner overlays per pane */}
                   <div className="vp-overlay vp-tl">
                     <div className="vp-mod">{label}</div>
                   </div>
@@ -563,18 +645,10 @@ export default function RadyologPage() {
                   <div className="vp-overlay vp-br" style={{ fontSize: 8 }}>
                     {slice && <div>{slice}</div>}
                   </div>
-
-                  {/* Crosshair lines */}
                   <div className="crosshair-h" />
                   <div className="crosshair-v" />
-
-                  {/* Heatmap */}
                   <div className={`heatmap-sim${heatmap ? " on" : ""}`} />
-
-                  {/* Scan animation on running */}
                   {ctRunning && <div className="scan" />}
-
-                  {/* Center icon */}
                   <div className="vp-center">
                     <Activity size={36} strokeWidth={0.5} />
                     <div className="vp-center-txt" style={{ fontSize: 8 }}>
@@ -632,7 +706,7 @@ export default function RadyologPage() {
                       <div className="cv">{st.status}</div>
                     </div>
                     <div>
-                      <div className="cl">Nodül Sayısı</div>
+                      <div className="cl">Nodül</div>
                       <div className="cv">{st.nodule_count ?? "-"}</div>
                     </div>
                   </div>
@@ -653,28 +727,27 @@ export default function RadyologPage() {
                   <div className="pbar-tr">
                     <div
                       className="pbar-fl animating"
-                      style={{ width: `${cxrInference.progress ? Math.round((cxrInference.progress.step / cxrInference.progress.total_steps) * 100) : 50}%` }}
+                      style={{ width: `${cxrInference.progress?.percent ?? (cxrInference.progress ? Math.round((cxrInference.progress.step / cxrInference.progress.total_steps) * 100) : 50)}%` }}
                     />
                   </div>
                   <div className="pbar-st">
                     {cxrInference.progress?.current_agent || cxrInference.status || "İşleniyor..."}
                     {cxrInference.progress && (
                       <span style={{ float: "right", color: "var(--t3)" }}>
-                        %{Math.round((cxrInference.progress.step / cxrInference.progress.total_steps) * 100)}
+                        %{cxrInference.progress.percent ?? Math.round((cxrInference.progress.step / cxrInference.progress.total_steps) * 100)}
                       </span>
                     )}
                   </div>
                 </div>
               )}
 
-              {/* CXR Error */}
               {cxrInference.error && (
                 <div className="card" style={{ borderColor: "var(--err)" }}>
                   <div style={{ color: "var(--err)", fontSize: 11 }}>{cxrInference.error}</div>
                 </div>
               )}
 
-              {/* CXR Ensemble agents — show from report */}
+              {/* CXR Ensemble results */}
               {showAgents && report && (
                 <div className="agents">
                   <div className="plbl">CXR Ensemble Sonuçları</div>
@@ -701,7 +774,6 @@ export default function RadyologPage() {
                 </div>
               )}
 
-              {/* CXR done but no report yet */}
               {showAgents && !report && (
                 <div className="agents">
                   <div className="plbl">CXR Analiz Tamamlandı</div>
@@ -721,7 +793,6 @@ export default function RadyologPage() {
                 </div>
               )}
 
-              {/* CT start button */}
               {activePip === 2 && !ctRunning && !ctDone && cxrDone && !showCtPrompt && (
                 <button className="ai-btn ct" onClick={runCT}>
                   Pipeline 2 — BT Analizi Başlat
@@ -735,21 +806,20 @@ export default function RadyologPage() {
                   <div className="pbar-tr">
                     <div
                       className="pbar-fl animating"
-                      style={{ width: `${ctInference.progress ? Math.round((ctInference.progress.step / ctInference.progress.total_steps) * 100) : 50}%` }}
+                      style={{ width: `${ctInference.progress?.percent ?? (ctInference.progress ? Math.round((ctInference.progress.step / ctInference.progress.total_steps) * 100) : 50)}%` }}
                     />
                   </div>
                   <div className="pbar-st">
                     {ctInference.progress?.current_agent || ctInference.status || "İşleniyor..."}
                     {ctInference.progress && (
                       <span style={{ float: "right", color: "var(--t3)" }}>
-                        %{Math.round((ctInference.progress.step / ctInference.progress.total_steps) * 100)}
+                        %{ctInference.progress.percent ?? Math.round((ctInference.progress.step / ctInference.progress.total_steps) * 100)}
                       </span>
                     )}
                   </div>
                 </div>
               )}
 
-              {/* CT Error */}
               {ctInference.error && (
                 <div className="card" style={{ borderColor: "var(--err)" }}>
                   <div style={{ color: "var(--err)", fontSize: 11 }}>{ctInference.error}</div>
@@ -760,12 +830,8 @@ export default function RadyologPage() {
               {showRads && report && (
                 <div className="rads-box">
                   <div className="rads-l">Lung-RADS Skoru</div>
-                  <div className="rads-n" style={{ color: radsInfo.color }}>
-                    {report.overall_lung_rads}
-                  </div>
-                  <div className="rads-nm" style={{ color: radsInfo.color }}>
-                    {radsInfo.name}
-                  </div>
+                  <div className="rads-n" style={{ color: radsInfo.color }}>{report.overall_lung_rads}</div>
+                  <div className="rads-nm" style={{ color: radsInfo.color }}>{radsInfo.name}</div>
                   <div
                     className="rads-ac"
                     style={{
@@ -830,16 +896,11 @@ export default function RadyologPage() {
                             )}
                           </div>
                           <div className="mbar">
-                            <div
-                              className="mfill"
-                              style={{ width: `${malPct}%`, background: nColor }}
-                            />
+                            <div className="mfill" style={{ width: `${malPct}%`, background: nColor }} />
                           </div>
                         </div>
                         <div className="nsco">
-                          <div className="nsv" style={{ color: nColor }}>
-                            %{malPct}
-                          </div>
+                          <div className="nsv" style={{ color: nColor }}>%{malPct}</div>
                           <div className="nsl">malignite</div>
                         </div>
                       </div>
@@ -854,43 +915,101 @@ export default function RadyologPage() {
               <div className="rbox">
                 <div className="rh">
                   <div className="rt">Radyoloji Raporu</div>
-                  <div style={{ fontSize: 9, color: "var(--t3)" }}>
-                    #{st?.id.slice(0, 8)} · {st?.patient_name}
+                  <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+                    {report?.edited && (
+                      <span style={{ fontSize: 8, color: "var(--warn)", fontFamily: "JetBrains Mono, monospace" }}>✎ DÜZENLENDİ</span>
+                    )}
+                    <div style={{ fontSize: 9, color: "var(--t3)" }}>
+                      #{st?.id.slice(0, 8)} · {st?.patient_name}
+                    </div>
                   </div>
                 </div>
-                {reportText()}
 
-                {/* Report timestamp */}
-                {report && (
-                  <div className="r-stamp">
-                    Rapor oluşturma: {new Date().toLocaleDateString("tr-TR")} {new Date().toLocaleTimeString("tr-TR", { hour: "2-digit", minute: "2-digit" })}
-                    {report.total_processing_seconds && ` · ${report.total_processing_seconds.toFixed(1)}s`}
-                  </div>
+                {/* View mode */}
+                {!editMode && reportViewContent()}
+
+                {/* Edit mode */}
+                {editMode && (
+                  <>
+                    <div className="rs">BULGULAR</div>
+                    <textarea
+                      value={editSummary}
+                      onChange={(e) => setEditSummary(e.target.value)}
+                      style={{
+                        width: "100%", minHeight: 100, background: "var(--s2)",
+                        border: "1px solid var(--tm)", borderRadius: 6,
+                        color: "var(--tx)", fontSize: 11, padding: "8px 10px",
+                        fontFamily: "Mulish, sans-serif", resize: "vertical", outline: "none",
+                      }}
+                    />
+                    <div className="rs" style={{ marginTop: 8 }}>ÖNERİ</div>
+                    <textarea
+                      value={editReco}
+                      onChange={(e) => setEditReco(e.target.value)}
+                      style={{
+                        width: "100%", minHeight: 72, background: "var(--s2)",
+                        border: "1px solid var(--tm)", borderRadius: 6,
+                        color: "var(--tx)", fontSize: 11, padding: "8px 10px",
+                        fontFamily: "Mulish, sans-serif", resize: "vertical", outline: "none",
+                      }}
+                    />
+                    <div style={{ display: "flex", gap: 6, marginTop: 10 }}>
+                      <button
+                        className="ai-btn"
+                        onClick={saveEdit}
+                        disabled={editSaving}
+                        style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: 5 }}
+                      >
+                        <Save size={12} />
+                        {editSaving ? "Kaydediliyor..." : "Kaydet"}
+                      </button>
+                      <button
+                        className="pbtn"
+                        onClick={() => setEditMode(false)}
+                        style={{ display: "flex", alignItems: "center", gap: 4 }}
+                      >
+                        <X size={11} /> İptal
+                      </button>
+                    </div>
+                  </>
                 )}
 
-                {/* Doctor signature */}
-                <div className="r-sign">
-                  <div className="r-sign-av">DR</div>
-                  <div className="r-sign-info">
-                    <div className="r-sign-name">Dr. Radyolog</div>
-                    <div className="r-sign-role">Göğüs Radyolojisi Uzmanı</div>
-                  </div>
-                </div>
+                {!editMode && (
+                  <>
+                    {/* Report timestamp */}
+                    {report && (
+                      <div className="r-stamp">
+                        {new Date(report.report_date).toLocaleDateString("tr-TR")}{" "}
+                        {new Date(report.report_date).toLocaleTimeString("tr-TR", { hour: "2-digit", minute: "2-digit" })}
+                        {report.total_processing_seconds && ` · ${report.total_processing_seconds.toFixed(1)}s`}
+                      </div>
+                    )}
 
-                <div style={{ display: "flex", gap: 5, marginTop: 10 }}>
-                  <button className="pbtn" onClick={() => showToast("PDF oluşturuldu")}>
-                    PDF
-                  </button>
-                  <button className="pbtn" onClick={() => showToast("PACS'a gönderildi")}>
-                    PACS
-                  </button>
-                  <button className="pbtn" onClick={() => showToast("FHIR R4 gönderildi")}>
-                    FHIR
-                  </button>
-                  <button className="pbtn" onClick={() => showToast("Kurul listesine eklendi")}>
-                    Kurul
-                  </button>
-                </div>
+                    {/* Doctor signature */}
+                    <div className="r-sign">
+                      <div className="r-sign-av">DR</div>
+                      <div className="r-sign-info">
+                        <div className="r-sign-name">Dr. Radyolog</div>
+                        <div className="r-sign-role">Göğüs Radyolojisi Uzmanı</div>
+                      </div>
+                    </div>
+
+                    <div style={{ display: "flex", gap: 5, marginTop: 10 }}>
+                      <button
+                        className="pbtn"
+                        onClick={handlePdfDownload}
+                        disabled={pdfLoading || !report}
+                        style={{ display: "flex", alignItems: "center", gap: 4 }}
+                      >
+                        <Download size={11} />
+                        {pdfLoading ? "..." : "PDF"}
+                      </button>
+                      <button className="pbtn" onClick={() => showToast("PACS'a gönderildi")}>PACS</button>
+                      <button className="pbtn" onClick={() => showToast("FHIR R4 gönderildi")}>FHIR</button>
+                      <button className="pbtn" onClick={() => showToast("Kurul listesine eklendi")}>Kurul</button>
+                    </div>
+                  </>
+                )}
               </div>
             </div>
 
@@ -934,20 +1053,15 @@ export default function RadyologPage() {
 
           {/* bottom actions */}
           <div className="actions">
-            <button
-              className="btn-p"
-              onClick={() => showToast("Rapor onaylandı — PACS'a gönderildi")}
-            >
+            <button className="btn-p" onClick={handleApprove}>
               Onayla ve PACS Gönder
             </button>
             <button
               className="btn-s"
-              onClick={() => {
-                setRightTab(1);
-                showToast("Rapor düzenleme modu açıldı");
-              }}
+              onClick={startEdit}
+              style={{ display: "flex", alignItems: "center", gap: 5 }}
             >
-              Raporu Düzenle
+              <Pencil size={11} /> Raporu Düzenle
             </button>
             <button
               className="btn-d"
@@ -968,13 +1082,9 @@ export default function RadyologPage() {
         onClick={() => setModal(null)}
       >
         <div className="mbox" onClick={(e) => e.stopPropagation()}>
-          <button className="mcls" onClick={() => setModal(null)}>
-            &times;
-          </button>
+          <button className="mcls" onClick={() => setModal(null)}>&times;</button>
           <div className="mt">İstatistik Paneli</div>
-          <div className="ms">
-            Günlük analiz istatistikleri ve performans metrikleri
-          </div>
+          <div className="ms">Günlük analiz istatistikleri ve performans metrikleri</div>
           <div className="mb">
             Toplam çalışma: <strong>{studies.length}</strong>
             <br />
@@ -983,10 +1093,10 @@ export default function RadyologPage() {
             Bekleyen: <strong>{studies.filter((s) => s.status === "uploaded").length}</strong>
             <br />
             RADS &ge; 3: <strong>{studies.filter((s) => parseInt(s.lung_rads || "0") >= 3).length}</strong>
+            <br />
+            RADS 4B/4X (Acil): <strong style={{ color: "var(--err)" }}>{studies.filter((s) => s.lung_rads === "4B" || s.lung_rads === "4X").length}</strong>
           </div>
-          <button className="mbtn-p" onClick={() => setModal(null)}>
-            Tamam
-          </button>
+          <button className="mbtn-p" onClick={() => setModal(null)}>Tamam</button>
         </div>
       </div>
 
@@ -996,13 +1106,9 @@ export default function RadyologPage() {
         onClick={() => setModal(null)}
       >
         <div className="mbox" onClick={(e) => e.stopPropagation()}>
-          <button className="mcls" onClick={() => setModal(null)}>
-            &times;
-          </button>
+          <button className="mcls" onClick={() => setModal(null)}>&times;</button>
           <div className="mt">PACS Bağlantısı</div>
-          <div className="ms">
-            Orthanc PACS sunucu durumu ve DICOM bağlantı bilgileri
-          </div>
+          <div className="ms">Orthanc PACS sunucu durumu ve DICOM bağlantı bilgileri</div>
           <div className="mb">
             Sunucu: <strong>Orthanc 1.12.3</strong>
             <br />
@@ -1012,9 +1118,7 @@ export default function RadyologPage() {
             <br />
             Port: <strong>4242 (DICOM) / 8042 (REST)</strong>
           </div>
-          <button className="mbtn-p" onClick={() => setModal(null)}>
-            Tamam
-          </button>
+          <button className="mbtn-p" onClick={() => setModal(null)}>Tamam</button>
         </div>
       </div>
     </>

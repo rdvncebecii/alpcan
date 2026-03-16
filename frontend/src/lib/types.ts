@@ -35,7 +35,15 @@ export interface LungRADSReport {
   cxr_recommendation: string | null;
   summary_tr: string | null;
   recommendation_tr: string | null;
+  full_report_tr: string | null;
   total_processing_seconds: number | null;
+  edited: boolean;
+}
+
+export interface ReportUpdate {
+  summary_tr?: string;
+  recommendation_tr?: string;
+  full_report_tr?: string;
 }
 
 export interface AgentResult {
@@ -61,8 +69,24 @@ export interface InferenceStatus {
     current_agent: string;
     step: number;
     total_steps: number;
+    percent?: number;
   };
   result?: unknown;
+}
+
+// ── Auth Types ──
+
+export interface User {
+  id: string;
+  email: string;
+  full_name: string;
+  role: string;
+  is_active: boolean;
+}
+
+export interface LoginResponse {
+  access_token: string;
+  token_type: string;
 }
 
 // ── UI-only Types (used by dev page) ──

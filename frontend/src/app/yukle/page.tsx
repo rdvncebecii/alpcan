@@ -2,14 +2,25 @@
 
 import { useState, useCallback, useRef } from "react";
 import Link from "next/link";
-import { uploadDicom, uploadDicomBatch } from "@/lib/api";
+import { uploadDicom, seedDemo, clearDemo } from "@/lib/api";
 
 export default function YuklePage() {
   const [files, setFiles] = useState<File[]>([]);
   const [uploading, setUploading] = useState(false);
   const [results, setResults] = useState<{ name: string; ok: boolean; msg: string }[]>([]);
   const [dragOver, setDragOver] = useState(false);
+  const [demoLoading, setDemoLoading] = useState(false);
+  const [toast, setToast] = useState("");
+  const [toastVisible, setToastVisible] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
+  const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const showToast = useCallback((msg: string) => {
+    if (toastTimer.current) clearTimeout(toastTimer.current);
+    setToast(msg);
+    setToastVisible(true);
+    toastTimer.current = setTimeout(() => setToastVisible(false), 3000);
+  }, []);
 
   const addFiles = useCallback((newFiles: FileList | File[]) => {
     const arr = Array.from(newFiles).filter(
@@ -55,6 +66,34 @@ export default function YuklePage() {
     setFiles([]);
   }, [files]);
 
+  const handleSeedDemo = useCallback(async () => {
+    setDemoLoading(true);
+    try {
+      const res = await seedDemo();
+      showToast(`${res.created} demo çalışma yüklendi`);
+      setResults([{ name: "Demo", ok: true, msg: res.message }]);
+    } catch (err) {
+      showToast(err instanceof Error ? err.message : "Demo yüklenemedi");
+      setResults([{ name: "Demo", ok: false, msg: err instanceof Error ? err.message : "Hata" }]);
+    } finally {
+      setDemoLoading(false);
+    }
+  }, [showToast]);
+
+  const handleClearDemo = useCallback(async () => {
+    setDemoLoading(true);
+    try {
+      const res = await clearDemo();
+      showToast(`${res.deleted} çalışma silindi`);
+      setResults([{ name: "Temizlik", ok: true, msg: res.message }]);
+    } catch (err) {
+      showToast(err instanceof Error ? err.message : "Temizleme başarısız");
+      setResults([{ name: "Temizlik", ok: false, msg: err instanceof Error ? err.message : "Hata" }]);
+    } finally {
+      setDemoLoading(false);
+    }
+  }, [showToast]);
+
   const removeFile = useCallback((idx: number) => {
     setFiles((prev) => prev.filter((_, i) => i !== idx));
   }, []);
@@ -82,8 +121,56 @@ export default function YuklePage() {
           maxWidth: 640,
           margin: "40px auto",
           padding: "0 20px",
+          overflowY: "auto",
+          height: "calc(100vh - 90px)",
         }}
       >
+        {/* Demo section */}
+        <div
+          style={{
+            background: "var(--s2)",
+            border: "1px solid var(--b2)",
+            borderRadius: 12,
+            padding: "18px 20px",
+            marginBottom: 24,
+          }}
+        >
+          <div style={{ fontSize: 12, fontWeight: 700, color: "var(--tm)", marginBottom: 4, fontFamily: "Syne, sans-serif" }}>
+            Demo Veri
+          </div>
+          <div style={{ fontSize: 11, color: "var(--t3)", marginBottom: 14, lineHeight: 1.6 }}>
+            Sistemi test etmek için 12 adet gerçekçi hasta çalışması yükleyin.
+            Tüm Lung-RADS kategorileri (1–4X) ve çeşitli modaliteler (CXR, BT) içerir.
+          </div>
+          <div style={{ display: "flex", gap: 8 }}>
+            <button
+              className="ai-btn"
+              onClick={handleSeedDemo}
+              disabled={demoLoading}
+              style={{ flex: 1 }}
+            >
+              {demoLoading ? "Yükleniyor..." : "Demo Veri Yükle"}
+            </button>
+            <button
+              className="pbtn"
+              onClick={handleClearDemo}
+              disabled={demoLoading}
+              style={{ whiteSpace: "nowrap", padding: "7px 14px" }}
+            >
+              {demoLoading ? "..." : "Tümünü Sil"}
+            </button>
+          </div>
+        </div>
+
+        {/* Divider */}
+        <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
+          <div style={{ flex: 1, height: 1, background: "var(--b1)" }} />
+          <span style={{ fontSize: 10, color: "var(--t3)", fontFamily: "JetBrains Mono, monospace" }}>
+            VEYA DICOM YÜKLE
+          </span>
+          <div style={{ flex: 1, height: 1, background: "var(--b1)" }} />
+        </div>
+
         {/* Drop zone */}
         <div
           onDragOver={(e) => { e.preventDefault(); setDragOver(true); }}
@@ -160,9 +247,7 @@ export default function YuklePage() {
         {/* Results */}
         {results.length > 0 && (
           <div style={{ marginTop: 20 }}>
-            <div style={{ color: "var(--t2)", fontSize: 12, marginBottom: 8 }}>
-              Sonuçlar
-            </div>
+            <div style={{ color: "var(--t2)", fontSize: 12, marginBottom: 8 }}>Sonuçlar</div>
             {results.map((r, i) => (
               <div
                 key={i}
@@ -177,7 +262,7 @@ export default function YuklePage() {
                 }}
               >
                 <span style={{ color: r.ok ? "var(--ok)" : "var(--err)" }}>
-                  {r.ok ? "OK" : "HATA"} — {r.name}
+                  {r.ok ? "✓" : "✗"} — {r.name}
                 </span>
                 <span style={{ color: "var(--t3)" }}>{r.msg}</span>
               </div>
@@ -187,11 +272,14 @@ export default function YuklePage() {
               className="ai-btn"
               style={{ marginTop: 12, display: "block", textAlign: "center", textDecoration: "none" }}
             >
-              Radyolog Arayüzüne Git
+              Radyolog Arayüzüne Git →
             </Link>
           </div>
         )}
       </div>
+
+      {/* Toast */}
+      <div className={`toast${toastVisible ? " show" : ""}`}>{toast}</div>
     </>
   );
 }
