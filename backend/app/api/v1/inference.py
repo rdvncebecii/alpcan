@@ -1,6 +1,5 @@
 """YZ analiz (inference) endpoint'leri — Celery task dispatch."""
 
-import time
 from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel
 from enum import Enum
@@ -79,7 +78,6 @@ async def run_inference(
     study.status = "queued"
     study.pipeline_type = request.pipeline.value
     # Analiz başlangıç zamanını kaydet
-    from datetime import datetime, timezone
     study.quality_score = None  # reset
     # queued_at için study'ye ek alan yok; created_at'i proxy olarak kullanacağız
     # Bunun yerine task_id'yi study.study_instance_uid'nin sonuna ekliyoruz

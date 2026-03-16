@@ -11,8 +11,6 @@ from sqlalchemy.orm import selectinload
 
 from app.core.database import get_db
 from app.models.study import Study
-from app.models.report import Report
-
 router = APIRouter()
 
 
@@ -230,8 +228,6 @@ def _build_pdf(study) -> bytes:
     from reportlab.lib.units import cm
     from reportlab.lib import colors
     from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, HRFlowable
-    from reportlab.lib.enums import TA_LEFT, TA_CENTER, TA_RIGHT
-
     buffer = io.BytesIO()
     doc = SimpleDocTemplate(
         buffer,
@@ -244,7 +240,6 @@ def _build_pdf(study) -> bytes:
 
     styles = getSampleStyleSheet()
     tl_color = colors.HexColor("#1a9fa8")
-    dark_bg = colors.HexColor("#0d1117")
 
     style_title = ParagraphStyle(
         "title", parent=styles["Heading1"],
@@ -298,7 +293,7 @@ def _build_pdf(study) -> bytes:
     info_data = [
         ["Hasta ID", patient_name, "Çalışma Tarihi", study_date],
         ["Modalite", study.modality, "Rapor Tarihi", now_str],
-        ["Çalışma ID", study_id[:16] + "...", "Pipeline", study.pipeline_type or "—"],
+        ["Çalışma ID", str(study.id)[:16] + "...", "Pipeline", study.pipeline_type or "—"],
     ]
     info_table = Table(info_data, colWidths=[3.5 * cm, 5 * cm, 3.5 * cm, 5 * cm])
     info_table.setStyle(TableStyle([
