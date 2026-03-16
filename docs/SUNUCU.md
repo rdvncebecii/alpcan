@@ -12,7 +12,7 @@
 - **Cloudflare:** Domain Cloudflare üzerinden proxy ediliyor
 
 ## Deploy Dizini
-- **Sunucudaki yol:** /root/alpcan
+- **Sunucudaki yol:** /root/alpcan (NOT: /alpcan değil!)
 - **Compose dosyası:** docker-compose.prod.yml
 - **Env dosyası:** /root/alpcan/.env
 
@@ -24,36 +24,44 @@
 | db         | 5432 (internal)           | PostgreSQL 16                |
 | redis      | 6379 (internal)           | Redis 7                      |
 | orthanc    | 127.0.0.1:8052, 4242     | DICOM sunucusu               |
-| celery     | -                         | ML inference worker          |
+| celery     | -                        | ML inference worker          |
 
 ## NOT: Caddy YOK — sunucuda nginx reverse proxy kullanılıyor
 
-## Komutlar
+## Önemli Komutlar
 
-### Lokal makineden deploy
+### Deploy (lokal makineden)
 ```bash
-bash deploy/deploy-remote.sh
+cd ~/Desktop/alpcan
+bash deploy.sh
 ```
 
-### Sunucuda
+### Sunucuda doğrudan
 ```bash
 ssh -i ~/.ssh/id_rsa root@45.141.150.46
-cd /root/alpcan
 
 # Container durumu
-docker compose -f docker-compose.prod.yml ps
+cd /root/alpcan && docker compose -f docker-compose.prod.yml ps
 
 # Loglar
+docker compose -f docker-compose.prod.yml logs -f
 docker compose -f docker-compose.prod.yml logs -f backend
+docker compose -f docker-compose.prod.yml logs -f frontend
 
 # Restart
 docker compose -f docker-compose.prod.yml restart
 
 # Migration
 docker compose -f docker-compose.prod.yml exec -T backend alembic upgrade head
+
+# Admin oluştur
+docker compose -f docker-compose.prod.yml exec -T backend python -c "
+from app.core.security import get_password_hash
+print(get_password_hash('SIFRE_BURAYA'))
+"
 ```
 
-## NOT: AlpISS
-- AlpISS projesi aynı sunucuda (/var/www/alpiss)
-- AlpCAN kendi PostgreSQL container'ını kullanır
+## NOT: PostgreSQL
+- AlpISS projesi aynı sunucuda çalışıyor
+- AlpCAN kendi PostgreSQL container'ını kullanır (docker-compose.prod.yml içinde)
 - AlpISS'in DB'sine DOKUNMA
