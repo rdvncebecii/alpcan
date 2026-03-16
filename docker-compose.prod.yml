@@ -62,7 +62,7 @@ services:
   celery:
     build:
       context: ./backend
-      dockerfile: Dockerfile.prod
+      dockerfile: Dockerfile.celery
     command: celery -A app.core.queue worker --loglevel=info --concurrency=2
     env_file: .env
     depends_on:

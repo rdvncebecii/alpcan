@@ -1,0 +1,19 @@
+# AlpCAN Celery Worker — ML bağımlılıklarıyla
+FROM python:3.11-slim
+
+WORKDIR /app
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    libgl1 \
+    libglib2.0-0 \
+    libpq-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY pyproject.toml .
+# ML extras dahil — sadece Celery worker ihtiyacı var
+RUN pip install --no-cache-dir -e ".[ml]"
+
+COPY . .
+
+CMD ["celery", "-A", "app.core.queue", "worker", "--loglevel=info", "--concurrency=2"]
