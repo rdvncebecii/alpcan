@@ -118,4 +118,4 @@ alpcan/
 
 ## License
 
-MIT License
+All rights reserved. See LICENSE file for details.
