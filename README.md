@@ -118,7 +118,7 @@ alpcan/
 
 ## License & Legal
 
-**Copyright (c) 2024-2026 Rıdvan Cebeci & Figen Çiçek. All rights reserved.**
+**Copyright (c) 2025-2026 Rıdvan Cebeci & Figen Çiçek. All rights reserved.**
 
 This project and all associated source code, algorithms, trained model architectures, training pipelines, documentation, and design assets are the intellectual property of the authors.
 
