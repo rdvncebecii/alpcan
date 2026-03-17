@@ -116,6 +116,32 @@ alpcan/
 - **Rıdvan Cebeci** — Giresun University, Dept. of Database, Network Design and Management
 - **Figen Çiçek** — Giresun University, Dept. of Medical Services and Techniques
 
-## License
+## License & Legal
 
-All rights reserved. See LICENSE file for details.
+**Copyright (c) 2024-2026 Rıdvan Cebeci & Figen Çiçek. All rights reserved.**
+
+This project and all associated source code, algorithms, trained model architectures, training pipelines, documentation, and design assets are the intellectual property of the authors.
+
+### Permitted Uses
+- Academic research and citation
+- Personal evaluation and learning
+- Non-commercial collaboration (with prior written consent)
+- Review by potential research partners and funding bodies
+
+### Prohibited Without Written Permission
+- Commercial use, deployment, or integration into commercial products
+- Redistribution, sublicensing, or resale of source code or trained models
+- Use in clinical or diagnostic settings without regulatory approval and author consent
+- Creating derivative works for commercial purposes
+
+### Third-Party Components
+This project incorporates open-source libraries and pretrained models (PyTorch, MONAI, nnU-Net, TorchXRayVision, etc.) which retain their original licenses. Datasets used (LIDC-IDRI, NIH CXR-14, CheXpert, MIMIC-CXR) are subject to their respective data use agreements.
+
+### Citation
+If you use this work in academic research, please cite:
+```
+Cebeci, R., & Çiçek, F. (2026). AlpCAN: AI-Powered Lung Cancer Early Detection Platform.
+Giresun University. https://github.com/rdvncebecii/alpcan
+```
+
+For collaboration inquiries, licensing, or commercial use requests, please contact the authors.
