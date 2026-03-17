@@ -3,28 +3,23 @@
 ## Kapsam Kuralları (KRİTİK)
 
 ### Lokal
-- **Sadece** `/Users/rdvncebeci/alpcan` klasörü ile çalış
+- **Sadece** proje klasörü ile çalış
 - Başka dizinlere dokunma, başka projelerin dosyalarını değiştirme
 
 ### Sunucu
-- Sunucu: `45.141.150.46`
-- Sunucuda **sadece** `/root/alpcan` dizini ile işlem yap
-- Aynı sunucuda 4 farklı proje çalışıyor — **sadece alpcan ile ilgilen:**
-  - `alpiss.net` — DOKUNMA
-  - `alpweb.alpiss.net` — DOKUNMA
-  - `gruweb.alpiss.net` — DOKUNMA
-  - **`alpcan.alpiss.net`** — SADECE BU
+- Sunucu bilgileri lokal konfigürasyonda saklanır
+- Sunucuda **sadece** proje dizini ile işlem yap
+- Aynı sunucuda birden fazla proje çalışıyor — **sadece alpcan ile ilgilen**
 
 ### Portlar
-- Backend: `127.0.0.1:8010:8000` — değiştirme, başka portla karıştırma
-- Frontend: `127.0.0.1:3010:3000` — değiştirme, başka portla karıştırma
-- Orthanc: `127.0.0.1:8052:8042` ve `4242:4242`
+- Backend: 8010:8000 — değiştirme, başka portla karıştırma
+- Frontend: 3010:3000 — değiştirme, başka portla karıştırma
+- Orthanc: 8052:8042 ve 4242:4242
 - Bu portlar diğer projelerle çakışmamak için seçildi, DEĞİŞTİRME
 
 ### Nginx
-- Sadece `alpcan.alpiss.net` server bloğunu düzenle
+- Sadece alpcan.alpiss.net server bloğunu düzenle
 - Diğer subdomain'lerin nginx config'lerine DOKUNMA
-- Nginx config yolu: `/etc/nginx/sites-available/alpcan.alpiss.net`
 
 ### Docker
 - Compose dosyası: `docker-compose.prod.yml`
@@ -33,7 +28,7 @@
 
 ### Deploy
 - Deploy script: `deploy/deploy-remote.sh`
-- Sunucuda sadece `/root/alpcan` altında işlem yapar
+- Sunucuda sadece proje dizini altında işlem yapar
 - Diğer dizinlere, servislere, container'lara müdahale etmez
 
 ## Teknik Bilgiler

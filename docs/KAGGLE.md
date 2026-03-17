@@ -1,63 +1,42 @@
 # AlpCAN Kaggle Notebook Bilgileri
 
 ## Kaggle Hesabı
-- **Kullanıcı:** rdvncebecii (doğrulamak için: `kaggle config view`)
+- **Kullanıcı:** ridvancebec
 
 ## Notebook'lar
 
-### 1. ark-foundation-lung-nodule-detection (Ark+ Foundation Model)
-- **Kaggle slug:** rdvncebecii/ark-foundation-lung-nodule-detection
-- **Durum:** v4 push edildi, ÇIKTI YOK (hata var, düzeltilmeli)
-- **Sorun:** `ml.evaluation` import hatası veya model weight indirme problemi
-- **Lokal dosya:** /Users/rdvncebeci/alpcan/notebooks/ark_foundation_lung_nodule_detection.ipynb
-- **Çıktılar:** /Users/rdvncebeci/alpcan/notebooks/outputs/ark/ (boş)
-
-### 2. Diğer Notebook'lar (çıktıları mevcut)
-- LUNA16 analiz
-- CXR DenseNet
-- MedSAM segmentation
-- ViT classification
-- VFNet detection
-- EfficientNet
-- MONAI preprocessing
+| # | Notebook | Kaggle Slug | Durum |
+|---|---------|-------------|-------|
+| 01 | LIDC-IDRI Exploration | ridvancebec/alpcan-lidc-idri-exploration | Complete |
+| 02 | CXR TorchXRayVision | ridvancebec/alpcan-cxr-pipeline-torchxrayvision-baseline | Complete |
+| 03 | CXR ResNet-50 | ridvancebec/alpcan-cxr-pipeline-resnet-50 | Complete |
+| 04 | CXR MedSAM | ridvancebec/alpcan-cxr-pipeline-medsam | Complete |
+| 05 | CXR Ark+ | ridvancebec/alpcan-cxr-pipeline-ark-plus | Complete |
+| 06 | CT Nodule Segmentation | ridvancebec/alpcan-ct-nodule-segmentation | Complete |
+| 07 | CT Characterization | ridvancebec/alpcan-ct-nodule-characterization | Complete |
+| 08 | CXR Ensemble | ridvancebec/alpcan-cxr-ensemble-pipeline | Complete |
+| 09 | CT Pipeline Integration | ridvancebec/alpcan-ct-pipeline-integration | Complete |
+| 10 | System Performance Report | ridvancebec/alpcan-system-performance-report | Complete |
+| 11 | nnU-Net Nodule Segmentation | ridvancebec/alpcan-nnu-net-nodule-segmentation | Queued (v6) |
+| 12 | Turkish Report LLM | ridvancebec/alpcan-turkish-llm | Complete |
+| 13 | Malignancy Classification | ridvancebec/alpcan-ct-malignancy-classification | Queued (v1) |
+| 14 | Reporting Engine | ridvancebec/alpcan-reporting-engine | Complete |
 
 ## Kaggle CLI Komutları
 
 ### Status kontrol
 ```bash
-kaggle kernels status rdvncebecii/ark-foundation-lung-nodule-detection
-```
-
-### Notebook push (güncelleme sonrası)
-```bash
-cd /Users/rdvncebeci/alpcan/notebooks
-kaggle kernels push -p . --kernel-name ark-foundation-lung-nodule-detection
+kaggle kernels status ridvancebec/NOTEBOOK_SLUG
 ```
 
 ### Çıktıları indirme
 ```bash
-kaggle kernels output rdvncebecii/ark-foundation-lung-nodule-detection -p notebooks/outputs/ark/
+kaggle kernels output ridvancebec/NOTEBOOK_SLUG -p notebooks/outputs/
 ```
 
-### Yeni notebook push template
+### Notebook push
 ```bash
-# 1. kernel-metadata.json oluştur (veya güncelle)
-cat > kernel-metadata.json <<EOF
-{
-  "id": "rdvncebecii/NOTEBOOK_NAME",
-  "title": "NOTEBOOK TITLE",
-  "code_file": "notebook.ipynb",
-  "language": "python",
-  "kernel_type": "notebook",
-  "is_private": false,
-  "enable_gpu": true,
-  "enable_internet": true,
-  "competition_sources": [],
-  "dataset_sources": []
-}
-EOF
-
-# 2. Push
+cd notebooks/kaggle_XX/
 kaggle kernels push -p .
 ```
 

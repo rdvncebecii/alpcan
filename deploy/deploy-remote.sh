@@ -19,9 +19,13 @@
 
 set -e
 
-# Configuration — SADECE alpcan değerleri, değiştirme
-SERVER_IP="${SERVER_IP:-45.141.150.46}"
-SERVER_USER="${SERVER_USER:-root}"
+# Configuration — env değişkenlerinden okunur, varsayılan değer YOKTUR
+if [ -z "$SERVER_IP" ] || [ -z "$SERVER_USER" ]; then
+    echo "HATA: SERVER_IP ve SERVER_USER env değişkenleri tanımlı olmalı."
+    echo "  export SERVER_IP=x.x.x.x"
+    echo "  export SERVER_USER=kullanici"
+    exit 1
+fi
 DEPLOY_PATH="${DEPLOY_PATH:-/root/alpcan}"
 SSH_KEY="${SSH_KEY:-$HOME/.ssh/id_rsa}"
 COMPOSE_FILE="docker-compose.prod.yml"

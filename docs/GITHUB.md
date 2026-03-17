@@ -3,19 +3,6 @@
 ## Repository
 - **URL:** https://github.com/rdvncebecii/alpcan
 - **Branch:** main
-- **Visibility:** Public (veya Private — kontrol et)
-
-## Lokal Proje Yolu
-- **Proje dizini:** /Users/rdvncebeci/alpcan
-- **Git remote:** origin → https://github.com/rdvncebecii/alpcan.git
-
-## Push Komutu
-```bash
-cd /Users/rdvncebeci/alpcan
-git add .
-git commit -m "mesaj"
-git push origin main
-```
 
 ## CI/CD Pipeline (.github/workflows/ci.yml)
 1. **backend-lint:** ruff ile Python linting
@@ -25,17 +12,11 @@ git push origin main
 
 ## GitHub Secrets (Settings > Secrets > Actions)
 Aşağıdaki secret'lar CI/CD deploy için gerekli:
-- `SERVER_HOST` → 45.141.150.46
-- `SERVER_USER` → root
-- `SERVER_SSH_KEY` → ~/.ssh/id_rsa içeriği (private key)
+- `SERVER_HOST`
+- `SERVER_USER`
+- `SERVER_SSH_KEY`
 
-### Secret Ekleme
-```bash
-# GitHub CLI ile
-gh secret set SERVER_HOST --body "45.141.150.46"
-gh secret set SERVER_USER --body "root"
-gh secret set SERVER_SSH_KEY < ~/.ssh/id_rsa
-```
+Not: Secret değerleri GitHub Settings > Secrets > Actions üzerinden eklenir. Gerçek değerler repo'da saklanmaz.
 
 ## Proje Yapısı
 ```
@@ -54,6 +35,5 @@ alpcan/
 ├── notebooks/        # Kaggle notebook'ları + çıktıları
 ├── deploy/           # Sunucu kurulum scriptleri
 ├── docker-compose.prod.yml
-├── Caddyfile
 └── deploy.sh
 ```
