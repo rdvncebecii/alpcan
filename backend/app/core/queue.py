@@ -6,6 +6,7 @@ celery_app = Celery(
     "alpcan",
     broker=settings.redis_url,
     backend=settings.redis_url,
+    include=["app.tasks"],
 )
 
 celery_app.conf.update(
