@@ -32,6 +32,8 @@ out/
 # ML Weights (managed via HuggingFace/DVC)
 ml/weights/*.pt
 ml/weights/*.pth
+ml/weights/**/*.pt
+ml/weights/**/*.pth
 ml/weights/*.onnx
 ml/weights/*.bin
 ml/weights/*.gguf

@@ -1,8 +1,8 @@
 {
-  "training_loss": 1.0261618781894393,
-  "training_time_seconds": 4161.548518896103,
-  "training_time_hours": 1.155985699693362,
-  "global_steps": 563,
+  "training_loss": 0.8152270846896701,
+  "training_time_seconds": 18101.959125757217,
+  "training_time_hours": 5.028321979377004,
+  "global_steps": 2250,
   "epochs": 1,
-  "bleu_score": 0.0
+  "bleu_score": 0.0004826778129432452
 }

@@ -1,0 +1,55 @@
+{
+  "notebook": "NB14 — RPT-1 Raporlama Motoru",
+  "version": "1.0",
+  "pipeline": "AlpCAN RPT-1",
+  "description": "Yapilandirilmis Turkce radyoloji rapor motoru",
+  "capabilities": [
+    "CXR patoloji raporlama",
+    "BT nodul raporlama",
+    "Lung-RADS kategorilendirme",
+    "Aciliyet degerlendirme",
+    "Takip onerisi",
+    "HTML rapor uretimi",
+    "JSON / CSV cikti"
+  ],
+  "supported_modalities": [
+    "CXR",
+    "BT"
+  ],
+  "supported_cxr_pathologies": [
+    "Atelectasis",
+    "Cardiomegaly",
+    "Consolidation",
+    "Edema",
+    "Effusion",
+    "Emphysema",
+    "Fibrosis",
+    "Hernia",
+    "Infiltration",
+    "Mass",
+    "Nodule",
+    "Pleural_Thickening",
+    "Pneumonia",
+    "Pneumothorax",
+    "No Finding"
+  ],
+  "lung_rads_categories": [
+    "1",
+    "2",
+    "3",
+    "4A",
+    "4B",
+    "4X"
+  ],
+  "output_formats": [
+    "text",
+    "html",
+    "json",
+    "csv"
+  ],
+  "statistics": {
+    "demo_reports": 5,
+    "batch_reports": 20,
+    "total_reports": 25
+  }
+}
