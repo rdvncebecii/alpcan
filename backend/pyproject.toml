@@ -35,8 +35,8 @@ ml = [
     "numpy>=1.26.0",
     "Pillow>=10.3.0",
     "opencv-python-headless>=4.9.0",
-    # Ark+ Foundation Model — timm 0.5.4 ZORUNLU (SwinTransformer API)
-    "timm==0.5.4",
+    # timm — smp>=0.3.3 timm>=0.9 gerektirir; Ark+ uyumluluğu ark_inference.py'de handle edilir
+    "timm>=0.9.0",
     # TorchXRayVision — DenseNet-121 CXR analizi
     "torchxrayvision>=1.0.0",
     # MedSAM — HuggingFace Segment Anything
