@@ -1,0 +1,129 @@
+{
+  "model": {
+    "architecture": "EfficientNet-B0 + Tabular Fusion",
+    "image_branch": "EfficientNet-B0 (ImageNet pretrained)",
+    "tabular_branch": "19 -> 64",
+    "fusion_dim": 1344,
+    "n_params": 4358850,
+    "patch_size": 128,
+    "n_tabular_features": 19,
+    "tabular_features": [
+      "diameter_px",
+      "consensus_area",
+      "compactness",
+      "eccentricity",
+      "solidity",
+      "perimeter",
+      "margin_sharpness",
+      "intensity_mean",
+      "intensity_std",
+      "surround_mean",
+      "surround_std",
+      "contrast_ratio",
+      "glcm_homogeneity",
+      "glcm_contrast",
+      "glcm_energy",
+      "glcm_correlation",
+      "n_annotators",
+      "n_slices",
+      "annotator_area_std"
+    ]
+  },
+  "training": {
+    "epochs": 50,
+    "batch_size": 32,
+    "optimizer": "AdamW",
+    "lr": 0.0001,
+    "weight_decay": 0.0001,
+    "scheduler": "CosineAnnealingLR",
+    "binary_loss": "FocalLoss (alpha=0.25, gamma=2)",
+    "multiclass_loss": "LabelSmoothingCE (smoothing=0.1)",
+    "amp": true
+  },
+  "dataset": {
+    "source": "zhangweiled/lidcidri (LIDC-IDRI slices)",
+    "n_train": 1445,
+    "n_val": 349,
+    "n_patients_train": 617,
+    "n_patients_val": 155,
+    "split": "80/20 patient-based"
+  },
+  "results": {
+    "binary_auc": 0.974502487562189,
+    "5class_accuracy": 0.0,
+    "best_epoch": 50
+  },
+  "comparison_nb07": {
+    "nb07_approach": "Size-only proxy (diameter-based 4-class)",
+    "nb07_model": "ResNet-50 + CBAM",
+    "nb13_approach": "Multi-feature proxy (size+morph+intensity+GLCM, 5-class)",
+    "nb13_model": "EfficientNet-B0 + Tabular Fusion",
+    "improvements": [
+      "15 radiomic features vs size-only",
+      "Image + tabular fusion vs image-only",
+      "5-class ordinal vs 4-class categorical",
+      "Lighter model (EfficientNet-B0 vs ResNet-50)",
+      "Label smoothing for ordinal classes"
+    ]
+  },
+  "scaler": {
+    "mean": [
+      9.925220231778894,
+      103.28512110726643,
+      0.9264596018205464,
+      0.6316779109124081,
+      0.9246240348964414,
+      32.92954629119292,
+      212.26460210674773,
+      110.05617776362541,
+      21.472334621686837,
+      49.57420731184804,
+      20.985592966013712,
+      2.947738098891961,
+      0.21161409779983512,
+      2237.64783782035,
+      0.1945217961413225,
+      0.5425936176849265,
+      4.0,
+      6.320415224913495,
+      32.0708451257445
+    ],
+    "scale": [
+      5.744275766140233,
+      149.00507998609825,
+      0.11970198001392571,
+      0.16653596222573044,
+      0.05777074376402637,
+      22.718073357903396,
+      116.44009605345973,
+      39.64769580642892,
+      13.256109758252517,
+      38.49193467670355,
+      13.122540299134137,
+      1.5122686206241243,
+      0.11801412466622246,
+      1996.174479536324,
+      0.08105114922979942,
+      0.23813944578515955,
+      1.0,
+      4.884311991858898,
+      55.68795197277089
+    ]
+  },
+  "malignancy_proxy": {
+    "method": "Weighted multi-feature scoring",
+    "features_used": [
+      "size (0.25)",
+      "irregularity (0.15)",
+      "spiculation (0.12)",
+      "elongation (0.05)",
+      "margin_blur (0.12)",
+      "contrast (0.08)",
+      "heterogeneity (0.08)",
+      "texture_irregular (0.08)",
+      "texture_contrast (0.07)"
+    ],
+    "binary_threshold": 3.5,
+    "class_bins": "[0, 1.8, 2.6, 3.4, 4.2, 6.0]"
+  }
+}
