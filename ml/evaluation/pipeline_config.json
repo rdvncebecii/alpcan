@@ -1,0 +1,61 @@
+{
+  "notebook": "12_turkish_report_llm",
+  "agent": "BT-5: Turkish Report LLM",
+  "project": "AlpCAN",
+  "dataset": {
+    "name": "MIMIC-CXR Reports",
+    "kaggle_slug": "ridvancebec/alpcan-mimic-cxr-reports",
+    "total_reports": 146147,
+    "both_sections_available": 82216,
+    "translated_subset": 5000,
+    "training_examples": 4500,
+    "validation_examples": 500
+  },
+  "translation": {
+    "model": "Helsinki-NLP/opus-mt-en-tr",
+    "subset_size": 5000,
+    "batch_size": 32
+  },
+  "model": {
+    "base_model": "microsoft/Phi-3.5-mini-instruct",
+    "quantization": "4-bit NF4",
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lora_target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ],
+    "trainable_params": 8912896,
+    "total_params": 2018053120,
+    "trainable_pct": 0.44
+  },
+  "training": {
+    "epochs": 1,
+    "batch_size": 2,
+    "gradient_accumulation": 4,
+    "effective_batch_size": 8,
+    "learning_rate": 0.0002,
+    "max_seq_length": 512,
+    "warmup_steps": 100,
+    "fp16": true,
+    "optimizer": "paged_adamw_8bit",
+    "gpu": "T4 16GB"
+  },
+  "results": {
+    "final_loss": 1.0261618781894393,
+    "training_time_hours": 1.155985699693362,
+    "bleu_score": 0.0,
+    "global_steps": 563
+  },
+  "output_files": [
+    "lora_adapter/",
+    "sample_generations.csv",
+    "training_metrics.json",
+    "pipeline_config.json"
+  ]
+}
