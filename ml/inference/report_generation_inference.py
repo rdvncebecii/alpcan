@@ -1,213 +1,210 @@
-"""Rapor Üretimi — Template tabanlı (ilk sürüm).
+"""NB14 Rapor Motoru — yapılandırılmış Türkçe radyoloji raporu.
 
-Türkçe Lung-RADS 2022 yapılandırılmış rapor üretimi.
-İlk sürüm: şablon tabanlı. Gelecek: Llama-3-8B-Instruct.
+Birincil yöntem: ml/reporting/rapor_motoru.py (NB14 çıktısı)
+Fallback: dahili şablon (rapor_motoru import edilemezse)
 
-Bağımlılıklar: PyYAML
+Kullanım:
+    result = ReportGenerationInference.predict({
+        "modalite": "BT",
+        "hasta_id": "P001",
+        "hasta_adi": "Ad Soyad",
+        "yas": 55,
+        "cinsiyet": "E",
+        "bt_noduller": [
+            {"lokalizasyon": "SAĞ ALT", "boyut_mm": 8.2,
+             "lung_rads": "3", "malignite_skoru": 0.31}
+        ]
+    })
 """
 
 import logging
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
+from typing import Optional
 
 from ml.inference.base import BaseInferenceModel
 
 logger = logging.getLogger(__name__)
 
-LUNG_RADS_DESCRIPTIONS = {
-    "1": "Negatif — Malignite bulgusu yok",
-    "2": "Benign — İyi huylu özellikler",
-    "3": "Muhtemelen benign — 6 ay kontrol",
+_RAPOR_MOTORU_PATH = Path(__file__).parents[2] / "ml" / "reporting"
+
+LUNG_RADS_TR = {
+    "1":  "Negatif — Malignite bulgusu yok",
+    "2":  "Benign — İyi huylu özellikler",
+    "3":  "Muhtemelen benign — 6 ay kontrol",
     "4A": "Şüpheli (düşük) — 3 ay BT veya PET-BT",
     "4B": "Şüpheli (yüksek) — Biyopsi önerilir",
     "4X": "Ek bulgular — Multidisipliner kurul",
 }
-
-LUNG_RADS_RECOMMENDATIONS = {
-    "1": "Yıllık DDBT taraması devam etmelidir.",
-    "2": "Yıllık DDBT taraması devam etmelidir.",
-    "3": "6 ay sonra kontrol BT önerilir.",
+LUNG_RADS_RECOMMENDATION = {
+    "1":  "Yıllık düşük doz BT taraması devam etmelidir.",
+    "2":  "Yıllık düşük doz BT taraması devam etmelidir.",
+    "3":  "6 ay sonra kontrol BT önerilir.",
     "4A": "3 ay içinde kontrol BT veya PET-BT önerilir.",
     "4B": "Doku örnekleme / biyopsi önerilir.",
     "4X": "Multidisipliner kurul değerlendirmesi önerilir.",
 }
 
+_LR_ORDER = {"1": 0, "2": 1, "3": 2, "4A": 3, "4B": 4, "4X": 5}
+
+
+def _overall_lung_rads(nodules: list) -> str:
+    """Nodül listesinden en yüksek Lung-RADS kategorisini al."""
+    best = "1"
+    for n in nodules:
+        lr = str(n.get("lung_rads", n.get("lung_rads_category", "1")))
+        if _LR_ORDER.get(lr, 0) > _LR_ORDER.get(best, 0):
+            best = lr
+    return best
+
+
+def _pipeline_to_rapor_input(pipeline_results: dict) -> dict:
+    """Pipeline çıktısını rapor_motoru.generate_report() formatına dönüştür."""
+    nodules_raw = pipeline_results.get(
+        "nodule_results",
+        pipeline_results.get("nodules", [])
+    )
+    modalite = pipeline_results.get("modalite", "BT").upper()
+
+    bt_noduller = []
+    for n in nodules_raw:
+        diam = n.get("diameter_mm", n.get("diameter_px", 0))
+        lr   = str(n.get("lung_rads", n.get("lung_rads_category", "1")))
+        cx, cy, cz = n.get("center", [0, 0, 0])[:3]
+
+        # Basit sağ/sol lob lokalizasyonu (cx'e göre)
+        volume = pipeline_results.get("volume")
+        if volume is not None:
+            lokalizasyon = "SAĞ AKCIĞER" if cx > volume.shape[2] / 2 else "SOL AKCIĞER"
+        else:
+            lokalizasyon = n.get("location_description", n.get("location", "Belirsiz"))
+
+        bt_noduller.append({
+            "lokalizasyon": lokalizasyon,
+            "boyut_mm": round(float(diam), 1),
+            "lung_rads": lr,
+            "malignite_skoru": round(float(n.get("malignancy_score", 0)), 3),
+            "malignite_sinif": n.get("malignancy_class", ""),
+            "risk_sinifi": n.get("risk_class", ""),
+            "koordinatlar": {"x": cx, "y": cy, "z": cz},
+        })
+
+    return {
+        "modalite": modalite,
+        "hasta_id": pipeline_results.get("patient_id", "ANON"),
+        "hasta_adi": pipeline_results.get("patient_name", "Bilinmiyor"),
+        "yas": pipeline_results.get("age", 0),
+        "cinsiyet": pipeline_results.get("gender", "-"),
+        "protokol_no": pipeline_results.get("study_id", ""),
+        "klinik_bilgi": pipeline_results.get("clinical_info", ""),
+        "bt_noduller": bt_noduller,
+        "cxr_patolojiler": pipeline_results.get("cxr_pathologies", {}),
+        "tarih": datetime.now(timezone.utc).strftime("%d.%m.%Y %H:%M"),
+    }
+
 
 class ReportGenerationInference(BaseInferenceModel):
-    """Rapor Üretimi — template tabanlı.
-
-    Mevcut mod: Template (şablon)
-    - Pipeline çıktılarından yapılandırılmış Türkçe rapor
-    - Lung-RADS 2022 kategorileri ve tavsiyeleri
-    - Nodül detayları ve ölçümleri
-
-    Gelecek mod: Llama-3-8B-Instruct (Q4_K_M)
-    - Doğal dil Türkçe rapor üretimi
-    - Bağlamsal tavsiyeler
-    """
+    """NB14 rapor_motoru tabanlı Türkçe radyoloji raporu üretimi."""
 
     _model = None
-    _config: dict = {}
-    _method: str = "template"
-
-    REPORT_TEMPLATE = """AKCİĞER BT ANALİZ RAPORU — AlpCAN v{version}
-{"=" * 50}
-Tarih: {date}
-Hasta ID: {patient_id}
-Çalışma ID: {study_id}
-Modalite: {modality}
-
-KALİTE KONTROL
-  Kalite Skoru: {quality_score}/100 — {quality_decision}
-
-BULGULAR
-{findings_text}
-
-LUNG-RADS KATEGORİSİ: {lung_rads}
-  {lung_rads_description}
-
-TAVSİYE
-  {recommendation}
-
-{"=" * 50}
-NOT: Bu rapor yapay zekâ destekli ön değerlendirmedir.
-Nihai tanı kararı radyologa aittir.
-AlpCAN — Akciğer Kanseri Erken Tespiti İçin YZ Karar Destek Platformu
-"""
+    _generate_fn = None
 
     @classmethod
     def load_model(cls, config: dict) -> None:
-        """Rapor üretim modunu ayarla."""
-        cls._config = config
-        cls._method = config.get("method", "template")
-
-        if cls._method == "llama_cpp":
-            model_path = config.get("llama_model_path")
-            if not model_path or not Path(model_path).exists():
-                logger.warning(
-                    "Llama-3 GGUF ağırlıkları bulunamadı, template moduna geri dönülüyor"
-                )
-                cls._method = "template"
-            # Gelecek: from llama_cpp import Llama
-
-        cls._model = True
-        logger.info(f"Rapor üretimi hazır: method={cls._method}")
+        # rapor_motoru'nu dinamik import et
+        if str(_RAPOR_MOTORU_PATH) not in sys.path:
+            sys.path.insert(0, str(_RAPOR_MOTORU_PATH))
+        try:
+            import importlib
+            rm = importlib.import_module("rapor_motoru")
+            cls._generate_fn = rm.generate_report
+            cls._model = True
+            logger.info("NB14 rapor_motoru yüklendi")
+        except ImportError:
+            logger.warning("rapor_motoru import edilemedi — dahili şablon kullanılacak")
+            cls._generate_fn = None
+            cls._model = True
 
     @classmethod
     def predict(cls, pipeline_results: dict) -> dict:
-        """Pipeline çıktılarından yapılandırılmış rapor oluştur.
+        """Pipeline çıktısından yapılandırılmış Türkçe rapor üret.
 
         Args:
-            pipeline_results: Pipeline çıktı dict'i:
-                - nodules: list[dict] — nodül listesi
-                - overall_lung_rads: str — genel Lung-RADS kategorisi
-                - quality: dict — kalite kontrol sonuçları
-                - patient_id: str
-                - study_id: str
+            pipeline_results: CT veya CXR pipeline sonuç dict'i
 
         Returns:
             {
-                "report_text": str — tam rapor metni,
-                "summary_tr": str — kısa Türkçe özet,
-                "recommendation_tr": str — Türkçe tavsiye,
-                "lung_rads": str,
+                "report_text":       str,
+                "summary_tr":        str,
+                "recommendation_tr": str,
+                "lung_rads":         str,
+                "html":              str | None,
             }
         """
         if not cls.is_loaded():
             cls.load_model({})
 
-        if cls._method == "template":
-            return cls._generate_template_report(pipeline_results)
-        # Gelecek: return cls._generate_llm_report(pipeline_results)
-        return cls._generate_template_report(pipeline_results)
+        rapor_input = _pipeline_to_rapor_input(pipeline_results)
+
+        # ── NB14 rapor_motoru (birincil) ───────────────────────────────────────
+        if cls._generate_fn is not None:
+            try:
+                result = cls._generate_fn(rapor_input)
+                return {
+                    "report_text":       result.get("rapor_metni", result.get("text", "")),
+                    "summary_tr":        result.get("ozet", result.get("bulgular", "")),
+                    "recommendation_tr": result.get("takip", result.get("tavsiye", "")),
+                    "lung_rads":         result.get("lung_rads", _overall_lung_rads(
+                                            pipeline_results.get("nodule_results",
+                                            pipeline_results.get("nodules", []))
+                                         )),
+                    "html":              result.get("html"),
+                    "aciliyet":          result.get("aciliyet", "Normal"),
+                }
+            except Exception as e:
+                logger.warning(f"rapor_motoru hatası, fallback: {e}")
+
+        # ── Dahili şablon (fallback) ───────────────────────────────────────────
+        return cls._template_report(pipeline_results, rapor_input)
 
     @classmethod
-    def _generate_template_report(cls, data: dict) -> dict:
-        """Şablon tabanlı rapor oluştur."""
-        nodules = data.get("nodules", data.get("nodule_results", []))
-        lung_rads = data.get("overall_lung_rads", "1")
-        quality = data.get("quality", {})
-        patient_id = data.get("patient_id", "ANON")
-        study_id = data.get("study_id", "")
+    def _template_report(cls, pipeline_results: dict, rapor_input: dict) -> dict:
+        nodules = rapor_input.get("bt_noduller", [])
+        lr = _overall_lung_rads(
+            pipeline_results.get("nodule_results",
+            pipeline_results.get("nodules", []))
+        )
 
-        # Nodül bulgularını metin olarak oluştur
         if nodules:
-            findings_lines = []
-            for i, nod in enumerate(nodules, 1):
-                loc = nod.get("location_description", nod.get("location", "Belirtilmemiş"))
-                diameter = nod.get("diameter_mm", 0)
-                volume = nod.get("volume_mm3", 0)
-                density = nod.get("density", "belirtilmemiş")
-                mal_score = nod.get("malignancy_score", 0)
-                nod_lr = nod.get("lung_rads", nod.get("lung_rads_category", ""))
-
-                line = (
-                    f"  Nodül {i}:\n"
-                    f"    Lokalizasyon: {loc}\n"
-                    f"    Boyut: {diameter:.1f} mm"
-                )
-                if volume:
-                    line += f" (hacim: {volume:.1f} mm³)"
-                line += f"\n    Yoğunluk: {density}"
-                if mal_score:
-                    line += f"\n    Malignite skoru: {mal_score:.2f}"
-                if nod_lr:
-                    lr_desc = LUNG_RADS_DESCRIPTIONS.get(nod_lr, "")
-                    line += f"\n    Lung-RADS: {nod_lr} — {lr_desc}"
-
-                findings_lines.append(line)
-
-            findings_text = (
-                f"  Toplam nodül sayısı: {len(nodules)}\n\n"
-                + "\n\n".join(findings_lines)
+            lines = [f"  {i+1}. {n['lokalizasyon']} — {n['boyut_mm']} mm "
+                     f"(Lung-RADS {n['lung_rads']}, malignite: {n['malignite_skoru']:.2f})"
+                     for i, n in enumerate(nodules)]
+            findings = f"  {len(nodules)} nodül tespit edildi.\n" + "\n".join(lines)
+            summary  = "; ".join(
+                f"{n['lokalizasyon']} {n['boyut_mm']} mm" for n in nodules
             )
         else:
-            findings_text = "  Nodül tespit edilmedi."
+            findings = "  Nodül tespit edilmedi."
+            summary  = "Normal bulgular, nodül yok."
 
-        # Özet ve tavsiye
-        lung_rads_desc = LUNG_RADS_DESCRIPTIONS.get(lung_rads, "Belirtilmemiş")
-        recommendation = LUNG_RADS_RECOMMENDATIONS.get(
-            lung_rads, "Radyolog değerlendirmesi önerilir."
-        )
-
-        # Kısa özet oluştur
-        if nodules:
-            summary_parts = []
-            for nod in nodules:
-                diameter = nod.get("diameter_mm", 0)
-                density = nod.get("density", "")
-                loc = nod.get("location_description", nod.get("location", ""))
-                nod_lr = nod.get("lung_rads", nod.get("lung_rads_category", ""))
-                summary_parts.append(
-                    f"{loc}'da {diameter:.1f} mm {density} nodül — Lung-RADS {nod_lr}"
-                )
-            summary_tr = ". ".join(summary_parts) + "."
-        else:
-            summary_tr = "Nodül tespit edilmedi. Normal bulgular."
-
-        # Rapor metni
+        recommendation = LUNG_RADS_RECOMMENDATION.get(lr, "Radyolog değerlendirmesi.")
         report_text = (
-            f"AKCİĞER BT ANALİZ RAPORU — AlpCAN v0.2.0\n"
+            f"AKCİĞER BT ANALİZ RAPORU — AlpCAN\n"
             f"{'=' * 50}\n"
-            f"Tarih: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M')}\n"
-            f"Hasta ID: {patient_id}\n"
-            f"Çalışma ID: {study_id}\n\n"
-            f"KALİTE KONTROL\n"
-            f"  Kalite Skoru: {quality.get('quality_score', 'N/A')}/100 "
-            f"— {quality.get('decision', 'N/A')}\n\n"
-            f"BULGULAR\n{findings_text}\n\n"
-            f"LUNG-RADS KATEGORİSİ: {lung_rads}\n"
-            f"  {lung_rads_desc}\n\n"
+            f"Tarih: {datetime.now(timezone.utc).strftime('%d.%m.%Y %H:%M')}\n"
+            f"Hasta ID: {rapor_input.get('hasta_id', 'ANON')}\n\n"
+            f"BULGULAR\n{findings}\n\n"
+            f"LUNG-RADS: {lr} — {LUNG_RADS_TR.get(lr, '')}\n\n"
             f"TAVSİYE\n  {recommendation}\n\n"
             f"{'=' * 50}\n"
-            f"NOT: Bu rapor yapay zekâ destekli ön değerlendirmedir.\n"
-            f"Nihai tanı kararı radyologa aittir."
+            f"NOT: Yapay zekâ destekli ön değerlendirme. "
+            f"Nihai tanı radyologa aittir."
         )
-
         return {
-            "report_text": report_text,
-            "summary_tr": summary_tr,
+            "report_text":       report_text,
+            "summary_tr":        summary,
             "recommendation_tr": recommendation,
-            "lung_rads": lung_rads,
-            "lung_rads_description": lung_rads_desc,
+            "lung_rads":         lr,
+            "html":              None,
         }

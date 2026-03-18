@@ -41,6 +41,14 @@ ml = [
     "torchxrayvision>=1.0.0",
     # MedSAM — HuggingFace Segment Anything
     "transformers>=4.40.0",
+    # NB06 U-Net segmentasyon
+    "segmentation-models-pytorch>=0.3.3",
+    # NB07/NB13 model mimarisi
+    "torchvision>=0.18.0",
+    # NB13 radiomic özellik hesaplama
+    "scikit-image>=0.23.0",
+    # Albumentations — augmentation (inference transform için)
+    "albumentations>=1.4.0",
 ]
 dev = [
     "pytest>=8.2.0",

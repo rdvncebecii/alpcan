@@ -1,9 +1,8 @@
-"""Ajan 2 — Nodül Tespit: nnU-Net v2.5.1 (3D ResEnc-L)
+"""Ajan 2 — Nodül Tespit: NB06 U-Net 2D (ResNet-34 encoder)
 
-3D nodül segmentasyonu — tüm akciğer taranır.
-Hedef: Duyarlılık >%90, FPR<0.5/tarama.
-GPU: 1× A100 80GB, ~45-90 s/BT.
-Ağırlıklar henüz eğitilmedi — not_available döner.
+2D slice-by-slice CT nodül segmentasyonu.
+Model: smp.Unet(resnet34), LIDC-IDRI, Dice=0.623, IoU=0.572
+Gelecek: nnU-Net 3D (NB11 tamamlandığında)
 """
 
 import logging
@@ -14,8 +13,8 @@ logger = logging.getLogger(__name__)
 
 
 class NoduleDetectionAgent(BaseAgent):
-    name = "Nodule Detection (nnU-Net)"
-    version = "0.2.0"
+    name = "Nodule Detection (U-Net 2D)"
+    version = "0.3.0"
     requires_gpu = True
     pipeline = "ct"
 

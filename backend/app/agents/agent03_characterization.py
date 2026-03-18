@@ -1,8 +1,8 @@
-"""Ajan 3 — Karakterizasyon: 3D ResNet-50 + CBAM + Grad-CAM v2
+"""Ajan 3 — Karakterizasyon: NB07 ResNet-50+CBAM + NB13 EfficientNet-B0+Tabular
 
-Malign/benign ayrımı + Lung-RADS 2022 skorlama.
-AUC >0.95, ~2-5 s/nodül.
-Ağırlıklar Kaggle'da eğitim aşamasında — not_available döner.
+NB07: suspicious AUC=0.977, 4-class risk
+NB13: malignity AUC=0.991, 5-class Lung-RADS  ← birincil
+Her nodül için 19 radiomic özellik hesaplanır, scaler NB13 training setinden.
 """
 
 import logging
@@ -22,8 +22,8 @@ LUNG_RADS_CATEGORIES = {
 
 
 class CharacterizationAgent(BaseAgent):
-    name = "Characterization (ResNet-50+CBAM)"
-    version = "0.2.0"
+    name = "Characterization (NB07+NB13)"
+    version = "0.3.0"
     requires_gpu = True
     pipeline = "ct"
 
@@ -41,10 +41,13 @@ class CharacterizationAgent(BaseAgent):
 
         try:
             nodules = preprocessed.get("nodules", [])
-            results = []
-            for i, nod in enumerate(nodules):
-                result = CharacterizationInference.predict(None)
-                results.append(result)
+            volume  = preprocessed.get("volume")
+            if not nodules:
+                return {"nodule_results": [], "total_nodules": 0}
+            results = CharacterizationInference.predict_nodule_list(
+                volume=volume,
+                nodules=nodules,
+            )
             return {"nodule_results": results}
         except ModelNotAvailableError as e:
             logger.info(f"Karakterizasyon mevcut değil: {e}")
@@ -72,8 +75,9 @@ class CharacterizationAgent(BaseAgent):
             lr = r.get("lung_rads", "1")
             r["lung_rads_description"] = LUNG_RADS_CATEGORIES.get(lr, "")
 
+        lr_order = {"1": 0, "2": 1, "3": 2, "4A": 3, "4B": 4, "4X": 5}
         categories = [r.get("lung_rads", "1") for r in results]
-        overall = max(categories, default="1")
+        overall = max(categories, key=lambda x: lr_order.get(x, 0), default="1")
 
         return {
             "findings": {
