@@ -46,15 +46,32 @@ class BTPipeline:
                     return {
                         "status": "quality_rejected",
                         "quality": result.findings,
-                        "agent_results": [r.__dict__ for r in results],
+                        "agent_results": [
+                            {"agent_name": r.agent_name, "status": r.status,
+                             "findings": r.findings, "duration_seconds": r.duration_seconds}
+                            for r in results
+                        ],
                     }
 
-            # Her ajanın çıktısını bir sonrakine aktar
+            # JSON-serializable bulgular bir sonraki ajana aktar
             if result.findings:
                 pipeline_data.update(result.findings)
+            # Numpy array / tensor gibi serialize edilemeyen veriler (volume, mask vb.)
+            if result.pipeline_data:
+                pipeline_data.update(result.pipeline_data)
 
         # Son rapor ajanının çıktısı
         report_result = results[-1]
+
+        def _serializable_result(r):
+            return {
+                "agent_name": r.agent_name,
+                "status": r.status,
+                "confidence": r.confidence,
+                "findings": r.findings,
+                "duration_seconds": r.duration_seconds,
+                "error_message": r.error_message,
+            }
 
         return {
             "status": "completed",
@@ -62,5 +79,5 @@ class BTPipeline:
             "overall_lung_rads": pipeline_data.get("overall_lung_rads", "1"),
             "report": report_result.findings,
             "quality": results[0].findings,
-            "agent_results": [r.__dict__ for r in results],
+            "agent_results": [_serializable_result(r) for r in results],
         }

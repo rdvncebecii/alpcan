@@ -46,6 +46,38 @@ show_status() {
     echo "=== Model Ağırlıkları Durumu ==="
     echo ""
 
+    # NB06 U-Net Nodül Segmentasyon
+    if [ -f "$WEIGHTS_DIR/nb06_ct_seg/ct_seg_best_model.pth" ]; then
+        SIZE=$(du -h "$WEIGHTS_DIR/nb06_ct_seg/ct_seg_best_model.pth" | cut -f1)
+        echo "[✓] NB06 U-Net ResNet-34 CT Segmentasyon ($SIZE)"
+    else
+        echo "[✗] NB06 U-Net — ml/weights/nb06_ct_seg/ct_seg_best_model.pth yok"
+    fi
+
+    # NB07 ResNet-50+CBAM Karakterizasyon
+    if [ -f "$WEIGHTS_DIR/nb07_ct_char/ct_char_best_model.pth" ]; then
+        SIZE=$(du -h "$WEIGHTS_DIR/nb07_ct_char/ct_char_best_model.pth" | cut -f1)
+        echo "[✓] NB07 ResNet-50+CBAM Karakterizasyon ($SIZE)"
+    else
+        echo "[✗] NB07 ResNet-50+CBAM — ml/weights/nb07_ct_char/ct_char_best_model.pth yok"
+    fi
+
+    # NB13 EfficientNet-B0+Tabular Malignite
+    if [ -f "$WEIGHTS_DIR/nb13_malignancy/malignancy_best_model.pth" ]; then
+        SIZE=$(du -h "$WEIGHTS_DIR/nb13_malignancy/malignancy_best_model.pth" | cut -f1)
+        echo "[✓] NB13 EfficientNet-B0+Tabular Malignite ($SIZE)"
+    else
+        echo "[✗] NB13 EfficientNet-B0 — ml/weights/nb13_malignancy/malignancy_best_model.pth yok"
+    fi
+
+    # NB12 LoRA
+    if [ -f "$WEIGHTS_DIR/nb12_lora/adapter_model.safetensors" ]; then
+        SIZE=$(du -h "$WEIGHTS_DIR/nb12_lora/adapter_model.safetensors" | cut -f1)
+        echo "[✓] NB12 LoRA Rapor LLM ($SIZE)"
+    else
+        echo "[~] NB12 LoRA — ml/weights/nb12_lora/adapter_model.safetensors yok"
+    fi
+
     # Ark+
     if [ -f "$WEIGHTS_DIR/ark/ark_plus_checkpoint.pth" ]; then
         SIZE=$(du -h "$WEIGHTS_DIR/ark/ark_plus_checkpoint.pth" | cut -f1)
@@ -70,12 +102,10 @@ show_status() {
         echo "[~] MedSAM — ilk çalıştırmada otomatik indirilecek"
     fi
 
-    # Kullanılamayan modeller
     echo ""
     echo "--- Henüz mevcut olmayan modeller ---"
     echo "[—] X-Raydar: Kod herkese açık değil"
-    echo "[—] nnU-Net Nodül Tespiti: Eğitim devam ediyor"
-    echo "[—] Nodül Karakterizasyonu: Eğitim devam ediyor"
+    echo "[—] nnU-Net (NB11): Eğitim devam ediyor"
     echo "[—] Büyüme Takibi: Gelecek fazda eklenecek"
     echo ""
 }

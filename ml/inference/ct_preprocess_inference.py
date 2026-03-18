@@ -89,18 +89,20 @@ class CTPreprocessInference(BaseInferenceModel):
         logger.info("Akciğer maskesi çıkarılıyor...")
         lung_mask_raw = extract_lung_mask(volume, threshold_hu=lung_threshold)
 
-        # 4. HU normalizasyon
-        logger.info(f"HU normalizasyon: [{hu_min}, {hu_max}]")
-        volume_norm = normalize_hu(volume, hu_min=hu_min, hu_max=hu_max)
-
-        # 5. İzotropik resampling
         original_spacing = series_metadata.get("spacing", (1.0, 1.0, 1.0))
         logger.info(f"Resampling: {original_spacing} → {target_spacing}")
+
+        # 4a. Ham HU resampling — nodül tespiti kendi pencerelemeyi yapar
+        volume_hu = resample_isotropic(volume.astype(np.float32), original_spacing, target_spacing)
+
+        # 4b. HU normalizasyon + resampling — [0,1] aralığı, genel kullanım
+        logger.info(f"HU normalizasyon: [{hu_min}, {hu_max}]")
+        volume_norm = normalize_hu(volume, hu_min=hu_min, hu_max=hu_max)
         volume_resampled = resample_isotropic(
             volume_norm, original_spacing, target_spacing
         )
 
-        # Akciğer maskesini de resample et
+        # 5. Akciğer maskesini resample et
         lung_mask_resampled = resample_isotropic(
             lung_mask_raw.astype(np.float32), original_spacing, target_spacing
         )
@@ -111,7 +113,8 @@ class CTPreprocessInference(BaseInferenceModel):
         )
 
         return {
-            "volume": volume_resampled,
+            "volume": volume_resampled,      # [0,1] normalize, genel kullanım
+            "volume_hu": volume_hu,           # ham HU (float32), nodül tespiti için
             "lung_mask": lung_mask_resampled,
             "metadata": metadata,
             "original_shape": original_shape,

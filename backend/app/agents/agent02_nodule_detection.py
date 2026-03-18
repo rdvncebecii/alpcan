@@ -20,8 +20,10 @@ class NoduleDetectionAgent(BaseAgent):
 
     def preprocess(self, input_data: dict) -> dict:
         """Pipeline'dan gelen volume ve mask'ı al."""
+        # volume_hu: ham HU değerleri (NoduleDetectionInference kendi pencerelemeyi yapar)
+        # volume_hu yoksa eski volume'e fallback (geriye dönük uyumluluk)
         return {
-            "volume": input_data.get("volume"),
+            "volume": input_data.get("volume_hu") or input_data.get("volume"),
             "lung_mask": input_data.get("lung_mask"),
         }
 

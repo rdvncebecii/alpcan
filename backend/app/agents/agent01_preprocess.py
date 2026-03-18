@@ -49,7 +49,8 @@ class PreprocessAgent(BaseAgent):
                 "metadata": prediction.get("metadata", {}),
             },
             "confidence": 1.0,
-            # Pipeline'a veri aktarımı için
-            "volume": prediction.get("volume"),
+            # Pipeline'a veri aktarımı için (numpy array — findings'e alınmaz)
+            "volume": prediction.get("volume"),        # [0,1] normalize
+            "volume_hu": prediction.get("volume_hu"),  # ham HU — nodül tespiti için
             "lung_mask": prediction.get("lung_mask"),
         }

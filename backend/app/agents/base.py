@@ -20,6 +20,7 @@ class AgentResult:
     status: AgentStatus = AgentStatus.IDLE
     confidence: float | None = None
     findings: dict = field(default_factory=dict)
+    pipeline_data: dict = field(default_factory=dict)
     duration_seconds: float = 0.0
     error_message: str | None = None
 
@@ -54,6 +55,11 @@ class BaseAgent(ABC):
             result.status = AgentStatus.COMPLETED
             result.findings = output.get("findings", {})
             result.confidence = output.get("confidence")
+            # Non-serializable pipeline pass-through (numpy arrays, etc.)
+            result.pipeline_data = {
+                k: v for k, v in output.items()
+                if k not in ("findings", "confidence")
+            }
             logger.info(f"[{self.name}] Completed successfully")
 
         except Exception as e:

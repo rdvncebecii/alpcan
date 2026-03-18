@@ -29,9 +29,10 @@ class CharacterizationAgent(BaseAgent):
 
     def preprocess(self, input_data: dict) -> dict:
         """Pipeline'dan gelen nodül listesini al."""
+        # volume_hu: ham HU değerleri (karakterizasyon radiomic hesaplama için gerekli)
         return {
             "nodules": input_data.get("nodules", []),
-            "volume": input_data.get("volume"),
+            "volume": input_data.get("volume_hu") or input_data.get("volume"),
         }
 
     def predict(self, preprocessed: dict) -> dict:
