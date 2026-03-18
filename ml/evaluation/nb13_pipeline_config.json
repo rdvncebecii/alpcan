@@ -4,7 +4,7 @@
     "image_branch": "EfficientNet-B0 (ImageNet pretrained)",
     "tabular_branch": "19 -> 64",
     "fusion_dim": 1344,
-    "n_params": 4358850,
+    "n_params": 4389634,
     "patch_size": 128,
     "n_tabular_features": 19,
     "tabular_features": [
@@ -30,7 +30,7 @@
     ]
   },
   "training": {
-    "epochs": 50,
+    "epochs": 100,
     "batch_size": 32,
     "optimizer": "AdamW",
     "lr": 0.0001,
@@ -49,9 +49,9 @@
     "split": "80/20 patient-based"
   },
   "results": {
-    "binary_auc": 0.974502487562189,
-    "5class_accuracy": 0.0,
-    "best_epoch": 50
+    "binary_auc": 0.9911783674221484,
+    "5class_accuracy": 0.9541547277936963,
+    "best_epoch": 100
   },
   "comparison_nb07": {
     "nb07_approach": "Size-only proxy (diameter-based 4-class)",

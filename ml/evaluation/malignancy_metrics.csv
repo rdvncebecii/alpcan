@@ -1,2 +1,2 @@
 binary_auc,5class_accuracy,n_val_samples,n_train_samples,best_epoch,total_epochs,n_features
-0.974502487562189,0.0,349,1445,50,50,19
+0.9911783674221484,0.9541547277936963,349,1445,100,100,19
