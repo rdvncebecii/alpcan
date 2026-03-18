@@ -151,10 +151,13 @@ class ReportGenerationInference(BaseInferenceModel):
         if cls._generate_fn is not None:
             try:
                 result = cls._generate_fn(rapor_input)
+                def _str(v):
+                    return " ".join(v) if isinstance(v, list) else (v or "")
+
                 return {
-                    "report_text":       result.get("rapor_metni", result.get("text", "")),
-                    "summary_tr":        result.get("ozet", result.get("bulgular", "")),
-                    "recommendation_tr": result.get("takip", result.get("tavsiye", "")),
+                    "report_text":       _str(result.get("rapor_metni", result.get("text", ""))),
+                    "summary_tr":        _str(result.get("ozet", result.get("bulgular", ""))),
+                    "recommendation_tr": _str(result.get("takip", result.get("tavsiye", ""))),
                     "lung_rads":         result.get("lung_rads", _overall_lung_rads(
                                             pipeline_results.get("nodule_results",
                                             pipeline_results.get("nodules", []))

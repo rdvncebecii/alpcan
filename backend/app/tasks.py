@@ -248,11 +248,14 @@ async def _save_pipeline_results(
         report.cxr_recommendation = result.get("recommendation")
 
     # Rapor metni (BT pipeline'da report ajanından gelir)
+    def _to_str(v):
+        return " ".join(v) if isinstance(v, list) else (v or None)
+
     report_findings = result.get("report", {})
     if isinstance(report_findings, dict):
-        report.summary_tr = report_findings.get("summary_tr")
-        report.recommendation_tr = report_findings.get("recommendation_tr")
-        report.full_report_tr = report_findings.get("report_text")
+        report.summary_tr = _to_str(report_findings.get("summary_tr"))
+        report.recommendation_tr = _to_str(report_findings.get("recommendation_tr"))
+        report.full_report_tr = _to_str(report_findings.get("report_text"))
 
     db.add(report)
     await db.commit()
